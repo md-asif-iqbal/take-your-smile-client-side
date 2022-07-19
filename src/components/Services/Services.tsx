@@ -8,7 +8,11 @@ import {RiVipDiamondLine} from 'react-icons/ri';
 const Services = () => {
     return (
         <div className='container mx-auto my-10 px-2'>
-            <h2 className='text-xl font-bold capitalize text-rose-500 md:text-2xl lg:text-4xl text-center my-10'>Our Services</h2>
+            <div className='text-center'>
+            <h2 className='text-xl font-bold capitalize text-rose-500 md:text-2xl lg:text-4xl my-5'>Our Services</h2>
+            <h4 className='text-lg md:text-2xl text-gray-500 capitalize'>Planning an event but no idea where to start? Take Heart!</h4>
+            <p className='text-lg text-gray-500 w-4/5 mx-auto my-10'>We have you covered. Take Heart Events partners with local vendors to create fun, unique and innovative events tailored just for you or your organization. We have a variety of event planning experience; including weddings, social, corporate and non-profit events.</p>
+            </div>
         <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
             <div className="card min-w-1/4 bg-base-100 shadow-xl">
             <div className="pt-10 flex justify-center">
