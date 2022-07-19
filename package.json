@@ -13,6 +13,7 @@
     "daisyui": "^2.19.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-faq-component": "^1.3.4",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
