@@ -50,6 +50,8 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.3",
+    "node-sass": "^7.0.1",
+    "sass": "^1.53.0",
     "tailwindcss": "^2.0.4"
   }
 }
