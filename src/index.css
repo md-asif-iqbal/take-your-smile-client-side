@@ -13,11 +13,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.btn-rose{
-  background-color: rgb(244 63 94);
-  border-color: rgb(244 63 94);
-}
-.btn-rose:hover{
-  background-color: rgb(244 63 94);
-  border-color: rgb(244 63 94);
-}

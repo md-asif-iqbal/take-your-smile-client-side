@@ -1,0 +1,10 @@
+.btn-rose{
+    background-color: #FB4051;
+    border-color: #FB4051;
+  }
+  .btn-rose:hover{
+    background-color: white;
+    border-color: rgb(244 63 94);
+    color: rgb(244 63 94);
+  }
+  
