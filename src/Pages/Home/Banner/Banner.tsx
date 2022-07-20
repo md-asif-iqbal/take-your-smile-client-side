@@ -14,7 +14,7 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -26,7 +26,7 @@ const Banner = () => {
       >
         <SwiperSlide>
         <div className='relative'>
-          <img src="https://i.ibb.co/H4D8BLG/img1.jpg" alt=""  className='h-[80vh]'/>
+          <img src="https://i.ibb.co/H4D8BLG/img1.jpg" alt=""  className='h-[80vh] '/>
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">

@@ -27,7 +27,7 @@ const DesktopNav = () => {
     ];
     return (
       <nav>
-      <ul className='flex space-x-12  capitalize text-2xl'>
+      <ul className='flex space-x-8  capitalize text-lg'>
           {navigation.map((item, idx) => {
               return (
                   <li
