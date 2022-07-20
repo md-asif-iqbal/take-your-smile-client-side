@@ -19,14 +19,14 @@ const DesktopNav = () => {
             name: 'services',
             href: 'services',
         },
-        {
-            name: 'contact',
-            href: 'contact',
-        },
+        // {
+        //     name: 'contact',
+        //     href: 'contact',
+        // },
     ];
     return (
         <nav>
-        <ul className='flex space-x-12  capitalize text-2xl'>
+        <ul className='flex space-x-12  capitalize text-xl'>
             {navigation.map((item, idx) => {
                 return (
                     <li
