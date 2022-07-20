@@ -7,7 +7,12 @@ import Summery from '../Summery/Summery';
 const Home = () => {
     return (
         <div>
+
             <Services/>
+
+        
+           <Services></Services>
+
            <Gallery></Gallery>
            <Reviews></Reviews>
            <Summery></Summery>
