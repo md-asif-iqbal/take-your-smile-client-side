@@ -27,8 +27,8 @@ const NavMobile = () => {
             href: 'contact',
         },
         {
-            name: 'contact',
-            href: 'contact',
+            name: 'About',
+            href: 'About',
         },
     ];
     const [isOpen, setIsOpen] = useState(false);
