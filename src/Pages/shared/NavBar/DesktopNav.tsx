@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 const DesktopNav = () => {
 
     const navigation = [
@@ -35,7 +36,7 @@ const DesktopNav = () => {
                   >
                       <Link
                           to={item.href}
-                          activeClass='active'
+                          
                           spy={true}
                           smooth={true}
                           duration={600}

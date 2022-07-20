@@ -1,0 +1,78 @@
+/* .background {
+    background-image: url(http://takeheartevents.com/wp-content/uploads/2019/06/TH-corporate-header.jpg);
+    background-size: cover;
+    background-position: center;
+     height: 50vh; 
+} */
+
+.background-img-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(http://takeheartevents.com/wp-content/uploads/2019/06/TH-corporate-header.jpg);
+    height: 55vh;
+
+    /* color:transparent; */
+
+    background-position: center;
+
+    background-size: cover;
+
+}
+
+.background-img-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.599), rgba(0, 0, 0, 0.481)), url(http://takeheartevents.com/wp-content/uploads/2014/09/4P3A0991-1.jpg);
+    height: 55vh;
+
+    /* color:transparent; */
+
+    background-position: center;
+
+    background-size: cover;
+
+}
+
+.background-img-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(http://takeheartevents.com/wp-content/uploads/2016/07/IMG_2408-copy.jpg);
+    height: 55vh;
+
+    /* color:transparent; */
+
+    background-position: center;
+
+    background-size: cover;
+
+}
+
+.background-img-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(http://takeheartevents.com/wp-content/uploads/2019/01/WWMansion-13-of-123.jpg);
+    height: 55vh;
+
+    /* color:transparent; */
+
+    background-position: center;
+
+    background-size: cover;
+
+}
+
+
+.change {
+    padding: 10px 22px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.change:hover {
+
+    border: 2px solid #FF014F;
+    background-color: #FF014F;
+    font-weight: 600;
+}
+
+/* .parent {
+   position: relative;
+}
+.child {
+   position: absolute;
+   bottom: 25%;
+} */

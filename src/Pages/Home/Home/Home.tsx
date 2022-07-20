@@ -6,9 +6,10 @@ import Summery from '../Summery/Summery';
 const Home = () => {
     return (
         <div>
-           <Summery></Summery>
+        
            <Gallery></Gallery>
            <Reviews></Reviews>
+           <Summery></Summery>
         </div>
     );
 };
