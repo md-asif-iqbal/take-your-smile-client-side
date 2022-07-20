@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import DesktopNav from './DesktopNav';
+import DesktopNav from './DesktopNav';
+
 import NavMobile from './NavMobile';
 
 const NavBar = () => {
@@ -19,7 +20,7 @@ const NavBar = () => {
         <div className='container mx-auto h-full flex items-center justify-evenly'>
           
           <div className='hidden lg:block'>
-            {/* <DesktopNav /> */}
+            <DesktopNav />
           </div>
           <div className='hidden lg:block'>
           <a href='/' className=''>
@@ -27,7 +28,7 @@ const NavBar = () => {
           </a>
           </div>
           <div className='hidden lg:block'>
-            {/* <DesktopNav /> */}
+            <DesktopNav />
           </div>
           <div className='lg:hidden'>
             <NavMobile/>
