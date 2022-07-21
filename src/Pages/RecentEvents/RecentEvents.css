@@ -1,0 +1,101 @@
+.custom-display1,
+.custom-display2,
+.custom-display3,
+.custom-display4,
+.custom-display5,
+.custom-display6 {
+    /* visibility: hidden; */
+    display: none;
+    position: absolute;
+    /* width: 424px; */
+    /* height: 300px; */
+    top: 0;
+    background-color: #333333b5;
+    /* background-color: #f06671f8; */
+    color: white;
+    text-align: justify;
+}
+
+.banner1,
+.banner2,
+.banner3,
+.banner4,
+.banner5,
+.banner6 {
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+
+.banner1:hover .custom-display1 {
+    /* visibility: visible; */
+    display: block;
+
+
+}
+
+.banner2:hover .custom-display2 {
+    /* visibility: visible; */
+    display: block;
+
+}
+
+
+.banner3:hover .custom-display3 {
+    /* visibility: visible; */
+    display: block;
+}
+
+
+
+.banner4:hover .custom-display4 {
+    /* visibility: visible; */
+    display: block;
+}
+
+
+
+
+.banner5:hover .custom-display5 {
+    /* visibility: visible; */
+    display: block;
+}
+
+
+
+.banner6:hover .custom-display6 {
+    /* visibility: visible; */
+    display: block;
+}
+
+
+.banner1:hover .image1,
+.banner2:hover .image2,
+.banner3:hover .image3,
+.banner4:hover .image4,
+.banner5:hover .image5,
+.banner6:hover .image6 {
+    /* visibility: visible; */
+    transform: scale(1.1);
+    transition: 1s all ease-in-out;
+
+}
+
+
+
+
+
+@media (max-width: 767.98px) {
+
+    .custom-display1 p,
+    .custom-display2 p,
+    .custom-display3 p,
+    .custom-display4 p,
+    .custom-display5 p,
+    .custom-display6 p {
+        display: none;
+    }
+
+}
