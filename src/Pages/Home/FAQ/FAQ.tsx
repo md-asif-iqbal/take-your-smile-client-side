@@ -13,7 +13,7 @@ const FAQ = () => {
                 <details className="p-6 border-l-4 border-red-500 bg-gray-50 group" open>
                   <summary className="flex items-center justify-between cursor-pointer">
                     <h5 className="text-lg font-medium text-gray-900">
-                      Lorem ipsum dolor sit amet consectetur adipisicing?
+                    How do you keep budgets on track?
                     </h5>
               
                     <span
@@ -35,16 +35,13 @@ const FAQ = () => {
                   </summary>
               
                   <p className="mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                  We are meticulous about keeping track of everything we need to spend money on. ans :This is done by constant monitoring and updating spreadsheets, knowing where to prioritise spending and keeping aside a budget to cater for emergency contingencies.
                   </p>
                 </details>
                 <details className="p-6 border-l-4 border-red-500 bg-gray-50 group">
                   <summary className="flex items-center justify-between cursor-pointer">
                     <h5 className="text-lg font-medium text-gray-900">
-                      Lorem ipsum dolor sit amet consectetur adipisicing?
+                    What factors do you consider when selecting a venue?
                     </h5>
               
                     <span
@@ -66,17 +63,14 @@ const FAQ = () => {
                   </summary>
               
                   <p className="mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                  We consider the size and capacity of venue needed for the number of guests, facilities provided, parking, technical needs and budget constraints. We visit venues to check on the quality of the facilities and liaise with clients, keeping them informed of decisions made.
                   </p>
                 </details>
               
                 <details className="p-6 border-l-4 border-red-500 bg-gray-50 group">
                   <summary className="flex items-center justify-between cursor-pointer">
                     <h5 className="text-lg font-medium text-gray-900">
-                      Lorem ipsum dolor sit amet consectetur adipisicing?
+                    What is your refund and cancellation policy?
                     </h5>
               
                     <span
@@ -98,10 +92,7 @@ const FAQ = () => {
                   </summary>
               
                   <p className="mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                  We’re aware that sometimes things happen which are outside of your control. In the event of needing a refund for a cancelled event, do discuss this with your event planner as early as possible, before extra services and products may have been ordered. We will discuss our policies with you before entering into contracts and then liaise with you in the unfortunate event of an event being canceled. We believe it’s important that all parties are aware of their obligations and responsibilities.
                   </p>
                 </details>
             
