@@ -8,16 +8,17 @@ import Footer from './Pages/shared/Footer/Footer';
 import NavBar from './Pages/shared/NavBar/NavBar';
 
 
+
 function App() {
   return (
-     
-      <div className="relative">
-             
-             <Routes>
-               <Route path='/' element={<Events/>}></Route>
-               <Route path='/home' element={<HomeWithNav/>}></Route>
-             </Routes>
-            <Footer/>
+
+    <div className="relative">
+
+      <Routes>
+        <Route path='/' element={<Events />}></Route>
+        <Route path='/home' element={<HomeWithNav />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }

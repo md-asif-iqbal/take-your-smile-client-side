@@ -2,6 +2,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import RecentEvents from '../RecentEvents/RecentEvents';
 
 import './Events.css'
 
@@ -49,6 +50,7 @@ const Events = () => {
                     <a className="change " href='/home'>ENTER SITE</a>
                 </h2>
             </div>
+
         </div >
     );
 };
