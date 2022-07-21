@@ -1,4 +1,5 @@
 import React from 'react';
+import RecentEvents from '../../RecentEvents/RecentEvents';
 import FAQ from '../FAQ/FAQ';
 import Gallery from '../Gallery/Gallery';
 import Reviews from '../Reviews/Reviews';
@@ -9,11 +10,12 @@ const Home = () => {
     return (
         <div>
 
-            <Services/>
-           <Gallery></Gallery>
-           <Reviews></Reviews>
-           <Summery></Summery>
-           <FAQ/>
+            <Services />
+            <Gallery></Gallery>
+            <Reviews></Reviews>
+            <Summery></Summery>
+            <RecentEvents></RecentEvents>
+            <FAQ />
         </div>
     );
 };
