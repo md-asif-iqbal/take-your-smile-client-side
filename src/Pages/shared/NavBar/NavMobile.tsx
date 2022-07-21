@@ -7,28 +7,38 @@ import { Link } from 'react-scroll';
 const NavMobile = () => {
     const navigation = [
         {
-            name: 'home',
+            name: 'HOME',
             href: 'home',
+            
         },
         {
-            name: 'Our Plans',
-            href: 'plans',
+            name: 'ABOUT',
+            href: 'about',
         },
         {
-            name: 'features',
-            href: 'features',
+            name: 'CORPORATE',
+            href: 'corporate',
         },
         {
-            name: 'services',
-            href: 'services',
+            name: 'SOCIAL',
+            href: 'social',
         },
         {
-            name: 'contact',
+            name: 'WEDDINGS',
+            href: 'weddings',
+            
+        },
+        {
+            name: 'NON-PROFIT',
+            href: 'nonprofit',
+        },
+        {
+            name: 'OUR STORY',
+            href: 'story',
+        },
+        {
+            name: 'CONTACT US',
             href: 'contact',
-        },
-        {
-            name: 'About',
-            href: 'About',
         },
     ];
     const [isOpen, setIsOpen] = useState(false);

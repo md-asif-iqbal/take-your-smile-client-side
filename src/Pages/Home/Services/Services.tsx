@@ -26,12 +26,13 @@ const Services = () => {
                 <p><span className='inline-block text-primary'><TiTick /></span> Conferences</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Trade Shows</p>
              
-                <p><span className='inline-block text-primary'><TiTick /></span> Customer Appreciation Parties</p>
+                <p><span className='inline-block text-primary'><TiTick /></span> Holiday Parties</p>
+                <p><span className='inline-block text-primary'><TiTick /></span> Customer  Parties</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>Photography</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>more...</p>
             
                 <div className="card-actions">
-                <button className="btn btn-rose text-white capitalize mt-10 btn-block text-lg">details</button>
+                <button className="btn btn-rose text-white capitalize  btn-block text-lg">details</button>
                 </div>
             </div>
             </div> 
@@ -43,15 +44,16 @@ const Services = () => {
                 <h2 className="card-title text-center justify-center mb-5">Non-Profit Events</h2>
                 <p className=''><span className='inline-block text-primary'><TiTick /></span>Talent Show</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>Concert </p>
+                <p><span className='inline-block text-primary'><TiTick /></span>Art Show</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Conferences</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Trade Shows</p>
                
-                <p><span className='inline-block text-primary'><TiTick /></span> Customer Appreciation Parties</p>
+                <p><span className='inline-block text-primary'><TiTick /></span>Appreciation Parties</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>Photography</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>more...</p>
             
                 <div className="card-actions">
-                <button className="btn btn-rose text-white capitalize mt-10 btn-block text-lg">details</button>
+                <button className="btn btn-rose text-white capitalize btn-block text-lg">details</button>
                 </div>
             </div>
             </div>
@@ -59,19 +61,19 @@ const Services = () => {
             <div className="pt-10 flex justify-center">
                <a href="/"><GiShakingHands className="text-5xl h-28 w-28 p-5 text-primary border-2 border-primary  rounded-full cursor-pointer" /></a> 
             </div>
-            <div className="card-body">
+            <div className="card-body ">
                 <h2 className="card-title text-center justify-center mb-5">Social Events</h2>
                 <p className=''><span className='inline-block text-primary'><TiTick /></span> Award ceremonies</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Birthday Parties</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Anniversary Parties</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Retirement Parties</p>
-                <p><span className='inline-block text-primary'><TiTick /></span> Seasonal Celebrations</p>
+                <p><span className='inline-block text-primary'><TiTick /></span>  Celebrations</p>
                 <p><span className='inline-block text-primary'><TiTick /></span> Religious events</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>Photography</p>
                 <p><span className='inline-block text-primary'><TiTick /></span>more...</p>
             
                 <div className="card-actions">
-                <button className="btn btn-rose text-white capitalize mt-10 btn-block text-lg">details</button>
+                <button className="btn btn-rose  text-white capitalize btn-block text-lg">details</button>
                 </div>
             </div>
             </div>
@@ -91,7 +93,7 @@ const Services = () => {
                 <p><span className='inline-block text-primary'><TiTick /></span>more...</p>
             
                 <div className="card-actions">
-                <button className="btn btn-rose  text-white capitalize mt-10 btn-block text-lg">details</button>
+                <button className="btn btn-rose  text-white capitalize btn-block text-lg">details</button>
                 </div>
             </div>
             </div>

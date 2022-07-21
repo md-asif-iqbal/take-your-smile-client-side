@@ -5,20 +5,21 @@ const DesktopNav = () => {
 
     const navigation = [
         {
-            name: 'home',
+            name: 'HOME',
             href: 'home',
+            
         },
         {
-            name: 'Our Plans',
-            href: 'plans',
+            name: 'ABOUT',
+            href: 'about',
         },
         {
-            name: 'features',
-            href: 'features',
+            name: 'CORPORATE',
+            href: 'corporate',
         },
         {
-            name: 'services',
-            href: 'services',
+            name: 'NON-PROFIT',
+            href: 'nonprofit',
         },
         // {
         //     name: 'contact',
@@ -27,7 +28,7 @@ const DesktopNav = () => {
     ];
     return (
       <nav>
-      <ul className='flex space-x-8  capitalize text-lg'>
+      <ul className='flex space-x-8  capitalize text-sm'>
           {navigation.map((item, idx) => {
               return (
                   <li

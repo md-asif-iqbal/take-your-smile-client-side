@@ -14,7 +14,7 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 3500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -30,9 +30,11 @@ const Banner = () => {
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
-                  <h1 className="md:text-6xl text-2xl font-bold text-white">
+                  <h1 className="md:text-4xl text-2xl font-bold text-white">
                     Visualize, Customize,
-                    <br /> Actualize.
+                    <br /> Actualize our Corporate Events.
+                    <br/>
+                    <button className='btn px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -46,9 +48,11 @@ const Banner = () => {
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
-                  <h1 className="md:text-6xl text-2xl font-bold text-white">
+                <h1 className="md:text-4xl text-2xl font-bold text-white">
                     Visualize, Customize,
-                    <br /> Actualize.
+                    <br /> Actualize our Non-Profit Events.
+                    <br/>
+                    <button className='btn px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -63,9 +67,11 @@ const Banner = () => {
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
-                  <h1 className="md:text-6xl text-2xl font-bold text-white">
+                <h1 className="md:text-4xl text-2xl font-bold text-white">
                     Visualize, Customize,
-                    <br /> Actualize.
+                    <br /> Actualize our Weddings Events.
+                    <br/>
+                    <button className='btn px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -78,10 +84,13 @@ const Banner = () => {
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
-                  <h1 className="md:text-6xl text-2xl font-bold text-white">
+                <h1 className="md:text-4xl text-2xl font-bold text-white">
                     Visualize, Customize,
-                    <br /> Actualize.
+                    <br /> Actualize our social Events.
+                    <br/>
+                    <button className='btn px-5 btn-rose'> Learn More</button>
                   </h1>
+                 
                 </div>
               </Fade>
             </div>

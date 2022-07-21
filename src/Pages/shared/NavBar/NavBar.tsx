@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DesktopNav from './DesktopNav';
+import NavEnd from './NavEnd';
 
 import NavMobile from './NavMobile';
 
@@ -28,7 +29,7 @@ const NavBar = () => {
           </a>
           </div>
           <div className='hidden lg:block'>
-            <DesktopNav />
+            <NavEnd/>
           </div>
           <div className='lg:hidden'>
             <NavMobile/>
