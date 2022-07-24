@@ -13,7 +13,6 @@ function App() {
   return (
      
       <div className="relative">
-             
              <Routes>
                <Route path='/' element={<Events/>}></Route>
                <Route path='/home' element={<HomeWithNav/>}></Route>

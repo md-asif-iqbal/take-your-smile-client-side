@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import "./authentication.css";
 import { BsFacebook, BsGoogle} from 'react-icons/bs';
-
+import { useForm,  SubmitHandler  } from 'react-hook-form';
+import Registation from './Registation';
+type Inputs = {
+    email: string,
+    password: string,
+    
+  };
 const Login = () => {
+    const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>();
+    const onSubmit: SubmitHandler<Inputs> = data =>{
+        const email = data.email;
+        const password =data.password;
+        console.log(email, password);
+        reset();
+        
+    }
+
+   
  let [btnStatus, setBtnStatus] = useState<String>('');
  let changeBtnStatus = (status:string )=> {
     setBtnStatus(status)
@@ -11,13 +27,38 @@ const Login = () => {
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">
           <div className="signin-signup">
-            <form className="sign-in-form">
+            <form className="sign-in-form" onSubmit={handleSubmit(onSubmit)}>
               <h2 className="title">Sign in</h2>
+             <p className=' text-red-500'>
+                {errors.email?.type === 'required' && <span>{errors.email.message}</span>}
+                {errors.email?.type === 'pattern' && <span>{errors.email.message}</span> }
+             </p>
               <div className="input-field">
-                <input name='email' type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" {...register("email", { required: {
+                    value: true,
+                    message: 'Email is required*'
+                },
+                 pattern: {
+                    value:  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: 'Provide a Valid Email',
+                }
+                  })} />
               </div>
+              <p className='text-left text-red-500'>
+                {errors.password?.type === 'required' && <span>{errors.password.message}</span>}
+                {errors.password?.type === 'minLength' && <span>{errors.password.message}</span> } 
+                </p>
               <div className="input-field">
-                <input name='password' type="password" placeholder="Password" />
+                <input  type="password" placeholder="Password" {...register("password", {
+                    required: {
+                        value: true,
+                        message: 'Password is required*'
+                    },
+                    minLength: {
+                        value: 8,
+                        message: 'Enter At Least 8 Character'
+                    }
+                    })} />
               </div>
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
@@ -32,33 +73,7 @@ const Login = () => {
               
               </div>
             </form>
-            <form action="#" className="sign-up-form">
-              <h2 className="title">Sign up</h2>
-              <div className="input-field">
-              
-                <input name='name' type="text" placeholder="Full Name" />
-              </div>
-              <div className="input-field">
-                <input name='email' type="email" placeholder="Email" />
-              </div>
-              <div className="input-field">
-                <input name='password' type="password" placeholder="Password" />
-              </div>
-              <div className="input-field">
-                <input name='comfirm' type="password" placeholder="Confirm Password" />
-              </div>
-              <input type="submit" className="btn" value="Sign up" />
-              <p className="social-text">Or Sign up with social platforms</p>
-              <div className="social-media">
-              <a href="/" className="social-icon">
-                  <BsFacebook />
-                </a>
-              
-                <a href="/" className="social-icon">
-                  <BsGoogle />
-                </a>
-              </div>
-            </form>
+          <Registation />
           </div>
         </div>
   
