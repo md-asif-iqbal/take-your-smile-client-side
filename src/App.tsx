@@ -8,6 +8,7 @@ import HomeWithNav from './Pages/Home/Home/HomeWithNav';
 import Footer from './Pages/shared/Footer/Footer';
 import NavBar from './Pages/shared/NavBar/NavBar';
 import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {

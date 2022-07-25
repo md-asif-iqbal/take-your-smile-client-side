@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
+import Loading from '../shared/Loading/Loading';
 
 type Inputs = {
     name: string,
@@ -20,21 +21,32 @@ const Registation = () => {
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
     const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
+    let errorMessage;
     if (error) {
-      return (
-        <div>
-          <p>Error: {error.message}</p>
-        </div>
-      );
-    }
-    if (loading) {
-      return <p>Loading...</p>;
-    }
 
-  if(user){
-   toast("Registration successfull!")
-
+        return (
+          <>
+          {
+            toast.error(error.message)
+          }
+          </>
+          )
   }
+    if (loading) {
+      return <div className='h-40 mt-10'>{<Loading />}</div>
+    }
+
+    if(user){
+   
+      return(
+        <>
+          {
+            toast.success('Welcome! Registration SuccessFull')
+          }
+        </>
+        )
+  
+   }
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
         const name = data.name;
@@ -53,6 +65,7 @@ const Registation = () => {
 
     return (
         <form  className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+            <p className='text-red-500'>{errorMessage}</p>
             <h2 className="title">Sign up</h2>
             <p className='text-left text-red-500'>
                 {errors.name?.type === 'required' && <span>{errors.name.message}</span>}

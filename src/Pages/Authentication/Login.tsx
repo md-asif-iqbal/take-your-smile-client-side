@@ -3,30 +3,71 @@ import "./authentication.css";
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import Registation from './Registation';
 import SocialLogin from './SocialLogin';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../shared/Loading/Loading';
+import { toast } from 'react-toastify';
+
 type Inputs = {
     email: string,
     password: string,
     
   };
 const Login = () => {
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
+
     const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data =>{
+    let [btnStatus, setBtnStatus] = useState<String>('');
+    let changeBtnStatus = (status:string )=> {
+       setBtnStatus(status)
+    }
+    const onSubmit: SubmitHandler<Inputs> = async(data) =>{
         const email = data.email;
         const password =data.password;
-        console.log(email, password);
-        reset();
+        if (email && password) {
+          await signInWithEmailAndPassword(email, password);
+          reset();
+        }
         
     }
+    let errorMessage;
+    if (error) {
 
+      return (
+        <>
+        {
+          toast.error(error.message)
+        }
+        </>
+        )
+}
+    if (loading) {
+      return <div className='h-40 mt-10'>{<Loading />}</div>
+      
+    };
+   if(user){
    
- let [btnStatus, setBtnStatus] = useState<String>('');
- let changeBtnStatus = (status:string )=> {
-    setBtnStatus(status)
- }
+      return(
+        <>
+          {
+            toast.success('Thank You! Login SuccessFull')
+          }
+        </>
+        )
+  
+   }
+   
     return (
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">
           <div className="signin-signup">
+          <p className='text-red-500'>{errorMessage}</p>
+
             <form className="sign-in-form" onSubmit={handleSubmit(onSubmit)}>
               <h2 className="title">Sign in</h2>
              <p className=' text-red-500'>
