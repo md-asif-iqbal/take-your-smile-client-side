@@ -35,7 +35,6 @@ const Login = () => {
         }
         
     }
-    let errorMessage;
     if (error) {
 
       return (
@@ -45,7 +44,7 @@ const Login = () => {
         }
         </>
         )
-}
+    }
     if (loading) {
       return <div className='h-40 mt-10'>{<Loading />}</div>
       
@@ -66,7 +65,6 @@ const Login = () => {
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">
           <div className="signin-signup">
-          <p className='text-red-500'>{errorMessage}</p>
 
             <form className="sign-in-form" onSubmit={handleSubmit(onSubmit)}>
               <h2 className="title">Sign in</h2>
