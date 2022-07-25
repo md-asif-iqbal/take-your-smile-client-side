@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home/Home';
 import HomeWithNav from './Pages/Home/Home/HomeWithNav';
 import Footer from './Pages/shared/Footer/Footer';
 import NavBar from './Pages/shared/NavBar/NavBar';
+import { ToastContainer} from 'react-toastify';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                <Route path='/login' element={<Login />} />
              </Routes>
             <Footer/>
+            <ToastContainer />
     </div>
   );
 }
@@ -26,9 +28,9 @@ function App() {
 export default App;
 
 
-{/* <div className="relative">
-      <NavBar/>
-      <Banner/>
-      <Home></Home>
+// {/* <div className="relative">
+//       <NavBar/>
+//       <Banner/>
+//       <Home></Home>
 
-    </div> */}
+//     </div> */}

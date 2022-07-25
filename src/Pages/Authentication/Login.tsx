@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "./authentication.css";
-import { BsFacebook, BsGoogle} from 'react-icons/bs';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import Registation from './Registation';
+import SocialLogin from './SocialLogin';
 type Inputs = {
     email: string,
     password: string,
@@ -62,17 +62,8 @@ const Login = () => {
               </div>
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
-              <div className="social-media">
-                <a href="/" className="social-icon">
-                  <BsFacebook />
-                </a>
-              
-                <a href="/" className="social-icon">
-                  <BsGoogle />
-                </a>
-              
-              </div>
             </form>
+           <SocialLogin />
           <Registation />
           </div>
         </div>

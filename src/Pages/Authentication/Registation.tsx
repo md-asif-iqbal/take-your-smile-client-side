@@ -1,6 +1,11 @@
 import React from 'react';
 import { BsFacebook, BsGoogle } from 'react-icons/bs';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+import SocialLogin from './SocialLogin';
+
 type Inputs = {
     name: string,
     email: string,
@@ -8,16 +13,37 @@ type Inputs = {
     confirmPassword: string,
   };
 const Registation = () => {
-    const { register,reset, handleSubmit,watch,getValues, formState: { errors } } = useForm<Inputs>();
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+    const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
+    if (error) {
+      return (
+        <div>
+          <p>Error: {error.message}</p>
+        </div>
+      );
+    }
+    if (loading) {
+      return <p>Loading...</p>;
+    }
 
-    const onSubmit: SubmitHandler<Inputs> = data => 
+  if(user){
+   toast("Registration successfull!")
+
+  }
+    const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
         const name = data.name;
         const email = data.email;
         const password = data.password;
         const confirm = data.confirmPassword;
         if (password === confirm) {
-            console.log('done');
+          await createUserWithEmailAndPassword(email, password)
+         
         }
         
         reset()
@@ -26,7 +52,6 @@ const Registation = () => {
     
 
     return (
-      
         <form  className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
             <h2 className="title">Sign up</h2>
             <p className='text-left text-red-500'>
@@ -85,16 +110,8 @@ const Registation = () => {
               </div>
               <input type="submit" className="btn" value="Sign up" />
               <p className="social-text">Or Sign up with social platforms</p>
-              <div className="social-media">
-              <a href="/" className="social-icon">
-                  <BsFacebook />
-                </a>
-              
-                <a href="/" className="social-icon">
-                  <BsGoogle />
-                </a>
-              </div>
             </form>
+           
     );
 };
 
