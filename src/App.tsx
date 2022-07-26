@@ -9,6 +9,7 @@ import Footer from './Pages/shared/Footer/Footer';
 import NavBar from './Pages/shared/NavBar/NavBar';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Contact from './Pages/Contact/Contact';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                <Route path='/' element={<Events/>}></Route>
                <Route path='/home' element={<HomeWithNav/>}></Route>
                <Route path='/login' element={<Login />} />
+               <Route path='/contact' element={<Contact />} />
              </Routes>
             <Footer/>
             <ToastContainer />
