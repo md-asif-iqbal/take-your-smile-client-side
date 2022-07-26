@@ -74,7 +74,7 @@ const Registation = () => {
                 <input  type="text" placeholder="Full Name"  {...register("name", { required: {
                     value: true,
                     message: 'Full Name is required*'
-                } })}/>
+                } })} />
             </div>
             <p className=' text-red-500'>
                 {errors.email?.type === 'required' && <span>{errors.email.message}</span>}

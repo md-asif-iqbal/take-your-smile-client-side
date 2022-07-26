@@ -1,10 +1,45 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import NavBar from '../shared/NavBar/NavBar';
 import { BsTelephoneOutbound} from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-
+import emailjs from '@emailjs/browser';
+import { useForm,  SubmitHandler  } from 'react-hook-form';
+import { toast } from 'react-toastify';
+type Inputs = {
+    name: string,
+    email: string,
+    phone: string,
+    company: string,
+    message: string,
+    date: string,
+    event: string
+  };
 const Contact = () => {
+    const { register,reset, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const form:any = useRef();
+    const onSubmit: SubmitHandler<Inputs> = async(data) => 
+    {
+        const name = data.name;
+        const email = data.email;
+        const date = data.date;
+        const message = data.message;
+        const phone = data.phone;
+        const company = data.company;
+        const event = data.event;
+        
+        emailjs.sendForm('take-your-smile', 'template_wireu27', form.current, 'NVoyRWy1HhJ-3DfFm')
+        .then((result) => {
+            return toast.success("Thank You! Send Message Success.")
+            
+            
+        }, (error) => {
+            return toast.error(error.text)
+        });
+        
+        
+        reset()
+    };
     return (
         <div>
             <NavBar />
@@ -18,84 +53,110 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="hero min-h-screen min-w-screen flex flex-col-reverse px-2  lg:flex-row-reverse mx-auto justify-center items-center gap-5 my-16">
+            <div className="hero min-h-screen min-w-screen flex flex-col-reverse px-2 md:px-0  lg:flex-row-reverse mx-auto justify-center items-center gap-5 my-16">
              
-                <div className="card flex-shrink-0 w-full lg:w-3/5 max-w-lg shadow-2xl ">
+                <div className="card flex-shrink-0 w-full lg:w-5/6 max-w-lg shadow-2xl ">
+                <form  className='p-0 flex-row' ref={form}  onSubmit={handleSubmit(onSubmit)}>
                 <div className="card-body">
+                    <p className='text-left text-red-500'>
+                    {errors.name?.type === 'required' && <span>{errors.name.message}</span>}
+                    </p>
                     <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Full Name*</span>
-                    </label>
-                    <input type="text" placeholder="Enter Full Name" className="input input-bordered input-primary" />
+                        <label className="label">
+                            <span className="label-text">Full Name*</span>
+                        </label>
+                        <input type="text" placeholder="Enter Full Name" className="input input-bordered input-primary" {...register("name", { required: {
+                        value: true,
+                        message: 'Full Name is required*'
+                        } })} />
                     </div>
+                    <p className=' text-red-500'>
+                        {errors.email?.type === 'required' && <span>{errors.email.message}</span>}
+                        {errors.email?.type === 'pattern' && <span>{errors.email.message}</span> }
+                    </p>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email*</span>
                     </label>
-                    <input type="email" placeholder="Enter Email" className="input input-bordered input-primary" />
+                    <input type="email" placeholder="Enter Email" className="input input-bordered input-primary" {...register("email", { required: {
+                    value: true,
+                    message: 'Email is required*'
+                },
+                 pattern: {
+                    value:  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: 'Provide a Valid Email',
+                }
+                  })} />
                    
                     </div> 
+                    <p className='text-left text-red-500'>
+                        {errors.date?.type === 'required' && <span>{errors.date.message}</span>}
+                    </p>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Event Date*</span>
                     </label>
-                    <input type="date" className="input input-bordered input-primary" />
+                    <input type="date" className="input input-bordered input-primary" {...register("date", { required: {
+                    value: true,
+                    message: 'Date is required*'
+                    } })} />
                    
                     </div>
+                    <p className='text-left text-red-500'>
+                        {errors.phone?.type === 'required' && <span>{errors.phone.message}</span>}
+                    </p>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Phone Number*</span>
                     </label>
-                    <input type="text" placeholder="Enter Phone" className="input input-bordered input-primary" />
+                    <input type="text" placeholder="Enter Phone" className="input input-bordered input-primary" {...register("phone", { required: {
+                    value: true,
+                    message: 'Number is required*'
+                    } })} />
                     </div>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Company Name</span>
                     </label>
-                    <input type="text" placeholder="Company Name" className="input input-bordered input-primary" />
+                    <input type="text" placeholder="Company Name" className="input input-bordered input-primary" {...register("company")} />
                     </div>
 
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">What Type Of Event Are You Planning?*</span>
                     </label>
-                    <div className='flex items-center justify-evenly'>
-                        <label className="label cursor-pointer">
-                        <span className="label-text mr-5 font-bold">Wedding</span> 
-                        <input type="checkbox"  className="checkbox checkbox-primary" />
-                        </label>
-                        <label className="label cursor-pointer">
-                            <span className="label-text mr-5 font-bold">Non-Profit</span> 
-                            <input type="checkbox"  className="checkbox checkbox-primary" />
-                        </label>
-                        </div>
-                        <div className='flex items-center justify-evenly'>
-                    <label className="label cursor-pointer">
-                        <span className="label-text mr-5 font-bold">Social Event</span> 
-                        <input type="checkbox"  className="checkbox checkbox-primary" />
-                    </label>
-                    
-                    <label className="label cursor-pointer">
-                        <span className="label-text mr-5 font-bold">Corporate Event</span> 
-                        <input type="checkbox"  className="checkbox checkbox-primary" />
-                    </label>
-                    </div>
+                    <select className="select select-primary w-full" {...register("event", { required: {
+                    value: true,
+                    message: 'Event Select is required*'
+                    } })}>
+                        <option disabled selected>What Type Of Event Are You Planning?*</option>
+                        <option>Corporate Events</option>
+                        <option>Non-Profit Events</option>
+                        <option>Social Events</option>
+                        <option>Weddings</option>
+                    </select>
                  
                     </div>
-
+                    <p className='text-left text-red-500'>
+                        {errors.message?.type === 'required' && <span>{errors.message.message}</span>}
+                    </p>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Explain Details*</span>
                     </label>
-                    <textarea className="textarea textarea-primary h-32" placeholder="Please explain details..."></textarea>
+                    <textarea className="textarea textarea-primary h-32" placeholder="Please explain details..." {...register("message", { required: {
+                    value: true,
+                    message: 'Write Some Text*'
+                } })}></textarea>
                   
                     </div>
                     <div className="form-control mt-6">
                     <button className="btn btn-primary uppercase" type='submit'>Send Message</button>
                     </div>
                 </div>
+                    </form>
                 </div>
-                <div className="card w-full  lg:w-2/5 shadow-xl  lg:text-left z-0 bg-primary">
+                <div className="card w-full  lg:w-1/5 shadow-xl  lg:text-left z-0 bg-primary">
                 <div className="card-body">
                     <h2 className="card-title text-xl text-white">Phone</h2>
                     <p className='text-lg text-white flex items-center gap-5'><BsTelephoneOutbound /><span><a href="tel:01881220413" >01881220413</a></span></p>
