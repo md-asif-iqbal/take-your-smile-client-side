@@ -14,7 +14,7 @@ const NavEnd = () => {
         },
         {
             name: 'OUR STORY',
-            href: 'story',
+            href: '/ourStory',
         },
         {
             name: 'CONTACT US',
