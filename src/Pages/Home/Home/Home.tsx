@@ -1,5 +1,5 @@
 import React from 'react';
-import OurStory from '../../OurStory/OurStory';
+
 import RecentEvents from '../../RecentEvents/RecentEvents';
 import FAQ from '../FAQ/FAQ';
 import Gallery from '../Gallery/Gallery';
@@ -16,7 +16,6 @@ const Home = () => {
             <Reviews></Reviews>
             <Summery></Summery>
             <RecentEvents></RecentEvents>
-            <OurStory></OurStory>
             <FAQ />
         </div>
     );

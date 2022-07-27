@@ -6,10 +6,10 @@ import Home from './Home';
 const HomeWithNav = () => {
     return (
         <div  className='relative'>
-        <NavBar/>
+            <NavBar/>
          <Routes>
             <Route path='/' element={<Home/>}></Route>
-
+            
          </Routes>
          
         </div>

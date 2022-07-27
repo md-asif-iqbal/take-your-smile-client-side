@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../shared/NavBar/NavBar";
 import Banner from "./Banner";
 import Header from "./Header";
 import "./OurStory.css";
@@ -43,6 +44,7 @@ const OurStory = () => {
   ];
   return (
     <div className="background img">
+      <NavBar/>
       {<Banner></Banner>}
       {<Header></Header>}
       <div className="font-mono grid gap-10 grid-cols-1 md:grid-cols-2 w-10/12 mx-auto mt-32">
