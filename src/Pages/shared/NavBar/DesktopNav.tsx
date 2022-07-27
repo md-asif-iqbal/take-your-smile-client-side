@@ -1,54 +1,24 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 // import { Link } from "react-scroll";
 const DesktopNav = () => {
 
-    const navigation = [
-        {
-            name: 'HOME',
-            href: 'home',
-            
-        },
-        {
-            name: 'ABOUT',
-            href: 'about',
-        },
-        {
-            name: 'CORPORATE',
-            href: 'corporate',
-        },
-        {
-            name: 'NON-PROFIT',
-            href: 'nonprofit',
-        },
-        // {
-        //     name: 'contact',
-        //     href: 'contact',
-        // },
-    ];
+    const navigation = <>
+                            <li className=' text-white  cursor-pointer'><Link to='/home' 
+                            className='transition-all duration-300 uppercase'> Home</Link></li>
+                            <li className=' text-white  cursor-pointer uppercase'><Link to='/ourstory' 
+                            className='transition-all duration-300'> Our Story</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/corporate' 
+                            className='transition-all duration-300'> Corporate</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/nonprofit' 
+                            className='transition-all duration-300'> Non-Profit</Link></li>
+                             
+
+    </>
     return (
       <nav>
       <ul className='flex space-x-8  capitalize text-sm'>
-          {navigation.map((item, idx) => {
-              return (
-                  <li
-                      className='text-white  cursor-pointer'
-                      key={idx}
-                  >
-                      <Link
-                          to={item.href}
-                          
-                          spy={true}
-                          smooth={true}
-                          duration={600}
-                          offset={-70}
-                          className='transition-all duration-300'
-                      >
-                          {item.name}
-                      </Link>
-                  </li>
-              );
-          })}
+          {navigation}
       </ul>
   </nav>
 );
