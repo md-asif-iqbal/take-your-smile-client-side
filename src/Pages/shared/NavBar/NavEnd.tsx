@@ -16,8 +16,6 @@ const NavEnd = () => {
                             className='transition-all duration-300 '> Login</Link></li>
 
     </>
-       
-
     return (
         <nav>
         <ul className='flex space-x-8  capitalize text-sm'>

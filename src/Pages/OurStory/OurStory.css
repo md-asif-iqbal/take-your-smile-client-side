@@ -1,0 +1,15 @@
+.story {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: #333333b5;
+  color: white;
+  text-align: center;
+}
+.banner1:hover .story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
