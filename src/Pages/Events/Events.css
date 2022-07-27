@@ -6,7 +6,7 @@
 } */
 
 .background-img-1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(http://takeheartevents.com/wp-content/uploads/2019/06/TH-corporate-header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/CorporateBigBanner.jpg);
     height: 55vh;
 
     /* color:transparent; */
@@ -18,7 +18,7 @@
 }
 
 .background-img-2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.599), rgba(0, 0, 0, 0.481)), url(http://takeheartevents.com/wp-content/uploads/2014/09/4P3A0991-1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.599), rgba(0, 0, 0, 0.481)), url(../../Images/NonProfitBigBanner.jpg);
     height: 55vh;
 
     /* color:transparent; */
@@ -30,7 +30,7 @@
 }
 
 .background-img-3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(http://takeheartevents.com/wp-content/uploads/2016/07/IMG_2408-copy.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/SocialBigBanner.jpg);
     height: 55vh;
 
     /* color:transparent; */
@@ -42,7 +42,7 @@
 }
 
 .background-img-4 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(http://takeheartevents.com/wp-content/uploads/2019/01/WWMansion-13-of-123.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(../../Images//WeedingBigBanner.jpg);
     height: 55vh;
 
     /* color:transparent; */
@@ -76,3 +76,55 @@
    position: absolute;
    bottom: 25%;
 } */
+
+
+/* --------
+Social
+---------- */
+.banner-social {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/social-banner.jpg);
+    background-position: center;
+
+    background-size: cover;
+}
+
+.banner-weeding {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(../../Images//WeedingBigBanner.jpg);
+    ;
+    background-position: center;
+
+    background-size: cover;
+}
+
+.banner-corporate {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/CorporateBigBanner.jpg);
+    background-position: center;
+
+    background-size: cover;
+}
+
+.banner-nonprofit {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/nonprofit-banner.jpg);
+    background-position: center;
+
+    background-size: cover;
+}
+
+
+.contact-button {
+    background-color: #FF014F;
+    padding: 12px 40px;
+    margin-top: 25px;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.send-button {
+    background-color: #FF014F;
+    padding: 12px 20px;
+    margin-top: 25px;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
