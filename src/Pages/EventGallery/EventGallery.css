@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.cardso {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cardt {
+
+  position: relative;
+}
+
+
+
+.cardt img {
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+.card-desc {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  bottom: 0;
+  opacity: 0;
+  
+  background-color: rgba(35, 33, 33, 0.145);
+  overflow-y: scroll;
+  transition: 0.9s ease;
+  
+  
+}
+
+.cardt:hover .card-desc {
+  opacity: 1;
+  height: 100%;
+}
+
+
+.hideing {
+  position: absolute;
+  display: none;
+
+}
+.hideing:hover {
+  display: block;
+}
