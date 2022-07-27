@@ -1,6 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import Corporate from './Pages/Events/Corporate';
+
+import Login from './Pages/Authentication/Login';
+
 import Events from './Pages/Events/Events';
 import NonProfit from './Pages/Events/NonProfit';
 import Social from './Pages/Events/Social';
@@ -10,10 +14,14 @@ import Home from './Pages/Home/Home/Home';
 import HomeWithNav from './Pages/Home/Home/HomeWithNav';
 import Footer from './Pages/shared/Footer/Footer';
 import NavBar from './Pages/shared/NavBar/NavBar';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Contact from './Pages/Contact/Contact';
 
 
 function App() {
   return (
+
 
     <div className="relative">
 
@@ -27,16 +35,20 @@ function App() {
 
       </Routes>
       <Footer />
+
+      <div className="relative">
+             <Routes>
+               <Route path='/' element={<Events/>}></Route>
+               <Route path='/home' element={<HomeWithNav/>}></Route>
+               <Route path='/login' element={<Login />} />
+               <Route path='/contact' element={<Contact />} />
+             </Routes>
+            <Footer/>
+            <ToastContainer />
+
     </div>
   );
 }
 
 export default App;
 
-
-{/* <div className="relative">
-      <NavBar/>
-      <Banner/>
-      <Home></Home>
-
-    </div> */}

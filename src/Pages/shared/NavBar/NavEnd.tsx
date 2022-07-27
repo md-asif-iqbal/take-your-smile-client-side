@@ -20,6 +20,10 @@ const NavEnd = () => {
             name: 'CONTACT US',
             href: 'contact',
         },
+        {
+            name: 'LOGIN',
+            href: 'login',
+        },
         // {
         //     name: 'contact',
         //     href: 'contact',
