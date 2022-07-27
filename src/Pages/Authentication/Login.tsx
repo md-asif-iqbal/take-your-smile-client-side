@@ -3,7 +3,7 @@ import "./authentication.css";
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import Registation from './Registation';
 import SocialLogin from './SocialLogin';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword,useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
@@ -16,7 +16,7 @@ type Inputs = {
     
   };
 const Login = () => {
-
+  const [email, setEmail] = useState();
   const [
     signInWithEmailAndPassword,
     user,
@@ -24,8 +24,8 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   const [token] = useToken(user);
-
-    const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>();
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>({mode: "onBlur"})
     let [btnStatus, setBtnStatus] = useState<String>('');
     let changeBtnStatus = (status:string )=> {
        setBtnStatus(status)
@@ -49,7 +49,7 @@ const Login = () => {
         </>
         )
     }
-    if (loading) {
+    if (loading || sending) {
       return <div className='h-40 mt-10'>{<Loading />}</div>
       
     };
@@ -64,6 +64,15 @@ const Login = () => {
         )
   
    }
+
+   const resetPassword = async() => {
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast.success("Please, Check Your Email");
+    }else{
+      toast.error('Please, Enter Email');
+    }
+  }
    
     return (
       <>
@@ -79,14 +88,15 @@ const Login = () => {
                 {errors.email?.type === 'pattern' && <span>{errors.email.message}</span> }
              </p>
               <div className="input-field">
-                <input type="email" placeholder="Email" {...register("email", { required: {
+                <input type="email"  placeholder="Email" {...register("email", { required: {
                     value: true,
-                    message: 'Email is required*'
+                    message: 'Email is required*',
                 },
                  pattern: {
                     value:  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     message: 'Provide a Valid Email',
-                }
+                },
+                onBlur: (e) => setEmail(e.target.value)
                   })} />
               </div>
               <p className='text-left text-red-500'>
@@ -105,7 +115,10 @@ const Login = () => {
                     }
                     })} />
               </div>
-              <input type="submit" value="Login" className="btn solid" />
+              
+            <p className='text-lg'> Forgot Password?<button className="text-primary" onClick={resetPassword}> Please Reset</button> </p>
+
+            <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
             </form>
            <SocialLogin />
@@ -138,7 +151,6 @@ const Login = () => {
                 Sign in
               </button>
             </div>
-            <img src="../../images/register.svg" className="image" alt="" />
           </div>
         </div>
       </div>
