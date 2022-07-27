@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
 import Loading from '../shared/Loading/Loading';
+import useToken from '../../hooks/useToken';
 
 type Inputs = {
     name: string,
@@ -20,7 +21,9 @@ const Registation = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
-    const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
+  const [token] = useToken(user);
+
+  const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
     let errorMessage;
     if (error) {
 
@@ -36,7 +39,7 @@ const Registation = () => {
       return <div className='h-40 mt-10'>{<Loading />}</div>
     }
 
-    if(user){
+    if(token){
    
       return(
         <>

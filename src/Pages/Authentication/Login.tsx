@@ -7,6 +7,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
+import NavBar from '../shared/NavBar/NavBar';
+import useToken from '../../hooks/useToken';
 
 type Inputs = {
     email: string,
@@ -14,12 +16,14 @@ type Inputs = {
     
   };
 const Login = () => {
+
   const [
     signInWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
 
     const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>();
     let [btnStatus, setBtnStatus] = useState<String>('');
@@ -49,7 +53,7 @@ const Login = () => {
       return <div className='h-40 mt-10'>{<Loading />}</div>
       
     };
-   if(user){
+   if(token){
    
       return(
         <>
@@ -62,6 +66,8 @@ const Login = () => {
    }
    
     return (
+      <>
+      <NavBar />
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">
           <div className="signin-signup">
@@ -112,8 +118,8 @@ const Login = () => {
             <div className="content">
               <h3>New here ?</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                ex ratione. Aliquid!
+              Planning an event but no idea where to start? Take Heart!
+
               </p>
               <button className="btn transparent" id="sign-up-btn" onClick={()=> changeBtnStatus("sign-up")}>
                 Sign up
@@ -125,8 +131,8 @@ const Login = () => {
             <div className="content">
               <h3>One of us ?</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+              Planning an event but no idea where to start? Take Heart!
+
               </p>
               <button className="btn transparent" id='sign-in-btn' onClick={()=> changeBtnStatus("sign-in")}>
                 Sign in
@@ -136,7 +142,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+</>
     );
 };
-
 export default Login;
