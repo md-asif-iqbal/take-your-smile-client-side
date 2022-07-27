@@ -15,6 +15,7 @@ const DesktopNav = () => {
                              
 
     </>
+    
     return (
       <nav>
       <ul className='flex space-x-8  capitalize text-sm'>
