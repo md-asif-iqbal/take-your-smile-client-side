@@ -169,7 +169,7 @@ export default class Corporate extends Component {
 
                     </div>
                 </div>
-
+{/* yes */}
                 <RecentEvents></RecentEvents>
                 <Packages></Packages>
             </div>
