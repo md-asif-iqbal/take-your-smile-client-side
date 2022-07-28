@@ -1,13 +1,17 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import NavBar from '../../shared/NavBar/NavBar';
-import Banner from '../Banner/Banner';
+
 import Home from './Home';
 const HomeWithNav = () => {
     return (
         <div  className='relative'>
-        <NavBar/>
-         <Banner/>
-         <Home/>
+            <NavBar/>
+         <Routes>
+            <Route path='/' element={<Home/>}></Route>
+            
+         </Routes>
+         
         </div>
     );
 };

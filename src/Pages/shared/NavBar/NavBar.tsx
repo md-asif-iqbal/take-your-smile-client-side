@@ -31,7 +31,7 @@ const NavBar = () => {
           <div className='hidden lg:block'>
             <NavEnd/>
           </div>
-          <div className='lg:hidden'>
+          <div  className='lg:hidden'>
             <NavMobile/>
           </div>
         </div>

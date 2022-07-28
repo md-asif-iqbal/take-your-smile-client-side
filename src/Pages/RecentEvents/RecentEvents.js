@@ -71,7 +71,7 @@ export default class RecentEvents extends Component {
                         <div className="banner2">
                             <img className='lg:h-80 h-20 image2' src={image2} alt="" />
 
-                            <div className="custom-display2 lg:h-80 h-20"><p className="p-4     "> Take Your Smile has been helping to organize successful weeding events since 2014 in New York and here you will get the services of a wedding planner and event coordination.</p>
+                            <div className="custom-display2 lg:h-80 h-20"><p className="p-4     "> Take Your Smile has been helping to organize successful birthday parties since 2014 in New York and here you will get the services of a birthday planner and event coordination.</p>
                                 <div className=" text-center">
                                     <button className="btn btn-primary ">Learn More</button>
                                 </div>

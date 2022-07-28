@@ -5,7 +5,8 @@
 .custom-display5,
 .custom-display6 {
     /* visibility: hidden; */
-    display: none;
+    /* display: none; */
+    transform: translateY(-320px);
     position: absolute;
     /* width: 424px; */
     /* height: 300px; */
@@ -32,20 +33,24 @@
 .banner1:hover .custom-display1 {
     /* visibility: visible; */
     display: block;
-
+    transform: translateY(0px);
+    transition: 1s all ease;
 
 }
 
 .banner2:hover .custom-display2 {
     /* visibility: visible; */
     display: block;
-
+    transform: translateY(0px);
+    transition: 1s all ease;
 }
 
 
 .banner3:hover .custom-display3 {
     /* visibility: visible; */
     display: block;
+    transform: translateY(0px);
+    transition: 1s all ease;
 }
 
 
@@ -53,6 +58,8 @@
 .banner4:hover .custom-display4 {
     /* visibility: visible; */
     display: block;
+    transform: translateY(0px);
+    transition: 1s all ease;
 }
 
 
@@ -61,6 +68,8 @@
 .banner5:hover .custom-display5 {
     /* visibility: visible; */
     display: block;
+    transform: translateY(0px);
+    transition: 1s all ease;
 }
 
 
@@ -68,6 +77,8 @@
 .banner6:hover .custom-display6 {
     /* visibility: visible; */
     display: block;
+    transform: translateY(0px);
+    transition: 1s all ease;
 }
 
 
@@ -87,7 +98,7 @@
 
 
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
 
     .custom-display1 p,
     .custom-display2 p,
