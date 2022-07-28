@@ -11,8 +11,12 @@ import social2 from '../../Images/Social2.avif'
 import social3 from '../../Images/Social3.avif'
 import { AiOutlineHeart } from 'react-icons/ai';
 import RecentEvents from "../RecentEvents/RecentEvents";
+
+import Packages from "../Packages/Packages";
+
 import { Link } from "react-router-dom";
 import { BsChatDots } from "react-icons/bs";
+
 
 
 export default class Social extends Component {
@@ -170,6 +174,7 @@ export default class Social extends Component {
                 </div>
 
                 <RecentEvents></RecentEvents>
+                <Packages></Packages>
             </div>
         );
     };
