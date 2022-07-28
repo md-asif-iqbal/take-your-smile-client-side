@@ -1,10 +1,8 @@
 import React from 'react';
-import { BsFacebook, BsGoogle } from 'react-icons/bs';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
-import SocialLogin from './SocialLogin';
 import Loading from '../shared/Loading/Loading';
 
 type Inputs = {
@@ -127,5 +125,5 @@ const Registation = () => {
            
     );
 };
-
+// fv
 export default Registation;

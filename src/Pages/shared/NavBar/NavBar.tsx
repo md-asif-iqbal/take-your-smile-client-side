@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DesktopNav from './DesktopNav';
 import NavEnd from './NavEnd';
-
+import logo from '../../../Images/main-logo.svg'
 import NavMobile from './NavMobile';
 
 const NavBar = () => {
@@ -25,7 +25,7 @@ const NavBar = () => {
           </div>
           <div className='hidden lg:block'>
           <a href='/' className=''>
-            <h3 className='text-2xl'>Take your Smile</h3>
+            <h3 className='w-48'> <img src={logo} alt="" /> </h3>
           </a>
           </div>
           <div className='hidden lg:block'>

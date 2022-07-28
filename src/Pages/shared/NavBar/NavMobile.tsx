@@ -5,46 +5,29 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
 const NavMobile = () => {
-    const navigation = [
-        {
-            name: 'HOME',
-            href: 'home',
-            
-        },
-        {
-            name: 'ABOUT',
-            href: 'about',
-        },
-        {
-            name: 'CORPORATE',
-            href: 'corporate',
-        },
-        {
-            name: 'SOCIAL',
-            href: 'social',
-        },
-        {
-            name: 'WEDDINGS',
-            href: 'weddings',
-            
-        },
-        {
-            name: 'NON-PROFIT',
-            href: 'nonprofit',
-        },
-        {
-            name: 'OUR STORY',
-            href: 'story',
-        },
-        {
-            name: 'CONTACT US',
-            href: 'contact',
-        },
-        {
-            name: 'LOGIN',
-            href: '/login',
-        },
-    ];
+    const navigation = <>
+                <li className=' text-white  cursor-pointer'><Link to='/home' 
+                className='transition-all duration-300 uppercase'> Home</Link></li>
+                <li className=' text-white  cursor-pointer uppercase'><Link to='/ourstory' 
+                className='transition-all duration-300'> Our Story</Link></li>
+                <li className=' text-white  cursor-pointer uppercase'><Link to='/corporate' 
+                className='transition-all duration-300'> Corporate</Link></li>
+                <li className=' text-white  cursor-pointer uppercase'><Link to='/nonprofit' 
+                className='transition-all duration-300'> Non-Profit</Link></li>
+                <li className=' text-white  cursor-pointer'><Link to='/weddings' 
+                            className='transition-all duration-300 uppercase'> Weddings</Link></li>
+
+                            <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
+                            className='transition-all duration-300'> Social</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/gallery' 
+                            className='transition-all duration-300'> Gallery</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
+                            className='transition-all duration-300'> Contact Us</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
+                            className='transition-all duration-300 '> Login</Link></li>
+                
+
+</>
     const [isOpen, setIsOpen] = useState(false);
 
     const circleVariants = {
@@ -101,21 +84,7 @@ const NavMobile = () => {
                 >
                     <XIcon className='w-8 h-8' />
                 </div>
-                {navigation.map((item, idx) => {
-                    return (
-                        <li key={idx} className='mb-8'>
-                            <Link
-                                to={item.href}
-                                smooth={true}
-                                duration={500}
-                                offset={-70}
-                                className='text-xl cursor-pointer capitalize'
-                            >
-                                {item.name}
-                            </Link>
-                        </li>
-                    );
-                })}
+                {navigation}
             </motion.ul>
         </nav>
     );

@@ -20,18 +20,11 @@ import Login from './Pages/Authentication/Login';
 import OurStory from './Pages/OurStory/OurStory';
 import NavBar from './Pages/shared/NavBar/NavBar';
 
-
-
-
 function App() {
   return (
       <div className="relative">
              <Routes>
                <Route path='/' element={<Events/>}></Route>
-               
-               {/* <NavBar/> */}
-               
-               
                <Route path='/home' element={<HomeWithNav />}></Route>
                <Route path='/ourstory' element={<OurStory />}></Route>
                <Route path='/weddings' element={<Weedings />}></Route>
@@ -48,8 +41,6 @@ function App() {
                  <Route path='weddinggallery' element={<WeddingGallery/>}></Route>
                  <Route path='corporategallery' element={<CorporateGallery/>}></Route>
                </Route>
-
-               
 
              </Routes>
             <Footer/>
