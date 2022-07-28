@@ -20,13 +20,6 @@ const Contact = () => {
     const form:any = useRef();
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
-        const name = data.name;
-        const email = data.email;
-        const date = data.date;
-        const message = data.message;
-        const phone = data.phone;
-        const company = data.company;
-        const event = data.event;
         
         emailjs.sendForm('take-your-smile', 'template_wireu27', form.current, 'NVoyRWy1HhJ-3DfFm')
         .then((result) => {

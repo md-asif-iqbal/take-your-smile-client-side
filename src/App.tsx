@@ -29,6 +29,8 @@ import Booking from './Pages/dashboard/Booking';
 import Users from './Pages/dashboard/Users';
 import MakeAdmin from './Pages/dashboard/MakeAdmin';
 import AllBooking from './Pages/dashboard/AllBooking';
+import Update from './Pages/dashboard/Profile/Update';
+import Profile from './Pages/dashboard/Profile/Profile';
 
 
 
@@ -43,10 +45,12 @@ function App() {
                <Route path='dashboard' element={<Dashboard></Dashboard>}>
                  <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
                  <Route path='booking' element={<Booking></Booking>}></Route>
-                 <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route>
+                 {/* <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route> */}
                  <Route path='reviews' element={<Reviews></Reviews>}></Route>
                  <Route path='users' element={<Users></Users>}></Route>
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+                 <Route path='profile/update' element={<Update />} />
+                 <Route path='profile' element={<Profile/>} />
                </Route>
       
                {/* <NavBar/> */}
@@ -59,7 +63,7 @@ function App() {
                <Route path='/social' element={<Social />}></Route>
                <Route path='/nonprofit' element={<NonProfit />}></Route>
                <Route path='/contactus' element={<Contact />}></Route>
-               {/* <Route path='/login' element={<Login />}></Route> */}
+               <Route path='/login' element={<Login />}></Route>
                 
                <Route path='/gallery' element={<EventGallery/>}>
                 <Route index element={<AllGallery/>}></Route>

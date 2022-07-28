@@ -1,15 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import UpdateProfile from './UpdateProfile';
 
 const Dashboard = () => {
     return (
-        <div className='flex items-start'>
-            <div className=''>
+        <div className='flex min-w-full gap-5'>
+            <div className='flex-none min-w-1/5'>
             <Sidebar></Sidebar>
             </div>
-           <div className='ml-20'>
+           <div className='flex-auto ml-20 min-w-4/5'>
            <Outlet></Outlet>
            </div>
         </div>
