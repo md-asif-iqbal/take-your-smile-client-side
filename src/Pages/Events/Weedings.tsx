@@ -12,6 +12,12 @@ import weeding3 from '../../Images/weeding4.avif'
 import { AiOutlineHeart } from 'react-icons/ai';
 import RecentEvents from "../RecentEvents/RecentEvents";
 
+import Packages from "../Packages/Packages";
+
+import { Link } from "react-router-dom";
+import { BsChatDots } from "react-icons/bs";
+
+
 
 export default class Weedings extends Component {
     render() {
@@ -129,6 +135,7 @@ export default class Weedings extends Component {
 
                                     </div>
                                     <button typeof="submit" className="send-button mx-3">
+
                                         SEND
                                     </button>
                                 </form>
@@ -146,15 +153,18 @@ export default class Weedings extends Component {
                                 <p className="pb-3"><FontAwesomeIcon className="text-primary pr-3" icon={faAngleRight}></FontAwesomeIcon> Unique Fundraisers</p>
                             </div>
                             <p className="text-neutral text-xl mt-7">Can’t find the answers you need? Get in touch!</p>
-                            <button className="contact-button">
-                                CONTACT US
-                            </button>
+                            <Link to='/contactus'>
+                                <button className="contact-button flex align-middle">
+                                    <span className="contact">CONTACT US </span>
+                                    <p className="pl-3 text-2xl ">   <BsChatDots className="chat-icon" /></p>
+                                </button>
+                            </Link>
                         </div>
 
 
                     </div>
                 </div>
-
+                <Packages></Packages>
                 <RecentEvents></RecentEvents>
             </div>
         );
