@@ -11,6 +11,7 @@ import weeding2 from '../../Images/Weeding3.avif'
 import weeding3 from '../../Images/weeding4.avif'
 import { AiOutlineHeart } from 'react-icons/ai';
 import RecentEvents from "../RecentEvents/RecentEvents";
+import Packages from "../Packages/Packages";
 
 
 export default class Weedings extends Component {
@@ -154,7 +155,7 @@ export default class Weedings extends Component {
 
                     </div>
                 </div>
-
+                <Packages></Packages>
                 <RecentEvents></RecentEvents>
             </div>
         );
