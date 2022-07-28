@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { Link } from "react-scroll";
 const DesktopNav = () => {
 
+
     const navigation = <>
                             <li className=' text-white  cursor-pointer'><Link to='/home' 
                             className='transition-all duration-300 uppercase'> Home</Link></li>
@@ -15,7 +16,7 @@ const DesktopNav = () => {
                              
 
     </>
-    
+
     return (
       <nav>
       <ul className='flex space-x-8  capitalize text-sm'>
