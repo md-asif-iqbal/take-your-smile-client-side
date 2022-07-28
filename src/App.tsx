@@ -1,11 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import Dashboard from './Pages/dashboard/Dashboard';
+
 import AllGallery from './Pages/EventGallery/AllGallery';
 import CorporateGallery from './Pages/EventGallery/CorporateGallery';
 import EventGallery from './Pages/EventGallery/EventGallery';
 import NonProfitGallery from './Pages/EventGallery/NonProfitGallery';
 import SocialGallery from './Pages/EventGallery/SocialGallery';
 import WeddingGallery from './Pages/EventGallery/WeddingGallery';
+
 import Events from './Pages/Events/Events';
 import HomeWithNav from './Pages/Home/Home/HomeWithNav';
 import Footer from './Pages/shared/Footer/Footer';
@@ -19,6 +23,12 @@ import NonProfit from './Pages/Events/NonProfit';
 import Login from './Pages/Authentication/Login';
 import OurStory from './Pages/OurStory/OurStory';
 import NavBar from './Pages/shared/NavBar/NavBar';
+import UpdateProfile from './Pages/dashboard/UpdateProfile';
+import Reviews from './Pages/dashboard/Reviews';
+import Booking from './Pages/dashboard/Booking';
+import Users from './Pages/dashboard/Users';
+import MakeAdmin from './Pages/dashboard/MakeAdmin';
+import AllBooking from './Pages/dashboard/AllBooking';
 
 
 
@@ -28,7 +38,17 @@ function App() {
       <div className="relative">
              <Routes>
                <Route path='/' element={<Events/>}></Route>
-               
+
+               <Route path='/home' element={<HomeWithNav/>}></Route>
+               <Route path='dashboard' element={<Dashboard></Dashboard>}>
+                 <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
+                 <Route path='booking' element={<Booking></Booking>}></Route>
+                 <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route>
+                 <Route path='reviews' element={<Reviews></Reviews>}></Route>
+                 <Route path='users' element={<Users></Users>}></Route>
+                 <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+               </Route>
+      
                {/* <NavBar/> */}
                
                

@@ -4,10 +4,13 @@ import { useSignInWithFacebook, useSignInWithGoogle} from 'react-firebase-hooks/
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 const SocialLogin = () => {
     const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
     const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
+    const [token] = useToken(Guser || Fuser);
+
     if (Gerror || Ferror) {
         return (
           <>
@@ -21,7 +24,7 @@ const SocialLogin = () => {
         return <div className='h-40 mt-10'>{<Loading />}</div>
         
       };
-     if(Guser || Fuser){
+     if(token){
         return(
           <>
             {
