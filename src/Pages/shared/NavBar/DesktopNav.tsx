@@ -21,6 +21,10 @@ const DesktopNav = () => {
             name: 'NON-PROFIT',
             href: 'nonprofit',
         },
+        {
+            name: 'Dashboard',
+            href: 'dashboard',
+        },
         // {
         //     name: 'contact',
         //     href: 'contact',
