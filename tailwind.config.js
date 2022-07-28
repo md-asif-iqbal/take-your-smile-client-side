@@ -13,6 +13,7 @@ module.exports = {
           success: "#E449A4",
           warning: "#DF7E07",
           error: "#FA5C5C",
+          violet:"#9999FF"
         },
       },
     ],

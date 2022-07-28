@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 // import { Link } from "react-scroll";
 const DesktopNav = () => {
 
+
     const navigation = <>
                             <li className=' text-white  cursor-pointer'><Link to='/home' 
                             className='transition-all duration-300 uppercase'> Home</Link></li>
-                            <li className=' text-white  cursor-pointer uppercase'><Link to='/ourstory' 
-                            className='transition-all duration-300'> Our Story</Link></li>
+                            
+                            <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
+                            className='transition-all duration-300'> DashBoard</Link></li>
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/corporate' 
                             className='transition-all duration-300'> Corporate</Link></li>
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/nonprofit' 
@@ -15,7 +17,7 @@ const DesktopNav = () => {
                              
 
     </>
-    
+
     return (
       <nav>
       <ul className='flex space-x-8  capitalize text-sm'>
