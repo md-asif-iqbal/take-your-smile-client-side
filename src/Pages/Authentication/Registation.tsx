@@ -1,11 +1,10 @@
-import React from 'react';
-import { BsFacebook, BsGoogle } from 'react-icons/bs';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-firebase-hooks/auth';
+
 import { toast } from 'react-toastify';
-import SocialLogin from './SocialLogin';
 import Loading from '../shared/Loading/Loading';
+import useToken from '../../hooks/useToken';
 
 type Inputs = {
     name: string,
@@ -20,28 +19,32 @@ const Registation = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
-    const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+  const [token] = useToken(user);
+
+  const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
     let errorMessage;
-    if (error) {
+    if (error || updateError) {
 
         return (
           <>
           {
-            toast.error(error.message)
+            toast.error(error?.message || updateError?.message)
           }
           </>
           )
   }
-    if (loading) {
+    if (loading || updating) {
       return <div className='h-40 mt-10'>{<Loading />}</div>
     }
 
-    if(user){
+    if(token){
    
       return(
         <>
           {
-            toast.success('Welcome! Registration SuccessFull')
+            toast.success('Welcome! Registration Successfull')
           }
         </>
         )
@@ -49,13 +52,13 @@ const Registation = () => {
    }
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
-        const name = data.name;
-        const email = data.email;
-        const password = data.password;
-        const confirm = data.confirmPassword;
+        const name = data?.name;
+        const email = data?.email;
+        const password = data?.password;
+        const confirm = data?.confirmPassword;
         if (password === confirm) {
-          await createUserWithEmailAndPassword(email, password)
-         
+          await createUserWithEmailAndPassword(email, password);
+          await updateProfile({ displayName: name});
         }
         
         reset()
