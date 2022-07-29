@@ -2,7 +2,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 
@@ -12,6 +12,11 @@ import PageTitle from '../shared/PageTitle/PageTitle';
 import './Events.css'
 
 const Events = () => {
+    const naviagate = useNavigate();
+    const handleload =(e: any) => {
+        e.preventDefault();
+        naviagate('/home')
+    }
     return (
         <div className='mb-8'>
                   <PageTitle title="Events" />
@@ -53,7 +58,7 @@ const Events = () => {
             </div>
             <div style={{ backgroundColor: '#2d2d2d' }}>
                 <h2 style={{ paddingTop: '57px', paddingBottom: '57px' }} className=' text-center'>
-                    <a className="change " href='/home'>ENTER SITE</a>
+                    <button className="change " onClick={ handleload}>ENTER SITE</button>
                 </h2>
             </div>
 

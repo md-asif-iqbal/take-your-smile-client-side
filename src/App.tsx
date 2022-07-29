@@ -41,9 +41,14 @@ import UploadEvents from './Pages/dashboard/UploadEvents';
 import Dashboard from './Pages/dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
 
+
+
 function App() {
+
+  
   return (
       <div className="relative">
+
              <Routes>
                <Route path='/' element={<Events/>}></Route>
 
