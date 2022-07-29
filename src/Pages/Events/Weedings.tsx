@@ -120,18 +120,18 @@ export default class Weedings extends Component {
 
                                     <div className="lg:flex">
                                         <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Name" className="input-lg w-full max-w-xs block mx-3 my-3" required={true} />
-                                        <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Email Address" className="mx-3 my-3 input-lg  w-full max-w-xs block " required={true} />
+                                        <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Email Address" className=" my-3 input-lg  w-full max-w-xs block " required={true} />
                                     </div>
                                     <div className="lg:flex ">
                                         <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Phone Number" className="input-lg mx-3 my-3  w-full max-w-xs block " required={true} />
-                                        <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Company Name" className="input-lg mx-3 my-3  w-full max-w-xs block " required={true} />
+                                        <input style={{ backgroundColor: '#3b3b3b' }} type="text" placeholder="Your Company Name" className="input-lg  my-3  w-full max-w-xs block " required={true} />
                                     </div>
-                                    <div className="flex ">
+                                    <div className="w-full ">
                                         <input style={{ backgroundColor: '#3b3b3b' }} type="text " placeholder="Date/Time of year preference Name" className="mx-3 my-3  input-lg  w-full max-w-2xl block " required={true} />
 
                                     </div>
-                                    <div className="flex ">
-                                        <textarea style={{ height: '300px', backgroundColor: '#3b3b3b' }} className=" input-lg mx-3 my-3 pt-4 w-full " placeholder="Tell us more about your event - don't hold back" required={true}></textarea>
+                                    <div className="w-full ">
+                                        <textarea style={{ height: '200px', backgroundColor: '#3b3b3b' }} className=" input-lg mx-3 my-3 pt-4 w-full " placeholder="Tell us more about your event - don't hold back" required={true}></textarea>
 
                                     </div>
                                     <button typeof="submit" className="send-button mx-3">

@@ -1,8 +1,19 @@
 import { type } from "@testing-library/user-event/dist/type";
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 
 const NavEnd = () => {
+  const [user] = useAuthState(auth);
+ const navigate = useNavigate();
+ const logout = () =>{
+   signOut(auth);
+    navigate('/login')
+   localStorage.removeItem('accessToken');
+
+ }
     const navigation = <>
                             <li className=' text-white  cursor-pointer'><Link to='/weddings' 
                             className='transition-all duration-300 uppercase'> Weddings</Link></li>
@@ -10,25 +21,17 @@ const NavEnd = () => {
                             <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
                             className='transition-all duration-300'> Social</Link></li>
                              
-                             <li className=' text-white  cursor-pointer uppercase'><Link to='/gallery' 
-                            className='transition-all duration-300'>
-                              <div className="dropdown dropdown-hover">
-                                    <label id="0" className=" m-1">Portfolio</label>
-                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-base-100     text-black w-52">
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
-                                          className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogs' 
-                                          className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
-                                          <li className=' hover:bg-primary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
-                                          className='transition-all duration-300'> Our Story</Link></li>
-                                    </ul>
-                                  </div>
-                              
-                              </Link></li>
+                             {
+                               user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
+                               className='transition-all duration-300'> DashBoard</Link></li>: ''
+                             }
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
-                             <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
-                            className='transition-all duration-300 '> Login</Link></li>
+                            {user ?  <li className=' text-white  cursor-pointer uppercase'>
+                            <button className= " transition-all duration-300 uppercase" onClick={logout} >Sign Out</button>
+                            </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
+                            className='transition-all duration-300 '> Login</Link></li>}
+                            
 
     </>
     return (

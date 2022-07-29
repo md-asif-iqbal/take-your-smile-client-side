@@ -9,6 +9,7 @@ import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import NavBar from '../shared/NavBar/NavBar';
 import useToken from '../../hooks/useToken';
+import { useNavigate } from 'react-router-dom';
 
 type Inputs = {
     email: string,
@@ -30,6 +31,7 @@ const Login = () => {
     let changeBtnStatus = (status:string )=> {
        setBtnStatus(status)
     }
+    const navigate = useNavigate();
     const onSubmit: SubmitHandler<Inputs> = async(data) =>{
         const email = data.email;
         const password =data.password;
@@ -64,6 +66,10 @@ const Login = () => {
         )
   
    }
+   if (user) {
+    console.log(token);
+   navigate('/home')
+}
 
    const resetPassword = async() => {
     if (email) {

@@ -8,6 +8,7 @@ import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-fireb
 import { toast } from 'react-toastify';
 import Loading from '../shared/Loading/Loading';
 import useToken from '../../hooks/useToken';
+import { useNavigate } from 'react-router-dom';
 
 type Inputs = {
     name: string,
@@ -16,6 +17,8 @@ type Inputs = {
     confirmPassword: string,
   };
 const Registation = () => {
+
+  const navigate = useNavigate();
   const [
     createUserWithEmailAndPassword,
     user,
@@ -53,6 +56,10 @@ const Registation = () => {
         )
   
    }
+   if (user) {
+    console.log(token);
+   navigate('/home')
+}
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
         const name = data?.name;

@@ -8,7 +8,7 @@ const EventGallery = () => {
     return (
         <div>
               <NavBar />
-            <div className="hero min-h-[400px]" style={{backgroundImage: "url(https://i.ibb.co/bLs1wrf/img2.jpg)"}}>
+            <div className="hero min-h-[400px]" style={{backgroundImage: "url(https://www.adlerplanetarium.org/wp-content/uploads/welcome-gallery-21.jpg)"}}>
             <div className="hero-overlay bg-gray-500 bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content my-32">
                 <div className="max-w-4/5">

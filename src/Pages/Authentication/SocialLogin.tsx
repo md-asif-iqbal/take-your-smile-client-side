@@ -5,12 +5,13 @@ import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import useToken from '../../hooks/useToken';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
     const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
     const [token] = useToken(Guser || Fuser);
-
+    const navigate = useNavigate();
     if (Gerror || Ferror) {
         return (
           <>
@@ -33,6 +34,11 @@ const SocialLogin = () => {
           </>
           )
      }
+     if (Guser || Fuser) {
+      console.log(token);
+     navigate('/home')
+  }
+     
     return (
         <div className="social-media">
         <button className="social-icon" onClick={() => signInWithFacebook()}>

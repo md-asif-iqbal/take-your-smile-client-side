@@ -69,14 +69,7 @@ const BlogsOne = () => {
           </div>
         ))}
       </div>
-      <div className="btn-group m-5 gap-5 p-5 flex justify-center">
-          <a href="http://localhost:3000/blog"><button className="btn hover:bg-red-500 btn-sm rounded-lg">« Previous</button></a>
-         <a href="http://localhost:3000/blog"><button className="btn btn-sm btn-active rounded-sm bg-red-500 ">1</button></a>
-          <a href="http://localhost:3000/blogs"><button className="btn btn-sm btn-active rounded-sm bg-red-500 ">2</button></a>
-          <a href="http://localhost:3000/bloges"><button className="btn btn-sm btn-active rounded-sm bg-red-500 ">3</button></a>
-          <a href="http://localhost:3000/blog"><button className="btn hover:bg-red-500 btn-sm rounded-lg"> Next»</button></a>
-          
-    </div>
+      
         </div>
         <div className='bg-red-500 w-full h-64 rounded-box'>
             <h1 className='text-center p-20 text-3xl text-white font-bold'>Ready to get to planning? Get in touch! <br />
