@@ -34,6 +34,7 @@ import BlogsThree from './Pages/Blogs/BlogsThree';
 import SingleEvent from './Pages/EventGallery/SingleEvent';
 import Error from './Pages/shared/Error/Error';
 import Review from './Pages/dashboard/Review';
+import UploadEvents from './Pages/dashboard/UploadEvents';
 
 function App() {
   return (
@@ -81,6 +82,7 @@ function App() {
                  <Route path='reviews' element={<Reviews></Reviews>}></Route>
                  <Route path='users' element={<Users></Users>}></Route>
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+                 <Route path='uploadEvents' element={<UploadEvents></UploadEvents>}></Route>
       
                </Route>
                <Route path='/singlegallery' element={<SingleEvent/>}></Route>
