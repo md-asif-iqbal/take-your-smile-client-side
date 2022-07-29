@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../shared/NavBar/NavBar";
+import PageTitle from "../shared/PageTitle/PageTitle";
 import Banner from "./Banner";
 import Header from "./Header";
 import "./OurStory.css";
@@ -44,6 +45,7 @@ const OurStory = () => {
   ];
   return (
     <div className="background img">
+      <PageTitle title="Our Story" />
       <NavBar/>
       {<Banner></Banner>}
       {<Header></Header>}

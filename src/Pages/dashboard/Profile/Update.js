@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import PageTitle from '../../shared/PageTitle/PageTitle';
 const Update = () => {
     const [user] = useAuthState(auth);
     const { register,reset, formState: { errors }, handleSubmit} = useForm();
@@ -52,7 +53,7 @@ const Update = () => {
         reset();
     }
     return (
-    <div className='container flex h-full mb-20 md:mt-10'>
+    <div className='container flex h-full mb-20 md:mt-20'>
             <div className="card w-full md:w-10/12 bg-base-100 shadow-xl">
             <div className="card-body">
                 <h2 className="text-center text-xl font-bold mb-5">Add New Product</h2>
@@ -110,6 +111,8 @@ const Update = () => {
                
             </div>
             </div>
+            <PageTitle title="Update Profile" />
+
         </div>
     );
 };

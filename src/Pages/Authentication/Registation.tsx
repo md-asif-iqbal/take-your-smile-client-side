@@ -1,6 +1,3 @@
-
-import React from 'react';
-
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-firebase-hooks/auth';
@@ -8,18 +5,22 @@ import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-fireb
 import { toast } from 'react-toastify';
 import Loading from '../shared/Loading/Loading';
 import useToken from '../../hooks/useToken';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type Inputs = {
     name: string,
     email: string,
     password: string,
     confirmPassword: string,
+    state: {
+      from: Location;
+    }
   };
-const Registation = () => {
 
+const Registation = () => {
   const navigate = useNavigate();
-  const [
+  const location = useLocation() as unknown as Inputs;
+  const from = location.state?.from?.pathname || '/';  const [
     createUserWithEmailAndPassword,
     user,
     loading,
@@ -46,20 +47,15 @@ const Registation = () => {
     }
 
     if(token){
-   
-      return(
-        <>
-          {
-            toast.success('Welcome! Registration Successfull')
-          }
-        </>
-        )
-  
-   }
-   if (user) {
-    console.log(token);
-   navigate('/home')
-}
+      navigate(from, { replace: true })
+    return(
+      <>
+        {
+         toast.success('Thank You! Registation Successfull')
+        }
+      </>
+      )
+ }
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
         const name = data?.name;
@@ -140,5 +136,5 @@ const Registation = () => {
            
     );
 };
-// fv
+
 export default Registation;

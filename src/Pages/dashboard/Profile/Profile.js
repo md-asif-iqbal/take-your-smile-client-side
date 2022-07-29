@@ -19,7 +19,7 @@ const Profile = () => {
             })
         },[user]);
     return (
-          <div className='p-6 mx-auto rounded-md md:mt-10'>
+          <div className='p-6 mx-auto rounded-md md:mt-20 lg:mt-20'>
             <div className="card bg-base-100 shadow-xl">
             <div className="card-body min-w-full">
                 <h2 className="text-center text-xl font-bold mb-5">My Profile</h2>

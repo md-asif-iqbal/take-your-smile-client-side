@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Dashboard from './Pages/dashboard/Dashboard';
-
 import AllGallery from './Pages/EventGallery/AllGallery';
 import CorporateGallery from './Pages/EventGallery/CorporateGallery';
 import EventGallery from './Pages/EventGallery/EventGallery';
@@ -28,13 +26,20 @@ import MakeAdmin from './Pages/dashboard/MakeAdmin';
 import AllBooking from './Pages/dashboard/AllBooking'
 import Update from './Pages/dashboard/Profile/Update';
 import Profile from './Pages/dashboard/Profile/Profile';
+
+
+import RequireAuth from './Pages/shared/RequireAuth/RequireAuth';
+
 import Login from './Pages/Authentication/Login';
-import Blogs from './Pages/Blogs/Blogs';
+// import Blogs from './Pages/Blogs/Blogs';
 import BlogsOne from './Pages/Blogs/BlogsOne';
 import BlogsThree from './Pages/Blogs/BlogsThree';
 import SingleEvent from './Pages/EventGallery/SingleEvent';
 import Error from './Pages/shared/Error/Error';
 import Review from './Pages/dashboard/Review';
+import UploadEvents from './Pages/dashboard/UploadEvents';
+import Dashboard from './Pages/dashboard/Dashboard';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -51,6 +56,8 @@ function App() {
                  {/* <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route> */}
                  <Route path='reviews' element={<Review></Review>}></Route>
                  <Route path='users' element={<Users></Users>}></Route>
+                 <Route path='uploadEvents' element={<UploadEvents/>}></Route>
+
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
                  <Route path='profile/update' element={<Update />} />
                  <Route path='profile' element={<Profile/>} />
@@ -68,7 +75,10 @@ function App() {
                <Route path='/corporate' element={<Corporate />}></Route>
                <Route path='/social' element={<Social />}></Route>
                <Route path='/nonprofit' element={<NonProfit />}></Route>
-               <Route path='/contactus' element={<Contact />}></Route>
+               <Route path='/contactus' element={<RequireAuth>
+                  <Contact />
+               </RequireAuth>
+               }></Route>
                <Route path='/login' element={<Login />}></Route>
                 
                <Route path='/gallery' element={<EventGallery/>}>
@@ -78,6 +88,9 @@ function App() {
                  <Route path='weddinggallery' element={<WeddingGallery/>}></Route>
                  <Route path='corporategallery' element={<CorporateGallery/>}></Route>
                </Route>
+
+              
+
                <Route path='/singlegallery' element={<SingleEvent/>}></Route>
                <Route path='*' element={<Error/>}></Route>
              </Routes>

@@ -9,14 +9,27 @@ import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import NavBar from '../shared/NavBar/NavBar';
 import useToken from '../../hooks/useToken';
-import { useNavigate } from 'react-router-dom';
+
+import { useLocation, useNavigate } from 'react-router-dom';
+import PageTitle from '../shared/PageTitle/PageTitle';
+
+
 
 type Inputs = {
     email: string,
     password: string,
+    state: {
+      from: Location;
+    }
     
   };
 const Login = () => {
+ 
+  let navigate = useNavigate();
+  const location = useLocation() as unknown as Inputs;
+  const from = location.state?.from?.pathname || '/';
+  // let from = state?.from?.pathname || "/";
+
   const [email, setEmail] = useState();
   const [
     signInWithEmailAndPassword,
@@ -31,7 +44,7 @@ const Login = () => {
     let changeBtnStatus = (status:string )=> {
        setBtnStatus(status)
     }
-    const navigate = useNavigate();
+  
     const onSubmit: SubmitHandler<Inputs> = async(data) =>{
         const email = data.email;
         const password =data.password;
@@ -55,6 +68,7 @@ const Login = () => {
       return <div className='h-40 mt-10'>{<Loading />}</div>
       
     };
+
    if(token){
    
       return(
@@ -71,6 +85,18 @@ const Login = () => {
    navigate('/home')
 }
 
+    if(token){
+      navigate(from, { replace: true })
+    return(
+      <>
+        {
+         toast.success('Thank You! Login Successfull')
+        }
+      </>
+      )
+ }
+
+
    const resetPassword = async() => {
     if (email) {
       await sendPasswordResetEmail(email);
@@ -82,6 +108,7 @@ const Login = () => {
    
     return (
       <>
+      <PageTitle title="Login/Registation" />
       <NavBar />
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">

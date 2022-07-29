@@ -7,9 +7,11 @@ import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
 import Summery from '../Summery/Summery';
 import Banner from '../Banner/Banner';
+import PageTitle from '../../shared/PageTitle/PageTitle';
 const Home = () => {
     return (
         <div>
+            <PageTitle title="Take Your Smile" />
             <Banner/>
             <Services />
             <Gallery></Gallery>

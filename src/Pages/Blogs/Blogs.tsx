@@ -1,9 +1,10 @@
-import React from 'react';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import NavBar from '../shared/NavBar/NavBar';
+import React from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import NavBar from "../shared/NavBar/NavBar";
 
 const Blogs = () => {
+
     const imageGallery = [
         {
           id: 1,
@@ -113,15 +114,10 @@ const Blogs = () => {
 	</button>
 </div>
     </div>
-            </div>
-          <div className='bg-red-500 w-full h-64 rounded-box'>
-            <h1 className='text-center p-20 text-3xl text-white font-bold'>Ready to get to planning? Get in touch! <br />
-            <a className='text-2xl' href=""><button className='btn btn-outline p-5 m-3 hover:text-green-800 '>GET STARTED</button></a>
-            </h1>
-            
-          </div>
-        </div>
-    );
+</div>
+</div>
+  
+  );
 };
 
 export default Blogs;

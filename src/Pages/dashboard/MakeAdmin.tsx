@@ -1,9 +1,12 @@
 import React from 'react';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const Users = () => {
     return (
         <table className='table-fixed'>
-<div className="container mx-auto px-4 sm:px-8 max-w-full">
+        <PageTitle title="Make Admin" />
+
+    <div className="container mx-auto px-4 sm:px-8 max-w-full">
     <div className="py-8">
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
