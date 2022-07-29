@@ -16,9 +16,9 @@ const Sidebar = () => {
 		
 	}
     return (
-        <div className="flex flex-col absolute  md:static mr-20 h-full p-3  dark:bg-gray-900 dark:text-gray-100">
+        <div className="flex flex-col absolute  md:static mr-20 h-full p-3  dark:bg-gray-900 dark:text-gray-100 mx-auto">
 	<div className="space-y-3">
-		<div className="flex items-center justify-between">
+		<div className="flex items-center justify-center">
 			<h2 className='text-xl font-bold'>Dashboard</h2>
 			<button 
 			onClick={handleDisplay}
@@ -31,7 +31,7 @@ const Sidebar = () => {
 			</button>
 		</div>
 		
-		<div className="flex-1">
+		<div className="flex-1 justify-center">
 			<ul  className="pt-2 pb-4 space-y-1 text-sm">
 				
 				

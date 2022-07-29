@@ -33,6 +33,7 @@ import BlogsOne from './Pages/Blogs/BlogsOne';
 import BlogsThree from './Pages/Blogs/BlogsThree';
 import SingleEvent from './Pages/EventGallery/SingleEvent';
 import Error from './Pages/shared/Error/Error';
+import Review from './Pages/dashboard/Review';
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
                  <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
                  <Route path='booking' element={<Booking></Booking>}></Route>
                  <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route>
-                 <Route path='reviews' element={<Reviews></Reviews>}></Route>
+                 <Route path='reviews' element={<Review></Review>}></Route>
                  <Route path='users' element={<Users></Users>}></Route>
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
                </Route>
