@@ -5,15 +5,23 @@ import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-fireb
 import { toast } from 'react-toastify';
 import Loading from '../shared/Loading/Loading';
 import useToken from '../../hooks/useToken';
+import { useLocation, useNavigate } from 'react-router-dom';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 type Inputs = {
     name: string,
     email: string,
     password: string,
     confirmPassword: string,
+    state: {
+      from: Location;
+    }
   };
+
 const Registation = () => {
-  const [
+  const navigate = useNavigate();
+  const location = useLocation() as unknown as Inputs;
+  const from = location.state?.from?.pathname || '/';  const [
     createUserWithEmailAndPassword,
     user,
     loading,
@@ -40,16 +48,15 @@ const Registation = () => {
     }
 
     if(token){
-   
-      return(
-        <>
-          {
-            toast.success('Welcome! Registration Successfull')
-          }
-        </>
-        )
-  
-   }
+      navigate(from, { replace: true })
+    return(
+      <>
+        {
+         toast.success('Thank You! Registation Successfull')
+        }
+      </>
+      )
+ }
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
         const name = data?.name;

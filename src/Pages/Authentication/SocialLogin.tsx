@@ -5,9 +5,19 @@ import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import useToken from '../../hooks/useToken';
-
+import { useLocation, useNavigate } from 'react-router-dom';
+type Inputs = {
+  email: string,
+  password: string,
+  state: {
+    from: Location;
+  }
+  
+};
 const SocialLogin = () => {
-    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+  const location = useLocation() as unknown as Inputs;
+  const from = location.state?.from?.pathname || '/';    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
     const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
     const [token] = useToken(Guser || Fuser);
 
@@ -24,11 +34,12 @@ const SocialLogin = () => {
         return <div className='h-40 mt-10'>{<Loading />}</div>
         
       };
-     if(token){
+      if(token){
+          navigate(from, { replace: true })
         return(
           <>
             {
-              toast.success('Thank You! Login SuccessFull')
+             toast.success('Thank You! Login Successfull')
             }
           </>
           )

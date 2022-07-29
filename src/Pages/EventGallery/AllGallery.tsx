@@ -1,9 +1,10 @@
 import React from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
+import PageTitle from '../shared/PageTitle/PageTitle';
 const AllGallery = () => {
     return (
         <section>
-    
+          <PageTitle title="All Gallery" />
     <div className="flex justify-center items-center">
  
  <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">

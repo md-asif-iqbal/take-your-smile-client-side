@@ -9,13 +9,24 @@ import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import NavBar from '../shared/NavBar/NavBar';
 import useToken from '../../hooks/useToken';
+import { useLocation, useNavigate } from 'react-router-dom';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 type Inputs = {
     email: string,
     password: string,
+    state: {
+      from: Location;
+    }
     
   };
 const Login = () => {
+ 
+  let navigate = useNavigate();
+  const location = useLocation() as unknown as Inputs;
+  const from = location.state?.from?.pathname || '/';
+  // let from = state?.from?.pathname || "/";
+
   const [email, setEmail] = useState();
   const [
     signInWithEmailAndPassword,
@@ -53,17 +64,16 @@ const Login = () => {
       return <div className='h-40 mt-10'>{<Loading />}</div>
       
     };
-   if(token){
-   
-      return(
-        <>
-          {
-            toast.success('Thank You! Login SuccessFull')
-          }
-        </>
-        )
-  
-   }
+    if(token){
+      navigate(from, { replace: true })
+    return(
+      <>
+        {
+         toast.success('Thank You! Login Successfull')
+        }
+      </>
+      )
+ }
 
    const resetPassword = async() => {
     if (email) {
@@ -76,6 +86,7 @@ const Login = () => {
    
     return (
       <>
+      <PageTitle title="Login/Registation" />
       <NavBar />
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">

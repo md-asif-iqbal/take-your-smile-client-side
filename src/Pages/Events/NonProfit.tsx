@@ -16,6 +16,7 @@ import Packages from "../Packages/Packages";
 
 import { Link } from "react-router-dom";
 import { BsChatDots } from "react-icons/bs";
+import PageTitle from "../shared/PageTitle/PageTitle";
 
 
 
@@ -60,7 +61,7 @@ export default class NonProfit extends Component {
         return (
             <div style={{ backgroundColor: 'white' }}>
                 <NavBar></NavBar>
-
+                <PageTitle title="Non-profit Event" />
                 {/* <img className='w-full' src={banner} alt="" /> */}
                 <div className='banner-nonprofit pt-8'>
                     <h1 className='text-3xl lg:text-6xl align-middle  text-center font-semibold ' style={{ marginTop: '200px', paddingBottom: '200px', color: 'white' }}>NON-PROFIT EVENTS</h1>

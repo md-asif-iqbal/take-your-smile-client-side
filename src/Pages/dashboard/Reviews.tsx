@@ -1,8 +1,10 @@
 import React from 'react';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const Reviews = () => {
     return (
         <div className="flex flex-col mx-auto mt-14 md:mt-10 max-w-xl p-8 shadow-sm bg-black  rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
+		<PageTitle title="Reviews" />
 	<div className="flex flex-col  items-center w-full">
 		<h2 className="text-3xl font-semibold text-white text-center">Your opinion matters!</h2>
 		<div className="flex flex-col items-center py-6 space-y-3">

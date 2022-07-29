@@ -1,9 +1,12 @@
 import React from 'react';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const AllBooking = () => {
     return (
         // <!-- component -->
 <section className="container mx-auto w-screen p-6 font-mono">
+<PageTitle title="All Booking" />
+
   <div className=" mb-8 overflow-hidden rounded-lg shadow-lg">
     <div className=" overflow-x-auto">
       <table className="">

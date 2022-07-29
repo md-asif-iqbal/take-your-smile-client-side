@@ -1,8 +1,10 @@
 import React from 'react';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const Users = () => {
     return (
         <table className='table-fixed'>
+    <PageTitle title="Users" />
 <div className="container mx-auto px-4 sm:px-8 w-full md:w-24vh">
     <div className="py-8">
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
