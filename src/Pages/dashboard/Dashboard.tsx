@@ -5,18 +5,25 @@ import Sidebar from './Sidebar';
 
 const Dashboard = () => {
     return (
+
+        <div className='flex min-w-full gap-5'>
+            <div className='flex-none min-w-1/5'>
+
        
-       <div className='mt-20'>
-            <NavBar/>
-            <div className='flex items-start'>
-            
-            <div className=''>
-            <Sidebar></Sidebar>
-            </div>
-           <div className='ml-20'>
-           <Outlet></Outlet>
-           </div>
-        </div>
+            <div className='mt-20'>
+                        <NavBar/>
+                        <div className='flex items-start'>
+                        
+                        <div className=''>
+                        <Sidebar></Sidebar>
+                        </div>
+                        <div className='flex-auto ml-20 min-w-4/5'>
+                        <Outlet></Outlet>
+                        </div>
+                    </div>
+                </div>
+
+       </div>
        </div>
     );
 };
