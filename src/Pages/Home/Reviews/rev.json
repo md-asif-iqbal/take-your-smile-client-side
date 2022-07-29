@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Travis Head",
+        "discription":
+          "I think you made a great point about cleaning up after the wedding. I would think that it will be a put-off for the couple if they still have to stay back for cleaning up after their wedding. My daughter is getting married next year and I will let her know about all-inclusive wedding packages to help her get everything settled in",
+        "address": "Kubi, Feni",
+       "img": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+       "rating": 5,
+       "status": "Wedding Events"
+      },
+      {
+        "name": "Kate Pretty",
+        "discription":"Jo was amazing!!! I had done most of my planning by the time I came to her, and needed help bringing it all together the day of. Jo worked with me the month of our wedding to finalize timeline",
+        "address": "Mirpur, Dhaka",
+       "img": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+       "rating": 5,
+       "status": "Wedding Events"
+      },
+      {
+        "name": "Samantha Aliye",
+        "discription": "My husband and I can't thank Jo enough for helping to make our wedding day perfect! We had a pretty long engagement and we were in contact with Jo from the very beginning",
+        "address": "Bus Stand, Bhola",
+       "img": "https://images.unsplash.com/photo-1616065298043-67646192dcb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+       "rating": 4,
+       "status": "Wedding Events"
+      },
+      {
+        "name": "Michel Jack",
+        "discription":"So is amazing! From start to fish she was their assisting me and taking care of all my crazy request",
+        "address": "Town, Bhola",
+       "img": "https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQ2fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+       "rating": 5,
+       "status": "Wedding Events"
+      }
+]
