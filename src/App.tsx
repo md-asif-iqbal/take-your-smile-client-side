@@ -20,21 +20,25 @@ import Weedings from './Pages/Events/Weedings';
 import Corporate from './Pages/Events/Corporate';
 import Social from './Pages/Events/Social';
 import NonProfit from './Pages/Events/NonProfit';
-import Login from './Pages/Authentication/Login';
 import OurStory from './Pages/OurStory/OurStory';
-import NavBar from './Pages/shared/NavBar/NavBar';
 import UpdateProfile from './Pages/dashboard/UpdateProfile';
 import Reviews from './Pages/dashboard/Reviews';
 import Booking from './Pages/dashboard/Booking';
 import Users from './Pages/dashboard/Users';
 import MakeAdmin from './Pages/dashboard/MakeAdmin';
 import AllBooking from './Pages/dashboard/AllBooking';
+
 import Update from './Pages/dashboard/Profile/Update';
 import Profile from './Pages/dashboard/Profile/Profile';
 import RequireAuth from './Pages/shared/RequireAuth/RequireAuth';
 
-
-
+import Login from './Pages/Authentication/Login';
+import Blogs from './Pages/Blogs/Blogs';
+import BlogsOne from './Pages/Blogs/BlogsOne';
+import BlogsThree from './Pages/Blogs/BlogsThree';
+import SingleEvent from './Pages/EventGallery/SingleEvent';
+import Error from './Pages/shared/Error/Error';
+import Review from './Pages/dashboard/Review';
 
 function App() {
   return (
@@ -42,10 +46,15 @@ function App() {
              <Routes>
                <Route path='/' element={<Events/>}></Route>
 
+
                <Route path='/home' element={<HomeWithNav/>}></Route>
                <Route path='dashboard' element={<Dashboard></Dashboard>}>
                  <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
                  <Route path='booking' element={<Booking></Booking>}></Route>
+
+                 <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route>
+                 <Route path='reviews' element={<Review></Review>}></Route>
+
                  {/* <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route> */}
                  <Route path='reviews' element={<Reviews></Reviews>}></Route>
                  <Route path='users' element={<Users></Users>}></Route>
@@ -56,7 +65,10 @@ function App() {
       
                {/* <NavBar/> */}
                
-               
+               <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+               <Route path='/blogsone' element={<BlogsOne></BlogsOne>}></Route>
+               <Route path='/blogsthree' element={<BlogsThree></BlogsThree>}></Route>
+              
                <Route path='/home' element={<HomeWithNav />}></Route>
                <Route path='/ourstory' element={<OurStory />}></Route>
                <Route path='/weddings' element={<Weedings />}></Route>
@@ -76,9 +88,17 @@ function App() {
                  <Route path='weddinggallery' element={<WeddingGallery/>}></Route>
                  <Route path='corporategallery' element={<CorporateGallery/>}></Route>
                </Route>
-
-               
-
+               <Route path='/dashboard' element={<Dashboard/>}>
+                  <Route index element={<UpdateProfile/>}></Route>
+                 <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
+                 {/* <Route path='booking' element={<Booking></Booking>}></Route> */}
+                 <Route path='reviews' element={<Reviews></Reviews>}></Route>
+                 <Route path='users' element={<Users></Users>}></Route>
+                 <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+      
+               </Route>
+               <Route path='/singlegallery' element={<SingleEvent/>}></Route>
+               <Route path='*' element={<Error/>}></Route>
              </Routes>
             <Footer/>
             <ToastContainer />

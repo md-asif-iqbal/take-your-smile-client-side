@@ -1,3 +1,6 @@
+
+import React from 'react';
+
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword,useUpdateProfile  } from 'react-firebase-hooks/auth';
@@ -137,5 +140,5 @@ const Registation = () => {
            
     );
 };
-
+// fv
 export default Registation;

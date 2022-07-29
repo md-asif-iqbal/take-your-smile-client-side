@@ -26,7 +26,7 @@ const Banner = () => {
       >
         <SwiperSlide>
         <div className='relative'>
-          <img src="https://i.ibb.co/H4D8BLG/img1.jpg" alt=""  className='h-[80vh] '/>
+          <img src="https://i.ibb.co/H4D8BLG/img1.jpg" alt=""  className=' '/>
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
@@ -44,7 +44,7 @@ const Banner = () => {
         <SwiperSlide>
           
           <div className='relative'>
-          <img src="https://i.ibb.co/SxNNYMk/img2.jpg" alt=""  className='h-[80vh]'/>
+          <img src="https://i.ibb.co/SxNNYMk/img2.jpg" alt=""  className=''/>
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
@@ -63,7 +63,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
         <div className='relative'>
-          <img src="https://i.ibb.co/SfJvM8P/img3.jpg" alt=""  className='h-[80vh]'/>
+          <img src="https://i.ibb.co/SfJvM8P/img3.jpg" alt=""  className=''/>
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">
@@ -80,7 +80,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
         <div className='relative'>
-          <img src="https://i.ibb.co/SxNNYMk/img2.jpg" alt=""  className='h-[80vh]'/>
+          <img src="https://i.ibb.co/SxNNYMk/img2.jpg" alt=""  className=''/>
           <div className=" absolute top-1/2 left-1/4 h-24  flex justify-center items-center">
               <Fade bottom>
                 <div className="flex items-start">

@@ -4,7 +4,7 @@ import VisibilitySensor from "react-visibility-sensor";
 const Summery = () => {
   const [summery, setSummery] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/summery";
+    const url = "http://localhost:8000/summery";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSummery(data));
