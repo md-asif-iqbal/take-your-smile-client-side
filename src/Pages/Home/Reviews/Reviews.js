@@ -9,7 +9,7 @@ import ReviewCard from "./ReviewCard";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:8000/reviews";
+    const url = "https://secure-escarpment-79738.herokuapp.com/reviews";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

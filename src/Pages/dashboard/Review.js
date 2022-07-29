@@ -14,7 +14,7 @@ const Review = () => {
   const handleClick = (value) => {
     setCurrentValue(value);
   };
-  console.log(user)
+  console.log(user);
   const onSubmit = (data) => {
     const reviewData = {
       name: user?.displayName,
@@ -23,10 +23,10 @@ const Review = () => {
       discription: data.review,
       address: data.address,
       status: data.status,
-      img: user?.photoUrl
+      img: user?.photoUrl,
     };
 
-    fetch("http://localhost:8000/reviews", {
+    fetch("https://secure-escarpment-79738.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

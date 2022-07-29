@@ -60,7 +60,7 @@ function App() {
 
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
                  <Route path='profile/update' element={<Update />} />
-                 <Route path='profile' element={<Profile/>} />
+                 <Route index element={<Profile/>} />
                </Route>
       
                {/* <NavBar/> */}

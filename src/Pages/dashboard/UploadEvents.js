@@ -30,7 +30,7 @@ const UploadEvents = () => {
             img: img,
           };
           // send to your database
-          fetch("http://localhost:8000/recentEvents", {
+          fetch("https://secure-escarpment-79738.herokuapp.com/recentEvents", {
             method: "POST",
             headers: {
               "content-type": "application/json",
