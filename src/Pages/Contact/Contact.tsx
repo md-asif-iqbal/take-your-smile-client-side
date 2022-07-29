@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import PageTitle from '../shared/PageTitle/PageTitle';
 type Inputs = {
     name: string,
     email: string,
@@ -35,6 +36,7 @@ const Contact = () => {
     };
     return (
         <div>
+            <PageTitle title="Contact Us" />
             <NavBar />
             <div className="hero min-h-[400px]" style={{backgroundImage: "url(https://i.ibb.co/bLs1wrf/img2.jpg)"}}>
             <div className="hero-overlay bg-gray-500 bg-opacity-50"></div>

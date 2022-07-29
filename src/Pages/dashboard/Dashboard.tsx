@@ -1,3 +1,9 @@
+
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import PageTitle from '../shared/PageTitle/PageTitle';
+import Sidebar from './Sidebar';
+
 import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../shared/NavBar/NavBar";
@@ -15,6 +21,7 @@ const Dashboard = () => {
     return (
 
         <div className='flex min-w-full gap-5'>
+        <PageTitle title="Deshboard" />
             <div className='flex-none min-w-1/5'>
 
        

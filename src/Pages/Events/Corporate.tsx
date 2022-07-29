@@ -16,6 +16,7 @@ import Packages from "../Packages/Packages";
 
 import { Link } from "react-router-dom";
 import { BsChatDots } from "react-icons/bs";
+import PageTitle from "../shared/PageTitle/PageTitle";
 
 
 
@@ -60,6 +61,7 @@ export default class Corporate extends Component {
         return (
             <div style={{ backgroundColor: 'white' }}>
                 <NavBar></NavBar>
+                <PageTitle title="Corporate Event" />
 
                 {/* <img className='w-full' src={banner} alt="" /> */}
                 <div className='banner-corporate pt-8'>

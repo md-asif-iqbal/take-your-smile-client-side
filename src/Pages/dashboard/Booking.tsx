@@ -1,9 +1,12 @@
 import React from "react";
+import PageTitle from "../shared/PageTitle/PageTitle";
 
 const Booking = () => {
   return (
     
     <div className="p-1 mt-4 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl">
+      <PageTitle title="Booking" />
+
       <div className="block p-6  grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 bg-white sm:p-8 rounded-xl">
         <div className="grid items-center my-16">
           <div>

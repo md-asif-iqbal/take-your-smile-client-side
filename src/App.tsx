@@ -30,6 +30,7 @@ import AllBooking from './Pages/dashboard/AllBooking';
 
 import Update from './Pages/dashboard/Profile/Update';
 import Profile from './Pages/dashboard/Profile/Profile';
+import RequireAuth from './Pages/shared/RequireAuth/RequireAuth';
 
 import Login from './Pages/Authentication/Login';
 import Blogs from './Pages/Blogs/Blogs';
@@ -74,7 +75,10 @@ function App() {
                <Route path='/corporate' element={<Corporate />}></Route>
                <Route path='/social' element={<Social />}></Route>
                <Route path='/nonprofit' element={<NonProfit />}></Route>
-               <Route path='/contactus' element={<Contact />}></Route>
+               <Route path='/contactus' element={<RequireAuth>
+                  <Contact />
+               </RequireAuth>
+               }></Route>
                <Route path='/login' element={<Login />}></Route>
                 
                <Route path='/gallery' element={<EventGallery/>}>

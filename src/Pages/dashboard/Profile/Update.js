@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import PageTitle from '../../shared/PageTitle/PageTitle';
 const Update = () => {
     const [user] = useAuthState(auth);
     const { register,reset, formState: { errors }, handleSubmit} = useForm();
@@ -110,6 +111,8 @@ const Update = () => {
                
             </div>
             </div>
+            <PageTitle title="Update Profile" />
+
         </div>
     );
 };
