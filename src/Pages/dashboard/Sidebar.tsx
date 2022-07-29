@@ -41,12 +41,12 @@ const Sidebar = () => {
 						<span style={{display: `${sidebar}`}}>Booking</span>
 					</Link>
 				</li>
-				<li className="rounded-sm hover:shadow-md">
+				{/* <li className="rounded-sm hover:shadow-md">
 					<Link to="/dashboard/booking"  className="flex items-center p-2 space-x-3 rounded-md">
 						<span className='text-2xl'><AiOutlineShoppingCart/></span>
 						<span style={{display: `${sidebar}`}}>Booking</span>
 					</Link>
-				</li>
+				</li> */}
 				
 				<li className="rounded-sm hover:shadow-md">
 					<Link to="/dashboard/reviews" rel="noopener noreferrer" className="flex items-center p-2 space-x-3 rounded-md">
