@@ -41,9 +41,6 @@ import UploadEvents from './Pages/dashboard/UploadEvents';
 import Dashboard from './Pages/dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
 
-import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
-import Messengar from './Pages/Messengar/Messengar';
-
 function App() {
 
   
@@ -100,7 +97,7 @@ function App() {
                <Route path='/singlegallery' element={<SingleEvent/>}></Route>
                <Route path='*' element={<Error/>}></Route>
              </Routes>
-             <Messengar/>
+       
             <Footer/>
             <ToastContainer />
             
