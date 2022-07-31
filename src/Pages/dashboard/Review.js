@@ -9,8 +9,8 @@ import { toast } from "react-toastify";
 const Review = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit, reset } = useForm();
-  const [currentValue, setCurrentValue] = useState(0);
-  const stars = Array(5).fill(0);
+  const [currentValue, setCurrentValue] = useState(1);
+  const stars = Array(5).fill(1);
   const handleClick = (value) => {
     setCurrentValue(value);
   };

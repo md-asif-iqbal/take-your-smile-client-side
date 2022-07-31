@@ -3,10 +3,15 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "react-scroll";
 import auth from "../../../firebase.init";
 
 const NavEnd = () => {
   const [user] = useAuthState(auth);
+  console.log(user?.photoURL);
+  let photo:any = user?.photoURL;
+  let names:any = user?.displayName
+  
  const navigate = useNavigate();
  const logout = () =>{
    signOut(auth);
@@ -28,7 +33,63 @@ const NavEnd = () => {
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
-                            <button className= " transition-all duration-300 uppercase" onClick={logout} >Sign Out</button>
+                           
+                              {/* Start */}
+                              <div className="dropdown dropdown-end">
+                                <label id="0" className=" m-1"> <button className= " transition-all duration-300 uppercase"  > 
+
+                                    <div className="avatar ">
+                                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    {
+                                      user.photoURL?<img src={photo} alt="" />
+                                      : names
+                                
+
+                                    }
+                                    </div>
+                                    </div>
+                                 </button> </label>
+                                <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
+                                  
+                                <div
+                                      className="bg-white uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center text-black right-0 appear-done enter-done"
+                                    >
+                                      <a
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        href="/likes"
+                                      >
+                                        My Likes
+                                      </a>
+                                      <a
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        href="/favorites"
+                                      >
+                                        My Favorites
+                                      </a>
+                                      <a
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        href="/profile"
+                                      >
+                                        Profile
+                                      </a>
+                                      <a
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        href="/settings"
+                                      >
+                                        Your Bookings
+                                      </a>
+                                      <button
+                                        className="flex w-full items-center px-3 py-3 cursor-pointer  hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                         onClick={logout}
+                                      >
+                                        LOGOUT
+                                      </button>
+                                    </div>
+                                                                      
+                                </ul>
+                              </div>
+                              {/* end */}
+                            
                             </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
                             
@@ -36,7 +97,7 @@ const NavEnd = () => {
     </>
     return (
         <nav>
-        <ul className='flex space-x-8  capitalize text-sm'>
+        <ul className='flex space-x-8 items-center capitalize  text-sm'>
             
           {navigation}
         </ul>
