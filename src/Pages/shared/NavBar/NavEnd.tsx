@@ -10,8 +10,8 @@ const NavEnd = () => {
   const [user] = useAuthState(auth);
   console.log(user?.photoURL);
   let photo:any = user?.photoURL;
-  let names:any = user?.displayName
-  
+  let names:any = user?.displayName;
+  console.log(photo);
  const navigate = useNavigate();
  const logout = () =>{
    signOut(auth);
@@ -41,7 +41,7 @@ const NavEnd = () => {
                                     <div className="avatar ">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      user.photoURL?<img src={photo} alt="" />
+                                      user ?<img src={photo} alt={names} />
                                       : names
                                 
 
@@ -66,12 +66,12 @@ const NavEnd = () => {
                                       >
                                         My Favorites
                                       </a>
-                                      <a
+                                      <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-                                        href="/profile"
+                                        to="/profiles"
                                       >
                                         Profile
-                                      </a>
+                                      </Link>
                                       <a
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         href="/settings"

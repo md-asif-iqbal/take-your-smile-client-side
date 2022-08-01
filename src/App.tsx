@@ -40,6 +40,8 @@ import Review from './Pages/dashboard/Review';
 import UploadEvents from './Pages/dashboard/UploadEvents';
 import Dashboard from './Pages/dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
+import Profiles from './Pages/Profiles/Profiles';
+import Messenger from './Pages/Messenger/Messenger';
 
 function App() {
 
@@ -55,6 +57,7 @@ function App() {
                <Route path='dashboard' element={<Dashboard></Dashboard>}>
                  <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
                  <Route path='booking' element={<Booking></Booking>}></Route>
+                 
 
                  {/* <Route path='profile' element={<UpdateProfile></UpdateProfile>}></Route> */}
                  <Route path='reviews' element={<Review></Review>}></Route>
@@ -62,8 +65,9 @@ function App() {
                  <Route path='uploadEvents' element={<UploadEvents/>}></Route>
 
                  <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
-                 <Route path='profile/update' element={<Update />} />
+                 
                  <Route index element={<Profile/>} />
+                 <Route path='update' element={<Update />} />
                </Route>
       
                {/* <NavBar/> */}
@@ -82,6 +86,12 @@ function App() {
                   <Contact />
                </RequireAuth>
                }></Route>
+               <Route path='profiles' element={ <RequireAuth>
+                <Profiles/>
+               </RequireAuth>
+               }>
+
+               </Route>
                <Route path='/login' element={<Login />}></Route>
                 
                <Route path='/gallery' element={<EventGallery/>}>
@@ -101,7 +111,7 @@ function App() {
             <Footer/>
             <ToastContainer />
             
-
+               <Messenger/>
     </div>
   );
 }
