@@ -26,10 +26,10 @@ const NavEnd = () => {
                             <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
                             className='transition-all duration-300'> Social</Link></li>
                              
-                             {
+                             {/* {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
                                className='transition-all duration-300'> DashBoard</Link></li>: ''
-                             }
+                             } */}
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
@@ -41,7 +41,7 @@ const NavEnd = () => {
                                     <div className="avatar ">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      user ?<img src={photo} alt={names} />
+                                      user ?<img src={photo} alt='' />
                                       : names
                                 
 

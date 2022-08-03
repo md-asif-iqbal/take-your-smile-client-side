@@ -43,6 +43,9 @@ import Blogs from './Pages/Blogs/Blogs';
 import Profiles from './Pages/Profiles/Profiles';
 import Messenger from './Pages/Messenger/Messenger';
 
+
+
+
 function App() {
 
   
@@ -101,8 +104,6 @@ function App() {
                  <Route path='weddinggallery' element={<WeddingGallery/>}></Route>
                  <Route path='corporategallery' element={<CorporateGallery/>}></Route>
                </Route>
-
-              
 
                <Route path='/singlegallery' element={<SingleEvent/>}></Route>
                <Route path='*' element={<Error/>}></Route>
