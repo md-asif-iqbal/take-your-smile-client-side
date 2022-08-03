@@ -42,6 +42,7 @@ import Dashboard from './Pages/dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
 import Profiles from './Pages/Profiles/Profiles';
 import Messenger from './Pages/Messenger/Messenger';
+import AdminLogin from './Pages/Authentication/Admin/AdminLogin';
 
 
 
@@ -54,8 +55,6 @@ function App() {
 
              <Routes>
                <Route path='/' element={<Events/>}></Route>
-
-
                <Route path='/home' element={<HomeWithNav/>}></Route>
                <Route path='dashboard' element={<Dashboard></Dashboard>}>
                  <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
@@ -76,6 +75,7 @@ function App() {
                {/* <NavBar/> */}
                
                <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+               <Route path='/admin/login' element={<AdminLogin />}></Route>
                <Route path='/blogsone' element={<BlogsOne></BlogsOne>}></Route>
                <Route path='/blogsthree' element={<BlogsThree></BlogsThree>}></Route>
               

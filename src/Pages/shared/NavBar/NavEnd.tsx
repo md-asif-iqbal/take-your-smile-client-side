@@ -8,10 +8,8 @@ import auth from "../../../firebase.init";
 
 const NavEnd = () => {
   const [user] = useAuthState(auth);
-  console.log(user?.photoURL);
   let photo:any = user?.photoURL;
   let names:any = user?.displayName;
-  console.log(photo);
  const navigate = useNavigate();
  const logout = () =>{
    signOut(auth);
