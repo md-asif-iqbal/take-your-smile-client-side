@@ -12,7 +12,6 @@ const NavMobile = () => {
     const [user] = useAuthState(auth);
   let photo:any = user?.photoURL;
   let names:any = user?.displayName;
-  console.log(photo);
  const navigate = useNavigate();
  const logout = () =>{
    signOut(auth);
