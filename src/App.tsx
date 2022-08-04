@@ -241,10 +241,7 @@ function App() {
           path="/weddingDecration/:pack/:id"
           element={<WeddingDecration />}
         ></Route>
-        <Route
-          path="/floralDe/:pack/:id"
-          element={<FloraDe />}
-        ></Route>
+        <Route path="/floralDe/:pack/:id" element={<FloraDe />}></Route>
 
         {/* Social Events  */}
         <Route
@@ -324,7 +321,7 @@ function App() {
           path="/SalesFrom/:pack/:id/:sale"
           element={<SalesFrom />}
         ></Route>
-         <Route
+        <Route
           path="/productfrom/:pack/:id/:pro"
           element={<ProductForm />}
         ></Route>
@@ -342,12 +339,14 @@ function App() {
           element={<FundrasingForm />}
         ></Route>
         <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
-        <Route path="/paintFrom/:pack/:id/:pain" element={<PaintJamFrom />}></Route>
+        <Route
+          path="/paintFrom/:pack/:id/:pain"
+          element={<PaintJamFrom />}
+        ></Route>
       </Routes>
       <Footer />
       <ToastContainer />
     </div>
   );
 }
-
 export default App;
