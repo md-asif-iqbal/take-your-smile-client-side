@@ -1,13 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import AllGallery from './Pages/EventGallery/AllGallery';
 import CorporateGallery from './Pages/EventGallery/CorporateGallery';
 import EventGallery from './Pages/EventGallery/EventGallery';
 import NonProfitGallery from './Pages/EventGallery/NonProfitGallery';
 import SocialGallery from './Pages/EventGallery/SocialGallery';
 import WeddingGallery from './Pages/EventGallery/WeddingGallery';
-
 import Events from './Pages/Events/Events';
 import HomeWithNav from './Pages/Home/Home/HomeWithNav';
 import Footer from './Pages/shared/Footer/Footer';
@@ -19,17 +17,13 @@ import Corporate from './Pages/Events/Corporate';
 import Social from './Pages/Events/Social';
 import NonProfit from './Pages/Events/NonProfit';
 import OurStory from './Pages/OurStory/OurStory';
-
 import Booking from './Pages/dashboard/Booking';
 import Users from './Pages/dashboard/Users';
 import MakeAdmin from './Pages/dashboard/MakeAdmin';
 import AllBooking from './Pages/dashboard/AllBooking'
 import Update from './Pages/dashboard/Profile/Update';
 import Profile from './Pages/dashboard/Profile/Profile';
-
-
 import RequireAuth from './Pages/shared/RequireAuth/RequireAuth';
-
 import Login from './Pages/Authentication/Login';
 // import Blogs from './Pages/Blogs/Blogs';
 import BlogsOne from './Pages/Blogs/BlogsOne';

@@ -10,7 +10,7 @@ const AllGallery = () => {
           <div className="Appes">
       <div className="propertiest">
         {properties.map((item) => (
-          <Card data={item} key={item.id} />
+          <Card data={item} key={item.date} />
         ))}
       </div>
       </div>
