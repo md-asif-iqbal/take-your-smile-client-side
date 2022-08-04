@@ -22,14 +22,18 @@ const NavEnd = () => {
                             className='transition-all duration-300 uppercase'> Weddings</Link></li>
 
                             <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
-                            className='transition-all duration-300'> Social</Link></li>
+                            className='transition-all duration-300'> Social</Link></li> 
+                            <li className=' text-white  cursor-pointer uppercase'><Link to='/blogs' 
+                            className='transition-all duration-300'>Blogs</Link></li>
                              
                              {/* {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
                                className='transition-all duration-300'> DashBoard</Link></li>: ''
                              } */}
-                             <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
-                            className='transition-all duration-300'> Contact Us</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'>
+                              <Link to='/contactus' 
+                            className='transition-all duration-300'> Contact Us</Link>
+                            </li>
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
                            
                               {/* Start */}
@@ -76,6 +80,12 @@ const NavEnd = () => {
                                       >
                                         Your Bookings
                                       </a>
+                                      <Link to='/posts'
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        
+                                      >
+                                        Blog Post
+                                      </Link>
                                       <button
                                         className="flex w-full items-center px-3 py-3 cursor-pointer  hover:bg-gray-200 font-light text-sm focus:outline-none"
                                          onClick={logout}

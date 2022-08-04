@@ -32,8 +32,6 @@ import RequireAuth from './Pages/shared/RequireAuth/RequireAuth';
 
 import Login from './Pages/Authentication/Login';
 // import Blogs from './Pages/Blogs/Blogs';
-import BlogsOne from './Pages/Blogs/BlogsOne';
-import BlogsThree from './Pages/Blogs/BlogsThree';
 import SingleEvent from './Pages/EventGallery/SingleEvent';
 import Error from './Pages/shared/Error/Error';
 import Review from './Pages/dashboard/Review';
@@ -43,6 +41,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import Profiles from './Pages/Profiles/Profiles';
 import Messenger from './Pages/Messenger/Messenger';
 import AdminLogin from './Pages/Authentication/Admin/AdminLogin';
+import Show from './Pages/shared/BlogEditor/Show';
+import BlogPost from './Pages/shared/BlogEditor/Article';
 
 
 
@@ -74,10 +74,8 @@ function App() {
       
                {/* <NavBar/> */}
                
-               <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+               <Route path='/blog/:id' element={<Blogs></Blogs>}></Route>
                <Route path='/admin/login' element={<AdminLogin />}></Route>
-               <Route path='/blogsone' element={<BlogsOne></BlogsOne>}></Route>
-               <Route path='/blogsthree' element={<BlogsThree></BlogsThree>}></Route>
               
                <Route path='/home' element={<HomeWithNav />}></Route>
                <Route path='/ourstory' element={<OurStory />}></Route>
@@ -85,10 +83,11 @@ function App() {
                <Route path='/corporate' element={<Corporate />}></Route>
                <Route path='/social' element={<Social />}></Route>
                <Route path='/nonprofit' element={<NonProfit />}></Route>
-               <Route path='/contactus' element={<RequireAuth>
-                  <Contact />
-               </RequireAuth>
-               }></Route>
+               <Route path='/contactus' element={<Contact />}></Route>
+               <Route path='/blogs' element={<Show />}></Route>
+               <Route path='/posts' element={<RequireAuth>
+                <BlogPost />
+               </RequireAuth>}></Route>
                <Route path='profiles' element={ <RequireAuth>
                 <Profiles/>
                </RequireAuth>
@@ -111,7 +110,6 @@ function App() {
        
             <Footer/>
             <ToastContainer />
-            
                <Messenger/>
     </div>
   );
