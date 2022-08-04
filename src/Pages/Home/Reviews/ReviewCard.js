@@ -2,8 +2,12 @@ import React from "react";
 import avatar from "../../../Assets/Icons/review-avatar.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../../shared/Loading/Loading";
 const ReviewCard = ({ item }) => {
   const { name, status, address, img, rating, discription } = item;
+  if (rating.length === 0) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
       {!item.img ? (

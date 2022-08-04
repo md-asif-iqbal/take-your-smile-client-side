@@ -9,11 +9,11 @@ import { toast } from "react-toastify";
 const Review = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit, reset } = useForm();
-  const [currentValue, setCurrentValue] = useState(0);
-  const stars = Array(5).fill(0);
+  const [currentValue, setCurrentValue] = useState(1);
+  const stars = Array(5).fill(1);
   const handleClick = (value) => {
     setCurrentValue(value);
-  };
+  }
   console.log(user);
   const onSubmit = (data) => {
     const reviewData = {
@@ -25,7 +25,6 @@ const Review = () => {
       status: data.status,
       img: user?.photoUrl,
     };
-
     fetch("https://secure-escarpment-79738.herokuapp.com/reviews", {
       method: "POST",
       headers: {
@@ -100,9 +99,8 @@ const Review = () => {
             name="message"
             className="p-4 mb-4 text-white bg-transparent rounded-md resize-none border-2 border-white text-area"
             placeholder="Message..."
-            {...register("review", {
-              required: true,
-            })}
+            required
+            {...register("review")}
           ></textarea>
         </div>
         <button
