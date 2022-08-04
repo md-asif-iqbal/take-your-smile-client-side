@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react"
+
 const useAdminToken = (user:any, role:any) => {
 const [token, setToken] = useState('');
 useEffect(() => {
 const email = user?.user?.email;
 const name = user?.user?.displayName;
-const currentUser = {email, name, role};
+let  currentUser;
+if(role){
+    currentUser = {email, name, role};
+}else{
+    currentUser = {email, name};
+}
 
 if (email) {
     fetch(`http://localhost:8000/admin/${email}`,{
