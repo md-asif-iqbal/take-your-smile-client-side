@@ -42,7 +42,11 @@ import Dashboard from './Pages/dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
 import Profiles from './Pages/Profiles/Profiles';
 import Messenger from './Pages/Messenger/Messenger';
+
 import AdminLogin from './Pages/Authentication/Admin/AdminLogin';
+
+import AvailableJob from './Pages/AvailableJob/AvailableJob';
+
 
 
 
@@ -106,6 +110,8 @@ function App() {
                </Route>
 
                <Route path='/singlegallery' element={<SingleEvent/>}></Route>
+               {/* available job */}
+               <Route path='/availablejob' element={<AvailableJob/>}></Route>
                <Route path='*' element={<Error/>}></Route>
              </Routes>
        

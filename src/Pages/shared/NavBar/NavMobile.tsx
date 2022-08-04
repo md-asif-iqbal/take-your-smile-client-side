@@ -47,7 +47,7 @@ const NavMobile = () => {
                                     <div className="avatar ">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      user ?<img src={photo} alt="" />
+                                      user ?<img src={photo} alt={names} />
                                       : names
                                     }
                                     </div>
