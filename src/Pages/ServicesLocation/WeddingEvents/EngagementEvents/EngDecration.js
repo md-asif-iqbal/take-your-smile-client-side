@@ -18,7 +18,7 @@ const EngDecration = () => {
   const [packag] = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "http://localhost:8000/engagement";
+    const url = "https://secure-escarpment-79738.herokuapp.com/engagement";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

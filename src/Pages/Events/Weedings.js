@@ -19,7 +19,7 @@ const Weedings = () => {
   const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/wedding";
+    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));
