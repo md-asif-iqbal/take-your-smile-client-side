@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const UseRetirement = (reti) => {
     const [retirement, setRetirement] = useState([]);
     useEffect(() => {
-      const url = `http://localhost:8000/retirement/${reti}`;
+      const url = `https://secure-escarpment-79738.herokuapp.com/retirement/${reti}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => setRetirement(data));
