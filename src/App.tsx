@@ -122,10 +122,12 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
+import NavBar from "./Pages/shared/NavBar/NavBar";
 // Services location here
 function App() {
   return (
     <div className="relative">
+      <NavBar/>
       <Routes>
         <Route path="/" element={<Events />}></Route>
         <Route path="/home" element={<HomeWithNav />}></Route>

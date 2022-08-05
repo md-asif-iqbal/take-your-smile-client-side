@@ -9,6 +9,7 @@ import { Autoplay } from "swiper";
 import { useNavigate, useParams } from "react-router-dom";
 import UseLocation from "../../../../hooks/UseLocation";
 import UsePackage from "../../../../hooks/UsePackage";
+import NavBar from "../../../shared/NavBar/NavBar";
 const Fade = require("react-reveal/Fade");
 const FashionCarDe = () => {
   const [decoration, setDecoration] = useState([]);
