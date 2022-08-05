@@ -10,18 +10,18 @@ const Dashboard = () => {
   return (
 
 
-        <div className='  gap-5'>
+        <div className=' bg-gray-400 gap-5'>
         <PageTitle title="Deshboard" />
 
             <div className=''>
 
        
 
-            <div className='mt-20'>
+            <div className=''>
                         <NavBar/>
                         <div className='flex items-start'>
                         
-                        <div className=''>
+                        <div className='mt-40'>
                         <Sidebar></Sidebar>
                         </div>
                         <div className='w-11/12 mx-auto'>
