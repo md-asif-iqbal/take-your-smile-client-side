@@ -171,7 +171,7 @@ const Profiles = () => {
                                     edits===false? <button className='mx-15 text-error'onClick={edit} >Edit</button>:''
                                 }
                             </div>
-
+                                
                            
 
                            
