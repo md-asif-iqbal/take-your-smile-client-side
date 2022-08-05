@@ -28,8 +28,11 @@ const NavEnd = () => {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
                                className='transition-all duration-300'> DashBoard</Link></li>: ''
                              } */}
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/blogs' 
+                            className='transition-all duration-300'>Blogs</Link></li>
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
+
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
                            
                               {/* Start */}
@@ -71,6 +74,12 @@ const NavEnd = () => {
                                       >
                                         Your Bookings
                                       </a>
+                                      <Link to='/posts'
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        
+                                      >
+                                        Blog Post
+                                      </Link>
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/availablejob"
