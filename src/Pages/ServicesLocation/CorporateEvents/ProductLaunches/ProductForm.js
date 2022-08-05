@@ -36,7 +36,7 @@ const ProductForm = () => {
       service: corporate.name2,
       details: data.details,
     };
-    fetch("http://localhost:8000/orders", {
+    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
