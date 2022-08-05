@@ -25,14 +25,14 @@ import Profile from "./Pages/dashboard/Profile/Profile";
 import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
-import BlogsOne from "./Pages/Blogs/BlogsOne";
-import BlogsThree from "./Pages/Blogs/BlogsThree";
+// import BlogsOne from "./Pages/Blogs/BlogsOne";
+// import BlogsThree from "./Pages/Blogs/BlogsThree";
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
 import Error from "./Pages/shared/Error/Error";
 import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
-import Blogs from "./Pages/Blogs/Blogs";
+// import Blogs from "./Pages/Blogs/Blogs";
 import Profiles from "./Pages/Profiles/Profiles";
 import Messenger from "./Pages/Messenger/Messenger";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
@@ -122,10 +122,14 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
+import BlogPost from "./Pages/shared/BlogEditor/Article";
+import Show from "./Pages/shared/BlogEditor/Show";
+import Navbar from "./Pages/shared/NavBar/NavBar";
 // Services location here
 function App() {
   return (
     <div className="relative">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Events />}></Route>
         <Route path="/home" element={<HomeWithNav />}></Route>
@@ -144,11 +148,14 @@ function App() {
         </Route>
 
         {/* <NavBar/> */}
-
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path='/blogs' element={<Show />}></Route>
+               <Route path='/posts' element={<RequireAuth>
+                <BlogPost />
+               </RequireAuth>}></Route>
+        {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
         <Route path="/admin/login" element={<AdminLogin />}></Route>
-        <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
-        <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route>
+        {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
+        <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route> */}
 
         <Route path="/home" element={<HomeWithNav />}></Route>
         <Route path="/ourstory" element={<OurStory />}></Route>
