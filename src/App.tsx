@@ -125,6 +125,7 @@ import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunche
 import BlogPost from "./Pages/shared/BlogEditor/Article";
 import Show from "./Pages/shared/BlogEditor/Show";
 import Navbar from "./Pages/shared/NavBar/NavBar";
+import Blogs from "./Pages/Blogs/Blogs";
 // Services location here
 function App() {
   return (
@@ -149,9 +150,11 @@ function App() {
 
         {/* <NavBar/> */}
         <Route path='/blogs' element={<Show />}></Route>
-               <Route path='/posts' element={<RequireAuth>
+        <Route path='/blog/:id' element={<Blogs></Blogs>}></Route>
+
+        <Route path='/posts' element={<RequireAuth>
                 <BlogPost />
-               </RequireAuth>}></Route>
+        </RequireAuth>}></Route>
         {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
