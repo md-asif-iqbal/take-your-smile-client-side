@@ -124,17 +124,19 @@ import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
 import BlogPost from "./Pages/shared/BlogEditor/Article";
 import Show from "./Pages/shared/BlogEditor/Show";
-import Navbar from "./Pages/shared/NavBar/NavBar";
 import Blogs from "./Pages/Blogs/Blogs";
 import Posts from "./Pages/Likes/Posts";
+import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
 // Services location here
 function App() {
   return (
     <div className="relative">
-      <Navbar />
+
       <Routes>
         <Route path="/" element={<Events />}></Route>
         <Route path="/home" element={<HomeWithNav />}></Route>
+        <Route path="/admindashboard" element={<AdminDashBoard />}></Route>
+
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
           <Route path="allbooking" element={<AllBooking></AllBooking>}></Route>
           <Route path="booking" element={<Booking></Booking>}></Route>
