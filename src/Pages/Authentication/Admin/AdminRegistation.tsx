@@ -152,7 +152,6 @@ const AdminRegistation = () => {
            
             </div>
               <input type="submit" className="btn" value="Sign up" />
-              <p className="social-text">Or Sign up with social platforms</p>
             </form>
            
     );
