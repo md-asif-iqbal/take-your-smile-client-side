@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const UseFundarationde = (fund) => {
     const [fundrasing, setFundrasing] = useState([]);
     useEffect(() => {
-      const url = `https://secure-escarpment-79738.herokuapp.com/Fundraising/${fund}`;
+      const url = `http://localhost:8000/Fundraising/${fund}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => setFundrasing(data));

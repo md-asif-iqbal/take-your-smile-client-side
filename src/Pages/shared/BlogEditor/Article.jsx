@@ -11,17 +11,17 @@ export default function BlogPost() {
   const editorRef = useRef(null);
   const handleSubmit = e => {
     e.preventDefault();
-    const blog = {
+    const article = {
       title: title,
       body: body,
       image: image
     }
-    fetch('https://secure-escarpment-79738.herokuapp.com/blogs', {
+    fetch('http://localhost:8000/articles', {
       method: "POST",
       headers: {
       'content-type': "application/json",
       },
-      body: JSON.stringify(blog)
+      body: JSON.stringify(article)
   })
   .then(res => res.json())
   .then(insertData => {

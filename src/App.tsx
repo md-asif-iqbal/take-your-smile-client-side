@@ -127,6 +127,8 @@ import Show from "./Pages/shared/BlogEditor/Show";
 import Blogs from "./Pages/Blogs/Blogs";
 import Posts from "./Pages/Likes/Posts";
 import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
+
 // Services location here
 function App() {
   return (
@@ -152,8 +154,14 @@ function App() {
         </Route>
  
         {/* <NavBar/> */}
-        <Route path='/blogs' element={<Show />}></Route>
-        <Route path='/blog/:id' element={<Blogs></Blogs>}></Route>
+        <Route path='/articles' element={
+          <Show />
+        }></Route>
+        <Route path='/article/:id' element={ <RequireAdmin>
+
+          <Blogs></Blogs>
+        </RequireAdmin> 
+        }></Route>
  
         <Route path='/posts' element={<RequireAuth>
                 <BlogPost />
@@ -172,9 +180,9 @@ function App() {
         <Route
           path="/contactus"
           element={
-            <RequireAuth>
+            <RequireAdmin>
               <Contact />
-            </RequireAuth>
+            </RequireAdmin>
           }
         ></Route>
         <Route
