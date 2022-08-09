@@ -13,7 +13,7 @@ const Reviews = () => {
   
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/reviews";
+    const url = "http://localhost:8000/reviews";
 
     fetch(url)
       .then((res) => res.json())

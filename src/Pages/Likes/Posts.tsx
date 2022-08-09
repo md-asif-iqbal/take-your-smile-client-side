@@ -40,7 +40,7 @@ const Posts = () => {
     // console.log(user)
 
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/posts/${postId}`
+    const url = `http://localhost:8000/posts/${postId}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -66,7 +66,7 @@ const Posts = () => {
     }
 
     useEffect(() => {
-        fetch('https://secure-escarpment-79738.herokuapp.com/posts')
+        fetch('http://localhost:8000/posts')
             .then(res => res.json())
             .then(data => setPosts(data));
     }, [posts])
@@ -132,7 +132,7 @@ const Posts = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -160,7 +160,7 @@ const Posts = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

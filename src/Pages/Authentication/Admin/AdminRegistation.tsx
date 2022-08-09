@@ -38,27 +38,24 @@ const AdminRegistation = () => {
     let errorMessage;
     if (error || updateError) {
 
-        return (
-          <>
-          {
-            toast.error(error?.message || updateError?.message)
-          }
-          </>
-          )
+      return (
+        <>
+        {
+           toast.error(error?.message || updateError?.message)
+        }
+        </>
+        )
+         
   }
     if (loading || updating) {
       return <div className='h-40 mt-10'>{<Loading />}</div>
     }
 
     if(token){
+      
+      toast.success('Thank You! Registation Successfull')
       navigate(from, { replace: true })
-    return(
-      <>
-        {
-         toast.success('Thank You! Registation Successfull')
-        }
-      </>
-      )
+   
  }
     const onSubmit: SubmitHandler<Inputs> = async(data) => 
     {
@@ -147,12 +144,11 @@ const AdminRegistation = () => {
               <option>Admin</option>
               <option>Manager</option>
               <option>Editor</option>
-              <option>partner</option>
+              <option>Partner</option>
             </select>
            
             </div>
               <input type="submit" className="btn" value="Sign up" />
-              <p className="social-text">Or Sign up with social platforms</p>
             </form>
            
     );

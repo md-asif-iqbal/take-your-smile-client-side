@@ -4,7 +4,7 @@ const UseNonProfit = (id) => {
     const [nonProfit, setNonProfit] = useState([]);
 
     useEffect(() => {
-        const url = `https://secure-escarpment-79738.herokuapp.com/nonprofit/${id}`;
+        const url = `http://localhost:8000/nonprofit/${id}`;
         fetch(url)
           .then((res) => res.json())
           .then((data) => setNonProfit(data));

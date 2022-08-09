@@ -19,7 +19,7 @@ import "swiper/css/navigation";
 const Corporate = () => {
   const [corporate, setCorporat] = useState([]);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/corporate";
+    const url = "http://localhost:8000/corporate";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCorporat(data));
