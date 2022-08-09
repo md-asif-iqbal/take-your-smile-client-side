@@ -223,7 +223,7 @@ const CorporateGallery = () => {
             
             </div>
             <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
-            <div className="cardso w-full">
+           <div className="cardso w-full"> 
                 <div className='cardt'>
                 <img src="https://i.ibb.co/3yvZBpm/img-5.png" className="w-full" alt="chair" />
                 <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>

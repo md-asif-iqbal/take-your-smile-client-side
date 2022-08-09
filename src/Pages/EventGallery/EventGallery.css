@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
@@ -53,4 +53,29 @@
 }
 .hideing:hover {
   display: block;
-}
+} */
+
+
+.Appes {
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    padding: 25px;
+  }
+  
+  .propertiest {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 5px;
+  }
+  

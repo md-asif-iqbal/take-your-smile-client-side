@@ -20,7 +20,8 @@ type Inputs = {
 const Registation = () => {
   const navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
-  const from = location.state?.from?.pathname || '/';  const [
+  const from = location.state?.from?.pathname || '/'; 
+  const [
     createUserWithEmailAndPassword,
     user,
     loading,

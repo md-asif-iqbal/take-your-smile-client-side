@@ -26,7 +26,7 @@ const Review = () => {
       img: user?.photoUrl,
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/reviews", {
+    fetch("http://localhost:8000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
