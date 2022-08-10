@@ -19,7 +19,7 @@ const SeasonalDe = () => {
   const [packag] = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/seasonal";
+    const url = "http://localhost:8000/seasonal";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

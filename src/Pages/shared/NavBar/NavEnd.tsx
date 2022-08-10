@@ -5,13 +5,16 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-scroll";
 import auth from "../../../firebase.init";
+import useAdmin from "../../../hooks/Admin/useAdmin";
 
 const NavEnd = () => {
   const [user] = useAuthState(auth);
+  const [admin]:any  =  useAdmin(user);
+  console.log(admin);
+  
   const photo:any = user?.photoURL;
   let names:any = user?.displayName;
  const navigate = useNavigate();
- console.log(user);
  
  const logout = () =>{
    signOut(auth);
@@ -25,7 +28,11 @@ const NavEnd = () => {
 
                             <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
                             className='transition-all duration-300'> Social</Link></li>
-                             <li className=' text-white cursor-pointer uppercase'><Link to='/blogs' className='transition-all duration-300'>Blogs</Link></li>
+                            {/* {
+                              admin?.role === 'Admin' && <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Blogs</Link></li>
+                            } */}
+                            <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
+                             
                              {/* {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
                                className='transition-all duration-300'> DashBoard</Link></li>: ''
@@ -42,7 +49,7 @@ const NavEnd = () => {
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
                                       user ?<img src={user.photoURL} alt={names} />
-                                      : names
+                                      : <img src="https://i.ibb.co/FqYD4K3/download-2.png" alt={names} />
                                 
 
                                     }
@@ -73,7 +80,7 @@ const NavEnd = () => {
                                       >
                                         Your Bookings
                                       </a>
-                                      <Link to='/posts' className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" > Blog Post </Link>
+                                      
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/availablejob"

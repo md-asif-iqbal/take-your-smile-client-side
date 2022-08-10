@@ -14,7 +14,7 @@ const WelcomHomeLoc = () => {
   const [packag] = UsePackage(pack);
   const [nonPropit] = UseNonProfitEvents();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "http://localhost:8000/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));

@@ -5,8 +5,8 @@ import NavBar from "../NavBar/NavBar";
 
 const Show = () => {
   const navigate = useNavigate();
-    const { isLoading, isError, data:blogs, error } = useQuery(['blogs'],  () => 
-    fetch('https://secure-escarpment-79738.herokuapp.com/blogs',{
+    const { isLoading, isError, data:articles, error } = useQuery(['articles'],  () => 
+    fetch('http://localhost:8000/articles',{
         method: "GET",
         headers: {
             'content-type': "applicataion/json"
@@ -28,7 +28,7 @@ const Show = () => {
         return plenText.slice(0,150)
       }
       const handlePost = (id) => {
-        const path = `/blog/${id}`;
+        const path = `/article/${id}`;
         navigate(path)
       }
     return (
@@ -41,7 +41,7 @@ const Show = () => {
     <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">
     {
-      blogs.map((item)=>(
+      articles.map((item)=>(
         <div className="p-4 md:w-1/3" key={item._id}>
     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
      {

@@ -38,7 +38,7 @@ const RehearsalForm = () => {
       details: data.details,
       time: data.time,
     };
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("http://localhost:8000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

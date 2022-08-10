@@ -25,6 +25,25 @@ import Profile from "./Pages/dashboard/Profile/Profile";
 import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
+
+import BlogsOne from './Pages/Blogs/BlogsOne';
+import BlogsThree from './Pages/Blogs/BlogsThree';
+// import SingleEvent from './Pages/EventGallery/SingleEvent';
+// import Error from './Pages/shared/Error/Error';
+// import Review from './Pages/dashboard/Review';
+// import UploadEvents from './Pages/dashboard/UploadEvents';
+// import Dashboard from './Pages/dashboard/Dashboard';
+import Blogs from './Pages/Blogs/Blogs';
+import Likes from './Pages/Likes/Posts';
+import Posts from './Pages/Likes/Posts';
+import AdminDashBoard from './Pages/AdminDashBoard/AdminDashBoard';
+import DashboardAdmin from './Pages/AdminDashBoard/DashboardAdmin';
+import AllBookings from './Pages/AdminDashBoard/AllBookings';
+import BlogPosts from './Pages/AdminDashBoard/BlogPosts';
+import GalleryPost from './Pages/AdminDashBoard/GalleryPost';
+import Messages from './Pages/AdminDashBoard/Messages';
+import Products from './Pages/AdminDashBoard/Products';
+import Settings from './Pages/AdminDashBoard/Settings';
 // import BlogsOne from "./Pages/Blogs/BlogsOne";
 // import BlogsThree from "./Pages/Blogs/BlogsThree";
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -124,18 +143,46 @@ import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
 import BlogPost from "./Pages/shared/BlogEditor/Article";
 import Show from "./Pages/shared/BlogEditor/Show";
-import Blogs from "./Pages/Blogs/Blogs";
-import Posts from "./Pages/Likes/Posts";
-import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
+// import Blogs from "./Pages/Blogs/Blogs";
+// import Posts from "./Pages/Likes/Posts";
+// import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
+import Article from "./Pages/shared/BlogEditor/Article"
+import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
 // Services location here
 function App() {
   return (
     <div className="relative">
 
       <Routes>
+        <Route path='/' element={<Events />}></Route>
+
+        <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
+          <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
+          <Route path='allbookings' element={<AllBookings></AllBookings>}>
+          <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
+            {/* here all bookings we made it */}
+          </Route>
+          <Route path='blogposts' element={<BlogPosts></BlogPosts>}></Route>
+          <Route path='gallerypost' element={<GalleryPost></GalleryPost>}></Route>
+          <Route path='messages' element={
+            <Messages></Messages>}>
+          </Route>
+          <Route path='allproducts' element={<Products></Products>}></Route>
+          <Route path='articlepost' element={<Article></Article>}>
+          </Route>
+        </Route>
+
+
+
+        <Route path='/home' element={<HomeWithNav />}></Route>
+        {/* <Route path='dashboard' element={<Dashboard></Dashboard>}>
+          <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
+          <Route path='booking' element={<Booking></Booking>}></Route>
         <Route path="/" element={<Events />}></Route>
         <Route path="/home" element={<HomeWithNav />}></Route>
-        <Route path="/admindashboard" element={<AdminDashBoard />}></Route>
+        <Route path="/admindashboard" element={<AdminDashBoard />}></Route> */}
+
 
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
           <Route path="allbooking" element={<AllBooking></AllBooking>}></Route>
@@ -152,8 +199,14 @@ function App() {
         </Route>
  
         {/* <NavBar/> */}
-        <Route path='/blogs' element={<Show />}></Route>
-        <Route path='/blog/:id' element={<Blogs></Blogs>}></Route>
+        <Route path='/articles' element={
+          <Show />
+        }></Route>
+        <Route path='/article/:id' element={ <RequireAdmin>
+
+          <Blogs></Blogs>
+        </RequireAdmin> 
+        }></Route>
  
         <Route path='/posts' element={<RequireAuth>
                 <BlogPost />
@@ -172,9 +225,9 @@ function App() {
         <Route
           path="/contactus"
           element={
-            <RequireAuth>
+            <RequireAdmin>
               <Contact />
-            </RequireAuth>
+            </RequireAdmin>
           }
         ></Route>
         <Route

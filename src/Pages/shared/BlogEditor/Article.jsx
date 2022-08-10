@@ -11,17 +11,17 @@ export default function BlogPost() {
   const editorRef = useRef(null);
   const handleSubmit = e => {
     e.preventDefault();
-    const blog = {
+    const article = {
       title: title,
       body: body,
       image: image
     }
-    fetch('https://secure-escarpment-79738.herokuapp.com/blogs', {
+    fetch('http://localhost:8000/articles', {
       method: "POST",
       headers: {
       'content-type': "application/json",
       },
-      body: JSON.stringify(blog)
+      body: JSON.stringify(article)
   })
   .then(res => res.json())
   .then(insertData => {
@@ -33,8 +33,8 @@ export default function BlogPost() {
   }
   return (
     <>
-    <NavBar />
-    <div className='my-32 px-5 md:px-10 mx-auto '>
+
+    <div className='my-10 px-5 md:px-10 mx-auto '>
       <h2 className="text-3xl text-center my-10 uppercase">Post a blog</h2>
       <form className=' items-stretch bg-white  border-2 border-primary rounded-lg p-10' onSubmit={(e) => handleSubmit(e)}>
         <label className='text-3xl capitalize my-2'>Post Title</label>

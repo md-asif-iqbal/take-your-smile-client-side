@@ -56,6 +56,7 @@ const AdminLogin = () => {
         }
         </>
         )
+
     }
     if (loading || sending) {
       return <div className='h-40 mt-10'>{<Loading />}</div>
@@ -63,19 +64,14 @@ const AdminLogin = () => {
     };
 
    if(token){
+    
+     
+     toast.success('Thank You! Login SuccessFull')
+     navigate(from, { replace: true })
    
-      return(
-        <>
-          {
-            toast.success('Thank You! Login SuccessFull')
-          }
-        </>
-        )
   
    }
-   if (user) {
-   navigate('/home')
-}
+
 
     if(token){
       navigate(from, { replace: true })
