@@ -8,7 +8,11 @@ import Services from '../Services/Services';
 import Summery from '../Summery/Summery';
 import Banner from '../Banner/Banner';
 import PageTitle from '../../shared/PageTitle/PageTitle';
+
+import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
+
 import Sponsorship from '../../shared/Sponsorship/Sponsorship';
+
 const Home = () => {
 
     return (
@@ -21,9 +25,12 @@ const Home = () => {
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
+
+            <OurLiveEvent />
+
             <Sponsorship />
             {/* <Modal /> */}
-            
+
         </div>
     );
 };

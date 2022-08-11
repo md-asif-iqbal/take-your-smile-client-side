@@ -26,24 +26,24 @@ import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
 
-import BlogsOne from './Pages/Blogs/BlogsOne';
-import BlogsThree from './Pages/Blogs/BlogsThree';
+import BlogsOne from "./Pages/Blogs/BlogsOne";
+import BlogsThree from "./Pages/Blogs/BlogsThree";
 // import SingleEvent from './Pages/EventGallery/SingleEvent';
 // import Error from './Pages/shared/Error/Error';
 // import Review from './Pages/dashboard/Review';
 // import UploadEvents from './Pages/dashboard/UploadEvents';
 // import Dashboard from './Pages/dashboard/Dashboard';
-import Blogs from './Pages/Blogs/Blogs';
-import Likes from './Pages/Likes/Posts';
-import Posts from './Pages/Likes/Posts';
-import AdminDashBoard from './Pages/AdminDashBoard/AdminDashBoard';
-import DashboardAdmin from './Pages/AdminDashBoard/DashboardAdmin';
-import AllBookings from './Pages/AdminDashBoard/AllBookings';
-import BlogPosts from './Pages/AdminDashBoard/BlogPosts';
-import GalleryPost from './Pages/AdminDashBoard/GalleryPost';
-import Messages from './Pages/AdminDashBoard/Messages';
-import Products from './Pages/AdminDashBoard/Products';
-import Settings from './Pages/AdminDashBoard/Settings';
+import Blogs from "./Pages/Blogs/Blogs";
+import Likes from "./Pages/Likes/Posts";
+import Posts from "./Pages/Likes/Posts";
+import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
+import DashboardAdmin from "./Pages/AdminDashBoard/DashboardAdmin";
+import AllBookings from "./Pages/AdminDashBoard/AllBookings";
+import BlogPosts from "./Pages/AdminDashBoard/BlogPosts";
+import GalleryPost from "./Pages/AdminDashBoard/GalleryPost";
+import Messages from "./Pages/AdminDashBoard/Messages";
+import Products from "./Pages/AdminDashBoard/Products";
+import Settings from "./Pages/AdminDashBoard/Settings";
 // import BlogsOne from "./Pages/Blogs/BlogsOne";
 // import BlogsThree from "./Pages/Blogs/BlogsThree";
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -148,44 +148,53 @@ import Show from "./Pages/shared/BlogEditor/Show";
 // import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 
+import Article from "./Pages/shared/BlogEditor/Article";
+import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
+import Home from "./Pages/Donation/Home";
+import Alluser from "./Pages/AdminDashBoard/Alluser";
+
+
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
+
 
 // Services location here
 function App() {
   return (
     <div className="relative">
-
       <Routes>
-        <Route path='/' element={<Events />}></Route>
+        <Route path="/" element={<Events />}></Route>
 
-        <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
+        <Route
+          path="/admindashboard"
+          element={<AdminDashBoard></AdminDashBoard>}
+        >
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
-          <Route path='allbookings' element={<AllBookings></AllBookings>}>
-          <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
+          <Route path="allbookings" element={<AllBookings></AllBookings>}>
+            <Route
+              path="bookings"
+              element={<AllsBookings></AllsBookings>}
+            ></Route>
             {/* here all bookings we made it */}
           </Route>
-          <Route path='blogposts' element={<BlogPosts></BlogPosts>}></Route>
-          <Route path='gallerypost' element={<GalleryPost></GalleryPost>}></Route>
-          <Route path='messages' element={
-            <Messages></Messages>}>
-          </Route>
-          <Route path='allproducts' element={<Products></Products>}></Route>
-          <Route path='articlepost' element={<Article></Article>}>
-          </Route>
+          <Route path="blogposts" element={<BlogPosts></BlogPosts>}></Route>
+          <Route
+            path="gallerypost"
+            element={<GalleryPost></GalleryPost>}
+          ></Route>
+          <Route path="messages" element={<Messages></Messages>}></Route>
+          <Route path="allproducts" element={<Products></Products>}></Route>
+          <Route path="articlepost" element={<Article></Article>}></Route>
+          <Route path="user" element={<Alluser></Alluser>}></Route>
         </Route>
 
-
-
-        <Route path='/home' element={<HomeWithNav />}></Route>
+        <Route path="/home" element={<HomeWithNav />}></Route>
         {/* <Route path='dashboard' element={<Dashboard></Dashboard>}>
           <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
           <Route path='booking' element={<Booking></Booking>}></Route>
         <Route path="/" element={<Events />}></Route>
         <Route path="/home" element={<HomeWithNav />}></Route>
         <Route path="/admindashboard" element={<AdminDashBoard />}></Route> */}
-
-
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
           <Route path="allbooking" element={<AllBooking></AllBooking>}></Route>
           <Route path="booking" element={<Booking></Booking>}></Route>
@@ -193,32 +202,43 @@ function App() {
           <Route path="reviews" element={<Review></Review>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
           <Route path="uploadEvents" element={<UploadEvents />}></Route>
- 
           <Route path="admin" element={<MakeAdmin></MakeAdmin>}></Route>
- 
           <Route index element={<Profile />} />
           <Route path="update" element={<Update />} />
         </Route>
- 
+
         {/* <NavBar/> */}
+
+        <Route path="/articles" element={<Show />}></Route>
+        <Route
+          path="/article/:id"
+          element={
+            <RequireAdmin>
+              <Blogs></Blogs>
+            </RequireAdmin>
+          }
+        ></Route>
+
     <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
           <Show />
         }></Route>
         <Route path='/article/:id' element={ <RequireAdmin>
 
-          <Blogs></Blogs>
-        </RequireAdmin> 
-        }></Route>
- 
-        <Route path='/posts' element={<RequireAuth>
-                <BlogPost />
-        </RequireAuth>}></Route>
-            {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
+
+        <Route
+          path="/posts"
+          element={
+            <RequireAuth>
+              <BlogPost />
+            </RequireAuth>
+          }
+        ></Route>
+        {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
         <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route> */}
- 
+
         <Route path="/home" element={<HomeWithNav />}></Route>
         <Route path="/ourstory" element={<OurStory />}></Route>
         <Route path="/weddings" element={<Weedings />}></Route>
@@ -235,30 +255,31 @@ function App() {
         ></Route>
         <Route
           path="profiles"
-          element={<RequireAuth>
-            <Profiles />
-          </RequireAuth>
-        }
-      ></Route>
-      <Route path="/login" element={<Login />}></Route>
+          element={
+            <RequireAuth>
+              <Profiles />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route path="/login" element={<Login />}></Route>
 
-      <Route path="/gallery" element={<EventGallery />}>
-        <Route index element={<AllGallery />}></Route>
-        <Route path="socialgallery" element={<SocialGallery />}></Route>
-        <Route path="nonprofitgallery" element={<NonProfitGallery />}></Route>
-        <Route path="weddinggallery" element={<WeddingGallery />}></Route>
-        <Route path="corporategallery" element={<CorporateGallery />}></Route>
-      </Route>
+        <Route path="/gallery" element={<EventGallery />}>
+          <Route index element={<AllGallery />}></Route>
+          <Route path="socialgallery" element={<SocialGallery />}></Route>
+          <Route path="nonprofitgallery" element={<NonProfitGallery />}></Route>
+          <Route path="weddinggallery" element={<WeddingGallery />}></Route>
+          <Route path="corporategallery" element={<CorporateGallery />}></Route>
+        </Route>
 
-      <Route path="/singlegallery" element={<SingleEvent />}></Route>
-      {/* available job */}
-      <Route path="/availablejob" element={<AvailableJob />}></Route>
-      <Route path="*" element={<Error />}></Route>
-      <Route path="/location/:id" element={<Location />}></Route>
-      <Route path="/decretion/:id" element={<Decrations />}></Route>
+        <Route path="/singlegallery" element={<SingleEvent />}></Route>
+        {/* available job */}
+        <Route path="/availablejob" element={<AvailableJob />}></Route>
+        <Route path="*" element={<Error />}></Route>
+        <Route path="/location/:id" element={<Location />}></Route>
+        <Route path="/decretion/:id" element={<Decrations />}></Route>
 
-      {/* Events Services Package Here  */}
-      <Route path="/birthday/:id" element={<BirthdayParties />}></Route>
+        {/* Events Services Package Here  */}
+        <Route path="/birthday/:id" element={<BirthdayParties />}></Route>
         <Route path="/anniversary/:id" element={<Anniversary />}></Route>
         <Route path="/engagement/:id" element={<Engagement />}></Route>
         <Route path="/rehearsal/:id" element={<Rehearsal />}></Route>
@@ -304,7 +325,7 @@ function App() {
         <Route path="/fairsLoc/:pack" element={<FairExposLoc />}></Route>
         <Route path="/fundrasLoc/:pack" element={<FundrasingLoc />}></Route>
         {/* Decration  */}
- 
+
         {/* Wedding Events Decration  */}
         <Route path="/decration/:pack/:id" element={<Decration />}></Route>
         <Route
@@ -320,7 +341,7 @@ function App() {
           element={<WeddingDecration />}
         ></Route>
         <Route path="/floralDe/:pack/:id" element={<FloraDe />}></Route>
- 
+
         {/* Social Events  */}
         <Route
           path="/birthdayDecra/:pack/:id"
@@ -342,7 +363,7 @@ function App() {
         <Route path="/paintJamde/:pack/:id" element={<PaintJamDe />}></Route>
         <Route path="/homede/:pack/:id" element={<WelcomeDe />}></Route>
         <Route path="/fundrasde/:pack/:id" element={<Fundrasing />}></Route>
- 
+
         {/* Order Routes  */}
         <Route path="/order/:pack/:id/:anny" element={<OrderFrom />}></Route>
         <Route
@@ -360,6 +381,77 @@ function App() {
         <Route
           path="/floralorder/:pack/:id/:flow"
           element={<FloralFrom />}
+
+        ></Route>
+        {/* Social Check Out form  */}
+        <Route
+          path="/birthOrder/:pack/:id/:birth"
+          element={<BirthdayForm />}
+        ></Route>
+        <Route
+          path="/holdayOrder/:pack/:id/:holy"
+          element={<HolydayFrom />}
+        ></Route>
+        <Route
+          path="/Religious/:pack/:id/:reli"
+          element={<ReligiousForm />}
+        ></Route>
+        <Route
+          path="/seasonal/:pack/:id/:sean"
+          element={<SeasonalFrom />}
+        ></Route>
+        <Route
+          path="/retirefrom/:pack/:id/:reti"
+          element={<RetirementFrom />}
+        ></Route>
+        {/* Corporate Events  */}
+        <Route
+          path="/fashionfrom/:pack/:id/:fas"
+          element={<FashionFrom />}
+        ></Route>
+        <Route
+          path="/Educationfrom/:pack/:id/:edu"
+          element={<Educationafrom />}
+        ></Route>
+        <Route
+          path="/newYearfrom/:pack/:id/:newy"
+          element={<NewYearFrom />}
+        ></Route>
+        <Route
+          path="/SalesFrom/:pack/:id/:sale"
+          element={<SalesFrom />}
+        ></Route>
+        <Route
+          path="/productfrom/:pack/:id/:pro"
+          element={<ProductForm />}
+        ></Route>
+        {/* Non Profit Bokking Form  */}
+        <Route
+          path="/concerfrom/:pack/:id/:con"
+          element={<ConcertFrom />}
+        ></Route>
+        <Route
+          path="/fairsFrom/:pack/:id/:fair"
+          element={<FairsForm />}
+        ></Route>
+        <Route
+          path="/fundrasFrom/:pack/:id/:fund"
+          element={<FundrasingForm />}
+        ></Route>
+        <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
+        <Route
+          path="/paintFrom/:pack/:id/:pain"
+          element={<PaintJamFrom />}
+        ></Route>
+        <Route path="/likes" element={<Posts></Posts>}></Route>
+        <Route path="/donate" element={<Home></Home>}></Route>
+      </Routes>
+      <Footer />
+      <ToastContainer />
+
+      <Messenger />
+    </div>
+  );
           ></Route>
           {/* Social Check Out form  */}
           <Route
@@ -432,13 +524,7 @@ function App() {
 
 </div>
 );
+
 }
 
 export default App;
-
-
-
-
-
-
-
