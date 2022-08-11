@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import CustomLink from '../CustomLink/CustomLink';
 import { AiOutlineHeart } from 'react-icons/ai';
 import "./EventGallery.css"
 import NavBar from '../shared/NavBar/NavBar';
+import Loading from '../shared/Loading/Loading';
+import { useQuery } from '@tanstack/react-query';
 const EventGallery = () => {
+ 
     return (
         <div>
               <NavBar />

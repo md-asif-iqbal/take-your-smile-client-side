@@ -10,6 +10,8 @@ import useAdmin from "../../../hooks/Admin/useAdmin";
 const NavEnd = () => {
   const [user] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
+  console.log(admin);
+  
   const photo:any = user?.photoURL;
   let names:any = user?.displayName;
  const navigate = useNavigate();
@@ -29,7 +31,7 @@ const NavEnd = () => {
                             {/* {
                               admin?.role === 'Admin' && <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Blogs</Link></li>
                             } */}
-                            <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Blogs</Link></li>
+                            <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
                              
                              {/* {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
@@ -78,7 +80,7 @@ const NavEnd = () => {
                                       >
                                         Your Bookings
                                       </a>
-                                      <Link to='/posts' className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" > Blog Post </Link>
+                                      
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/availablejob"
