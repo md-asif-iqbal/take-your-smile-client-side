@@ -13,7 +13,7 @@ const DesktopNav = () => {
                                     <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-base-100     text-black w-52">
                                       <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogs' 
+                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogslike' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
                                           <li className=' hover:bg-primary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
                                           className='transition-all duration-300'> Our Story</Link></li>

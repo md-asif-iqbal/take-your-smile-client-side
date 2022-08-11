@@ -210,7 +210,7 @@ const Posts = () => {
         <div>
             <NavBar />
             <div className=" mx-auto font-sans mt-36">
-                <h1 className='text-3xl text-center mt-16 font-bold'>Blogs</h1>
+                <h1 className='text-3xl text-center mt-16 font-bold opacity-60'>All Blogs Here</h1>
 
                 <section className="text-gray-600 body-font">
                     <div className="container px-5   py-24 ">
