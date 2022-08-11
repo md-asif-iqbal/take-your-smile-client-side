@@ -32,7 +32,7 @@ const GalleryPost = () => {
             decImg: img,
           };
           // send to your database
-          fetch("http://localhost:8000/gallerys", {
+          fetch("https://secure-escarpment-79738.herokuapp.com/gallerys", {
             method: "POST",
             headers: {
               "content-type": "application/json",

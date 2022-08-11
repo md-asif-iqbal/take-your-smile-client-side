@@ -7,11 +7,11 @@ const Profile = () => {
   const [users, setUser] = useState([]);
   useEffect(() => {
     const email = user?.email;
-    fetch(`http://localhost:8000/user/${email}`, {
+    fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())

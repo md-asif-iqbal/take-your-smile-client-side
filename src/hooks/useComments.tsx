@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const useComments = () => {
 
-    const url = `http://localhost:8000/postComments`
+    const url = `https://secure-escarpment-79738.herokuapp.com/postComments`
 
     const [comments, setComments] = useState([])
 

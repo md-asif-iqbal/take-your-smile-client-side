@@ -14,7 +14,7 @@ const FloralLoc = () => {
   const navigate = useNavigate();
   const [packag]: any = UsePackage(pack);
   useEffect(() => {
-    const url = "http://localhost:8000/address";
+    const url = "https://secure-escarpment-79738.herokuapp.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));

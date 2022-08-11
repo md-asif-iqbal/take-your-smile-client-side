@@ -19,7 +19,7 @@ import "swiper/css/navigation";
 const Corporate = () => {
   const [corporate, setCorporat] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:8000/corporate";
+    const url = "https://secure-escarpment-79738.herokuapp.com/corporate";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCorporat(data));
@@ -35,15 +35,15 @@ const Corporate = () => {
   };
 
   const EducationalSemi = (item) => {
-    navigate(`/educational/${item}`)
-  }
+    navigate(`/educational/${item}`);
+  };
 
   const SalesEvents = (item) => {
-    navigate(`/salesEvent/${item}`)
-  }
-  const handleProduct =(item) => {
-    navigate(`/product/${item}`)
-  }
+    navigate(`/salesEvent/${item}`);
+  };
+  const handleProduct = (item) => {
+    navigate(`/product/${item}`);
+  };
   return (
     <div>
       <div style={{ backgroundColor: "white" }}>

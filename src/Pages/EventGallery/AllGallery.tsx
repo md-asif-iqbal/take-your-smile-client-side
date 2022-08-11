@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 const AllGallery = () => {
   const [gallery, setGallery] = useState([]);
   const [events, setEvents] = useState([]);
-    const url = `http://localhost:8000/gallerys`;
+    const url = `https://secure-escarpment-79738.herokuapp.com/gallerys`;
   const { data: gallerys, isLoading , refetch } = useQuery(['allparts'], () => fetch(url, {
     method: 'GET',
     headers: {

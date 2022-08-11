@@ -20,7 +20,7 @@ const Fundrasing = () => {
   const [packag]: any = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "http://localhost:8000/Fundraising";
+    const url = "https://secure-escarpment-79738.herokuapp.com/Fundraising";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

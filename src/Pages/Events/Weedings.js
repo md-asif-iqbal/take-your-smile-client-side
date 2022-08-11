@@ -19,7 +19,7 @@ const Weedings = () => {
   const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/wedding";
+    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));
@@ -37,17 +37,14 @@ const Weedings = () => {
   const handleEngagement = (item) => {
     navigate(`/engagement/${item}`);
   };
-  
 
   const handlerehearsal = (item) => {
     navigate(`/rehearsal/${item}`);
-
-  }
+  };
 
   const handleWedding = (item) => {
     navigate(`/wedding/${item}`);
-
-  }
+  };
   return (
     <div style={{ backgroundColor: "white" }}>
       <NavBar></NavBar>

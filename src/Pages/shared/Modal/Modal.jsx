@@ -17,7 +17,7 @@ const  Modal = () => {
     setModal(true)
   },[])
   const { isLoading, isError, data:sponsors, error } = useQuery(['sponsor'],  () => 
-  fetch('http://localhost:8000/sponsor',{
+  fetch('https://secure-escarpment-79738.herokuapp.com/sponsor',{
       method: "GET",
       headers: {
           'content-type': "applicataion/json"

@@ -19,7 +19,7 @@ const Social = () => {
   const [social, setSocial] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/social";
+    const url = "https://secure-escarpment-79738.herokuapp.com/social";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSocial(data));
@@ -39,11 +39,11 @@ const Social = () => {
 
   const handleReligious = (item) => {
     navigate(`/religious/${item}`);
-  }
+  };
 
   const handleHolday = (item) => {
-    navigate(`/holyday/${item}`)
-  }
+    navigate(`/holyday/${item}`);
+  };
   return (
     <div style={{ backgroundColor: "white" }}>
       <NavBar></NavBar>
