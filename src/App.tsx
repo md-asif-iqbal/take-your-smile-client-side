@@ -147,8 +147,10 @@ import Show from "./Pages/shared/BlogEditor/Show";
 // import Posts from "./Pages/Likes/Posts";
 // import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
-import Article from "./Pages/shared/BlogEditor/Article"
-import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
+
+import Modal from "./Pages/shared/Modal/Modal";
+import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
+
 // Services location here
 function App() {
   return (
@@ -199,6 +201,7 @@ function App() {
         </Route>
  
         {/* <NavBar/> */}
+    <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
           <Show />
         }></Route>
@@ -420,10 +423,13 @@ function App() {
  ></Route>
   <Route path='/likes' element={<Posts></Posts>}></Route>
 </Routes>
+
 <Footer />
 <ToastContainer />
  
  <Messenger />
+<Modal />
+
 </div>
 );
 }
