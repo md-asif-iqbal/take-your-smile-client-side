@@ -14,7 +14,7 @@ const AdminDashBoard = () => {
 				<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
 			</button> */}
 			<div className="grid bg-indigo-600 text-white lg:grid-cols-[300px_minmax(900px,_1fr)_100px]">
-				<div className='rounded-lg h-auto pb-16 mb-16 mx-auto w-3/5 mt-28  bg-indigo-800 px-2'>
+				<div className='rounded-lg h-auto pb-16 mb-16 mx-auto w-3/5 mt-36  bg-indigo-800 px-2'>
 					<div className='pb-3 px-2 pt-3'>
 						<div className=' bg-indigo-700 px-2 rounded-lg  py-1 mx-auto flex  '>
 							<svg className="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

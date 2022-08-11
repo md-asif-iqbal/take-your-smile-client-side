@@ -13,12 +13,12 @@ const AllBookings = () => {
       <nav
         className="hidden lg:uppercase  lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-16 lg:flex"
       >
-        <Link
+        <CustomLink
           to="/admindashboard/allbookings/bookings"
-          className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"
+          
         >
-          All Bookings
-        </Link>
+          <p className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> All Bookings</p>
+        </CustomLink>
 
         <CustomLink
           to="/admindashboard/allbookings/payment"
@@ -28,19 +28,19 @@ const AllBookings = () => {
           
         </CustomLink>
 
-        <Link
+        <CustomLink
           to="/admindashboard/allbookings/cancelled"
-          className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"
+          
         >
-          Cancelled
-        </Link>
+          <p className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Canceled</p>
+        </CustomLink>
 
-        <Link
+        <CustomLink
           to="/admindashboard/allbookings/pandding"
-          className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"
+          
         >
-          Pandding
-        </Link>
+          <p className="block h-16 text-white leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Pandding</p>
+        </CustomLink>
       </nav>
     </div>
   </div>

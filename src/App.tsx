@@ -149,6 +149,7 @@ import Show from "./Pages/shared/BlogEditor/Show";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 import Article from "./Pages/shared/BlogEditor/Article"
 import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
+import PaymentDoneBook from "./Pages/AdminDashBoard/AllsBookings/PaymentDoneBook";
 // Services location here
 function App() {
   return (
@@ -161,6 +162,8 @@ function App() {
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
           <Route path='allbookings' element={<AllBookings></AllBookings>}>
           <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
+          <Route path='payment' element={<PaymentDoneBook/>}></Route>
+
             {/* here all bookings we made it */}
           </Route>
           <Route path='blogposts' element={<BlogPosts></BlogPosts>}></Route>
