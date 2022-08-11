@@ -8,6 +8,7 @@ import Services from '../Services/Services';
 import Summery from '../Summery/Summery';
 import Banner from '../Banner/Banner';
 import PageTitle from '../../shared/PageTitle/PageTitle';
+import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
 const Home = () => {
     return (
         <div>
@@ -19,6 +20,7 @@ const Home = () => {
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
+            <OurLiveEvent />
         </div>
     );
 };
