@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import './modal.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper";
+
 const  Modal = () => {
   const [modal, setModal] = useState(false);
   const [close, setClose] = useState(true);
@@ -32,19 +39,32 @@ const  Modal = () => {
              {
                 modal && <>
         
-                <div className='popup anim p-5 mx-auto' id={close === false && 'popup'}>
+                <div className='popup anim p-5 mx-auto z-10 ' id={close === false && 'popup'}>
                     <button id="close" onClick={() => setClose(false)}>&times;</button>
+                    <Swiper
+                    cssMode={true}
+                    navigation={true}
+                    pagination={true}
+                   
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: false,
+                      }}
+                    modules={[Navigation, Pagination,  Autoplay]}
+                    className="mySwiper"
+                    >
                     {
-                        sponsors.map((sponsor) => (<>
+                        sponsors.map((sponsor) => (<SwiperSlide>
                      
-                        <h2 className="text-lg md:text-2xl font-bold mb-2">{sponsor.title}</h2>
+                        <h2 className="text-lg md:text-2xl font-bold mb-2 w-full">{sponsor.title}</h2>
                         <div>
                             <img src={sponsor.image} alt="..." />
                         </div>
-                        <p className=" text-justify">{sponsor.description}</p>
-                        </>
+                        <p className=" text-justify px-2 mb-10">{sponsor.description}</p>
+                        </SwiperSlide>
                     ))}
-                        <Link to="/home" className="btn btn-primary">Let's Go</Link>
+                    </Swiper>
+                        <Link to="/sponsorpost" className="btn btn-primary">Let's Go</Link>
                 </div>
                 </>
              }

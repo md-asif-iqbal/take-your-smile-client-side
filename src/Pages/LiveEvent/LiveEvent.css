@@ -1,0 +1,19 @@
+.bookmark-icon{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ffbe30;
+}
+.live-linek-name{
+    color: #ffffff;
+font-size: 24px;
+}
+.ticket-price{
+    font-weight: 700;
+color: #ffbe30;
+font-size: 80%;
+}
+.countdown-timer ul{
+    margin: 0px;
+    padding: 0px;
+    display: table;
+}

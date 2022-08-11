@@ -7,7 +7,6 @@ import "./Reviews.css";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import Loading from "../../shared/Loading/Loading";
-import { set } from "react-hook-form";
 const Reviews = () => {
 
   

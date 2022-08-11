@@ -213,7 +213,7 @@ const Posts = () => {
                 <h1 className='text-3xl text-center mt-16 font-bold opacity-60'>All Blogs Here</h1>
 
                 <section className="text-gray-600 body-font">
-                    <div className="container px-5   py-24 ">
+                    <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>

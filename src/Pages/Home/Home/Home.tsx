@@ -8,7 +8,11 @@ import Services from '../Services/Services';
 import Summery from '../Summery/Summery';
 import Banner from '../Banner/Banner';
 import PageTitle from '../../shared/PageTitle/PageTitle';
+
+import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
+
 import Sponsorship from '../../shared/Sponsorship/Sponsorship';
+
 const Home = () => {
 
     return (
@@ -16,14 +20,17 @@ const Home = () => {
             <PageTitle title="Take Your Smile" />
             <Banner/>
             <Services />
+            <OurLiveEvent />
+            <Sponsorship />
             <Gallery></Gallery>
             <Reviews></Reviews>
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
-            <Sponsorship />
-            {/* <Modal /> */}
+
             
+            {/* <Modal /> */}
+
         </div>
     );
 };

@@ -151,11 +151,11 @@ import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 import Article from "./Pages/shared/BlogEditor/Article"
 import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
 import PaymentDoneBook from "./Pages/AdminDashBoard/AllsBookings/PaymentDoneBook";
-
+import Alluser from "./Pages/AdminDashBoard/Alluser";
 
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
-
+import Home from "./Pages/Donation/Home";
 // Services location here
 function App() {
   return (
@@ -163,7 +163,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Events />}></Route>
-
+        <Route path="user" element={<Alluser></Alluser>}></Route>
         <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
           <Route path='allbookings' element={<AllBookings></AllBookings>}>
@@ -180,11 +180,14 @@ function App() {
           <Route path='allproducts' element={<Products></Products>}></Route>
           <Route path='articlepost' element={<Article></Article>}>
           </Route>
+          <Route path="user" element={<Alluser></Alluser>}></Route>
         </Route>
 
 
 
         <Route path='/home' element={<HomeWithNav />}></Route>
+
+        <Route path="/donate" element={<Home></Home>}></Route>
         {/* <Route path='dashboard' element={<Dashboard></Dashboard>}>
           <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
           <Route path='booking' element={<Booking></Booking>}></Route>

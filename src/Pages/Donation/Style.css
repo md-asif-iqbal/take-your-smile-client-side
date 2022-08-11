@@ -1,0 +1,104 @@
+.banner::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.636);
+}
+.title {
+  position: absolute;
+  color: aliceblue;
+  left: 38%;
+  top: 34%;
+  z-index: 2;
+}
+.dis {
+  position: absolute;
+  left: 29%;
+  top: 48%;
+  z-index: 2;
+}
+.dis h1 {
+  line-height: 2;
+  width: 90%;
+}
+.border {
+  width: 200px;
+  border: 1px solid #fb4051;
+  position: relative;
+  display: inline-block;
+  border-color: #fb4051;
+  z-index: 2;
+  left: 21%;
+}
+.border::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #fb4051;
+  top: -9px;
+  left: 45%;
+  opacity: 0.8;
+  transform: rotate(45deg);
+}
+.border::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  right: 42%;
+  background-color: #fb4051;
+  top: -9px;
+  opacity: 0.8;
+  transform: rotate(45deg);
+}
+.exploreBtn {
+  color: white;
+  border: 2px solid #fb4051;
+  padding: 12px 25px;
+  font-size: 17px;
+  border-radius: 5px;
+  transition: 0.3s linear;
+  font-weight: 800;
+}
+.exploreBtn:hover {
+  background: #fb4051;
+}
+.donateBtn {
+  color: white;
+  background: #fb4051;
+  padding: 12px 25px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 2px solid #fb4051;
+  transition: 0.3s linear;
+  font-weight: 800;
+}
+.donateBtn:hover {
+  background: transparent;
+}
+.background {
+  background: url(../../Assets/background/about-bg-sp.jpg);
+  background-size: cover;
+}
+.smile {
+  background: url(../../Assets/background/smile.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.backgr {
+  background: url(http://tanshcreative.com/heartness-lp-preview/assets/images/cta-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.don-title {
+  position: relative;
+}
