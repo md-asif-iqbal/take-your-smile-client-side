@@ -28,7 +28,6 @@ const Login = () => {
   let navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
   const from = location.state?.from?.pathname || '/';
-  // let from = state?.from?.pathname || "/";
 
   const [email, setEmail] = useState();
   const [
@@ -81,7 +80,6 @@ const Login = () => {
   
    }
    if (user) {
-    console.log(token);
    navigate('/home')
 }
 
