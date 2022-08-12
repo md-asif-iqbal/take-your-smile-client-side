@@ -172,6 +172,7 @@ function App() {
 
             {/* here all bookings we made it */}
           </Route>
+          <Route path='sponsorpost' element={<SponsorPost />}></Route>
           <Route path='blogposts' element={<BlogPosts></BlogPosts>}></Route>
           <Route path='gallerypost' element={<GalleryPost></GalleryPost>}></Route>
           <Route path='messages' element={
@@ -211,7 +212,7 @@ function App() {
         </Route>
  
         {/* <NavBar/> */}
-       <Route path="/sponsorpost" element={<SponsorPost />} />
+       {/* <Route path="/sponsorpost" element={<SponsorPost />} /> */}
         <Route path='/articles' element={
           <Show />
         }></Route>

@@ -87,12 +87,12 @@ const NavEnd = () => {
                                       >
                                         Apply for Employee
                                       </Link>
-                                      <Link
+                                      {/* <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/sponsorpost"
                                       >
                                         Add Sponsor
-                                      </Link>
+                                      </Link> */}
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/admindashboard"
