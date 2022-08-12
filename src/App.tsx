@@ -211,14 +211,12 @@ function App() {
         </Route>
  
         {/* <NavBar/> */}
-    <Route path="/sponsorpost" element={<SponsorPost />} />
+       <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
           <Show />
         }></Route>
-        <Route path='/article/:id' element={ <RequireAdmin>
-
+        <Route path='/article/:id' element={
           <Blogs></Blogs>
-        </RequireAdmin> 
         }></Route>
  
         <Route path='/posts' element={<RequireAuth>
@@ -238,9 +236,7 @@ function App() {
         <Route
           path="/contactus"
           element={
-            <RequireAdmin>
               <Contact />
-            </RequireAdmin>
           }
         ></Route>
         <Route

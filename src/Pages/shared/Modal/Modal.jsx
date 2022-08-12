@@ -64,7 +64,7 @@ const  Modal = () => {
                         </SwiperSlide>
                     ))}
                     </Swiper>
-                        <Link to="/sponsorpost" className="btn btn-primary">Let's Go</Link>
+                        <Link to="/corporate" className="btn btn-primary" onClick={() => setClose(false)}>Let's Go</Link>
                 </div>
                 </>
              }
