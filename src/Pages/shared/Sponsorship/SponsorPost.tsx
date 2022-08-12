@@ -35,7 +35,6 @@ const SponsorPost = () => {
     };
     return (
         <>
-        <NavBar />
         <div className='hero  min-w-screen flex  px-2 md:px-0  mx-auto  items-center gap-5 my-14 md:my-32'>
                <div className="card flex-shrink-0 bg-white w-full lg:w-5/6 max-w-lg shadow-2xl ">
                 <h2 className='text-2xl font-bold text-center my-10 uppercase text-secondary'>Add Sponsor On This Application</h2>
