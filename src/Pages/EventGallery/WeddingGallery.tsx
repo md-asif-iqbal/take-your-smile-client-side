@@ -10,7 +10,7 @@ const WeddingGallery = () => {
     // const [loading, setLoading] = useState(false);
     useEffect(() => {
 
-      fetch("https://secure-escarpment-79738.herokuapp.com/gallerys")
+      fetch("http://localhost:8000/gallerys")
         .then((res) => res.json())
         .then((data) => {
           setGallery(data);

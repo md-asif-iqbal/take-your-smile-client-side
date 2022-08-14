@@ -13,7 +13,7 @@ if(role){
 }
 
 if (email) {
-    fetch(`https://secure-escarpment-79738.herokuapp.com/admin/${email}`,{
+    fetch(`http://localhost:8000/admin/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'

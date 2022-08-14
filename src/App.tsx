@@ -20,8 +20,7 @@ import Booking from "./Pages/dashboard/Booking";
 import Users from "./Pages/dashboard/Users";
 import MakeAdmin from "./Pages/dashboard/MakeAdmin";
 import AllBooking from "./Pages/dashboard/AllBooking";
-import Update from "./Pages/dashboard/Profile/Update";
-import Profile from "./Pages/dashboard/Profile/Profile";
+
 import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
@@ -52,7 +51,7 @@ import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
 // import Blogs from "./Pages/Blogs/Blogs";
-import Profiles from "./Pages/Profiles/Profiles";
+// import Profiles from "./Pages/Profiles/Profiles";
 import Messenger from "./Pages/Messenger/Messenger";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
@@ -153,9 +152,9 @@ import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
 import PaymentDoneBook from "./Pages/AdminDashBoard/AllsBookings/PaymentDoneBook";
 import Alluser from "./Pages/AdminDashBoard/Alluser";
 
-import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
+import Profiles from "./Pages/Profiles/Profiles";
 // Services location here
 function App() {
   return (
@@ -207,8 +206,7 @@ function App() {
  
           <Route path="admin" element={<MakeAdmin></MakeAdmin>}></Route>
  
-          <Route index element={<Profile />} />
-          <Route path="update" element={<Update />} />
+       
         </Route>
  
         {/* <NavBar/> */}
@@ -240,9 +238,7 @@ function App() {
               <Contact />
           }
         ></Route>
-        <Route
-          path="profiles"
-          element={<RequireAuth>
+        <Route path="profiles" element={<RequireAuth>
             <Profiles />
           </RequireAuth>
         }
@@ -435,7 +431,6 @@ function App() {
 <ToastContainer />
  
  <Messenger />
-<Modal />
 
 </div>
 );

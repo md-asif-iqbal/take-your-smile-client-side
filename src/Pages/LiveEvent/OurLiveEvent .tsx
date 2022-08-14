@@ -14,7 +14,7 @@ const OurLiveEvent = () => {
   time.setSeconds(time.getSeconds() + 216000);
   const [liveEvent, setLiveEvent]: any = useState([]);
   useEffect(() => {
-    const url = `https://secure-escarpment-79738.herokuapp.com/orders`;
+    const url = `http://localhost:8000/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setLiveEvent(data));

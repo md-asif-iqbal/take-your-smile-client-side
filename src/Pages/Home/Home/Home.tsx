@@ -12,6 +12,7 @@ import PageTitle from '../../shared/PageTitle/PageTitle';
 import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
 
 import Sponsorship from '../../shared/Sponsorship/Sponsorship';
+import Modal from '../../shared/Modal/Modal';
 
 const Home = () => {
 
@@ -29,7 +30,7 @@ const Home = () => {
             <FAQ />
 
             
-            {/* <Modal /> */}
+            <Modal />
 
         </div>
     );

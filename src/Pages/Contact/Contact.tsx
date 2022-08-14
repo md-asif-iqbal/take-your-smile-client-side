@@ -58,7 +58,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Full Name*</span>
+                            <span className="label-text text-secondary">Full Name*</span>
                         </label>
                         <input type="text" placeholder="Enter Full Name" className="input input-bordered input-primary" {...register("name", { required: {
                         value: true,
