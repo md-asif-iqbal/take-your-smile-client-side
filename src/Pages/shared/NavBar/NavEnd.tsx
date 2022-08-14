@@ -1,6 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { type } from "@testing-library/user-event/dist/type";
 import { signOut } from "firebase/auth";
-import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-scroll";
@@ -10,7 +10,16 @@ import useAdmin from "../../../hooks/Admin/useAdmin";
 const NavEnd = () => {
   const [user] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
-  console.log(admin);
+  const email = user?.email;
+  const { isLoading, error, data:users, refetch } = useQuery(['users'], () =>
+  fetch(`http://localhost:8000/user/${email}`, {
+    method: "GET",
+     headers: {
+       'content-type': 'application/json'
+      //  'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+     }
+}).then(res =>res.json())
+)
   
   const photo:any = user?.photoURL;
   let names:any = user?.displayName;
@@ -43,14 +52,14 @@ const NavEnd = () => {
                            
                               {/* Start */}
                               <div className="dropdown dropdown-end">
-                                <label id="0" className=" m-1"> <button className= " transition-all duration-300 uppercase"  > 
+                                <label id="0" className=" m-1"> 
+                                <button className= " transition-all duration-300 uppercase"  > 
 
                                     <div className="avatar ">
-                                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      user ?<img src={user.photoURL} alt={names} />
-                                      : <img src="https://i.ibb.co/FqYD4K3/download-2.png" alt={names} />
-                                
+                                      users?.image ? <img src={users?.image} alt={users.name} className="w-12 h-12"  />
+                                      : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={users?.name} className="w-14 h-14" />
 
                                     }
                                     </div>
@@ -87,6 +96,12 @@ const NavEnd = () => {
                                       >
                                         Apply for Employee
                                       </Link>
+                                      {/* <Link
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        to="/sponsorpost"
+                                      >
+                                        Add Sponsor
+                                      </Link> */}
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/admindashboard"

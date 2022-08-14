@@ -19,7 +19,7 @@ const WeddingDecration = () => {
   const { id } = useParams();
   const [address]: any = UseLocation(id);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/weddingceremony";
+    const url = "http://localhost:8000/weddingceremony";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

@@ -16,7 +16,7 @@ const SponsorPost = () => {
         const image = data.url;
         const description = data.description;
         const sponsor = {title, image, description};
-        fetch(`https://secure-escarpment-79738.herokuapp.com/sponsor/${'62f3f718523ed1f561a8cf90'}`,{
+        fetch(`http://localhost:8000/sponsor/${'62f3f718523ed1f561a8cf90'}`,{
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -35,17 +35,17 @@ const SponsorPost = () => {
     };
     return (
         <>
-        <NavBar />
-        <div className='hero min-h-full min-w-screen flex  px-2 md:px-0  mx-auto justify-center items-center gap-5 my-14 md:my-32'>
-               <div className="card flex-shrink-0 w-full lg:w-5/6 max-w-lg shadow-2xl ">
-                <form  className='p-0 flex-row'  onSubmit={handleSubmit(onSubmit)}>
+        <div className='hero  min-w-screen flex  px-2 md:px-0  mx-auto  items-center gap-5 my-14 md:my-32'>
+               <div className="card flex-shrink-0 bg-white w-full lg:w-5/6 max-w-lg shadow-2xl ">
+                <h2 className='text-2xl font-bold text-center my-10 uppercase text-secondary'>Add Sponsor On This Application</h2>
+                <form  className='p-0 flex-row '  onSubmit={handleSubmit(onSubmit)}>
                 <div className="card-body">
                     <p className='text-left text-red-500 my-4'>
                     {errors.title?.type === 'required' && <span>{errors.title.message}</span>}
                     </p>
                     <div className="form-control">
                     
-                        <input type="text" placeholder="Enter Sponsor Title" className="input input-bordered input-primary" {...register("title", { required: {
+                        <input type="text" placeholder="Enter Sponsor Title" className="input input-bordered bg-white input-primary" {...register("title", { required: {
                         value: true,
                         message: 'Title is required*'
                         } })} />
@@ -55,7 +55,7 @@ const SponsorPost = () => {
                     </p>
                     <div className="form-control">
                     
-                        <input type="url" placeholder="Enter Body Image URL" className="input input-bordered input-primary" {...register("url", { required: {
+                        <input type="url" placeholder="Enter Body Image URL" className="input input-bordered input-primary bg-white" {...register("url", { required: {
                         value: true,
                         message: 'URL is required*'
                         } })} />
@@ -66,7 +66,7 @@ const SponsorPost = () => {
                     </p>
                     <div className="form-control">
          
-                    <textarea className="textarea textarea-primary h-32" placeholder="Please explain details..." {...register("description", { required: {
+                    <textarea className="textarea textarea-primary h-32 bg-white" placeholder="Please explain details..." {...register("description", { required: {
                     value: true,
                     message: 'Write Some Text*'
                 } })}></textarea>

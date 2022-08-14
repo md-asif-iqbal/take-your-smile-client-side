@@ -17,7 +17,7 @@ const  Modal = () => {
     setModal(true)
   },[])
   const { isLoading, isError, data:sponsors, error } = useQuery(['sponsor'],  () => 
-  fetch('https://secure-escarpment-79738.herokuapp.com/sponsor',{
+  fetch('http://localhost:8000/sponsor',{
       method: "GET",
       headers: {
           'content-type': "applicataion/json"
@@ -64,7 +64,7 @@ const  Modal = () => {
                         </SwiperSlide>
                     ))}
                     </Swiper>
-                        <Link to="/sponsorpost" className="btn btn-primary">Let's Go</Link>
+                        <Link to="/corporate" className="btn btn-primary" onClick={() => setClose(false)}>Let's Go</Link>
                 </div>
                 </>
              }
