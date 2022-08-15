@@ -7,7 +7,8 @@ const Alluser = () => {
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);
-  console.log(user);
+
+  
   return (
     <section className="pt-4">
       <div className="container">
@@ -30,8 +31,7 @@ const Alluser = () => {
                                lg:px-4
                                border-l border-transparent
                                font-mono
-                               "
-                    >
+                               ">
                       Name
                     </th>
                     <th

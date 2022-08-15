@@ -25,8 +25,8 @@ import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
 
-import BlogsOne from './Pages/Blogs/BlogsOne';
-import BlogsThree from './Pages/Blogs/BlogsThree';
+// import BlogsOne from './Pages/Blogs/BlogsOne';
+// import BlogsThree from './Pages/Blogs/BlogsThree';
 // import SingleEvent from './Pages/EventGallery/SingleEvent';
 // import Error from './Pages/shared/Error/Error';
 // import Review from './Pages/dashboard/Review';
@@ -43,15 +43,12 @@ import GalleryPost from './Pages/AdminDashBoard/GalleryPost';
 import Messages from './Pages/AdminDashBoard/Messages';
 import Products from './Pages/AdminDashBoard/Products';
 import Settings from './Pages/AdminDashBoard/Settings';
-// import BlogsOne from "./Pages/Blogs/BlogsOne";
-// import BlogsThree from "./Pages/Blogs/BlogsThree";
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
 import Error from "./Pages/shared/Error/Error";
 import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
 // import Blogs from "./Pages/Blogs/Blogs";
-// import Profiles from "./Pages/Profiles/Profiles";
 import Messenger from "./Pages/Messenger/Messenger";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
@@ -163,7 +160,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Events />}></Route>
         <Route path="user" element={<Alluser></Alluser>}></Route>
-        <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
+        <Route path="/admindashboard" element={
+        <RequireAuth>
+          <AdminDashBoard></AdminDashBoard>
+        </RequireAuth>
+        }>
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
           <Route path='allbookings' element={<AllBookings></AllBookings>}>
           <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
@@ -429,7 +430,6 @@ function App() {
 
 <Footer />
 <ToastContainer />
- 
  <Messenger />
 
 </div>

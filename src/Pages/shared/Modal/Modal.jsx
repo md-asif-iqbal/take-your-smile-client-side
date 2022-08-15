@@ -39,7 +39,7 @@ const  Modal = () => {
              {
                 modal && <>
         
-                <div className='popup anim p-5 mx-auto z-10 ' id={close === false && 'popup'}>
+                <div className='popup anim p-5 mx-auto ' id={close === false && 'popup'}>
                     <button id="close" onClick={() => setClose(false)}>&times;</button>
                     <Swiper
                     cssMode={true}

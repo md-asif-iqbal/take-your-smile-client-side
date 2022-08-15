@@ -6,8 +6,6 @@ useEffect(() => {
 const email = user?.user?.email;
 const name = user?.user?.displayName;
 const image = user?.user?.photoURL;
-console.log(image);
-
 let currentUser;
 if (image) {
    currentUser = {email, name, image};

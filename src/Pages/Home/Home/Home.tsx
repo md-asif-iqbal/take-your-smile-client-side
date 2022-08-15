@@ -21,6 +21,7 @@ const Home = () => {
             <PageTitle title="Take Your Smile" />
             <Banner/>
             <Services />
+            <Modal />
             <OurLiveEvent />
             <Sponsorship />
             <Gallery></Gallery>
@@ -28,9 +29,6 @@ const Home = () => {
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
-
-            
-            <Modal />
 
         </div>
     );

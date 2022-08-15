@@ -8,7 +8,7 @@ import Loading from "../shared/Loading/Loading";
 const Blogs = () => {
 
   let {id} = useParams();  
-  const { isLoading, isError, data:articles, error } = useQuery(['articles'],  () => 
+  const { isLoading, isError, data:articles, error, refetch } = useQuery(['articles'],  () => 
   fetch(`http://localhost:8000/articles/${id}`,{
       method: "GET",
       headers: {
@@ -28,10 +28,11 @@ const Blogs = () => {
 const sanitizedData = (data:any) => ({
   __html: DOMPurify.sanitize(data)
 })
-    return (
+  refetch();
+  return (
         <div>
             <NavBar/>
-        <div className="font-sans mt-36 container px-10 py-10 mx-auto">
+        <div className="font-sans mt-36 container px-10 py-10 mx-auto blog-content">
             <h1 className='text-3xl text-center my-10 font-bold'>{articles?.title}</h1>
 
             <section className="text-gray-600 body-font">

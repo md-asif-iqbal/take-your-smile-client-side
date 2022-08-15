@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import {useNavigate } from 'react-router-dom';
+import Modal from '../shared/Modal/Modal';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 
@@ -19,6 +20,7 @@ const Events = () => {
     }
     return (
         <div className='mb-8'>
+            <Modal />
                   <PageTitle title="Events" />
             <div className='text-center' style={{ backgroundColor: '#c62127' }}>
                 <h3 className='text-4xl  pt-6' style={{ fontFamily: 'Josefin Sans', color: 'white', wordSpacing: '6px' }}><strong>What type of event do you want to plan?</strong>

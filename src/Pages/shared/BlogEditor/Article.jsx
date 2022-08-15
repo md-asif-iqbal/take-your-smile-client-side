@@ -18,7 +18,7 @@ export default function BlogPost() {
     fetch('http://localhost:8000/articles', {
       method: "POST",
       headers: {
-      'content-type': "application/json",
+        'content-type': 'application/json'
       },
       body: JSON.stringify(article)
   })

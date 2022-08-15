@@ -6,7 +6,10 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 const Profiles = () => {
+  const navigate = useNavigate();
   const { register, formState: { errors }, handleSubmit,reset} = useForm();
   const [user] = useAuthState(auth);
   const email = user?.email;
@@ -17,16 +20,18 @@ const { isLoading, error, data:details, refetch } = useQuery(['details'], () =>
 fetch(`http://localhost:8000/user/${email}`, {
     method: "GET",
      headers: {
-       'content-type': 'application/json'
-      //  'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+       'content-type': 'application/json',
+       'authorization': `Bearer ${localStorage.getItem('accessToken')}`
      }
 }).then(res =>res.json())
 )
 if(isLoading){
-    <Loading />
+  return <div className='h-40 mt-10'>{<Loading />}</div>
 }
 if(error){
    toast.error(error.message);
+   signOut(auth);
+   navigate('/login')
 }
 refetch();
 
@@ -96,6 +101,8 @@ refetch();
             .then(data => {
               console.log(data);
               if (data?.result?.modifiedCount > 0) {
+                const accessToken = data?.token;
+                localStorage.setItem('accessToken', accessToken);
                 toast.success('You are Successfully Update Profile!');
                 refetch();
                 reset()

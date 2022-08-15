@@ -15,14 +15,12 @@ const NavEnd = () => {
   fetch(`http://localhost:8000/user/${email}`, {
     method: "GET",
      headers: {
-       'content-type': 'application/json'
-      //  'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      'content-type': 'application/json',
+      'authorization': `Bearer ${localStorage.getItem('accessToken')}`
      }
 }).then(res =>res.json())
 )
   
-  const photo:any = user?.photoURL;
-  let names:any = user?.displayName;
  const navigate = useNavigate();
  
  const logout = () =>{

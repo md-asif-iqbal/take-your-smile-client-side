@@ -12,7 +12,7 @@ const AllGallery = () => {
   const { data: gallerys, isLoading , refetch } = useQuery(['allparts'], () => fetch(url, {
     method: 'GET',
     headers: {
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      'content-type': 'application/json'
     }
 }).then(res => res.json()));
 const filterItem = (categItem: any) => {
