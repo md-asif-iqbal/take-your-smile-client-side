@@ -30,7 +30,7 @@ const AdminLogin = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  const [token] = useAdminToken(user, '');
+  const [token] = useAdminToken(user, ' ');
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>({mode: "onBlur"})
     let [btnStatus, setBtnStatus] = useState<String>('');

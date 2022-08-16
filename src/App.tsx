@@ -161,9 +161,9 @@ function App() {
         <Route path='/' element={<Events />}></Route>
         <Route path="user" element={<Alluser></Alluser>}></Route>
         <Route path="/admindashboard" element={
-        <RequireAuth>
+        <RequireAdmin>
           <AdminDashBoard></AdminDashBoard>
-        </RequireAuth>
+        </RequireAdmin>
         }>
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
           <Route path='allbookings' element={<AllBookings></AllBookings>}>

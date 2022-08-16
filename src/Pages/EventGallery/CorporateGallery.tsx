@@ -22,7 +22,6 @@ const CorporateGallery = () => {
         });
     }, [events]);
          
-    //   console.log(gallery);
       
       const filterItem = (categItem: any) => {
         const updatedItems = gallery.filter((item) => {

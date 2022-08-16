@@ -99,7 +99,6 @@ refetch();
             })
             .then(res => res.json())
             .then(data => {
-              console.log(data);
               if (data?.result?.modifiedCount > 0) {
                 const accessToken = data?.token;
                 localStorage.setItem('accessToken', accessToken);

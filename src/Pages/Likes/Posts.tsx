@@ -37,7 +37,6 @@ const Posts = () => {
     const [userdata, SetUserdata] = useState({})
     const [postId, setPostid] = useState('')
     const [post, setPost] = useState<any[]>([]);
-    // console.log(user)
 
 
     const url = `http://localhost:8000/posts/${postId}`

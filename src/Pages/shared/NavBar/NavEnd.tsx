@@ -1,17 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import { type } from "@testing-library/user-event/dist/type";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-scroll";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../hooks/Admin/useAdmin";
+import useUser from "../../../hooks/User/UseUser";
+import Loading from "../Loading/Loading";
 
 const NavEnd = () => {
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
+  
+  const [users]:any  =  useUser(user);
   const email = user?.email;
-  const { isLoading, error, data:users, refetch } = useQuery(['users'], () =>
+  const { isLoading, error, data, refetch } = useQuery(['data'], () =>
   fetch(`http://localhost:8000/user/${email}`, {
     method: "GET",
      headers: {
@@ -20,8 +23,17 @@ const NavEnd = () => {
      }
 }).then(res =>res.json())
 )
+if (isLoading) {
+  return <div className='h-40 mt-10'>{<Loading />}</div>
+
+}
+
+if (error) {
+ 
+}
+refetch();
   
- const navigate = useNavigate();
+
  
  const logout = () =>{
    signOut(auth);
@@ -35,15 +47,7 @@ const NavEnd = () => {
 
                             <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
                             className='transition-all duration-300'> Social</Link></li>
-                            {/* {
-                              admin?.role === 'Admin' && <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Blogs</Link></li>
-                            } */}
                             <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
-                             
-                             {/* {
-                               user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
-                               className='transition-all duration-300'> DashBoard</Link></li>: ''
-                             } */}
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
@@ -56,8 +60,8 @@ const NavEnd = () => {
                                     <div className="avatar ">
                                     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      users?.image ? <img src={users?.image} alt={users.name} className="w-12 h-12"  />
-                                      : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={users?.name} className="w-14 h-14" />
+                                      data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  />
+                                      : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />
 
                                     }
                                     </div>
@@ -65,20 +69,18 @@ const NavEnd = () => {
                                  </button> </label>
                                 <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
                                   
-                                <div
-                                      className="bg-white uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center text-black right-0 appear-done enter-done"
-                                    >
-                                      
-                                      <a
-                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-                                        href="/favorites"
-                                      >
-                                        My Favorites
-                                      </a>
+                                <div className="bg-white uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center text-black right-0 appear-done enter-done">
+                                  {
+                                    users?.role === "user" && <>
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-                                        to="/profiles"
+                                        to="/favorites"
                                       >
+                                        My Favorites
+                                      </Link>
+                                      <Link
+                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
+                                        to="/profiles">
                                         Profile
                                       </Link>
                                       <a
@@ -94,18 +96,19 @@ const NavEnd = () => {
                                       >
                                         Apply for Employee
                                       </Link>
-                                      {/* <Link
-                                        className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-                                        to="/sponsorpost"
-                                      >
-                                        Add Sponsor
-                                      </Link> */}
-                                      <Link
+                                        
+                                        </>
+                                      }
+                                      
+                                      {
+                                        admin?.role === "Admin" && <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
                                         to="/admindashboard"
                                       >
                                        Admin DashBoard
                                       </Link>
+                                      }
+                                   
                                       <button
                                         className="flex w-full items-center px-3 py-3 cursor-pointer  hover:bg-gray-200 font-light text-sm focus:outline-none"
                                          onClick={logout}

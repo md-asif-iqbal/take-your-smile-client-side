@@ -43,7 +43,6 @@ const GalleryPost = () => {
             .then((data) => {
               toast.success("Gallery succesfully Added");
             });
-            console.log(data)
         }
       });
     reset();

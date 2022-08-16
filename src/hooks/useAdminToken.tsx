@@ -5,8 +5,9 @@ const [token, setToken] = useState('');
 useEffect(() => {
 const email = user?.user?.email;
 const name = user?.user?.displayName;
+
 let  currentUser;
-if(role){
+if(role.length > 1){
     currentUser = {email, name, role};
 }else{
     currentUser = {email, name};

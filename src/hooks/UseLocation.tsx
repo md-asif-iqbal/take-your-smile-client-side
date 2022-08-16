@@ -8,7 +8,6 @@ const UseLocation = (id) => {
       .then((res) => res.json())
       .then((data) => setAddress(data));
   }, [id]);
-  console.log(address);
   return [address];
 };
 

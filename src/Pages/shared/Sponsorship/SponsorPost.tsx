@@ -1,7 +1,6 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import NavBar from '../NavBar/NavBar';
 type Inputs = {
     title: string,
     description: string,
@@ -35,7 +34,6 @@ const SponsorPost = () => {
     };
     return (
         <>
-        <NavBar />
         <div className='hero min-h-full min-w-screen flex  px-2 md:px-0  mx-auto justify-center items-center gap-5 my-14 md:my-32'>
                <div className="card flex-shrink-0 w-full lg:w-5/6 max-w-lg shadow-2xl ">
                 <form  className='p-0 flex-row'  onSubmit={handleSubmit(onSubmit)}>
