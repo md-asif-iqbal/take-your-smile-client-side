@@ -156,7 +156,6 @@ import Profiles from "./Pages/Profiles/Profiles";
 function App() {
   return (
     <div className="relative">
-
       <Routes>
         <Route path='/' element={<Events />}></Route>
         <Route path="user" element={<Alluser></Alluser>}></Route>

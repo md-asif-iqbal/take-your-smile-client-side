@@ -19,7 +19,6 @@ const WeddingForm = () => {
   const [packag]: any[] = UsePackage(pack);
   const { wedd } = useParams();
   const [weddings]: any = UseWeddingDec(wedd);
-  console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
   const [wedding] = UseWedding();

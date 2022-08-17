@@ -15,6 +15,7 @@ module.exports = {
           violet:"#9999FF"
         },
       },
+      "dark"
     ],
   },
   plugins: [require("daisyui")],

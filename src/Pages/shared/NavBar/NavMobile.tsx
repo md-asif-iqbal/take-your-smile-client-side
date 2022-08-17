@@ -7,12 +7,35 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import DarkMode from '../DarkMode/DarkMode';
+import useAdmin from '../../../hooks/Admin/useAdmin';
+import useUser from '../../../hooks/User/UseUser';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../Loading/Loading';
 
 const NavMobile = () => {
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
     const [user] = useAuthState(auth);
+    const [admin]:any  =  useAdmin(user);
+    
+    const [users]:any  =  useUser(user);
+    const email = user?.email;
+    const { isLoading, error, data, refetch } = useQuery(['data'], () =>
+    fetch(`http://localhost:8000/user/${email}`, {
+      method: "GET",
+       headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+       }
+  }).then(res =>res.json())
+  )
+  if (isLoading) {
+    return <div className='h-40 mt-10'>{<Loading />}</div>
+  
+  }
   let photo:any = user?.photoURL;
   let names:any = user?.displayName;
- const navigate = useNavigate();
  const logout = () =>{
    signOut(auth);
     navigate('/login')
@@ -46,10 +69,10 @@ const NavMobile = () => {
 
                                     <div className="avatar ">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                    {
-                                      user ?<img src={photo} alt={names} />
-                                      : names
-                                    }
+                                    
+                                     {
+                                      data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  /> : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />}
+                                    
                                     </div>
                                     </div>
                                  </button> </label>
@@ -96,11 +119,11 @@ const NavMobile = () => {
                             
                             </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
+                            <li><DarkMode /></li>
                             
 
 
 </>
-    const [isOpen, setIsOpen] = useState(false);
 
     const circleVariants = {
         hidden: {
