@@ -17,6 +17,7 @@ const useUser = user => {
             .then(data => {
                 setUser(data);
                 setUserLoading(false);
+                
             })
         }
     },[user]);

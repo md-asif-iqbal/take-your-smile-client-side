@@ -57,7 +57,7 @@ export default class RecentEvents extends Component {
       ],
     };
     return (
-      <div style={{ backgroundColor: "white" }} className="px-7 py-14">
+      <div  className="px-7 py-14">
         <h3
           className="pb-7 text-3xl text-center"
           style={{
@@ -66,7 +66,7 @@ export default class RecentEvents extends Component {
           }}
         >
           <strong>
-            Recent <span className="text-primary">Events</span>
+           <span className="text-secondary">Recent</span>  <span className="text-primary">Events</span>
           </strong>
         </h3>
         <Slider {...settings}>

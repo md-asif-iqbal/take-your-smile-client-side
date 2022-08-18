@@ -7,7 +7,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import DarkMode from '../DarkMode/DarkMode';
 import useAdmin from '../../../hooks/Admin/useAdmin';
 import useUser from '../../../hooks/User/UseUser';
 import { useQuery } from '@tanstack/react-query';
@@ -119,7 +118,6 @@ const NavMobile = () => {
                             
                             </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
-                            <li><DarkMode /></li>
                             
 
 

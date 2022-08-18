@@ -1,18 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
+import { isError, useQuery } from "@tanstack/react-query";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../hooks/Admin/useAdmin";
 import useUser from "../../../hooks/User/UseUser";
-import DarkMode from "../DarkMode/DarkMode";
 import Loading from "../Loading/Loading";
 
 const NavEnd = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
-  
   const [users]:any  =  useUser(user);
   const email = user?.email;
   const { isLoading, error, data, refetch } = useQuery(['data'], () =>
@@ -29,7 +27,7 @@ if (isLoading) {
 
 }
 
-if (error) {
+if (isError) {
  
 }
 refetch();
@@ -61,29 +59,28 @@ refetch();
                    data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  /> : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />}
                     </div>
                     </div></button> </label>
-                   <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
+                   <ul id="0" className="dropdown-content menu p-2 shadow rounded  w-52">
                                   
-                  <div className="bg-white uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center text-black right-0 appear-done enter-done">
+                  <div className="bg-neutral uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done">
                   {
                    users?.role === "user" && <>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" to="/profiles"> Profile </Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" to="/settings"> Your Bookings</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/profiles"> Profile </Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/settings"> Your Bookings</Link>
                                       
-                    <Link className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" to="/availablejob">Apply for Employee</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/availablejob">Apply for Employee</Link>
                                         </> }
                       {
-                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none" to="/admindashboard"> Admin DashBoard</Link>}
+                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/admindashboard"> Admin DashBoard</Link>}
                                    
-                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  hover:bg-gray-200 font-light text-sm focus:outline-none" onClick={logout} >LOGOUT</button>
+                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" onClick={logout} >LOGOUT</button>
                         </div>
                         </ul>
                       </div>
                        {/* end */}
                             
-                     </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login' 
+                     </li> : <li className=' text-base-100  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
-                      <li><DarkMode /></li>
     </>
     return (
         <nav>

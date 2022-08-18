@@ -1,9 +1,52 @@
+/* 1 */
+:root {
+  --font-color: #fff;
+  --background-color: #ECF0F3;
+  --link-color: #fff;
+  --btn-bg: #FB4051;
+  --color: #fff;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --font-color: #A6ADBA;
+  --background-color: #2A303C;
+  --link-color: lightblue;
+  --btn-bg: #C74B50;
+
+}
+
+/* 3 */
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+a {
+  color: var(--link-color);
+}
+.btn{
+  background: var(--btn-bg);
+  border-color:var(--btn-bg) ;
+  color: #fff;
+}
+.btn:hover{
+  color: var(--btn-bg);
+  border: var(--btn-bg);
+
+}
+
 /* Custom Dark Mode Toggle Element */
 .toggle-theme-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 4px;
+
+    position: fixed;
+    bottom: 50%;
+    left: 10px;
+    z-index: 20;
   }
   
   .toggle-theme-wrapper span {
@@ -47,7 +90,7 @@
   }
   
   input:checked + .slider {
-    background-color: cornflowerblue;
+    background-color: #FB4051;
   }
   
   .slider.round {

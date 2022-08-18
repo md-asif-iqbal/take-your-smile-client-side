@@ -147,46 +147,46 @@ return (
                 <div className="col">
                   <div className="card-profile-stats d-flex justify-content-center mt-3">
                     <div>
-                      <span className="heading">22</span>
+                      <span className="heading text-info">22</span>
                       <span className="description">Booking</span>
                     </div>
                     <div>
-                      <span className="heading">89</span>
+                      <span className="heading text-info">89</span>
                       <span className="description">Favorite</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="text-center">
-                <h3 className='text-xl font-bold capitalize'>
+                <h3 className='text-xl font-bold capitalize text-info'>
                   {details?.userName ? details?.userName : details?.name}
                 </h3>
                 <div className="h5 font-weight-500">
                   {email}
                 </div>
-                <div className="h5 mt-4">
-                  <i className="ni business_briefcase-24 mr-2">Phone: <a href="tel:{details?.phone}">{details?.phone}</a></i>
+                <div className="h5 mt-4 text-info">
+                  <i className="ni business_briefcase-24 mr-2 ">Phone: <a href="tel:{details?.phone}">{details?.phone}</a></i>
                 </div>
                 <div>
                   {
-                    details?.country && <i className="ni education_hat mr-2">{details?.country}, {details?.city}, {details?.postal}</i>
+                    details?.country && <i className="ni education_hat mr-2 text-info">{details?.country}, {details?.city}, {details?.postal}</i>
                   }
                   
                 </div>
                 <hr className="my-4" />
                 {
-                  details?.bio ?  <p>{details?.bio}</p> : <p>Add Your Bio</p>
+                  details?.bio ?  <p className='text-info'>{details?.bio}</p> : <p className='text-info'>Add Your Bio</p>
                 }
               </div>
             </div>
           </div>
         </div>
         <div className="col-xl-8 order-xl-1">
-          <div className="card bg-secondary shadow">
-            <div className="card-header bg-white border-0">
+          <div className="card shadow">
+            <div className="card-header  border-0">
               <div className="row align-items-center">
                 <div className="col-8">
-                  <h3 className="mb-0">My account</h3>
+                  <h3 className="mb-0 text-info">My account</h3>
                 </div>
               
               </div>
@@ -270,7 +270,7 @@ return (
               <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div className="space-y-1 text-center">
                   <svg
-                    className="mx-auto h-12 w-12 text-secondary"
+                    className="mx-auto h-12 w-12 text-base-100"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 48 48"
@@ -284,8 +284,8 @@ return (
                     />
                   </svg>
                   <div className="flex">
-                    <label className="relative cursor-pointer bg-secondary rounded-md  px-3 py-2">
-                      <span className="font-mono text-secondary">
+                    <label className="relative cursor-pointer  rounded-md  px-3 py-2">
+                      <span className="font-mono text-base-100">
                         Upload a file
                       </span>
                       <input 

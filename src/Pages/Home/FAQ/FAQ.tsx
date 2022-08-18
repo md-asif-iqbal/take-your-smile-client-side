@@ -1,12 +1,7 @@
 import React from 'react';
 
 const FAQ = () => {
-   
-   
-  
-       
-      
-        
+
             return (
                 <div className="space-y-4 lg:w-1/2 w-full mx-auto my-8">
                     <h2 className='text-3xl font-bold mb-2 text-center '>Frequently Asked Questions</h2>

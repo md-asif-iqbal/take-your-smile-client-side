@@ -152,6 +152,7 @@ import Alluser from "./Pages/AdminDashBoard/Alluser";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
 import Profiles from "./Pages/Profiles/Profiles";
+import DarkMode from "./Pages/shared/DarkMode/DarkMode";
 // Services location here
 function App() {
   return (
@@ -430,6 +431,7 @@ function App() {
 <Footer />
 <ToastContainer />
  <Messenger />
+ <DarkMode />
 
 </div>
 );
