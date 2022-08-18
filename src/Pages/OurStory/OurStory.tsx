@@ -4,6 +4,7 @@ import PageTitle from "../shared/PageTitle/PageTitle";
 import Banner from "./Banner";
 import Header from "./Header";
 import "./OurStory.css";
+
 const OurStory = () => {
   const ourStory = [
     {

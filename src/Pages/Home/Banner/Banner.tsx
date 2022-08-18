@@ -34,7 +34,7 @@ const Banner = () => {
                     Visualize, Customize,
                     <br /> Actualize our Corporate Events.
                     <br/>
-                    <button className='btn px-5 btn-rose'> Learn More</button>
+                    <button className='btn lg:px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -52,7 +52,7 @@ const Banner = () => {
                     Visualize, Customize,
                     <br /> Actualize our Non-Profit Events.
                     <br/>
-                    <button className='btn px-5 btn-rose'> Learn More</button>
+                    <button className='btn lg:px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -71,7 +71,7 @@ const Banner = () => {
                     Visualize, Customize,
                     <br /> Actualize our Weddings Events.
                     <br/>
-                    <button className='btn px-5 btn-rose'> Learn More</button>
+                    <button className='btn lg:px-5 btn-rose'> Learn More</button>
                   </h1>
                 </div>
               </Fade>
@@ -88,7 +88,7 @@ const Banner = () => {
                     Visualize, Customize,
                     <br /> Actualize our social Events.
                     <br/>
-                    <button className='btn px-5 btn-rose'> Learn More</button>
+                    <button className='btn lg:px-5 btn-rose'> Learn More</button>
                   </h1>
                  
                 </div>

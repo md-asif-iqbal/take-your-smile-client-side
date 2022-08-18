@@ -8,14 +8,15 @@ import auth from "../../../firebase.init";
 import useAdmin from "../../../hooks/Admin/useAdmin";
 
 const NavEnd = () => {
-  const [user] = useAuthState(auth);
+  const [user ] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
   console.log(admin);
   
   const photo:any = user?.photoURL;
   let names:any = user?.displayName;
  const navigate = useNavigate();
- 
+
+
  const logout = () =>{
    signOut(auth);
     navigate('/login')
@@ -48,10 +49,8 @@ const NavEnd = () => {
                                     <div className="avatar ">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      user ?<img src={user.photoURL} alt={names} />
+                                      user.photoURL ?<img src={user.photoURL} alt={names}/>
                                       : <img src="https://i.ibb.co/FqYD4K3/download-2.png" alt={names} />
-                                
-
                                     }
                                     </div>
                                     </div>
@@ -74,12 +73,13 @@ const NavEnd = () => {
                                       >
                                         Profile
                                       </Link>
-                                      <a
+                                      <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-                                        href="/settings"
+                                        to="/yourbookings"
                                       >
                                         Your Bookings
-                                      </a>
+                                      </Link>
+                                      
                                       
                                       <Link
                                         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"

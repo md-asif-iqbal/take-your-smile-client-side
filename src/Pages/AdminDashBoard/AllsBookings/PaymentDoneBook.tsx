@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
-import { payments } from './constants/data2';
-
-
 const PaymentDoneBook = () => {
+
+  const [allBookings , setAllBookings]= useState([]);
+  useEffect(() => {
+    fetch("https://secure-escarpment-79738.herokuapp.com/orders")
+      .then((res) => res.json())
+      .then((data) => {
+          setAllBookings(data);
+      });
+  }, [allBookings]);
+
     return (
         <div>
             <div>
@@ -14,7 +21,7 @@ const PaymentDoneBook = () => {
           <div className="Appes">
           <h1 className='text-center mt-3 text-2xl'> All Payments Here</h1>
       <div className="propertiest text-black">
-      {payments.map((item) => (
+      {allBookings.map((item) => (
           <Card data={item} key={item.id} />
         ))}
       </div>

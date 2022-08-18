@@ -156,6 +156,7 @@ import Alluser from "./Pages/AdminDashBoard/Alluser";
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
+import YourBookings from "./Pages/YourBookings/YourBookings";
 // Services location here
 function App() {
   return (
@@ -432,13 +433,14 @@ function App() {
    element={<PaintJamFrom />}
  ></Route>
   <Route path='/blogslike' element={<Posts></Posts>}></Route>
+  <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
 </Routes>
 
 <Footer />
 <ToastContainer />
  
  <Messenger />
-<Modal />
+{/* <Modal /> */}
 
 </div>
 );
