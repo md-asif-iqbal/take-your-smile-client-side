@@ -8,6 +8,7 @@ import auth from "../../../firebase.init";
 import useAdmin from "../../../hooks/Admin/useAdmin";
 
 const NavEnd = () => {
+
   const [user ] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
   console.log(admin);
@@ -19,25 +20,38 @@ const NavEnd = () => {
 
  const logout = () =>{
    signOut(auth);
+
+  const [user] = useAuthState(auth);
+  const [admin]: any = useAdmin(user);
+  // console.log(admin);
+
+  const photo: any = user?.photoURL;
+  let names: any = user?.displayName;
+  const navigate = useNavigate();
+
+  const logout = () => {
+    signOut(auth);
+
     navigate('/login')
-   localStorage.removeItem('accessToken');
+    localStorage.removeItem('accessToken');
 
- }
-    const navigation = <>
-                            <li className=' text-white  cursor-pointer'><Link to='/weddings' 
-                            className='transition-all duration-300 uppercase'> Weddings</Link></li>
+  }
+  const navigation = <>
+    <li className=' text-white  cursor-pointer'><Link to='/weddings'
+      className='transition-all duration-300 uppercase'> Weddings</Link></li>
 
-                            <li className=' text-white  cursor-pointer uppercase'><Link to='/social' 
-                            className='transition-all duration-300'> Social</Link></li>
-                            {/* {
+    <li className=' text-white  cursor-pointer uppercase'><Link to='/social'
+      className='transition-all duration-300'> Social</Link></li>
+    {/* {
                               admin?.role === 'Admin' && <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Blogs</Link></li>
                             } */}
-                            <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
-                             
-                             {/* {
+    <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
+
+    {/* {
                                user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard' 
                                className='transition-all duration-300'> DashBoard</Link></li>: ''
                              } */}
+
                              <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus' 
                             className='transition-all duration-300'> Contact Us</Link></li>
                             {user ?  <li className=' text-white  cursor-pointer uppercase'>
@@ -110,14 +124,15 @@ const NavEnd = () => {
                             
 
     </>
-    return (
-        <nav>
-        <ul className='flex space-x-8 items-center capitalize  text-sm'>
-            
-          {navigation}
-        </ul>
+
+  return (
+    <nav>
+      <ul className='flex space-x-8 items-center capitalize  text-sm'>
+
+        {navigation}
+      </ul>
     </nav>
-    );
+  );
 };
 
 export default NavEnd;
