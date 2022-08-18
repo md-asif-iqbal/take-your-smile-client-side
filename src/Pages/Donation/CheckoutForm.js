@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import set from "date-fns/esm/set/index.js";
 import { toast, ToastContainer } from "react-toastify";
+import Loading from "../shared/Loading/Loading";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState('')
   const [success, setSuccess] = useState('')
+  const [processing, setProcessing] = useState(false)
   const [clientSecret, setClientSecret] = useState('')
   const [transactionId, setTransactionId] = useState('')
   const [email, setEmail] = useState('')
@@ -48,6 +50,9 @@ const CheckoutForm = () => {
     }
   }, [amount])
 
+  // if (setProcessing === false) {
+  //   return <Loading></Loading>
+  // }
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -89,7 +94,7 @@ const CheckoutForm = () => {
 
 
     // confrim card payment
-
+    setProcessing(true)
     const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
       clientSecret,
       {
@@ -106,6 +111,7 @@ const CheckoutForm = () => {
     if (intentError) {
       setCardError(intentError?.message)
       setSuccess('')
+      setProcessing(false)
     }
     else {
       setCardError('')
@@ -113,6 +119,7 @@ const CheckoutForm = () => {
       console.log(paymentIntent)
       toast(`Congrats! Your Payment is completed`)
       setSuccess(`Congrats! Your Payment is completed`)
+      setProcessing(false)
       event.target.reset();
     }
 
@@ -162,6 +169,11 @@ const CheckoutForm = () => {
           </button>
         </div>
       </form>
+
+      {
+        processing && <p><Loading></Loading></p>
+
+      }
       {
         cardError && <p style={{ color: 'yellow' }}>{cardError}</p>
       }
