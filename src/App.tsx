@@ -160,7 +160,7 @@ import Home from "./Pages/Donation/Home";
 import YourBookings from "./Pages/YourBookings/YourBookings";
 
 import Liked from "./Pages/Likes/Liked";
-
+import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 // Services location here
 function App() {
   return (
@@ -447,7 +447,7 @@ function App() {
  
  <Messenger />
 <Modal />
-
+<ClickToTop></ClickToTop>
 </div>
 );
 
