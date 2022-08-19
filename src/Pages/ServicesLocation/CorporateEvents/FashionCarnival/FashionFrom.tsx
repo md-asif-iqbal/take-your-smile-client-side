@@ -34,13 +34,15 @@ const FashionFrom = () => {
     location: string;
     address: string;
   };
+  
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: FashionDe.decImg,
-      decrImg2: FashionDe.decImg,
-      decrImg3: FashionDe.decImg,
+      decrImg2: FashionDe.decImg1,
+      decrImg3: FashionDe.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +50,7 @@ const FashionFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

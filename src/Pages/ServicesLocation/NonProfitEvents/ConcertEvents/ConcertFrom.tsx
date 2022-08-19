@@ -39,8 +39,8 @@ const ConcertFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: concert.decImg,
-      decrImg2: concert.decImg,
-      decrImg3: concert.decImg,
+      decrImg2: concert.decImg1,
+      decrImg3: concert.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const ConcertFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

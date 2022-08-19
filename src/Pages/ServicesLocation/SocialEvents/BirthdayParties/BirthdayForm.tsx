@@ -39,8 +39,8 @@ const BirthdayForm = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: birthday.decImg,
-      decrImg2: birthday.decImg,
-      decrImg3: birthday.decImg,
+      decrImg2: birthday.decImg1,
+      decrImg3: birthday.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const BirthdayForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

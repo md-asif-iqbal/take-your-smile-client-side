@@ -39,8 +39,8 @@ const PaintJamFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: paintJam.decImg,
-      decrImg2: paintJam.decImg,
-      decrImg3: paintJam.decImg,
+      decrImg2: paintJam.decImg1,
+      decrImg3: paintJam.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const PaintJamFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
