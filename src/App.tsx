@@ -138,7 +138,6 @@ import Home from "./Pages/Donation/Home";
 
 import YourBookings from "./Pages/YourBookings/YourBookings";
 
-import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
 import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
@@ -155,6 +154,7 @@ import Profiles from "./Pages/Profiles/Profiles";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import Login from "./Pages/Authentication/Login";
 import Blogposts from "./Pages/AdminDashbord/Blogposts";
+import Liked from "./Pages/Likes/Liked";
 // Services location here
 function App() {
   return (
@@ -426,8 +426,7 @@ function App() {
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
         <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favourites' element={<Posts />}></Route>
-      </Routes>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>      </Routes>
 
       <Footer />
       <ToastContainer />

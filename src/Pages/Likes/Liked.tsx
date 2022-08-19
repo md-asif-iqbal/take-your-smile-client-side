@@ -21,7 +21,7 @@ interface UserData {
 }
 
 
-const Posts = () => {
+const Liked = () => {
 
 
     const [user] = useAuthState(auth)
@@ -289,4 +289,4 @@ const Posts = () => {
         </div>
     );
 }
-export default Posts;
+export default Liked;
