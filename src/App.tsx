@@ -36,14 +36,6 @@ import BlogsThree from './Pages/Blogs/BlogsThree';
 import Blogs from './Pages/Blogs/Blogs';
 import Likes from './Pages/Likes/Posts';
 import Posts from './Pages/Likes/Posts';
-import AdminDashBoard from './Pages/AdminDashBoard/AdminDashBoard';
-import DashboardAdmin from './Pages/AdminDashBoard/DashboardAdmin';
-import AllBookings from './Pages/AdminDashBoard/AllBookings';
-import BlogPosts from './Pages/AdminDashBoard/BlogPosts';
-import GalleryPost from './Pages/AdminDashBoard/GalleryPost';
-import Messages from './Pages/AdminDashBoard/Messages';
-import Products from './Pages/AdminDashBoard/Products';
-import Settings from './Pages/AdminDashBoard/Settings';
 // import BlogsOne from "./Pages/Blogs/BlogsOne";
 // import BlogsThree from "./Pages/Blogs/BlogsThree";
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -149,9 +141,6 @@ import Show from "./Pages/shared/BlogEditor/Show";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 
 import Article from "./Pages/shared/BlogEditor/Article"
-import AllsBookings from "./Pages/AdminDashBoard/AllsBookings/AllsBookings";
-import PaymentDoneBook from "./Pages/AdminDashBoard/AllsBookings/PaymentDoneBook";
-import Alluser from "./Pages/AdminDashBoard/Alluser";
 
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
@@ -161,6 +150,14 @@ import YourBookings from "./Pages/YourBookings/YourBookings";
 
 import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
+import Alluser from "./Pages/AdminDashbord/Alluser";
+import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
+import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
+import EventPost from "./Pages/AdminDashbord/EventPost";
+import Blogposts from "./Pages/AdminDashbord/Blogposts";
+import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
+import PaymentDoneBook from "./Pages/AdminDashbord/AllsBookings/PaymentDoneBook";
+import AllBookings from "./Pages/AdminDashbord/AllBookings";
 // Services location here
 function App() {
   return (
@@ -169,23 +166,21 @@ function App() {
       <Routes>
         <Route path='/' element={<Events />}></Route>
         <Route path="user" element={<Alluser></Alluser>}></Route>
-        <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
-          <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
-          <Route path='allbookings' element={<AllBookings></AllBookings>}>
-            <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
-            <Route path='payment' element={<PaymentDoneBook />}></Route>
+        <Route path="/admin" element={<Dashbord></Dashbord>}>
+          <Route index element={<Admin></Admin>}></Route>
+          <Route path="eventpost" element={<EventPost></EventPost>}></Route>
+          <Route path="blogPost" element={<Blogposts></Blogposts>}></Route>
+          <Route path="user" element={<Alluser></Alluser>}></Route>
+          <Route path="articlepost" element={<Article></Article>}></Route>
+          <Route path="allbookings" element={<AllBookings></AllBookings>}>
+            <Route
+              path="bookings"
+              element={<AllsBookings></AllsBookings>}
+            ></Route>
+            <Route path="payment" element={<PaymentDoneBook />}></Route>
 
             {/* here all bookings we made it */}
           </Route>
-          <Route path='blogposts' element={<BlogPosts></BlogPosts>}></Route>
-          <Route path='gallerypost' element={<GalleryPost></GalleryPost>}></Route>
-          <Route path='messages' element={
-            <Messages></Messages>}>
-          </Route>
-          <Route path='allproducts' element={<Products></Products>}></Route>
-          <Route path='articlepost' element={<Article></Article>}>
-          </Route>
-          <Route path="user" element={<Alluser></Alluser>}></Route>
         </Route>
 
 
@@ -376,80 +371,80 @@ function App() {
           path="/floralorder/:pack/:id/:flow"
           element={<FloralFrom />}
 
-          ></Route>
-          {/* Social Check Out form  */}
-          <Route
-            path="/birthOrder/:pack/:id/:birth"
-            element={<BirthdayForm />}
-          ></Route>
-          <Route
-            path="/holdayOrder/:pack/:id/:holy"
-            element={<HolydayFrom />}
-          ></Route>
-          <Route
-            path="/Religious/:pack/:id/:reli"
-            element={<ReligiousForm />}
-          ></Route>
-          <Route
-            path="/seasonal/:pack/:id/:sean"
-            element={<SeasonalFrom />}
-          ></Route>
-          <Route
-            path="/retirefrom/:pack/:id/:reti"
-            element={<RetirementFrom />}
-          ></Route>
-          {/* Corporate Events  */}
-          <Route
-            path="/fashionfrom/:pack/:id/:fas"
-            element={<FashionFrom />}
-          ></Route>
-          <Route
-            path="/Educationfrom/:pack/:id/:edu"
-            element={<Educationafrom />}
-          ></Route>
-          <Route
-   path="/newYearfrom/:pack/:id/:newy"
-   element={<NewYearFrom />}
- ></Route>
- <Route
-   path="/SalesFrom/:pack/:id/:sale"
-   element={<SalesFrom />}
- ></Route>
- <Route
-   path="/productfrom/:pack/:id/:pro"
-   element={<ProductForm />}
- ></Route>
- {/* Non Profit Bokking Form  */}
- <Route
-   path="/concerfrom/:pack/:id/:con"
-   element={<ConcertFrom />}
- ></Route>
- <Route
-   path="/fairsFrom/:pack/:id/:fair"
-   element={<FairsForm />}
- ></Route>
- <Route
-   path="/fundrasFrom/:pack/:id/:fund"
-   element={<FundrasingForm />}
- ></Route>
- <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
- <Route
-   path="/paintFrom/:pack/:id/:pain"
-   element={<PaintJamFrom />}
- ></Route>
-  <Route path='/blogslike' element={<Posts></Posts>}></Route>
-  <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-  <Route path='/favourites' element={<Liked></Liked>}></Route>
-</Routes>
+        ></Route>
+        {/* Social Check Out form  */}
+        <Route
+          path="/birthOrder/:pack/:id/:birth"
+          element={<BirthdayForm />}
+        ></Route>
+        <Route
+          path="/holdayOrder/:pack/:id/:holy"
+          element={<HolydayFrom />}
+        ></Route>
+        <Route
+          path="/Religious/:pack/:id/:reli"
+          element={<ReligiousForm />}
+        ></Route>
+        <Route
+          path="/seasonal/:pack/:id/:sean"
+          element={<SeasonalFrom />}
+        ></Route>
+        <Route
+          path="/retirefrom/:pack/:id/:reti"
+          element={<RetirementFrom />}
+        ></Route>
+        {/* Corporate Events  */}
+        <Route
+          path="/fashionfrom/:pack/:id/:fas"
+          element={<FashionFrom />}
+        ></Route>
+        <Route
+          path="/Educationfrom/:pack/:id/:edu"
+          element={<Educationafrom />}
+        ></Route>
+        <Route
+          path="/newYearfrom/:pack/:id/:newy"
+          element={<NewYearFrom />}
+        ></Route>
+        <Route
+          path="/SalesFrom/:pack/:id/:sale"
+          element={<SalesFrom />}
+        ></Route>
+        <Route
+          path="/productfrom/:pack/:id/:pro"
+          element={<ProductForm />}
+        ></Route>
+        {/* Non Profit Bokking Form  */}
+        <Route
+          path="/concerfrom/:pack/:id/:con"
+          element={<ConcertFrom />}
+        ></Route>
+        <Route
+          path="/fairsFrom/:pack/:id/:fair"
+          element={<FairsForm />}
+        ></Route>
+        <Route
+          path="/fundrasFrom/:pack/:id/:fund"
+          element={<FundrasingForm />}
+        ></Route>
+        <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
+        <Route
+          path="/paintFrom/:pack/:id/:pain"
+          element={<PaintJamFrom />}
+        ></Route>
+        <Route path='/blogslike' element={<Posts></Posts>}></Route>
+        <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>
+      </Routes>
 
-<Footer />
-<ToastContainer />
- 
- <Messenger />
-<Modal />
-<ClickToTop></ClickToTop>
-</div>
-);
+      <Footer />
+      <ToastContainer />
+
+      <Messenger />
+      <Modal />
+      <ClickToTop></ClickToTop>
+    </div>
+  );
 
 }
 
