@@ -156,7 +156,11 @@ import Alluser from "./Pages/AdminDashBoard/Alluser";
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
+
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
+
+import Liked from "./Pages/Likes/Liked";
+
 // Services location here
 function App() {
   return (
@@ -168,8 +172,8 @@ function App() {
         <Route path="/admindashboard" element={<AdminDashBoard></AdminDashBoard>}>
           <Route index element={<DashboardAdmin></DashboardAdmin>}></Route>
           <Route path='allbookings' element={<AllBookings></AllBookings>}>
-          <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
-          <Route path='payment' element={<PaymentDoneBook/>}></Route>
+            <Route path='bookings' element={<AllsBookings></AllsBookings>}></Route>
+            <Route path='payment' element={<PaymentDoneBook />}></Route>
 
             {/* here all bookings we made it */}
           </Route>
@@ -204,32 +208,32 @@ function App() {
           <Route path="reviews" element={<Review></Review>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
           <Route path="uploadEvents" element={<UploadEvents />}></Route>
- 
+
           <Route path="admin" element={<MakeAdmin></MakeAdmin>}></Route>
- 
+
           <Route index element={<Profile />} />
           <Route path="update" element={<Update />} />
         </Route>
- 
+
         {/* <NavBar/> */}
-    <Route path="/sponsorpost" element={<SponsorPost />} />
+        <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
           <Show />
         }></Route>
-        <Route path='/article/:id' element={ <RequireAdmin>
+        <Route path='/article/:id' element={<RequireAdmin>
 
           <Blogs></Blogs>
-        </RequireAdmin> 
+        </RequireAdmin>
         }></Route>
- 
+
         <Route path='/posts' element={<RequireAuth>
-                <BlogPost />
+          <BlogPost />
         </RequireAuth>}></Route>
-            {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
+        {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
         <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route> */}
- 
+
         <Route path="/home" element={<HomeWithNav />}></Route>
         <Route path="/ourstory" element={<OurStory />}></Route>
         <Route path="/weddings" element={<Weedings />}></Route>
@@ -249,27 +253,27 @@ function App() {
           element={<RequireAuth>
             <Profiles />
           </RequireAuth>
-        }
-      ></Route>
-      <Route path="/login" element={<Login />}></Route>
+          }
+        ></Route>
+        <Route path="/login" element={<Login />}></Route>
 
-      <Route path="/gallery" element={<EventGallery />}>
-        <Route index element={<AllGallery />}></Route>
-        <Route path="socialgallery" element={<SocialGallery />}></Route>
-        <Route path="nonprofitgallery" element={<NonProfitGallery />}></Route>
-        <Route path="weddinggallery" element={<WeddingGallery />}></Route>
-        <Route path="corporategallery" element={<CorporateGallery />}></Route>
-      </Route>
+        <Route path="/gallery" element={<EventGallery />}>
+          <Route index element={<AllGallery />}></Route>
+          <Route path="socialgallery" element={<SocialGallery />}></Route>
+          <Route path="nonprofitgallery" element={<NonProfitGallery />}></Route>
+          <Route path="weddinggallery" element={<WeddingGallery />}></Route>
+          <Route path="corporategallery" element={<CorporateGallery />}></Route>
+        </Route>
 
-      <Route path="/singlegallery" element={<SingleEvent />}></Route>
-      {/* available job */}
-      <Route path="/availablejob" element={<AvailableJob />}></Route>
-      <Route path="*" element={<Error />}></Route>
-      <Route path="/location/:id" element={<Location />}></Route>
-      <Route path="/decretion/:id" element={<Decrations />}></Route>
+        <Route path="/singlegallery" element={<SingleEvent />}></Route>
+        {/* available job */}
+        <Route path="/availablejob" element={<AvailableJob />}></Route>
+        <Route path="*" element={<Error />}></Route>
+        <Route path="/location/:id" element={<Location />}></Route>
+        <Route path="/decretion/:id" element={<Decrations />}></Route>
 
-      {/* Events Services Package Here  */}
-      <Route path="/birthday/:id" element={<BirthdayParties />}></Route>
+        {/* Events Services Package Here  */}
+        <Route path="/birthday/:id" element={<BirthdayParties />}></Route>
         <Route path="/anniversary/:id" element={<Anniversary />}></Route>
         <Route path="/engagement/:id" element={<Engagement />}></Route>
         <Route path="/rehearsal/:id" element={<Rehearsal />}></Route>
@@ -315,7 +319,7 @@ function App() {
         <Route path="/fairsLoc/:pack" element={<FairExposLoc />}></Route>
         <Route path="/fundrasLoc/:pack" element={<FundrasingLoc />}></Route>
         {/* Decration  */}
- 
+
         {/* Wedding Events Decration  */}
         <Route path="/decration/:pack/:id" element={<Decration />}></Route>
         <Route
@@ -331,7 +335,7 @@ function App() {
           element={<WeddingDecration />}
         ></Route>
         <Route path="/floralDe/:pack/:id" element={<FloraDe />}></Route>
- 
+
         {/* Social Events  */}
         <Route
           path="/birthdayDecra/:pack/:id"
@@ -353,7 +357,7 @@ function App() {
         <Route path="/paintJamde/:pack/:id" element={<PaintJamDe />}></Route>
         <Route path="/homede/:pack/:id" element={<WelcomeDe />}></Route>
         <Route path="/fundrasde/:pack/:id" element={<Fundrasing />}></Route>
- 
+
         {/* Order Routes  */}
         <Route path="/order/:pack/:id/:anny" element={<OrderFrom />}></Route>
         <Route
@@ -371,6 +375,7 @@ function App() {
         <Route
           path="/floralorder/:pack/:id/:flow"
           element={<FloralFrom />}
+
           ></Route>
           {/* Social Check Out form  */}
           <Route
@@ -443,6 +448,81 @@ function App() {
 <ClickToTop></ClickToTop>
 </div>
 );
+
+        ></Route>
+        {/* Social Check Out form  */}
+        <Route
+          path="/birthOrder/:pack/:id/:birth"
+          element={<BirthdayForm />}
+        ></Route>
+        <Route
+          path="/holdayOrder/:pack/:id/:holy"
+          element={<HolydayFrom />}
+        ></Route>
+        <Route
+          path="/Religious/:pack/:id/:reli"
+          element={<ReligiousForm />}
+        ></Route>
+        <Route
+          path="/seasonal/:pack/:id/:sean"
+          element={<SeasonalFrom />}
+        ></Route>
+        <Route
+          path="/retirefrom/:pack/:id/:reti"
+          element={<RetirementFrom />}
+        ></Route>
+        {/* Corporate Events  */}
+        <Route
+          path="/fashionfrom/:pack/:id/:fas"
+          element={<FashionFrom />}
+        ></Route>
+        <Route
+          path="/Educationfrom/:pack/:id/:edu"
+          element={<Educationafrom />}
+        ></Route>
+        <Route
+          path="/newYearfrom/:pack/:id/:newy"
+          element={<NewYearFrom />}
+        ></Route>
+        <Route
+          path="/SalesFrom/:pack/:id/:sale"
+          element={<SalesFrom />}
+        ></Route>
+        <Route
+          path="/productfrom/:pack/:id/:pro"
+          element={<ProductForm />}
+        ></Route>
+        {/* Non Profit Bokking Form  */}
+        <Route
+          path="/concerfrom/:pack/:id/:con"
+          element={<ConcertFrom />}
+        ></Route>
+        <Route
+          path="/fairsFrom/:pack/:id/:fair"
+          element={<FairsForm />}
+        ></Route>
+        <Route
+          path="/fundrasFrom/:pack/:id/:fund"
+          element={<FundrasingForm />}
+        ></Route>
+        <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
+        <Route
+          path="/paintFrom/:pack/:id/:pain"
+          element={<PaintJamFrom />}
+        ></Route>
+        <Route path='/blogslike' element={<Posts></Posts>}></Route>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>
+
+      </Routes>
+
+      <Footer />
+      <ToastContainer />
+
+      <Messenger />
+      <Modal />
+
+    </div>
+  );
 }
 
 export default App;

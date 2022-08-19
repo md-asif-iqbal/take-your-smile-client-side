@@ -5,7 +5,7 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://secure-escarpment-79738.herokuapp.com/admin/${email}`,{
+            fetch(`https://secure-escarpment-79738.herokuapp.com/admin/${email}`, {
                 methodd: "GET",
                 headers: {
                     'content-type': 'application/json',
@@ -13,14 +13,14 @@ const useAdmin = user => {
                 }
 
             })
-            .then(res => res.json())
-            .then(data => {
-                setAdmin(data);
-                setAdminLoading(false);
-            })
+                .then(res => res.json())
+                .then(data => {
+                    setAdmin(data);
+                    setAdminLoading(false);
+                })
         }
-    },[user]);
-    console.log(admin);
+    }, [user]);
+    // console.log(admin);
 
     return [admin, adminLoading];
 }
