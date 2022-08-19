@@ -439,6 +439,7 @@ function App() {
  ></Route>
   <Route path='/blogslike' element={<Posts></Posts>}></Route>
   <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
+  <Route path='/favourites' element={<Liked></Liked>}></Route>
 </Routes>
 
 <Footer />
