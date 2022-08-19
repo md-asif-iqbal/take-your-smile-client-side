@@ -156,7 +156,11 @@ import Alluser from "./Pages/AdminDashBoard/Alluser";
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
+
+import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
+
 import Liked from "./Pages/Likes/Liked";
+
 // Services location here
 function App() {
   return (
@@ -371,6 +375,80 @@ function App() {
         <Route
           path="/floralorder/:pack/:id/:flow"
           element={<FloralFrom />}
+
+          ></Route>
+          {/* Social Check Out form  */}
+          <Route
+            path="/birthOrder/:pack/:id/:birth"
+            element={<BirthdayForm />}
+          ></Route>
+          <Route
+            path="/holdayOrder/:pack/:id/:holy"
+            element={<HolydayFrom />}
+          ></Route>
+          <Route
+            path="/Religious/:pack/:id/:reli"
+            element={<ReligiousForm />}
+          ></Route>
+          <Route
+            path="/seasonal/:pack/:id/:sean"
+            element={<SeasonalFrom />}
+          ></Route>
+          <Route
+            path="/retirefrom/:pack/:id/:reti"
+            element={<RetirementFrom />}
+          ></Route>
+          {/* Corporate Events  */}
+          <Route
+            path="/fashionfrom/:pack/:id/:fas"
+            element={<FashionFrom />}
+          ></Route>
+          <Route
+            path="/Educationfrom/:pack/:id/:edu"
+            element={<Educationafrom />}
+          ></Route>
+          <Route
+   path="/newYearfrom/:pack/:id/:newy"
+   element={<NewYearFrom />}
+ ></Route>
+ <Route
+   path="/SalesFrom/:pack/:id/:sale"
+   element={<SalesFrom />}
+ ></Route>
+ <Route
+   path="/productfrom/:pack/:id/:pro"
+   element={<ProductForm />}
+ ></Route>
+ {/* Non Profit Bokking Form  */}
+ <Route
+   path="/concerfrom/:pack/:id/:con"
+   element={<ConcertFrom />}
+ ></Route>
+ <Route
+   path="/fairsFrom/:pack/:id/:fair"
+   element={<FairsForm />}
+ ></Route>
+ <Route
+   path="/fundrasFrom/:pack/:id/:fund"
+   element={<FundrasingForm />}
+ ></Route>
+ <Route path="/WehomeDe/:pack/:id/:weh" element={<HomeFrom />}></Route>
+ <Route
+   path="/paintFrom/:pack/:id/:pain"
+   element={<PaintJamFrom />}
+ ></Route>
+  <Route path='/blogslike' element={<Posts></Posts>}></Route>
+</Routes>
+
+<Footer />
+<ToastContainer />
+ 
+ <Messenger />
+<Modal />
+<ClickToTop></ClickToTop>
+</div>
+);
+
         ></Route>
         {/* Social Check Out form  */}
         <Route

@@ -10,6 +10,7 @@ import {
    LinkedinShareButton,
    LinkedinIcon
 } from "react-share";
+
 import { useOnClickOutside } from '../../hooks/UseClickOutSide/UseOutsideClick';
 
 const ShareSocial = (posts:any) => {
@@ -31,14 +32,14 @@ const ShareSocial = (posts:any) => {
    return (
       <div>
          <div className="flex gap-1">
-            <div onMouseOver={handleMouseOver}  onMouseOut={handleMouseOut} style={{ display: 'flex', alignItems: 'center' }}>
+            <div  onMouseOver={handleMouseOver}  onMouseOut={handleMouseOut} style={{ display: 'flex', alignItems: 'center' }}>
                <RiShareForwardLine></RiShareForwardLine>
             </div>
             <span className='flex items-center'>20</span>
          </div>
 
          {isHovering && (
-            <div ref={ref} className='absolute bottom-7 flex items-center right-0'>
+            <div  ref={ref} className='social-share absolute bottom-7 flex items-center right-0'>
 
                <FacebookShareButton url={shareUrl}>
                   <FacebookIcon size={40} round={true} />
