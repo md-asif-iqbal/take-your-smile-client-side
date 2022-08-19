@@ -7,48 +7,46 @@ import Loading from "../shared/Loading/Loading";
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
-  const [cardError, setCardError] = useState('')
-  const [success, setSuccess] = useState('')
-  const [processing, setProcessing] = useState(false)
-  const [clientSecret, setClientSecret] = useState('')
-  const [transactionId, setTransactionId] = useState('')
-  const [email, setEmail] = useState('')
-  const [amount, setAmount] = useState('')
+  const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
+  const [transactionId, setTransactionId] = useState("");
+  const [email, setEmail] = useState("");
+  const [amount, setAmount] = useState("");
   // console.log(email, amount)
-
 
   // const price = '156';
 
   const handleEmail = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   const handleAmount = (e) => {
-    setAmount(e.target.value)
-  }
-
-
-
+    setAmount(e.target.value);
+  };
 
   useEffect(() => {
     if (amount) {
-      fetch('http://localhost:8000/create-payment-intent', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({ amount })
-      })
-        .then(res => res.json())
-        .then(data => {
+      fetch(
+        "https://secure-escarpment-79738.herokuapp.com/create-payment-intent",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ amount }),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
           // console.log(data)
           if (data?.clientSecret) {
-
             setClientSecret(data.clientSecret);
           }
         });
     }
-  }, [amount])
+  }, [amount]);
 
   // if (setProcessing === false) {
   //   return <Loading></Loading>
@@ -57,9 +55,6 @@ const CheckoutForm = () => {
   const handleSubmit = async (event) => {
     // Block native form submission.
     event.preventDefault();
-
-
-
 
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
@@ -78,73 +73,77 @@ const CheckoutForm = () => {
 
     // Use your card Element with other Stripe.js APIs
     const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
+      type: "card",
       card,
     });
 
-
-    setCardError(error?.message || '')
-    setSuccess('')
+    setCardError(error?.message || "");
+    setSuccess("");
     if (error) {
-      console.log('[error]', error);
+      console.log("[error]", error);
     } else {
-      console.log('[PaymentMethod]', paymentMethod);
-
+      console.log("[PaymentMethod]", paymentMethod);
     }
 
-
     // confrim card payment
-    setProcessing(true)
-    const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
-      clientSecret,
-      {
+    setProcessing(true);
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: card,
           billing_details: {
-
-            email: email
+            email: email,
           },
         },
-      },
-    );
+      });
 
     if (intentError) {
-      setCardError(intentError?.message)
-      setSuccess('')
-      setProcessing(false)
-    }
-    else {
-      setCardError('')
-      setTransactionId(paymentIntent.id)
-      console.log(paymentIntent)
-      toast(`Congrats! Your Payment is completed`)
-      setSuccess(`Congrats! Your Payment is completed`)
-      setProcessing(false)
+      setCardError(intentError?.message);
+      setSuccess("");
+      setProcessing(false);
+    } else {
+      setCardError("");
+      setTransactionId(paymentIntent.id);
+      console.log(paymentIntent);
+      toast(`Congrats! Your Payment is completed`);
+      setSuccess(`Congrats! Your Payment is completed`);
+      setProcessing(false);
       event.target.reset();
     }
-
   };
 
   return (
     <>
-      <form className="p-0" style={{ display: 'inline' }} onSubmit={handleSubmit}>
+      <form
+        className="p-0"
+        style={{ display: "inline" }}
+        onSubmit={handleSubmit}
+      >
         <div className="grid grid-cols-2 gap-5 ">
           <div>
             <label style={{ fontSize: "20px" }} className="text-white ">
               Email
             </label>
-            <input onChange={handleEmail} type="email" placeholder="Your Email Address" className="border-rounded border-2 border-primary rounded-lg   my-3 input-md  w-full max-w-2xl block " />
-
+            <input
+              onChange={handleEmail}
+              type="email"
+              placeholder="Your Email Address"
+              className="border-rounded border-2 border-primary rounded-lg   my-3 input-md  w-full max-w-2xl block "
+            />
           </div>
           <div>
             <div>
               <label style={{ fontSize: "20px" }} className="text-white ">
                 Amount
               </label>
-              <input onChange={handleAmount} type="number" placeholder="Amount" className="border-rounded border-2 border-primary rounded-lg   my-3 input-md  w-full max-w-2xl block " />
+              <input
+                onChange={handleAmount}
+                type="number"
+                placeholder="Amount"
+                className="border-rounded border-2 border-primary rounded-lg   my-3 input-md  w-full max-w-2xl block "
+              />
             </div>
           </div>
-
         </div>
         <CardElement
           options={{
@@ -164,26 +163,27 @@ const CheckoutForm = () => {
         />
 
         <div className="mt-10 mb-5">
-          <button className='pay-btn' type="submit" disabled={!stripe}>
+          <button className="pay-btn" type="submit" disabled={!stripe}>
             Pay
           </button>
         </div>
       </form>
 
-      {
-        processing && <p><Loading></Loading></p>
-
-      }
-      {
-        cardError && <p style={{ color: 'yellow' }}>{cardError}</p>
-      }
-      {
-        success && <div style={{ color: 'white' }}>
-
+      {processing && (
+        <p>
+          <Loading></Loading>
+        </p>
+      )}
+      {cardError && <p style={{ color: "yellow" }}>{cardError}</p>}
+      {success && (
+        <div style={{ color: "white" }}>
           <p> {success}</p>
-          <p>Your TransactionId: <span className="text-black font-bold">{transactionId}</span></p>
+          <p>
+            Your TransactionId:{" "}
+            <span className="text-black font-bold">{transactionId}</span>
+          </p>
         </div>
-      }
+      )}
       <ToastContainer />
     </>
   );
