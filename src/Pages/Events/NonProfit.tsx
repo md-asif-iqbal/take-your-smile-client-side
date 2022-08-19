@@ -15,43 +15,41 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-const Weedings = () => {
-  const [wedding, setWedding] = useState([]);
+const NonProfit = () => {
+  const [nonPropit, setnonPropit] = useState([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
+    const url = "https://secure-escarpment-79738.herokuapp.com/nonprofit";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setWedding(data));
+      .then((data) => setnonPropit(data));
   }, []);
-
   const navigate = useNavigate();
-  const FloralDesing = (item) => {
-    navigate(`/floral/${item}`);
+  const ConcertEvents = (item: any) => {
+    navigate(`/concert/${item}`);
   };
 
-  const HandleAnniversary = (item) => {
-    navigate(`/anniversary/${item}`);
+  const ExposEvents = (item: any) => {
+    navigate(`/fairs/${item}`);
   };
 
-  const handleEngagement = (item) => {
-    navigate(`/engagement/${item}`);
+  const Fundrasing = (item: any) => {
+    navigate(`/Fundrasing/${item}`);
   };
 
-  const handlerehearsal = (item) => {
-    navigate(`/rehearsal/${item}`);
+  const WelcomeHomeEvents = (item: any) => {
+    navigate(`/homeEvent/${item}`);
   };
 
-  const handleWedding = (item) => {
-    navigate(`/wedding/${item}`);
+  const PaintJam = (item: any) => {
+    navigate(`/paintJam/${item}`);
   };
   return (
     <div style={{ backgroundColor: "white" }}>
       <NavBar></NavBar>
-      <PageTitle title="Weeding Event" />
-
+      <PageTitle title="Non-profit Event" />
       {/* <img className='w-full' src={banner} alt="" /> */}
-      <div className="banner-weeding pt-8">
+      <div className="banner-nonprofit pt-8">
         <h1
           className="text-3xl lg:text-6xl align-middle  text-center font-semibold "
           style={{
@@ -60,7 +58,7 @@ const Weedings = () => {
             color: "white",
           }}
         >
-          WEEDING PLANNING
+          NON-PROFIT EVENTS
         </h1>
       </div>
       <div className=" w-3/5 mx-auto my-20">
@@ -68,14 +66,18 @@ const Weedings = () => {
           style={{ color: "#444", lineHeight: "44px", wordSpacing: "4px" }}
           className="text-2xl lg:text-2xl align-middle  text-center  font-semibold ,"
         >
-          Planning you're wedding, but no idea where to start? Take Heart!
+          Non-profit events are one of our biggest passions and we have a
+          variety of experience in the non-profit sector.
         </h3>
         <p
           style={{ color: "#676767", lineHeight: "30px", wordSpacing: "3px" }}
           className="text-center pt-11 text-base"
         >
-          Whether you need a day-of coordinator or full service planning from
-          your proposal to your big day, we have you covered!
+          We understand the important of raising funds and awareness for your
+          organization through your special events. We pride ourselves on
+          creating unique event experiences that highlight all of the amazing
+          resources your organization has to offer.From your next gala, to your
+          annual awareness walk, Take Heart! We have you covered!
         </p>
       </div>
 
@@ -103,7 +105,7 @@ const Weedings = () => {
                   <img className="mx-auto" src={social1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img cclassName="mx-auto" src={social2} alt="" />
+                  <img className="mx-auto" src={social2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img className="mx-auto" src={social3} alt="" />
@@ -119,10 +121,10 @@ const Weedings = () => {
           >
             SERVICES INCLUDE
           </h1>
-          {wedding.map((item) => (
+          {nonPropit.map((item) => (
             <div key={item._id}>
               <h1
-                onClick={() => HandleAnniversary(item._id)}
+                onClick={() => ConcertEvents(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -131,7 +133,7 @@ const Weedings = () => {
                 {item.name}
               </h1>
               <h1
-                onClick={() => handleEngagement(item._id)}
+                onClick={() => WelcomeHomeEvents(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -140,7 +142,7 @@ const Weedings = () => {
                 {item.name1}
               </h1>
               <h1
-                onClick={() => handlerehearsal(item._id)}
+                onClick={() => Fundrasing(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -149,7 +151,7 @@ const Weedings = () => {
                 {item.name2}
               </h1>
               <h1
-                onClick={() => handleWedding(item._id)}
+                onClick={() => ExposEvents(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -158,7 +160,7 @@ const Weedings = () => {
                 {item.name3}
               </h1>
               <h1
-                onClick={() => FloralDesing(item._id)}
+                onClick={() => PaintJam(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -180,15 +182,15 @@ const Weedings = () => {
           </strong>
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
-          <div className="mx-auto w-5/6">
+          <div className="mx-auto w-full">
             <div className="w-full text-neutral">
               <form action="">
-                <div className="lg:flex">
+                <div className="lg:flex w-full">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Name"
-                    className="input-lg w-full max-w-xs block mx-3 my-3"
+                    className="input-lg w-full max-w-xs block mx-4 my-3"
                     required={true}
                   />
                   <input
@@ -199,12 +201,12 @@ const Weedings = () => {
                     required={true}
                   />
                 </div>
-                <div className="lg:flex ">
+                <div className="lg:flex w-full ">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Phone Number"
-                    className="input-lg mx-3 my-3  w-full max-w-xs block "
+                    className="input-lg mx-4 my-3  w-full max-w-xs block "
                     required={true}
                   />
                   <input
@@ -215,7 +217,7 @@ const Weedings = () => {
                     required={true}
                   />
                 </div>
-                <div className="w-full ">
+                <div className="w-full">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text "
@@ -224,7 +226,7 @@ const Weedings = () => {
                     required={true}
                   />
                 </div>
-                <div className="w-full ">
+                <div className="w-full">
                   <textarea
                     style={{ height: "200px", backgroundColor: "#3b3b3b" }}
                     className=" input-lg mx-3 my-3 pt-4 w-full "
@@ -294,9 +296,10 @@ const Weedings = () => {
           </div>
         </div>
       </div>
+
       <RecentEvents></RecentEvents>
     </div>
   );
 };
 
-export default Weedings;
+export default NonProfit;

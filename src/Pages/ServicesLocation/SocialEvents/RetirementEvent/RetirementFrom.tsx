@@ -39,8 +39,8 @@ const RetirementFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: retirement.decImg,
-      decrImg2: retirement.decImg,
-      decrImg3: retirement.decImg,
+      decrImg2: retirement.decImg1,
+      decrImg3: retirement.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const RetirementFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

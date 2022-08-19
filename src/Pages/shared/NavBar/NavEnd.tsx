@@ -10,7 +10,6 @@ import useAdmin from "../../../hooks/Admin/useAdmin";
 const NavEnd = () => {
   const [user] = useAuthState(auth);
   const [admin]:any  =  useAdmin(user);
-  console.log(admin);
   
   const photo:any = user?.photoURL;
   let names:any = user?.displayName;

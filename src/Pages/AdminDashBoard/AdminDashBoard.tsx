@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, } from 'react-router-dom';
 import NavBar from '../shared/NavBar/NavBar';
 
 
 const AdminDashBoard = () => {
-
-
 	return (
-	
 		<div>
-			<NavBar/>
+			<NavBar />
 			{/* <button className='mt-5 pl-5'>
 				<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
 			</button> */}
@@ -94,7 +91,7 @@ const AdminDashBoard = () => {
 
 				</div>
 				<div>
-					
+
 					<h1 className=' mx-auto text-white pt-32 lg:ml-52 text-4xl'>Welcome to your Dashboard</h1>
 					<Outlet></Outlet>
 				</div>

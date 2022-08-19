@@ -32,7 +32,7 @@ if(isLoading){
           <div className="Appes">
       <div className="propertiest">
         {gallerys.map((item) => (
-          <Card data={item} key={item.date} />
+          <Card data={item} key={item._id} />
         ))}
       </div>
       </div>

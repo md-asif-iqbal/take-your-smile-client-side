@@ -15,41 +15,42 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-const NonProfit = () => {
-  const [nonPropit, setnonPropit] = useState([]);
+const Social = () => {
+  const [social, setSocial] = useState([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/nonprofit";
+    const url = "https://secure-escarpment-79738.herokuapp.com/social";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setnonPropit(data));
+      .then((data) => setSocial(data));
   }, []);
+
   const navigate = useNavigate();
-  const ConcertEvents = (item) => {
-    navigate(`/concert/${item}`);
+  const Retirement = (item: any) => {
+    navigate(`/retirement/${item}`);
+  };
+  const HandleBirthday = (item: any) => {
+    navigate(`/birthday/${item}`);
   };
 
-  const ExposEvents = (item) => {
-    navigate(`/fairs/${item}`);
+  const HandleSeasonal = (item: any) => {
+    navigate(`/seasonal/${item}`);
   };
 
-  const Fundrasing = (item) => {
-    navigate(`/Fundrasing/${item}`);
+  const handleReligious = (item: any) => {
+    navigate(`/religious/${item}`);
   };
 
-  const WelcomeHomeEvents = (item) => {
-    navigate(`/homeEvent/${item}`);
-  };
-
-  const PaintJam = (item) => {
-    navigate(`/paintJam/${item}`);
+  const handleHolday = (item: any) => {
+    navigate(`/holyday/${item}`);
   };
   return (
     <div style={{ backgroundColor: "white" }}>
       <NavBar></NavBar>
-      <PageTitle title="Non-profit Event" />
+      <PageTitle title="Social Event" />
+
       {/* <img className='w-full' src={banner} alt="" /> */}
-      <div className="banner-nonprofit pt-8">
+      <div className="banner-social pt-8">
         <h1
           className="text-3xl lg:text-6xl align-middle  text-center font-semibold "
           style={{
@@ -58,7 +59,7 @@ const NonProfit = () => {
             color: "white",
           }}
         >
-          NON-PROFIT EVENTS
+          SOCIAL EVENTS
         </h1>
       </div>
       <div className=" w-3/5 mx-auto my-20">
@@ -66,18 +67,17 @@ const NonProfit = () => {
           style={{ color: "#444", lineHeight: "44px", wordSpacing: "4px" }}
           className="text-2xl lg:text-2xl align-middle  text-center  font-semibold ,"
         >
-          Non-profit events are one of our biggest passions and we have a
-          variety of experience in the non-profit sector.
+          Our social event planning services are perfect for the host/hostess
+          that wants to be able to join in and enjoy their party.
         </h3>
         <p
           style={{ color: "#676767", lineHeight: "30px", wordSpacing: "3px" }}
           className="text-center pt-11 text-base"
         >
-          We understand the important of raising funds and awareness for your
-          organization through your special events. We pride ourselves on
-          creating unique event experiences that highlight all of the amazing
-          resources your organization has to offer.From your next gala, to your
-          annual awareness walk, Take Heart! We have you covered!
+          Social events are where Take Heart Events can really cut loose and let
+          our creativity shine! We would love to celebrate your next milestone
+          with you! From your child’s birthday party, to your annual holiday
+          party, Take Heart! We have you covered!
         </p>
       </div>
 
@@ -105,7 +105,7 @@ const NonProfit = () => {
                   <img className="mx-auto" src={social1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img cclassName="mx-auto" src={social2} alt="" />
+                  <img className="mx-auto" src={social2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img className="mx-auto" src={social3} alt="" />
@@ -121,10 +121,10 @@ const NonProfit = () => {
           >
             SERVICES INCLUDE
           </h1>
-          {nonPropit.map((item) => (
+          {social.map((item) => (
             <div key={item._id}>
               <h1
-                onClick={() => ConcertEvents(item._id)}
+                onClick={() => HandleBirthday(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -133,7 +133,7 @@ const NonProfit = () => {
                 {item.name}
               </h1>
               <h1
-                onClick={() => WelcomeHomeEvents(item._id)}
+                onClick={() => HandleSeasonal(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -142,16 +142,16 @@ const NonProfit = () => {
                 {item.name1}
               </h1>
               <h1
-                onClick={() => Fundrasing(item._id)}
+                onClick={() => handleReligious(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name2}
+                {item.name4}
               </h1>
               <h1
-                onClick={() => ExposEvents(item._id)}
+                onClick={() => handleHolday(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -160,13 +160,13 @@ const NonProfit = () => {
                 {item.name3}
               </h1>
               <h1
-                onClick={() => PaintJam(item._id)}
+                onClick={() => Retirement(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name4}
+                {item.name2}
               </h1>
             </div>
           ))}
@@ -185,35 +185,35 @@ const NonProfit = () => {
           <div className="mx-auto w-full">
             <div className="w-full text-neutral">
               <form action="">
-                <div className="lg:flex w-full">
+                <div className="lg:flex">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Name"
-                    className="input-lg w-full max-w-xs block mx-4 my-3"
+                    className="input-lg w-full max-w-xs block mx-3 my-3"
                     required={true}
                   />
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Email Address"
-                    className=" my-3 input-lg  w-full max-w-xs block "
+                    className="mx-3 my-3 input-lg  w-full max-w-xs block "
                     required={true}
                   />
                 </div>
-                <div className="lg:flex w-full ">
+                <div className="lg:flex ">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Phone Number"
-                    className="input-lg mx-4 my-3  w-full max-w-xs block "
+                    className="input-lg mx-3 my-3  w-full max-w-xs block "
                     required={true}
                   />
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Company Name"
-                    className="input-lg  my-3  w-full max-w-xs block "
+                    className="input-lg mx-3 my-3  w-full max-w-xs block "
                     required={true}
                   />
                 </div>
@@ -301,5 +301,4 @@ const NonProfit = () => {
     </div>
   );
 };
-
-export default NonProfit;
+export default Social;

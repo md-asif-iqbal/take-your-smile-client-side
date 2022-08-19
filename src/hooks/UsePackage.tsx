@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const UsePackage = (pack) => {
+const UsePackage = (pack: any) => {
   const [packag, setPackage] = useState([]);
   useEffect(() => {
     const url = `https://secure-escarpment-79738.herokuapp.com/package/${pack}`;

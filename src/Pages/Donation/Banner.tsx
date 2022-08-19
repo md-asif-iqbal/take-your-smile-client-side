@@ -50,7 +50,7 @@ const Banner = () => {
               <div className="banner-img relative ">
                 <div className="title">
                   <h1 className="font-mono font-bold text-2xl">{item.title}</h1>
-                  <div className="border"> </div>
+                  <div className="borderLine"> </div>
                 </div>
                 <img className="h-screen w-full" src={item.img} alt="" />
                 <div className="banner"> </div>

@@ -51,7 +51,7 @@ const BlogsOne = () => {
             <h1 className='text-3xl text-center mt-16 font-bold'>Blogs</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-10">
         {imageGallery.map((item) => (
-          <div>
+          <div key={item.id}>
             
             <img className="hover:bg-primary" src={item.img} alt="" />
             <a href="" className='hover:text-red-500'>{item.text}</a>

@@ -15,42 +15,43 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-const Social = () => {
-  const [social, setSocial] = useState([]);
+const Weedings = () => {
+  const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/social";
+    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setSocial(data));
+      .then((data) => setWedding(data));
   }, []);
 
   const navigate = useNavigate();
-  const Retirement = (item) => {
-    navigate(`/retirement/${item}`);
-  };
-  const HandleBirthday = (item) => {
-    navigate(`/birthday/${item}`);
+  const FloralDesing = (item: any) => {
+    navigate(`/floral/${item}`);
   };
 
-  const HandleSeasonal = (item) => {
-    navigate(`/seasonal/${item}`);
+  const HandleAnniversary = (item: any) => {
+    navigate(`/anniversary/${item}`);
   };
 
-  const handleReligious = (item) => {
-    navigate(`/religious/${item}`);
+  const handleEngagement = (item: any) => {
+    navigate(`/engagement/${item}`);
   };
 
-  const handleHolday = (item) => {
-    navigate(`/holyday/${item}`);
+  const handlerehearsal = (item: any) => {
+    navigate(`/rehearsal/${item}`);
+  };
+
+  const handleWedding = (item: any) => {
+    navigate(`/wedding/${item}`);
   };
   return (
     <div style={{ backgroundColor: "white" }}>
       <NavBar></NavBar>
-      <PageTitle title="Social Event" />
+      <PageTitle title="Weeding Event" />
 
       {/* <img className='w-full' src={banner} alt="" /> */}
-      <div className="banner-social pt-8">
+      <div className="banner-weeding pt-8">
         <h1
           className="text-3xl lg:text-6xl align-middle  text-center font-semibold "
           style={{
@@ -59,7 +60,7 @@ const Social = () => {
             color: "white",
           }}
         >
-          SOCIAL EVENTS
+          WEEDING PLANNING
         </h1>
       </div>
       <div className=" w-3/5 mx-auto my-20">
@@ -67,17 +68,14 @@ const Social = () => {
           style={{ color: "#444", lineHeight: "44px", wordSpacing: "4px" }}
           className="text-2xl lg:text-2xl align-middle  text-center  font-semibold ,"
         >
-          Our social event planning services are perfect for the host/hostess
-          that wants to be able to join in and enjoy their party.
+          Planning you're wedding, but no idea where to start? Take Heart!
         </h3>
         <p
           style={{ color: "#676767", lineHeight: "30px", wordSpacing: "3px" }}
           className="text-center pt-11 text-base"
         >
-          Social events are where Take Heart Events can really cut loose and let
-          our creativity shine! We would love to celebrate your next milestone
-          with you! From your child’s birthday party, to your annual holiday
-          party, Take Heart! We have you covered!
+          Whether you need a day-of coordinator or full service planning from
+          your proposal to your big day, we have you covered!
         </p>
       </div>
 
@@ -105,7 +103,7 @@ const Social = () => {
                   <img className="mx-auto" src={social1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img cclassName="mx-auto" src={social2} alt="" />
+                  <img className="mx-auto" src={social2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img className="mx-auto" src={social3} alt="" />
@@ -121,10 +119,10 @@ const Social = () => {
           >
             SERVICES INCLUDE
           </h1>
-          {social.map((item) => (
+          {wedding.map((item) => (
             <div key={item._id}>
               <h1
-                onClick={() => HandleBirthday(item._id)}
+                onClick={() => HandleAnniversary(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -133,7 +131,7 @@ const Social = () => {
                 {item.name}
               </h1>
               <h1
-                onClick={() => HandleSeasonal(item._id)}
+                onClick={() => handleEngagement(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -142,16 +140,16 @@ const Social = () => {
                 {item.name1}
               </h1>
               <h1
-                onClick={() => handleReligious(item._id)}
+                onClick={() => handlerehearsal(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name4}
+                {item.name2}
               </h1>
               <h1
-                onClick={() => handleHolday(item._id)}
+                onClick={() => handleWedding(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
@@ -160,13 +158,13 @@ const Social = () => {
                 {item.name3}
               </h1>
               <h1
-                onClick={() => Retirement(item._id)}
+                onClick={() => FloralDesing(item._id)}
                 className="mb-2 font-mono cursor-pointer"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name2}
+                {item.name4}
               </h1>
             </div>
           ))}
@@ -182,7 +180,7 @@ const Social = () => {
           </strong>
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
-          <div className="mx-auto w-full">
+          <div className="mx-auto w-5/6">
             <div className="w-full text-neutral">
               <form action="">
                 <div className="lg:flex">
@@ -197,7 +195,7 @@ const Social = () => {
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Email Address"
-                    className="mx-3 my-3 input-lg  w-full max-w-xs block "
+                    className=" my-3 input-lg  w-full max-w-xs block "
                     required={true}
                   />
                 </div>
@@ -213,11 +211,11 @@ const Social = () => {
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text"
                     placeholder="Your Company Name"
-                    className="input-lg mx-3 my-3  w-full max-w-xs block "
+                    className="input-lg  my-3  w-full max-w-xs block "
                     required={true}
                   />
                 </div>
-                <div className="w-full">
+                <div className="w-full ">
                   <input
                     style={{ backgroundColor: "#3b3b3b" }}
                     type="text "
@@ -226,7 +224,7 @@ const Social = () => {
                     required={true}
                   />
                 </div>
-                <div className="w-full">
+                <div className="w-full ">
                   <textarea
                     style={{ height: "200px", backgroundColor: "#3b3b3b" }}
                     className=" input-lg mx-3 my-3 pt-4 w-full "
@@ -296,9 +294,9 @@ const Social = () => {
           </div>
         </div>
       </div>
-
       <RecentEvents></RecentEvents>
     </div>
   );
 };
-export default Social;
+
+export default Weedings;

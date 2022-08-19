@@ -10,7 +10,7 @@ const Location = () => {
   const [address, setAddress] = useState([]);
   const [filter, setFilter] = useState("");
   const { id } = useParams();
-  const [packag] = UsePackage(id);
+  const [packag]: any = UsePackage(id);
   const navigate = useNavigate();
   useEffect(() => {
     const url = "https://secure-escarpment-79738.herokuapp.com/address";
@@ -19,13 +19,13 @@ const Location = () => {
       .then((data) => setAddress(data));
   }, []);
 
-  const handleClick = (item) => {
+  const handleClick = (item: any) => {
     if (item) {
       navigate(`/decretion/${item}`);
     }
   };
 
-  const searchEvent = (event) => {
+  const searchEvent = (event: any) => {
     setFilter(event.target.value);
   };
 

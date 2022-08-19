@@ -19,7 +19,6 @@ const OurLiveEvent = () => {
       .then((res) => res.json())
       .then((data) => setLiveEvent(data));
   }, []);
-  console.log(liveEvent);
   return (
     <>
       <Swiper
@@ -36,7 +35,7 @@ const OurLiveEvent = () => {
         className="mySwiper"
       >
         {liveEvent.map((item: any) => (
-          <SwiperSlide>
+          <SwiperSlide key={item._id}>
             <section
               className="mb-10"
               style={{

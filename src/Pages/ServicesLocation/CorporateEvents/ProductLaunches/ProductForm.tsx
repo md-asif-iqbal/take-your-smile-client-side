@@ -39,8 +39,8 @@ const ProductForm = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: product.decImg,
-      decrImg2: product.decImg,
-      decrImg3: product.decImg,
+      decrImg2: product.decImg1,
+      decrImg3: product.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const ProductForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

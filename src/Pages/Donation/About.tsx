@@ -3,7 +3,7 @@ import Social from "./Social";
 
 const About = () => {
   return (
-    <div className="pt-10 background">
+    <div className="pt-10 aboutBg">
         <h1 className="text-center smile py-10 pb-14 text-4xl font-mono font-bold w-6/12 mx-auto"><span className="border-b-4 border-primary">Our</span> Mission</h1>
       <div className="">
         <div className="grid md:grid-cols-2 grid-cols-1 w-9/12 mx-auto">

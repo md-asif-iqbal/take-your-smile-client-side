@@ -71,7 +71,7 @@ export default class RecentEvents extends Component {
         </h3>
         <Slider {...settings}>
           {this.state.books.map((book) => (
-            <div key={book.id} className="px-3">
+            <div key={book._id} className="px-3" >
               <div className="banner1">
                 <img className="lg:h-80 h-20 image1" src={book.img} alt="" />
 

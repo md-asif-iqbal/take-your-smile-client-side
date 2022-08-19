@@ -26,22 +26,22 @@ const Corporate = () => {
   }, []);
 
   const navigate = useNavigate();
-  const FashionCarnival = (item) => {
+  const FashionCarnival = (item: any) => {
     navigate(`/fashionCar/${item}`);
   };
 
-  const NewYearEvent = (item) => {
+  const NewYearEvent = (item: any) => {
     navigate(`/newYear/${item}`);
   };
 
-  const EducationalSemi = (item) => {
+  const EducationalSemi = (item: any) => {
     navigate(`/educational/${item}`);
   };
 
-  const SalesEvents = (item) => {
+  const SalesEvents = (item: any) => {
     navigate(`/salesEvent/${item}`);
   };
-  const handleProduct = (item) => {
+  const handleProduct = (item: any) => {
     navigate(`/product/${item}`);
   };
   return (
@@ -107,7 +107,7 @@ const Corporate = () => {
                     <img className="mx-auto" src={social1} alt="" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img cclassName="mx-auto" src={social2} alt="" />
+                    <img className="mx-auto" src={social2} alt="" />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img className="mx-auto" src={social3} alt="" />

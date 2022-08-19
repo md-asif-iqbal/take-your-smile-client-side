@@ -34,14 +34,13 @@ export default function BlogPost() {
   return (
     <>
 
-    <div className='my-10 px-5 md:px-10 mx-auto '>
-      <h2 className="text-3xl text-center my-10 uppercase">Post a blog</h2>
-      <form className=' items-stretch bg-white  border-2 border-primary rounded-lg p-10' onSubmit={(e) => handleSubmit(e)}>
-        <label className='text-3xl capitalize my-2'>Post Title</label>
-      <input name='title' type="text" placeholder="Enter Blog Title" className="input input-bordered border-primary bg-white w-full mb-5" onChange={e => {setTitle(e.target.value)}} required /> 
-      <label className='text-3xl capitalize my-2'>Select Main Image</label>
-      <input name='title' type="url" placeholder="Enter photo url" className="input input-bordered border-primary bg-white w-full mb-5" onChange={e => {setImage(e.target.value)}} required />
-      <label className='text-3xl capitalize my-2'>Write your Post</label>
+    <div className='mt-28 px-5 md:px-10 mx-auto w-8/12'>
+      <form className=' items-stretch bg-[#DFECF1] font-mono rounded-lg p-10' onSubmit={(e) => handleSubmit(e)}>
+        <label className='text-xl capitalize my-2 text-black'>Post Title</label>
+      <input name='title' type="text" placeholder="Enter Blog Title" className="input input-bordered border-blue-500 bg-transparent w-full mb-5 text-black" onChange={e => {setTitle(e.target.value)}} required /> 
+      <label className='text-xl capitalize my-2 text-black'>Select Main Image</label>
+      <input name='title' type="url" placeholder="Enter photo url" className="input input-bordered border-blue-500 bg-transparent w-full mb-5 text-black" onChange={e => {setImage(e.target.value)}} required />
+      <label className='text-xl capitalize my-2 text-black '>Write your Post</label>
       <Editor
         apiKey='38i1zd4i57jnnyxixqbg7blu6xsq1mrqv644n6dgpdpo54th'
         onInit={(evt, editor) => editorRef.current = editor}
