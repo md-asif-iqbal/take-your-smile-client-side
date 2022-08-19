@@ -31,7 +31,7 @@ import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 // import Review from './Pages/dashboard/Review';
 // import UploadEvents from './Pages/dashboard/UploadEvents';
 // import Dashboard from './Pages/dashboard/Dashboard';
-import Likes from './Pages/Likes/Posts';
+// import Likes from './Pages/Likes/Posts';
 import Posts from './Pages/Likes/Posts';
 
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -426,7 +426,7 @@ function App() {
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
         <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favourites' element={<Liked></Liked>}></Route>
+        <Route path='/favourites' element={<Posts />}></Route>
       </Routes>
 
       <Footer />

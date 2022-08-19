@@ -23,7 +23,7 @@ const NavEnd = () => {
 }).then(res =>res.json())
 )
 if (isLoading) {
-  return <div className='h-40 mt-10'>{<Loading />}</div>
+  
 
 }
 
@@ -72,7 +72,7 @@ refetch();
 
 {
                    users?.role === "user" && <>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favourites"> My Favorites</Link>
                     <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/profiles"> Profile </Link>
                     <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/yourbookings"> Your Bookings</Link>
 
