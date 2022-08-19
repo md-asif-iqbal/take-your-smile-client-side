@@ -4,11 +4,11 @@ import NavBar from "../shared/NavBar/NavBar";
 import DOMPurify from 'dompurify'
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../shared/Loading/Loading";
-
+import './blog.css';
 const Blogs = () => {
 
   let {id} = useParams();  
-  const { isLoading, isError, data:articles, error } = useQuery(['articles'],  () => 
+  const { isLoading, isError, data:articles, error, refetch } = useQuery(['articles'],  () => 
   fetch(`https://secure-escarpment-79738.herokuapp.com/articles/${id}`,{
       method: "GET",
       headers: {
@@ -28,17 +28,18 @@ const Blogs = () => {
 const sanitizedData = (data:any) => ({
   __html: DOMPurify.sanitize(data)
 })
-    return (
+  refetch();
+  return (
         <div>
             <NavBar/>
-        <div className="font-sans mt-36 container px-10 py-10 mx-auto">
-            <h1 className='text-3xl text-center my-10 font-bold'>{articles?.title}</h1>
+        <div className="font-sans pt-14 md:pt-36 container px-5 md:px-10 py-10 mx-auto ">
+            <h1 className='text-xl sm:text-2xl md:text-3xl text-3 text-center my-5 md:my-10 font-bold text-secondary'>{articles?.title}</h1>
 
-            <section className="text-gray-600 body-font">
+            <section className=" body-font blog-content">
               <div className="w-full h-auto mx-auto">
                 <img src={articles?.image} alt="" className="mx-auto mb-5"/>
               </div>
-            <div className="" dangerouslySetInnerHTML={sanitizedData(articles?.body)}>
+            <div className="text-secondary" dangerouslySetInnerHTML={sanitizedData(articles?.body)}>
             </div>
     </section>
 </div>

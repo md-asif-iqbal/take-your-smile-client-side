@@ -35,7 +35,7 @@ const Contact = () => {
         reset()
     };
     return (
-        <div>
+        <div className='contactUs'>
             <PageTitle title="Contact Us" />
             <NavBar />
             <div className="hero min-h-[400px]" style={{backgroundImage: "url(https://i.ibb.co/bLs1wrf/img2.jpg)"}}>
@@ -58,7 +58,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Full Name*</span>
+                            <span className="label-text text-secondary">Full Name*</span>
                         </label>
                         <input type="text" placeholder="Enter Full Name" className="input input-bordered input-primary" {...register("name", { required: {
                         value: true,
@@ -71,7 +71,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Email*</span>
+                        <span className="label-text text-secondary">Email*</span>
                     </label>
                     <input type="email" placeholder="Enter Email" className="input input-bordered input-primary" {...register("email", { required: {
                     value: true,
@@ -89,7 +89,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Event Date*</span>
+                        <span className="label-text text-secondary">Event Date*</span>
                     </label>
                     <input type="date" className="input input-bordered input-primary" {...register("date", { required: {
                     value: true,
@@ -102,7 +102,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Phone Number*</span>
+                        <span className="label-text text-secondary">Phone Number*</span>
                     </label>
                     <input type="text" placeholder="Enter Phone" className="input input-bordered input-primary" {...register("phone", { required: {
                     value: true,
@@ -111,24 +111,24 @@ const Contact = () => {
                     </div>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Company Name</span>
+                        <span className="label-text text-secondary">Company Name</span>
                     </label>
                     <input type="text" placeholder="Company Name" className="input input-bordered input-primary" {...register("company")} />
                     </div>
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">What Type Of Event Are You Planning?*</span>
+                        <span className="label-text text-secondary">What Type Of Event Are You Planning?*</span>
                     </label>
                     <select className="select select-primary w-full" {...register("event", { required: {
                     value: true,
                     message: 'Event Select is required*'
                     } })}>
-                        <option disabled selected>What Type Of Event Are You Planning?*</option>
-                        <option>Corporate Events</option>
-                        <option>Non-Profit Events</option>
-                        <option>Social Events</option>
-                        <option>Weddings</option>
+                        <option disabled selected className='text-secondary'>What Type Of Event Are You Planning?*</option>
+                        <option className='text-secondary'>Corporate Events</option>
+                        <option className='text-secondary'>Non-Profit Events</option>
+                        <option className='text-secondary'>Social Events</option>
+                        <option className='text-secondary'>Weddings</option>
                     </select>
                  
                     </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                     </p>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Explain Details*</span>
+                        <span className="label-text text-secondary">Explain Details*</span>
                     </label>
                     <textarea className="textarea textarea-primary h-32" placeholder="Please explain details..." {...register("message", { required: {
                     value: true,

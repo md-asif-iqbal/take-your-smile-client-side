@@ -1,0 +1,113 @@
+/* 1 */
+:root {
+  --font-color: #fff;
+  --background-color: #ECF0F3;
+  --link-color: #fff;
+  --btn-bg: #FB4051;
+  --color: #fff;
+  --option-color: #2A303C;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --font-color: #A6ADBA;
+  --background-color: #2A303C;
+  --link-color: lightblue;
+  --btn-bg: #C74B50;
+  --option-color: #A6ADBA;
+}
+
+/* 3 */
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+a {
+  color: var(--link-color);
+}
+.btn{
+  background: var(--btn-bg);
+  border-color:var(--btn-bg) ;
+  color: #fff;
+}
+.btn:hover{
+  color: var(--btn-bg);
+  border: var(--btn-bg);
+
+}
+.contactUs input,
+.contactUs select,
+.contactUs textarea
+{
+background: var(--background-color);
+}
+select:invalid,
+select option{
+  color: var(--option-color);
+}
+
+/* Custom Dark Mode Toggle Element */
+.toggle-theme-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+
+    position: fixed;
+    bottom: 50%;
+    left: 10px;
+    z-index: 20;
+  }
+  
+  .toggle-theme-wrapper span {
+    font-size: 25px;
+  }
+  .toggle-theme {
+    position: relative;
+    display: inline-block;
+    height: 28px;
+    width: 55px;
+  }
+  
+  .toggle-theme input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 0.2s;
+  }
+  
+  .slider:before {
+    content: "";
+    background-color: #fff;
+    bottom: 4px;
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 20px;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  input:checked + .slider {
+    background-color: #FB4051;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

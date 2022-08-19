@@ -4,16 +4,16 @@ import auth from "../../../firebase.init";
 import useAdmin from "../../../hooks/Admin/useAdmin";
 import Loading from "../../shared/Loading/Loading";
 
-function RequireAdmin({ children }) {
+function RequireEditor({ children }) {
     const location = useLocation();
     const [user, loading, error] = useAuthState(auth);
     const [admin, adminLoading] = useAdmin(user);
 if (loading || adminLoading) {
     return <div className='h-40 mt-10'>{<Loading />}</div>
 }
-if (admin.role==="Admin") {
+if (admin.role==="Editor") {
     return children;
 }
 return <Navigate to="/admin/login" state={{ from: location }} replace />;
 }
-export default RequireAdmin;
+export default RequireEditor;

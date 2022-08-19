@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { toast } from 'react-toastify';
-import NavBar from '../NavBar/NavBar';
 
 export default function BlogPost() {
   const [body, setBody] = useState("");
@@ -19,7 +18,7 @@ export default function BlogPost() {
     fetch('https://secure-escarpment-79738.herokuapp.com/articles', {
       method: "POST",
       headers: {
-      'content-type': "application/json",
+        'content-type': 'application/json'
       },
       body: JSON.stringify(article)
   })
@@ -37,11 +36,11 @@ export default function BlogPost() {
     <div className='my-10 px-5 md:px-10 mx-auto '>
       <h2 className="text-3xl text-center my-10 uppercase">Post a blog</h2>
       <form className=' items-stretch bg-white  border-2 border-primary rounded-lg p-10' onSubmit={(e) => handleSubmit(e)}>
-        <label className='text-3xl capitalize my-2'>Post Title</label>
+        <label className='text-3xl capitalize my-2 text-gray-500'>Post Title</label>
       <input name='title' type="text" placeholder="Enter Blog Title" className="input input-bordered border-primary bg-white w-full mb-5" onChange={e => {setTitle(e.target.value)}} required /> 
-      <label className='text-3xl capitalize my-2'>Select Main Image</label>
+      <label className='text-3xl capitalize my-2 text-gray-500'>Select Main Image</label>
       <input name='title' type="url" placeholder="Enter photo url" className="input input-bordered border-primary bg-white w-full mb-5" onChange={e => {setImage(e.target.value)}} required />
-      <label className='text-3xl capitalize my-2'>Write your Post</label>
+      <label className='text-3xl capitalize my-2 text-gray-500'>Write your Post</label>
       <Editor
         apiKey='38i1zd4i57jnnyxixqbg7blu6xsq1mrqv644n6dgpdpo54th'
         onInit={(evt, editor) => editorRef.current = editor}

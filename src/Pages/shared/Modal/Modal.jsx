@@ -39,7 +39,7 @@ const  Modal = () => {
              {
                 modal && <>
         
-                <div className='popup anim p-5 mx-auto z-10 ' id={close === false && 'popup'}>
+                <div className='popup anim p-5 mx-auto' id={close === false && 'popup'}>
                     <button id="close" onClick={() => setClose(false)}>&times;</button>
                     <Swiper
                     cssMode={true}
@@ -56,15 +56,15 @@ const  Modal = () => {
                     {
                         sponsors.map((sponsor) => (<SwiperSlide>
                      
-                        <h2 className="text-lg md:text-2xl font-bold mb-2 w-full">{sponsor.title}</h2>
+                        <h2 className="text-lg md:text-2xl font-bold mb-2 w-full text-secondary">{sponsor.title}</h2>
                         <div>
                             <img src={sponsor.image} alt="..." />
                         </div>
-                        <p className=" text-justify px-2 mb-10">{sponsor.description}</p>
+                        <p className=" text-justify px-2 mb-10 text-secondary">{sponsor.description}</p>
                         </SwiperSlide>
                     ))}
                     </Swiper>
-                        <Link to="/sponsorpost" className="btn btn-primary">Let's Go</Link>
+                        <Link to="/corporate" className="btn btn-primary" onClick={() => setClose(false)}>Let's Go</Link>
                 </div>
                 </>
              }

@@ -28,9 +28,7 @@ const Registation = () => {
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
   const [token] = useToken(user);
-
   const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
     let errorMessage;
     if (error || updateError) {
@@ -67,16 +65,11 @@ const Registation = () => {
           await createUserWithEmailAndPassword(email, password);
           await updateProfile({ displayName: name});
         }
-        
         reset()
     };
- 
-    
-
     return (
         <form  className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
             <p className='text-red-500'>{errorMessage}</p>
-            <h2 className="title">Sign up</h2>
             <p className='text-left text-red-500'>
                 {errors.name?.type === 'required' && <span>{errors.name.message}</span>}
              </p>

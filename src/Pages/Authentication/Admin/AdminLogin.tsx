@@ -30,7 +30,7 @@ const AdminLogin = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  const [token] = useAdminToken(user, '');
+  const [token] = useAdminToken(user, ' ');
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>({mode: "onBlur"})
     let [btnStatus, setBtnStatus] = useState<String>('');
@@ -103,7 +103,6 @@ const AdminLogin = () => {
           <div className="signin-signup">
 
             <form className="sign-in-form" onSubmit={handleSubmit(onSubmit)}>
-              <h2 className="title">Sign in</h2>
              <p className=' text-red-500'>
                 {errors.email?.type === 'required' && <span>{errors.email.message}</span>}
                 {errors.email?.type === 'pattern' && <span>{errors.email.message}</span> }

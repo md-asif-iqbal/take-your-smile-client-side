@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 
 import RecentEvents from '../../RecentEvents/RecentEvents';
-import FAQ from '../FAQ/FAQ';
-import Gallery from '../Gallery/Gallery';
 import Reviews from '../Reviews/Reviews';
-import Services from '../Services/Services';
 import Summery from '../Summery/Summery';
 import Banner from '../Banner/Banner';
 import PageTitle from '../../shared/PageTitle/PageTitle';
@@ -12,6 +9,9 @@ import PageTitle from '../../shared/PageTitle/PageTitle';
 import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
 
 import Sponsorship from '../../shared/Sponsorship/Sponsorship';
+import Services from '../Services/Services';
+import Gallery from '../Gallery/Gallery';
+import FAQ from '../FAQ/FAQ';
 
 const Home = () => {
 
