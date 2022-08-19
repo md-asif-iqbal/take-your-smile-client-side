@@ -6,7 +6,7 @@
   margin: 20px;
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: white;
+  background-color: #D0E1E9;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -68,7 +68,7 @@
 
 .listing__price {
   font-size: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   text-align: start;
 }
 

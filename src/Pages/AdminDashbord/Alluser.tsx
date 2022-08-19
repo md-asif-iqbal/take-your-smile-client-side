@@ -9,14 +9,14 @@ const Alluser = () => {
   }, [user]);
   console.log(user);
   return (
-    <section className="pt-4">
-      <div className="container">
+    <section className="pt-4 mt-40">
+      <div className="w-8/12 mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
-            <div className="max-w-full overflow-x-auto">
+            <div className="max-w-full overflow-x-auto rounded-md">
               <table className="table-auto w-full">
                 <thead>
-                  <tr className="bg-primary text-center font-mono">
+                  <tr className="bg-blue-900 text-center font-mono ">
                     <th
                       className="
                                w-1/6
@@ -25,7 +25,7 @@ const Alluser = () => {
                                font-semibold
                                text-white
                                py-4
-                               lg:py-7
+                               lg:py-4
                                px-3
                                lg:px-4
                                border-l border-transparent
@@ -42,7 +42,7 @@ const Alluser = () => {
                                font-semibold
                                text-white
                                py-4
-                               lg:py-7
+                               lg:py-4
                                px-3
                                lg:px-4
                                font-mono
@@ -58,7 +58,7 @@ const Alluser = () => {
                                font-semibold
                                text-white
                                py-4
-                               lg:py-7
+                               lg:py-4
                                px-3
                                lg:px-4
                                "
@@ -73,7 +73,7 @@ const Alluser = () => {
                                font-semibold
                                text-white
                                py-4
-                               lg:py-7
+                               lg:py-4
                                px-3
                                lg:px-4
                                "
