@@ -50,6 +50,8 @@ const Educationafrom = () => {
       date: formattedDate,
       price: packag.price
     };
+    
+
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
       method: "POST",
