@@ -446,7 +446,7 @@ function App() {
 <ToastContainer />
  
  <Messenger />
-{/* <Modal /> */}
+<Modal />
 
 </div>
 );

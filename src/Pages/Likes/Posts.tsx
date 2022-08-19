@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsChat, BsFillSuitHeartFill, BsSuitHeart } from 'react-icons/bs';
+import { RiShareForwardLine } from 'react-icons/ri';
 import auth from '../../firebase.init';
 import NavBar from '../shared/NavBar/NavBar';
+import {
+    FacebookShareButton,
+    FacebookIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    TwitterShareButton,
+    TwitterIcon,
+    LinkedinShareButton,
+    LinkedinIcon
+  } from "react-share";
+import { useOnClickOutside } from '../../hooks/UseClickOutSide/UseOutsideClick';
+import ShareSocial from './ShareSocial';
 
 // type Inputs = {
 //     name: string,
@@ -35,9 +48,22 @@ const Posts = () => {
     const [value, setValue] = useState<UserData | Number>(0);
 
     const [userdata, SetUserdata] = useState({})
-    const [postId, setPostid] = useState('')
-    const [post, setPost] = useState<any[]>([]);
+    const [postId, setPostid] = useState('');
+    console.log(postId)
+    const [post, setPost]:any= useState([]);
     // console.log(user)
+
+    // social share start 
+    // const shareUrl = 'https://take-your-smile-4d64a.web.app'
+    // const [isHovering, setIsHovering] = useState(false);
+
+    // const handleMouseOver = () => {
+    //   setIsHovering(true);
+    // };
+  
+    // const handleMouseOut = () => {
+    // //   setIsHovering(false);
+    // };
 
 
     const url = `https://secure-escarpment-79738.herokuapp.com/posts/${postId}`
@@ -204,7 +230,10 @@ const Posts = () => {
 
 
     }
-
+// const ref = useRef();
+// useOnClickOutside(ref, () =>{
+//     setIsHovering(false)
+// })
 
     return (
         <div>
@@ -226,7 +255,7 @@ const Posts = () => {
 
                                             </h2>
                                             <p>{post['body']}</p>
-                                            <div className="card-actions justify-end">
+                                            <div className="card-actions justify-end relative">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <button onClick={() => handleColor(post['likes'], post['_id'], user, post['like'])}>
@@ -253,7 +282,10 @@ const Posts = () => {
                                                     <span>5K</span>
                                                 </div>
 
-
+                                                {/* social share  */}
+                                               <ShareSocial
+                                               posts={posts}
+                                               ></ShareSocial>
 
                                             </div>
                                             <div style={{
