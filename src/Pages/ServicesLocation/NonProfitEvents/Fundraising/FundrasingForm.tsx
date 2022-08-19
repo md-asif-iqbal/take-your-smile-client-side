@@ -23,6 +23,7 @@ const FundrasingForm = () => {
   console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
+  
   type Inputs = {
     name: string;
     email: string;
@@ -34,6 +35,7 @@ const FundrasingForm = () => {
     location: string;
     address: string;
   };
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
