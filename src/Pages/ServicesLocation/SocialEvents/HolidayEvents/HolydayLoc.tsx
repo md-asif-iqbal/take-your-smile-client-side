@@ -59,7 +59,7 @@ const HolydayLoc = () => {
                 <AiFillHome /> Home
               </span>
               {social.map((item) => (
-                <h1 className="font-mono">
+                <h1 key={item._id} className="font-mono">
                   / {item.name3}/ {packag.title}
                 </h1>
               ))}
@@ -83,6 +83,7 @@ const HolydayLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
+            key={item._id} 
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >

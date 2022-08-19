@@ -39,8 +39,8 @@ const HomeFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: WeHome.decImg,
-      decrImg2: WeHome.decImg,
-      decrImg3: WeHome.decImg,
+      decrImg2: WeHome.decImg1,
+      decrImg3: WeHome.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const HomeFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

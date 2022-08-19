@@ -25,7 +25,7 @@ const Retirement = () => {
       </h1>
       <div className="mt-20 grid w-9/12 mb-10 mx-auto grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {packages.map((item) => (
-          <div className="mx-auto even:bg-gradient-to-r from-[#001510] to-[#00bf8f] even:text-white odd:text-primary  text-center font-mono rounded-xl pt-8">
+          <div key={item._id} className="mx-auto even:bg-gradient-to-r from-[#001510] to-[#00bf8f] even:text-white odd:text-primary  text-center font-mono rounded-xl pt-8">
             <h1 className="text-2xl font-bold font-mono">{item.title}</h1>
             <h1 className="text-sm w-10/12 mx-auto font-mono py-3">
               {item.dis}

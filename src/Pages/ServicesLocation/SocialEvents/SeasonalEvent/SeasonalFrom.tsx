@@ -39,8 +39,8 @@ const SeasonalFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: seasonal.decImg,
-      decrImg2: seasonal.decImg,
-      decrImg3: seasonal.decImg,
+      decrImg2: seasonal.decImg1,
+      decrImg3: seasonal.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const SeasonalFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
