@@ -5,7 +5,8 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
 const Modal = ({ data, close }) => {
-  const { decrImg1 ,service ,time ,date ,package : packages, location,name ,phone, email,details } = data;
+  const {
+    decImg,title,text,date} = data;
 
   const modalVariants = {
     open: {
@@ -39,12 +40,12 @@ const Modal = ({ data, close }) => {
       <motion.img
         className="modal__image"
         alt="real estate mansion"
-        src={decrImg1}
+        src={decImg}
         variants={imageVariants}
       ></motion.img>
       <motion.div className="modal__info" variants={modalInfoVariants}>
         <motion.div className="modal__row" variants={modalRowVariants}>
-          <span className="modal__price">{service}</span>
+          <span className="modal__price">{title}</span>
         </motion.div>
         <motion.div className="modal__row" variants={modalRowVariants}>
           <span className="modal__address">{date}</span>
@@ -54,42 +55,7 @@ const Modal = ({ data, close }) => {
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">Booking Time: {time}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}
-        >
-          <p className="modal__description">Package: {packages}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}
-        >
-          <p className="modal__description">Location: {location}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}
-        >
-          <p className="modal__description">User Name: {name}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}
-        >
-          <p className="modal__description">User Number: {phone}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}>
-          <p className="modal__description">User Email: {email}</p>
-        </motion.div>
-        <motion.div
-          className="modal__description-wrapper"
-          variants={modalRowVariants}
-        >
-          <p className="modal__description">Details: {details}</p>
+          <p className="modal__description">{text}</p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"

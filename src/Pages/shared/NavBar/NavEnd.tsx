@@ -89,7 +89,7 @@ const NavEnd = () => {
             </Link>
             <Link
               className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-              to="/admindashboard"
+              to="/admin"
             >
               Admin DashBoard
             </Link>
