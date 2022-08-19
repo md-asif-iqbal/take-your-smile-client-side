@@ -58,7 +58,7 @@ const Dashbord = () => {
           </div>
           <div className="pb-2 px-2 ">
             <div className=" hover:border-r-2 border-white px-2 my-2 mx-auto flex cursor-pointer">
-              <NavLink to="allbookings" className="flex items-center">
+              <NavLink to="allbookings/bookings" className="flex items-center">
                 <svg
                   className="w-6 h-6 stroke-current"
                   xmlns="http://www.w3.org/2000/svg"
