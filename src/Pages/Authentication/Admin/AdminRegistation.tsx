@@ -77,9 +77,8 @@ const AdminRegistation = () => {
     
 
     return (
-        <form  className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+        <form  className="sign-up-form reg-form" onSubmit={handleSubmit(onSubmit)}>
             <p className='text-red-500'>{errorMessage}</p>
-            <h2 className="title">Sign up</h2>
             <p className='text-left text-red-500'>
                 {errors.name?.type === 'required' && <span>{errors.name.message}</span>}
              </p>

@@ -5,7 +5,7 @@ import NavBar from "../NavBar/NavBar";
 
 const Show = () => {
   const navigate = useNavigate();
-    const { isLoading, isError, data:articles, error } = useQuery(['articles'],  () => 
+    const { isLoading, isError, data:articles, error,refetch } = useQuery(['articles'],  () => 
     fetch('https://secure-escarpment-79738.herokuapp.com/articles',{
         method: "GET",
         headers: {
@@ -31,11 +31,12 @@ const Show = () => {
         const path = `/article/${id}`;
         navigate(path)
       }
+      refetch();
     return (
         <div >
         <NavBar/>
-    <div className=" mx-auto font-sans mt-36">
-    <h1 className='text-3xl text-center mt-16 font-bold'>Blogs</h1>
+    <div className=" mx-auto font-sans pt-36">
+    <h1 className='text-3xl text-center mt-16 font-bold text-secondary uppercase'>All Blogs</h1>
 
     <section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto">
@@ -48,11 +49,11 @@ const Show = () => {
          item.image ? <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={item.image} alt="blog"/> : <img className="lg:h-48 md:h-36 w-full object-cover object-center" src='placeholder.png' alt="blog"/> 
     } 
       <div className="p-6">
-        <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-        <h2 className="title-font text-3xl font-medium text-gray-900 mb-3">{item.title}</h2>
-        <p className="leading-relaxed mb-3">{getText(item.body)}</p>
+        <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Admin</h2>
+        <h2 className="title-font text-3xl font-medium text-secondary mb-3">{item.title}</h2>
+        <p className="leading-relaxed mb-3 text-secondary">{getText(item.body)}</p>
         <div className="flex items-center flex-wrap ">
-          <button className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"  onClick={() => handlePost(item._id)}>Learn More
+          <button className="text-secondary inline-flex items-center md:mb-2 lg:mb-0"  onClick={() => handlePost(item._id)}>Learn More
             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>

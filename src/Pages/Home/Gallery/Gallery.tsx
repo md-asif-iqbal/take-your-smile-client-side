@@ -29,10 +29,10 @@ const Gallery = () => {
   ];
   return (
     <div className="w-8/12 mx-auto font-mono mt-20">
-      <h1 className="text-2xl font-bold text-center">
+      <h1 className="text-2xl font-bold text-center text-secondary">
         A Story Behind a Pictures
       </h1>
-      <p className="text-[16px] text-center w-7/12 mx-auto">
+      <p className="text-[16px] text-center w-7/12 mx-auto text-secondary">
         As the premier event planning company in the area. Each event and client
         is unique and we believe our services should be as well.
       </p>

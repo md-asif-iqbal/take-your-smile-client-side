@@ -118,12 +118,12 @@ form.sign-in-form {
 
 .btn {
   width: 150px;
-  background-color: #FB4051;
+  /* background-color: #FB4051; */
   border: none;
   outline: none;
   height: 49px;
   border-radius: 49px;
-  color: #fff;
+  /* color: #fff; */
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;

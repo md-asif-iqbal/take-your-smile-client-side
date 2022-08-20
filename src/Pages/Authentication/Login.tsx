@@ -102,7 +102,7 @@ const Login = () => {
     }else{
       toast.error('Please, Enter Email');
     }
-  }
+  } 
    
     return (
       <>
@@ -113,7 +113,6 @@ const Login = () => {
           <div className="signin-signup">
 
             <form className="sign-in-form" onSubmit={handleSubmit(onSubmit)}>
-              <h2 className="title">Sign in</h2>
              <p className=' text-red-500'>
                 {errors.email?.type === 'required' && <span>{errors.email.message}</span>}
                 {errors.email?.type === 'pattern' && <span>{errors.email.message}</span> }
@@ -160,7 +159,7 @@ const Login = () => {
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
+              <h3 className='text-white'>New here ?</h3>
               <p>
               Planning an event but no idea where to start? Take Heart!
 
@@ -173,7 +172,7 @@ const Login = () => {
           </div>
           <div className="panel right-panel">
             <div className="content">
-              <h3>One of us ?</h3>
+              <h3 className='text-white'>One of us ?</h3>
               <p>
               Planning an event but no idea where to start? Take Heart!
 
