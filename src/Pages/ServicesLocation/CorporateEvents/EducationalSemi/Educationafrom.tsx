@@ -39,8 +39,8 @@ const Educationafrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: educational.decImg,
-      decrImg2: educational.decImg,
-      decrImg3: educational.decImg,
+      decrImg2: educational.decImg2,
+      decrImg3: educational.decImg3,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,7 +48,10 @@ const Educationafrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
+    
+
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
       method: "POST",

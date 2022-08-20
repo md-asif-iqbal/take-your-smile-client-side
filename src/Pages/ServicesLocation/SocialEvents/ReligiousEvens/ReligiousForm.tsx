@@ -39,8 +39,8 @@ const ReligiousForm = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: religious.decImg,
-      decrImg2: religious.decImg,
-      decrImg3: religious.decImg,
+      decrImg2: religious.decImg1,
+      decrImg3: religious.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const ReligiousForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

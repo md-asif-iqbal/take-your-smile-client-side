@@ -49,6 +49,7 @@ const RehearsalForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

@@ -23,6 +23,7 @@ const FundrasingForm = () => {
   console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
+  
   type Inputs = {
     name: string;
     email: string;
@@ -34,13 +35,14 @@ const FundrasingForm = () => {
     location: string;
     address: string;
   };
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: fundrasing.decImg,
-      decrImg2: fundrasing.decImg,
-      decrImg3: fundrasing.decImg,
+      decrImg2: fundrasing.decImg1,
+      decrImg3: fundrasing.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +50,7 @@ const FundrasingForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

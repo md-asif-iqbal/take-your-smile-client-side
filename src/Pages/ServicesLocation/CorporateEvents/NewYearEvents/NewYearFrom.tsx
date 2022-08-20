@@ -39,8 +39,8 @@ const NewYearFrom = () => {
       name: user?.displayName,
       email: user?.email,
       decrImg1: newYear.decImg,
-      decrImg2: newYear.decImg,
-      decrImg3: newYear.decImg,
+      decrImg2: newYear.decImg1,
+      decrImg3: newYear.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -48,6 +48,7 @@ const NewYearFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      price: packag.price
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
