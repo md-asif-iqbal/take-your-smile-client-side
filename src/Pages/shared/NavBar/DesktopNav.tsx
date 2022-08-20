@@ -7,10 +7,10 @@ const DesktopNav = () => {
     const navigation = <>
                             <li className=' text-white  cursor-pointer'><Link to='/home' 
                             className='transition-all duration-300 uppercase'> Home</Link></li>
-                             <li className=' text-white transition-all duration-300 cursor-pointer uppercase'>
-                              <div className="dropdown dropdown-hover">
+                             <li className=' text-white transition-all duration-300 cursor-pointer uppercase '>
+                              <div className="dropdown dropdown-hover ">
                                     <label id="0" className=" m-1">Portfolio</label>
-                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-base-100     text-black w-52">
+                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-primary   text-black w-52">
                                       <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
                                       <li className=' text-black cursor-pointer uppercase'><Link to='/blogslike' 

@@ -12,6 +12,7 @@ import Sponsorship from '../../shared/Sponsorship/Sponsorship';
 import Services from '../Services/Services';
 import Gallery from '../Gallery/Gallery';
 import FAQ from '../FAQ/FAQ';
+import Modal from '../../shared/Modal/Modal';
 
 const Home = () => {
 
@@ -27,9 +28,7 @@ const Home = () => {
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
-
-            
-            {/* <Modal /> */}
+            <Modal />
 
         </div>
     );
