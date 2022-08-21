@@ -13,10 +13,10 @@ const ReviewCard = ({ item }) => {
       )}
       <div className="items-center font-mono">
         <p>{status}</p>
-        <h2 className="text-secondary text-3xl font-semibold">
+        <h2 className="text-gray-900 text-3xl font-semibold">
           {name}, <span>{address}</span>
         </h2>
-        <p className="text-secondary text-[18px] mt-4">{discription}.</p>
+        <p className="text-gray-900 text-[18px] mt-4">{discription}.</p>
         <div className="flex justify-start mt-3">
           {Array.from(Array(parseInt(rating)), (e, i) => (
             <FontAwesomeIcon

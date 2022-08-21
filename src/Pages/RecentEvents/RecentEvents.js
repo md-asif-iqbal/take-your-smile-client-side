@@ -10,7 +10,7 @@ export default class RecentEvents extends Component {
   };
 
   componentDidMount() {
-    fetch("https://secure-escarpment-79738.herokuapp.com/recentEvents")
+    fetch("http://localhost:8000/recentEvents")
       .then((response) => response.json())
       .then((booksList) => {
         this.setState({ books: booksList });
@@ -78,7 +78,7 @@ export default class RecentEvents extends Component {
                 <div className="custom-display1 lg:h-80 h-20">
                   <p className="p-4     "> {book.description}</p>
                   <div className=" text-center">
-                    <button className="btn btn-primary ">Learn More</button>
+                    <button className="btn ">Learn More</button>
                   </div>
                 </div>
               </div>

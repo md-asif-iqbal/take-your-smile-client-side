@@ -6,7 +6,7 @@ import "./Package.css";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/package";
+    const url = "http://localhost:8000/package";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPackages(data));
@@ -88,7 +88,7 @@ const Packages = () => {
             <div className="w-9/12 mx-auto py-8">
               <button
                 onClick={() => handleClick(item._id)}
-                className="btn odd:bg-primary w-full text-white"
+                className="btn  w-full text-black"
               >
                 Book Now
               </button>

@@ -8,7 +8,7 @@ const Listing = ({ data, open }) => {
 
   return (
     <motion.div className="listing" onClick={open} whileHover={{ scale: 1.1 }}>
-      <div className="listing__content">
+      <div className="listing__content bg-primary-content">
         <div className="listing__image-container">
           <img
             className="listing__image"
@@ -16,10 +16,10 @@ const Listing = ({ data, open }) => {
             src={decImg}
           />
         </div>
-        <div className="listing__details">
+        <div className="listing__details bg-primary-content">
           <div className="listing__type">All Bookings</div>
           <div className="listing__row">
-            <span className="listing__price">{title}</span>
+            <span className="listing__price text-secondary">{title}</span>
           </div>
           <div className="listing__row">
             <span className="listing__address">{date}</span>

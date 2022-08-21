@@ -29,7 +29,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     if (amount) {
       fetch(
-        "https://secure-escarpment-79738.herokuapp.com/create-payment-intent",
+        "http://localhost:8000/create-payment-intent",
         {
           method: "POST",
           headers: {

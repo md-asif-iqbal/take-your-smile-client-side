@@ -31,7 +31,7 @@ const EventPost = () => {
                         decImg: img,
                     };
                     // send to your database
-                    fetch("https://secure-escarpment-79738.herokuapp.com/gallerys", {
+                    fetch("http://localhost:8000/gallerys", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",
@@ -53,23 +53,23 @@ const EventPost = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid grid-cols-1 items-center gap-6 mt-4 md:grid-cols-2">
                         <div>
-                            <label className="font-mono text-black">Event Title</label>
+                            <label className="font-mono text-secondary">Event Title</label>
                             <input
                                 type="text"
                                 placeholder="Birthday Party.."
-                                className="block px-4 py-2 mt-5 bg-transparent w-full input font-mono text-lg border-2 border-black text-black "
+                                className="block px-4 py-2 mt-5 bg-transparent w-full input font-mono text-lg border-2 border-seondary text-secondary"
                                 {...register("title")}
                                 required
                             />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="font-mono block mb-2 text-black">
+                                <span className="font-mono block mb-2 text-secondary">
                                     Event Are You Compelete
                                 </span>
                             </label>
                             <select
-                                className="block px-4 py-2 bg-transparent w-full input font-mono text-lg border-2 border-black text-black "
+                                className="block px-4 py-2 bg-transparent w-full input font-mono text-lg border-2 border-secondary text-secondary "
                                 {...register("status", {
                                     required: {
                                         value: true,
@@ -77,52 +77,52 @@ const EventPost = () => {
                                     },
                                 })}
                             >
-                                <option className="text-lg text-black">corporate </option>
-                                <option className="text-lg text-black">
+                                <option className="text-lg text-secondary">corporate </option>
+                                <option className="text-lg text-secondary">
                                     non-profit
                                 </option>
-                                <option className="text-lg text-black">social </option>
-                                <option className="text-lg text-black">weddings </option>
+                                <option className="text-lg text-secondary">social </option>
+                                <option className="text-lg text-secondary">weddings </option>
                             </select>
                         </div>
                         <div>
-                            <label className="text-black font-mono">Your Email</label>
+                            <label className="text-secondary font-mono">Your Email</label>
                             <input
                                 type="text"
                                 value={user.email}
                                 placeholder="takeyourSmile@gmail.com"
-                                className="block px-4 py-2 mt-3 bg-transparent w-full input font-mono text-lg border-2 border-black text-black "
+                                className="block px-4 py-2 mt-3 bg-transparent w-full input font-mono text-lg border-2 border-secondary text-secondary "
                                 {...register("email")}
                                 required
                             />
                         </div>
                         <div>
-                            <label className="text-black dark:text-gray-200">Date</label>
+                            <label className="text-secondary dark:text-gray-200">Date</label>
                             <input
                                 type="date"
-                                className="block px-4 py-2 mt-3 bg-transparent w-full input font-mono text-lg border-2 border-black text-black "
+                                className="block px-4 py-2 mt-3 bg-transparent w-full input font-mono text-lg border-2 border-secondary text-secondary "
                                 {...register("date")}
                                 required
                             />
                         </div>
                         <div>
-                            <label className="text-black font-mono">Description</label>
+                            <label className="text-secondary font-mono">Description</label>
                             <textarea
                                 {...register("description")}
                                 required
                                 id="textarea"
                                 placeholder="Message..."
-                                className="block w-full font-mono h-36 p-4 mb-4 text-black rounded-xl resize-none border-2 border-black px-4 py-2 mt-2 bg-transparent text-area"
+                                className="block w-full font-mono h-36 p-4 mb-4 text-secondary rounded-xl resize-none border-2 border-secondary px-4 py-2 mt-2 bg-transparent text-area"
                             />
                         </div>
                         <div>
-                            <label className="block font-mono text-black">
+                            <label className="block font-mono text-secondary">
                                 Upload Your Event images
                             </label>
-                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-black border-dashed rounded-md">
+                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-secondary border-dashed rounded-md">
                                 <div className="space-y-1 text-center">
                                     <svg
-                                        className="mx-auto h-12 w-12 text-black"
+                                        className="mx-auto h-12 w-12 text-secondary"
                                         stroke="currentColor"
                                         fill="none"
                                         viewBox="0 0 48 48"
@@ -136,8 +136,8 @@ const EventPost = () => {
                                         />
                                     </svg>
                                     <div className="flex">
-                                        <label className="relative cursor-pointer border-2 border-black rounded-md  px-3 py-2">
-                                            <span className="font-mono text-black">
+                                        <label className="relative cursor-pointer border-2 border-secondary rounded-md  px-3 py-2">
+                                            <span className="font-mono text-secondary">
                                                 Upload a file
                                             </span>
                                             <input
@@ -160,12 +160,12 @@ const EventPost = () => {
                     </div>
                     <a
                         href="#_"
-                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-primary group"
                     >
-                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
                         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
                             <svg
-                                className="w-5 h-5 text-black"
+                                className="w-5 h-5 text-white"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"

@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 import { useForm,  SubmitHandler  } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import PageTitle from '../shared/PageTitle/PageTitle';
+import { MdOutlineMailOutline } from 'react-icons/md';
 type Inputs = {
     name: string,
     email: string,
@@ -156,7 +157,8 @@ const Contact = () => {
                     <h2 className="card-title text-xl text-white">Phone</h2>
                     <p className='text-lg text-white flex items-center gap-5'><BsTelephoneOutbound /><span><a href="tel:01881220413" >01881220413</a></span></p>
                      <h2 className="card-title text-xl text-white">E-mail</h2>
-                    <p className='text-lg text-white flex items-center gap-5'><AiOutlineMail /><span><a href="mailto:ranaarju20@gmail.com" >ranaarju20@gmail.com</a></span></p>
+                    <p className='text-[16px] text-white flex items-center gap-5'><AiOutlineMail /><span ><a href="mailto:ranaarju20@gmail.com" >ranaarju20@gmail.com</a></span></p>
+                   
                     <h2 className="card-title text-xl text-white">Address</h2>
                     <p className='text-lg text-white flex items-center gap-5'><FaMapMarkerAlt /><span>Dhaka, Bangladesh</span></p>
                   

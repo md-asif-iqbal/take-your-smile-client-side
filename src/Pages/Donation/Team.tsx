@@ -13,13 +13,13 @@ const Team = () => {
                           text-3xl
                           sm:text-4xl
                           md:text-[40px]
-                          text-dark
+                        text-secondary
                           mb-4
                           "
         >
           Our Awesome Team
         </h2>
-        <p className="text-base text-body-color">
+        <p className="text-base text-secondary">
           There are many variations of passages of Lorem Ipsum available but the
           majority have suffered alteration in some form.
         </p>

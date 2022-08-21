@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Alluser = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("https://secure-escarpment-79738.herokuapp.com/usersdata")
+    fetch("http://localhost:8000/usersdata")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);
@@ -61,8 +61,7 @@ const Alluser = () => {
                                lg:py-4
                                px-3
                                lg:px-4
-                               "
-                    >
+                               ">
                       Role
                     </th>
                     <th
@@ -87,12 +86,12 @@ const Alluser = () => {
                     <tr className="font-mono">
                       <td
                         className="
-                               text-center text-dark
+                               text-center 
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-[#F3F6FF]
+                              
                                border-b border-l border-[#E8E8E8]
                                "
                       >
@@ -100,25 +99,23 @@ const Alluser = () => {
                       </td>
                       <td
                         className="
-                               text-center text-dark
+                               text-center
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
-                               px-2
-                               bg-white
+                               px-2 bg-primary-content 
                                border-b border-[#E8E8E8]
-                               "
-                      >
+                               ">
                         {item.email}
                       </td>
                       <td
                         className="
-                               text-center text-dark
+                               text-center 
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-[#F3F6FF]
+                               
                                border-b border-[#E8E8E8]
                                "
                       >
@@ -126,12 +123,12 @@ const Alluser = () => {
                       </td>
                       <td
                         className="
-                               text-center text-dark
+                               text-center 
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-white
+                               
                                border-b border-r border-[#E8E8E8]
                                "
                       >

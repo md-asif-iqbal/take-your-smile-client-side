@@ -66,7 +66,7 @@ const Posts = () => {
     // };
 
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/posts/${postId}`
+    const url = `http://localhost:8000/posts/${postId}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -92,7 +92,7 @@ const Posts = () => {
     }
 
     useEffect(() => {
-        fetch('https://secure-escarpment-79738.herokuapp.com/posts')
+        fetch('http://localhost:8000/posts')
             .then(res => res.json())
             .then(data => setPosts(data));
     }, [posts])
@@ -158,7 +158,7 @@ const Posts = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -186,7 +186,7 @@ const Posts = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -238,27 +238,27 @@ const Posts = () => {
     return (
         <div>
             <NavBar />
-            <div className=" mx-auto font-sans mt-36">
-                <h1 className='text-3xl text-center mt-16 font-bold opacity-60'>All Blogs Here</h1>
+            <div className=" mx-auto font-sans pt-36">
+                <h1 className='text-3xl text-center mt-16 font-bold text-secondary'>All Blogs Here</h1>
 
-                <section className="text-gray-600 body-font">
+                <section className=" body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post['_id']} className="card w-96 bg-base-100 shadow-xl">
+                                    <div key={post['_id']} className="card w-96  shadow-xl">
                                         <figure><img src={post['image']} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">
+                                            <h2 className="card-title text-secondary">
                                                 {post['name']}
                                                 {/* <div className="badge badge-secondary">NEW</div> */}
 
                                             </h2>
-                                            <p>{post['body']}</p>
+                                            <p className='text-secondary'>{post['body']}</p>
                                             <div className="card-actions justify-end relative">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <button onClick={() => handleColor(post['likes'], post['_id'], user, post['like'])}>
+                                                        <button onClick={() => handleColor(post['likes'], post['_id'], user, post['like'])} className="text-secondary">
                                                             {
                                                                 post['like'] === 'liked' ?
                                                                     <BsFillSuitHeartFill style={{ color: 'FF014F' }}></BsFillSuitHeartFill> :
@@ -272,14 +272,14 @@ const Posts = () => {
                                                             <BsFillSuitHeartFill style={{ color: 'FF014F', display: `${display1}` }}></BsFillSuitHeartFill> */}
                                                         </button>
                                                     </div>
-                                                    <span>{post['likes']}</span>
+                                                    <span className='text-secondary'>{post['likes']}</span>
                                                 </div>
 
-                                                <div className="flex gap-1">
+                                                <div className="flex gap-1 text-secondary">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <BsChat></BsChat>
                                                     </div>
-                                                    <span>5K</span>
+                                                    <span className='text-secondary'>5K</span>
                                                 </div>
 
                                                 {/* social share  */}
@@ -303,7 +303,7 @@ const Posts = () => {
 
                                                 }
                                             </div>
-                                            <button onClick={() => handleComments(post['_id'])} style={{ color: 'grey' }} className='text-right'>Show all comments</button>
+                                            <button onClick={() => handleComments(post['_id'])} className='text-right text-secondary'>Show all comments</button>
                                         </div>
 
                                     </div>)

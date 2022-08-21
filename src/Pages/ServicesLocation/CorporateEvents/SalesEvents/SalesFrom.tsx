@@ -50,7 +50,7 @@ const SalesFrom = () => {
       date: formattedDate,
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("http://localhost:8000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -86,7 +86,6 @@ const SalesFrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
@@ -107,7 +106,7 @@ const SalesFrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

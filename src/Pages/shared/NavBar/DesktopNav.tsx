@@ -10,15 +10,15 @@ const DesktopNav = () => {
                              <li className=' text-white transition-all duration-300 cursor-pointer uppercase '>
                               <div className="dropdown dropdown-hover ">
                                     <label id="0" className=" m-1">Portfolio</label>
-                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-primary   text-black w-52">
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
+                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-white   w-52">
+                                      <li className='text-base-100   cursor-pointer uppercase'><Link to='/gallery' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogslike' 
+                                      <li className='text-base-100  cursor-pointer uppercase'><Link to='/blogslike' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/donate' 
+                                      <li className='text-base-100  cursor-pointer uppercase'><Link to='/donate' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Donation</Link></li>
-                                          <li className=' hover:bg-primary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
-                                          className='transition-all duration-300'> Our Story</Link></li>
+                                          <li className=' hover:bg-primary text-base-100   cursor-pointer uppercase'><Link to='/ourstory' 
+                                          className='transition-all duration-300 hover:text-white'> Our Story</Link></li>
                                     </ul>
                                   </div>
                               </li>

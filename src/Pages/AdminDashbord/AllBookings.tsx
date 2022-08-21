@@ -11,20 +11,20 @@ const AllBookings = () => {
         >
           <div className="flex items-center justify-center  flex-1">
             <nav
-              className="hidden lg:uppercase  lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-16 lg:flex"
+              className="hidden lg:uppercase   lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-16 lg:flex"
             >
               <CustomLink
                 to="/admin/allbookings/bookings"
 
               >
-                <p className="block h-16 text-black leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Bookings</p>
+                <p className="block h-16 text-secondary leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Bookings</p>
               </CustomLink>
 
               <CustomLink
                 to="/admin/allbookings/payment"
 
               >
-                <p className="block h-16 text-black leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Payment</p>
+                <p className="block h-16 text-secondary leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Payment</p>
 
               </CustomLink>
 
@@ -32,14 +32,14 @@ const AllBookings = () => {
                 to="/admin/allbookings/cancelled"
 
               >
-                <p className="block h-16 text-black leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Canceled</p>
+                <p className="block h-16 text-secondary leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Canceled</p>
               </CustomLink>
 
               <CustomLink
                 to="/admin/allbookings/pandding"
 
               >
-                <p className="block h-16 text-black leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Pandding</p>
+                <p className="block h-16 text-secondary leading-[4rem] border-b-4 border-transparent hover:text-rose-600 hover:border-current"> Pandding</p>
               </CustomLink>
             </nav>
           </div>

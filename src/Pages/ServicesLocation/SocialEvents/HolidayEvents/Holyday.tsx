@@ -89,7 +89,7 @@ const Holyday = () => {
             <div className="w-9/12 mx-auto py-8">
               <button
                 onClick={() => handleClick(item._id)}
-                className="btn odd:bg-primary w-full text-white"
+                className="btn w-full "
               >
                 Book Now
               </button>

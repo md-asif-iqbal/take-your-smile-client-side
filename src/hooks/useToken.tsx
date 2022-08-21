@@ -14,7 +14,7 @@ if (image) {
 }
 
 if (email) {
-    fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`,{
+    fetch(`http://localhost:8000/user/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'
