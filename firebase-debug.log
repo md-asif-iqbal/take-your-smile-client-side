@@ -1,0 +1,40 @@
+[debug] [2022-08-21T20:12:52.506Z] ----------------------------------------------------------------------
+[debug] [2022-08-21T20:12:52.510Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-08-21T20:12:52.511Z] CLI Version:   11.2.0
+[debug] [2022-08-21T20:12:52.511Z] Platform:      win32
+[debug] [2022-08-21T20:12:52.511Z] Node Version:  v16.16.0
+[debug] [2022-08-21T20:12:52.518Z] Time:          Sun Aug 21 2022 15:12:52 GMT-0500 (Central Daylight Time)
+[debug] [2022-08-21T20:12:52.518Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-21T20:12:52.523Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-08-21T20:12:52.630Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-21T20:12:52.630Z] > authorizing via signed-in user (arjurana20@gmail.com)
+[debug] [2022-08-21T20:12:52.631Z] [iam] checking project take-your-smile-4d64a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-21T20:12:52.632Z] > refreshing access token with scopes: []
+[debug] [2022-08-21T20:12:52.633Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-21T20:12:52.633Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-21T20:12:53.134Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-21T20:12:53.134Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-21T20:12:53.151Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-your-smile-4d64a:testIamPermissions [none]
+[debug] [2022-08-21T20:12:53.151Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-your-smile-4d64a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-21T20:12:53.491Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-08-21T20:12:53.492Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-08-21T20:12:54.918Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-your-smile-4d64a:testIamPermissions 200
+[debug] [2022-08-21T20:12:54.918Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-your-smile-4d64a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-21T20:12:54.923Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a [none]
+[debug] [2022-08-21T20:12:55.733Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a 200
+[debug] [2022-08-21T20:12:55.733Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a {"projectId":"take-your-smile-4d64a","projectNumber":"1075631707211","displayName":"take-your-smile","name":"projects/take-your-smile-4d64a","resources":{"hostingSite":"take-your-smile-4d64a"},"state":"ACTIVE","etag":"1_a88386e1-d9ea-4e33-97ce-bd5b7f2d3e95"}
+[info] 
+[info] === Deploying to 'take-your-smile-4d64a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-08-21T20:12:55.748Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a [none]
+[debug] [2022-08-21T20:12:56.589Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a 200
+[debug] [2022-08-21T20:12:56.589Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a {"projectId":"take-your-smile-4d64a","projectNumber":"1075631707211","displayName":"take-your-smile","name":"projects/take-your-smile-4d64a","resources":{"hostingSite":"take-your-smile-4d64a"},"state":"ACTIVE","etag":"1_a88386e1-d9ea-4e33-97ce-bd5b7f2d3e95"}
+[debug] [2022-08-21T20:12:56.598Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1075631707211/sites/take-your-smile-4d64a/versions [none]
+[debug] [2022-08-21T20:12:56.598Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1075631707211/sites/take-your-smile-4d64a/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-21T20:12:58.523Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1075631707211/sites/take-your-smile-4d64a/versions 200
+[debug] [2022-08-21T20:12:58.524Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1075631707211/sites/take-your-smile-4d64a/versions {"name":"projects/1075631707211/sites/take-your-smile-4d64a/versions/64e2362120eea2ef","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[take-your-smile-4d64a]: beginning deploy... 
+[info] i  hosting[take-your-smile-4d64a]: found 35 files in build 
+[debug] [2022-08-21T20:12:58.590Z] [hosting] uploading with 200 concurrency

@@ -35,7 +35,7 @@ const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
 const DarkMode = () => {
   return (
     <div className="toggle-theme-wrapper">
-      <span className="text-primary" ><MdOutlineLightMode ></MdOutlineLightMode></span>
+      {/* <span className="text-primary" ><MdOutlineLightMode ></MdOutlineLightMode></span>
       <label className="toggle-theme" htmlFor="checkbox">
         <input
           type="checkbox"
@@ -47,8 +47,20 @@ const DarkMode = () => {
       </label>
 
       
-      <span className="text-primary"><MdOutlineNightlight /></span>
+      <span className="text-primary"><MdOutlineNightlight /></span> */}
 
+
+      
+    <input type="checkbox" id="toggle_checkbox" onChange={toggleTheme}
+          defaultChecked={defaultDark} />
+
+    <label htmlFor="toggle_checkbox">
+      <div id="star">
+        <div className="star" id="star-1">★</div>
+        <div className="star" id="star-2">★</div>
+      </div>
+      <div id="moon"></div>
+    </label>
 
     </div>
   );

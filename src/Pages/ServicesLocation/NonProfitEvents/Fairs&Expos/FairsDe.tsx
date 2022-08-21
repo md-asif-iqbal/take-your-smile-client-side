@@ -19,7 +19,7 @@ const FairsDe = () => {
   const [packag]: any = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "http://localhost:8000/fairsExpos";
+    const url = "https://secure-escarpment-79738.herokuapp.com/fairsExpos";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

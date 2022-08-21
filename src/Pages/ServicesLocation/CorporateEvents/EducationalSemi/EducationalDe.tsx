@@ -20,7 +20,7 @@ const EducationalDe = () => {
   const [packag]:any = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
-    const url = "http://localhost:8000/EducationalSeminar";
+    const url = "https://secure-escarpment-79738.herokuapp.com/EducationalSeminar";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

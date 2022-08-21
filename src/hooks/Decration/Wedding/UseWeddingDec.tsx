@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const UseWeddingDec = (wedd: any) => {
   const [weddings, setWedding] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:8000/weddingceremony/${wedd}`;
+    const url = `https://secure-escarpment-79738.herokuapp.com/weddingceremony/${wedd}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));

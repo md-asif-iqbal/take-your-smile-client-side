@@ -20,7 +20,7 @@ const HolyDayDec = () => {
   const [packag]: any = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
-    const url = "http://localhost:8000/holiday";
+    const url = "https://secure-escarpment-79738.herokuapp.com/holiday";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
