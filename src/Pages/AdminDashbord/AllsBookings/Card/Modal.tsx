@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Modal = ({ data, close }) => {
   const {
-    decImg,title,text,date} = data;
+    decrImg1,details,email,location,package:packages,price,phone,name,service,time,date } = data;
 
   const modalVariants = {
     open: {
@@ -40,28 +40,73 @@ const Modal = ({ data, close }) => {
       <motion.img
         className="modal__image"
         alt="real estate mansion"
-        src={decImg}
+        src={decrImg1}
         variants={imageVariants}
       ></motion.img>
       <motion.div className="modal__info" variants={modalInfoVariants}>
         <motion.div className="modal__row" variants={modalRowVariants}>
-          <span className="modal__price">{title}</span>
+          <span className="modal__price">{service}</span>
         </motion.div>
         <motion.div className="modal__row" variants={modalRowVariants}>
           <span className="modal__address">{date}</span>
+        </motion.div>
+
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Package: {packages}</p>
+        </motion.div>
+
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Time: {time}</p>
+        </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Location: {location}</p>
+        </motion.div>
+        
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Customer: {name}</p>
+        </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Email Address: {email}</p>
+        </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Contact Number: {phone}</p>
         </motion.div>
        
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">{text}</p>
+          <p className="modal__description">Description: {details}</p>
+        </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Status: <span className="text-primary"> Pandding </span> </p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"
           whileHover={{ scale: 1.2 }}
-          onClick={close}
-        >
+          onClick={close} 
+          >
           <IoCloseCircleOutline className="modal__close-icon" />
         </motion.button>
       </motion.div>

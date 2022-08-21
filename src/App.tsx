@@ -23,30 +23,23 @@ import AllBooking from "./Pages/dashboard/AllBooking";
 import Update from "./Pages/dashboard/Profile/Update";
 import Profile from "./Pages/dashboard/Profile/Profile";
 import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
-import Login from "./Pages/Authentication/Login";
 // import Blogs from './Pages/Blogs/Blogs';
 
-import BlogsOne from './Pages/Blogs/BlogsOne';
-import BlogsThree from './Pages/Blogs/BlogsThree';
+
 // import SingleEvent from './Pages/EventGallery/SingleEvent';
 // import Error from './Pages/shared/Error/Error';
 // import Review from './Pages/dashboard/Review';
 // import UploadEvents from './Pages/dashboard/UploadEvents';
 // import Dashboard from './Pages/dashboard/Dashboard';
-import Blogs from './Pages/Blogs/Blogs';
 import Likes from './Pages/Likes/Posts';
 import Posts from './Pages/Likes/Posts';
-// import BlogsOne from "./Pages/Blogs/BlogsOne";
-// import BlogsThree from "./Pages/Blogs/BlogsThree";
+
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
 import Error from "./Pages/shared/Error/Error";
 import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
-// import Blogs from "./Pages/Blogs/Blogs";
-import Profiles from "./Pages/Profiles/Profiles";
 import Messenger from "./Pages/Messenger/Messenger";
-import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 import Location from "./Pages/Location/Location/Location";
 import Decrations from "./Pages/Decrations/Decrations";
@@ -133,14 +126,11 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
-import BlogPost from "./Pages/shared/BlogEditor/Article";
-import Show from "./Pages/shared/BlogEditor/Show";
 // import Blogs from "./Pages/Blogs/Blogs";
 // import Posts from "./Pages/Likes/Posts";
 // import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 
-import Article from "./Pages/shared/BlogEditor/Article"
 
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
@@ -154,10 +144,21 @@ import Alluser from "./Pages/AdminDashbord/Alluser";
 import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
 import EventPost from "./Pages/AdminDashbord/EventPost";
-import Blogposts from "./Pages/AdminDashbord/Blogposts";
 import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
 import PaymentDoneBook from "./Pages/AdminDashbord/AllsBookings/PaymentDoneBook";
 import AllBookings from "./Pages/AdminDashbord/AllBookings";
+import DarkMode from "./Pages/shared/DarkMode/DarkMode";
+import Blogs from "./Pages/Blogs/Blogs";
+import Show from "./Pages/shared/BlogEditor/Show";
+import Article from "./Pages/shared/BlogEditor/Article";
+import Profiles from "./Pages/Profiles/Profiles";
+import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
+import Login from "./Pages/Authentication/Login";
+import Blogposts from "./Pages/AdminDashbord/Blogposts";
+import Pandding from "./Pages/AdminDashbord/AllsBookings/Pandding";
+import Complete from "./Pages/AdminDashbord/AllsBookings/Complete";
+import Canceled from "./Pages/AdminDashbord/AllsBookings/Canceled";
+import Teams from "./Pages/AdminDashbord/Teams";
 // Services location here
 function App() {
   return (
@@ -171,13 +172,17 @@ function App() {
           <Route path="eventpost" element={<EventPost></EventPost>}></Route>
           <Route path="blogPost" element={<Blogposts></Blogposts>}></Route>
           <Route path="user" element={<Alluser></Alluser>}></Route>
-          <Route path="articlepost" element={<Article></Article>}></Route>
+          <Route path="articlepost" element={<Article />}></Route>
+          <Route path="teams" element={<Teams />}></Route>
           <Route path="allbookings" element={<AllBookings></AllBookings>}>
             <Route
               path="bookings"
               element={<AllsBookings></AllsBookings>}
             ></Route>
             <Route path="payment" element={<PaymentDoneBook />}></Route>
+            <Route path="pandding" element={<Pandding />}></Route>
+            <Route path="complete" element={<Complete />}></Route>
+            <Route path="canceled" element={<Canceled />}></Route>
 
             {/* here all bookings we made it */}
           </Route>
@@ -213,17 +218,14 @@ function App() {
         {/* <NavBar/> */}
         <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
-          <Show />
+         <Show />
         }></Route>
-        <Route path='/article/:id' element={<RequireAdmin>
-
-          <Blogs></Blogs>
-        </RequireAdmin>
+        <Route path='/article/:id' element={ <Blogs />
         }></Route>
 
-        <Route path='/posts' element={<RequireAuth>
+        {/* <Route path='/posts' element={<RequireAuth>
           <BlogPost />
-        </RequireAuth>}></Route>
+        </RequireAuth>}></Route> */}
         {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
@@ -238,9 +240,7 @@ function App() {
         <Route
           path="/contactus"
           element={
-            <RequireAdmin>
               <Contact />
-            </RequireAdmin>
           }
         ></Route>
         <Route
@@ -434,15 +434,14 @@ function App() {
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
         <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favourites' element={<Liked></Liked>}></Route>
+        <Route path='/favorites' element={<Liked></Liked>}></Route>
       </Routes>
 
       <Footer />
       <ToastContainer />
-
       <Messenger />
-      {/* <Modal /> */}
       <ClickToTop></ClickToTop>
+      <DarkMode />
     </div>
   );
 

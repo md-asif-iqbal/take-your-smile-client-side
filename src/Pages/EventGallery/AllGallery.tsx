@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PageTitle from '../shared/PageTitle/PageTitle';
-import { properties } from './constants/data';
 import Card from './Card';
 import Loading from '../shared/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';

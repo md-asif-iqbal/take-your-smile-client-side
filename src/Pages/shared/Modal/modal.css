@@ -1,5 +1,5 @@
 .popup{
-    background-color: #fff;
+    background-color: var(--background-color);
     width: 450px;
     /* padding: 30px 40px; */
     position: absolute;

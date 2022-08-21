@@ -1,14 +1,10 @@
-
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import React from 'react';
 import Loading from '../../shared/Loading/Loading';
 import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
 
-
-
-const AllsBookings = () => {
-
+const Canceled = () => {
     const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
     const { data:bookings , isLoading , refetch } = useQuery(['allBooking'], () => fetch(url, {
     method: 'GET',
@@ -39,4 +35,4 @@ const AllsBookings = () => {
     );
 };
 
-export default AllsBookings;
+export default Canceled;

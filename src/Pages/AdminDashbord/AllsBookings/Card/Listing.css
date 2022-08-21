@@ -61,14 +61,14 @@
 }
 
 .listing__row {
-  margin: 6px 0px;
+  margin: 5px 0px;
   display: flex;
   align-items: center;
 }
 
 .listing__price {
   font-size: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   text-align: start;
 }
 

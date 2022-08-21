@@ -4,8 +4,9 @@ import { useSignInWithFacebook, useSignInWithGoogle} from 'react-firebase-hooks/
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
-import useToken from '../../hooks/useToken';
 import { useLocation, useNavigate } from 'react-router-dom';
+// import useToken from '../../hooks/useToken';
+import useToken from '../../hooks/useToken'
 type Inputs = {
   email: string,
   password: string,
