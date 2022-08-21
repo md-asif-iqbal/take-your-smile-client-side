@@ -127,7 +127,7 @@ const Corporate = () => {
               <div key={item._id}>
                 <h1
                   onClick={() => FashionCarnival(item._id)}
-                  className="mb-2 font-mono cursor-pointer"
+                  className="mb-2 font-mono cursor-pointer text-primary"
                 >
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -136,7 +136,7 @@ const Corporate = () => {
                 </h1>
                 <h1
                   onClick={() => NewYearEvent(item._id)}
-                  className="mb-2 font-mono cursor-pointer"
+                  className="mb-2 font-mono cursor-pointer text-primary"
                 >
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -145,7 +145,7 @@ const Corporate = () => {
                 </h1>
                 <h1
                   onClick={() => EducationalSemi(item._id)}
-                  className="mb-2 font-mono cursor-pointer"
+                  className="mb-2 font-mono cursor-pointer text-primary"
                 >
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -154,7 +154,7 @@ const Corporate = () => {
                 </h1>
                 <h1
                   onClick={() => SalesEvents(item._id)}
-                  className="mb-2 font-mono cursor-pointer"
+                  className="mb-2 font-mono cursor-pointer text-primary"
                 >
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -163,7 +163,7 @@ const Corporate = () => {
                 </h1>
                 <h1
                   onClick={() => handleProduct(item._id)}
-                  className="mb-2 font-mono cursor-pointer"
+                  className="mb-2 font-mono cursor-pointer text-primary"
                 >
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />

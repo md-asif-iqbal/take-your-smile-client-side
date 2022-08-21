@@ -125,7 +125,7 @@ const NonProfit = () => {
             <div key={item._id}>
               <h1
                 onClick={() => ConcertEvents(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -134,7 +134,7 @@ const NonProfit = () => {
               </h1>
               <h1
                 onClick={() => WelcomeHomeEvents(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -143,7 +143,7 @@ const NonProfit = () => {
               </h1>
               <h1
                 onClick={() => Fundrasing(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -152,7 +152,7 @@ const NonProfit = () => {
               </h1>
               <h1
                 onClick={() => ExposEvents(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -161,7 +161,7 @@ const NonProfit = () => {
               </h1>
               <h1
                 onClick={() => PaintJam(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />

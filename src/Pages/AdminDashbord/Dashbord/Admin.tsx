@@ -69,49 +69,47 @@ const Admin = () => {
     },
   ];
   return (
-    <div className="mt-36">
-      <div>
-        <h1 className="text-black font-mono text-2xl w-full text-center font-bold">
-          Hello Mr, {user?.displayName} !
-        </h1>
-        <div className="busniess">
-          <div className="mb-4 w-10/12 mx-auto">
-            <Swiper
-              slidesPerView={1}
-              autoplay={{
-                delay: 2000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 4,
-                },
-              }}
-              modules={[Autoplay, Pagination]}
-              className="mySwiper"
-            >
-              <>
-                {busniess.map((item) => (
-                  <SwiperSlide>
-                    <div className="text-black font-semibold font-mono mt-8 p-5 w-48 py-8 bg-[#D0E1E9] rounded-3xl mb-10 mx-auto">
-                      <h1 className="text-3xl mb-2">{item.icons}</h1>
-                      <p className="text-3xl">{item.number}</p>
-                      <p>{item.name}</p>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </>
-            </Swiper>
-          </div>
+    <div>
+      <h1 className="text-black font-mono text-2xl w-full text-center font-bold">
+        Hello Mr, {user?.displayName} !
+      </h1>
+      <div className="busniess">
+        <div className="mb-4 w-10/12 mx-auto">
+          <Swiper
+            slidesPerView={1}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
+            modules={[Autoplay, Pagination]}
+            className="mySwiper"
+          >
+            <>
+              {busniess.map((item) => (
+                <SwiperSlide>
+                  <div className="text-black font-semibold font-mono mt-8 p-5 w-48 py-8 bg-[#D0E1E9] rounded-3xl mb-10 mx-auto">
+                    <h1 className="text-3xl mb-2">{item.icons}</h1>
+                    <p className="text-3xl">{item.number}</p>
+                    <p>{item.name}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </>
+          </Swiper>
         </div>
       </div>
       <Card />

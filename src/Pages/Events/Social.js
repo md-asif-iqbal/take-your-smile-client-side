@@ -125,7 +125,7 @@ const Social = () => {
             <div key={item._id}>
               <h1
                 onClick={() => HandleBirthday(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -134,7 +134,7 @@ const Social = () => {
               </h1>
               <h1
                 onClick={() => HandleSeasonal(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -143,7 +143,7 @@ const Social = () => {
               </h1>
               <h1
                 onClick={() => handleReligious(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -152,7 +152,7 @@ const Social = () => {
               </h1>
               <h1
                 onClick={() => handleHolday(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -161,7 +161,7 @@ const Social = () => {
               </h1>
               <h1
                 onClick={() => Retirement(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />

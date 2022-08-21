@@ -22,10 +22,7 @@ const NavEnd = () => {
      }
 }).then(res =>res.json())
 )
-if (isLoading) {
-  return <div className='h-40 mt-10'>{<Loading />}</div>
 
-}
 
 if (isError) {
  

@@ -141,7 +141,6 @@ import YourBookings from "./Pages/YourBookings/YourBookings";
 import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
-import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
 import EventPost from "./Pages/AdminDashbord/EventPost";
 import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
@@ -155,6 +154,7 @@ import Profiles from "./Pages/Profiles/Profiles";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import Login from "./Pages/Authentication/Login";
 import Blogposts from "./Pages/AdminDashbord/Blogposts";
+import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 // Services location here
 function App() {
   return (

@@ -123,7 +123,7 @@ const Weedings = () => {
             <div key={item._id}>
               <h1
                 onClick={() => HandleAnniversary(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -132,7 +132,7 @@ const Weedings = () => {
               </h1>
               <h1
                 onClick={() => handleEngagement(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -141,7 +141,7 @@ const Weedings = () => {
               </h1>
               <h1
                 onClick={() => handlerehearsal(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -150,7 +150,7 @@ const Weedings = () => {
               </h1>
               <h1
                 onClick={() => handleWedding(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
@@ -159,7 +159,7 @@ const Weedings = () => {
               </h1>
               <h1
                 onClick={() => FloralDesing(item._id)}
-                className="mb-2 font-mono cursor-pointer"
+                className="mb-2 font-mono cursor-pointer text-primary"
               >
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />

@@ -5,7 +5,7 @@ module.exports = {
       {
         light: {
           primary: "#FB4051",
-          secondary: "#151515",
+          secondary: "#00000",
           neutral: "#fff",
           "base-100": "#222831",
           info: "#A6ADBA",
@@ -16,7 +16,7 @@ module.exports = {
         },
         dark: {
           primary: "#C74B50",
-          secondary: "#fff",
+          secondary: "#ffff",
           "base-100": "#222831",
           neutral: "#ECF0F3",
           info: "#A6ADBA",

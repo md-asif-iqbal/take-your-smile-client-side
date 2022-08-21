@@ -9,7 +9,7 @@ const Alluser = () => {
   }, [user]);
   console.log(user);
   return (
-    <section className="pt-4 mt-40">
+    <section className="pt-4 ">
       <div className="w-8/12 mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
