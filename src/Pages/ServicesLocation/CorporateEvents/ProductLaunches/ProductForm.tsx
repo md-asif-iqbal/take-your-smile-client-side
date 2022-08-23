@@ -34,6 +34,8 @@ const ProductForm = () => {
     location: string;
     address: string;
   };
+  let status = "pending";
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
@@ -48,7 +50,8 @@ const ProductForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price
+      price: packag.price,
+      status: status
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
