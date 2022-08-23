@@ -4,6 +4,15 @@ import auth from "../../firebase.init";
 import NavBar from "../shared/NavBar/NavBar";
 
 const YourBookings = () => {
+    const [cancle , setCancle] = useState(false);
+    const cancleHandle =()=>{
+        setCancle(true)
+    }
+    const crossHandle =()=>{
+        setCancle(false)
+    }
+    console.log(cancle);
+    
     const [booking, setBooking]: any = useState([]);
     const [user] = useAuthState(auth);
     const orderNumber = Math.round(Math.random() * 100000)
@@ -18,6 +27,12 @@ const YourBookings = () => {
     const total = booking.reduce((accumulator: any, object: any) => {
         return accumulator + object.price;
     }, 0);
+
+    const cancleOrder =(id)=>{
+        
+
+     
+    }
 
     return (
         <div>
@@ -36,7 +51,7 @@ const YourBookings = () => {
                         {
                             booking.map((item: any) => (<div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row  items-start md:items-center space-y-4  md:space-x-6 xl:space-x-8 w-full mb-5">
                                 <div className="w-full md:w-40">
-                                    <img className="w-full hidden md:block" src={item.decrImg1} alt="dress" />
+                                    <img className="w-full hidden md:block rounded" src={item.decrImg1} alt="dress" />
                                 </div>
                                 <div className="  flex justify-between items-start w-full flex-col md:flex-row space-y-4 md:space-y-0  ">
                                     <div className="w-full flex flex-col justify-start items-start space-y-2">
@@ -56,11 +71,28 @@ const YourBookings = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="flex justify-between space-x-8 items-start w-full">
+                                    <div className="flex justify-between items-center space-x-8 items-start w-full">
                                         <p className="text-base xl:text-lg leading-6 text-gray-800">01</p>
                                         <p className="text-base xl:text-lg font-semibold leading-6 text-gray-800">${item.price}</p>
+                                        <button> <label htmlFor="my-modal-3" className="bg-primary uppercase px-6 py-2 rounded text-white">Cancle</label>
+                                        </button>
+                               
+                                             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                                            <div className="modal mt-10">
+                                            <div className="modal-box relative text-black bg-gray-100">
+                                                <label htmlFor="my-modal-3" onClick={crossHandle} className=" btn-sm btn-circle absolute right-0 top-3 text-2xl font-bold">✕</label>
+                                                <h3 className="text-lg font-bold">Are you sure to cancle {item.service}</h3>
+                                                <p className="py-4 ">
+                                                <textarea onChange={cancleHandle} className="textarea w-3/4 bg-white text-black" placeholder="Please write on the valid reason" required></textarea>
+                                                </p>
+                                                <button> <label htmlFor="my-modal-3" className="bg-primary uppercase px-6 py-2 rounded text-white" onClick={()=>cancleOrder(item._id)}>Confirm
+                                                </label>
+                                                </button>
+                                            </div>
+                                            </div>
                                     </div>
                                 </div>
+                                
                             </div>))
                         }
                     </div>
