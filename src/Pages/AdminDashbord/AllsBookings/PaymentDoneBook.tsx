@@ -3,9 +3,6 @@ import React from 'react';
 import Loading from '../../shared/Loading/Loading';
 import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
-
-
-
 const PaymentDoneBook = () => {
   const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
     const { data:bookings , isLoading , refetch } = useQuery(['allBooking'], () => fetch(url, {

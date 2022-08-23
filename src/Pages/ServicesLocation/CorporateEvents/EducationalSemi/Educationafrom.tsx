@@ -1,6 +1,6 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import UseCorporate from "../../../../hooks/OurEvents/UseCorporate";
 import UseLocation from "../../../../hooks/UseLocation";
@@ -34,6 +34,8 @@ const Educationafrom = () => {
     location: string;
     address: string;
   };
+
+  let status = "pending";
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
@@ -48,9 +50,10 @@ const Educationafrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price
+      price: packag.price,
+      status: status
     };
-    
+
 
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
