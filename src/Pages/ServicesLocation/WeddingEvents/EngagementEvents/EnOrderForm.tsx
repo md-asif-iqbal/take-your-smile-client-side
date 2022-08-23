@@ -22,6 +22,7 @@ const EnOrderForm = () => {
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
   const [wedding] = UseWedding();
+  let status = 'pandding'
   type Inputs = {
     name: string;
     email: string;
@@ -32,6 +33,7 @@ const EnOrderForm = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
@@ -47,7 +49,8 @@ const EnOrderForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price
+      price: packag.price,
+      status: status
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {

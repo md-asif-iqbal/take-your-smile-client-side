@@ -4,7 +4,7 @@ import "./Listing.css";
 import { motion } from "framer-motion";
 
 const Listing = ({ data, open }) => {
-    const { decrImg1,details,email,location,package:packages,price,phone,name,service,time,date } = data;
+    const {status, decrImg1,details,email,location,package:packages,price,phone,name,service,time,date } = data;
 
   return (
     <motion.div className="listing" onClick={open} whileHover={{ scale: 1.1 }}>
@@ -17,7 +17,7 @@ const Listing = ({ data, open }) => {
           />
         </div>
         <div className="listing__details">
-          <div className="listing__type">All Bookings</div>
+          <div className="listing__type">{status}</div>
           <div className="listing__row">
             <span className="listing__price">{service}</span>
           </div>

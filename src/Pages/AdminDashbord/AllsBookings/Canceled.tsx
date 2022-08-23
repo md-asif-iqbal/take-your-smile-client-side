@@ -23,7 +23,7 @@ const Canceled = () => {
             <section>
                 <PageTitle title="All Gallery" />
                 <div className="Appes">
-                    <h1 className='text-center mt-3 text-black text-2xl'> All Bookings Here</h1>
+                    <h1 className='text-center mt-3 text-black text-2xl'> All Cancle Bookings Here</h1>
                     <div className="propertiest text-black">
                         {bookings.map((items) => (
                             <Card data={items} key={items._id} />
