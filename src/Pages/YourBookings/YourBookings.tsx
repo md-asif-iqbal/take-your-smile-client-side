@@ -5,11 +5,21 @@ import auth from "../../firebase.init";
 import NavBar from "../shared/NavBar/NavBar";
 
 const YourBookings = () => {
+
     const [cancle, setCancle] = useState(false);
     const cancleHandle = () => {
         setCancle(true)
     }
     const crossHandle = () => {
+        setCancle(false)
+    }
+    console.log(cancle);
+
+    const [cancle , setCancle] = useState(false);
+    const cancleHandle =()=>{
+        setCancle(true)
+    }
+    const crossHandle =()=>{
         setCancle(false)
     }
     console.log(cancle);
@@ -30,6 +40,7 @@ const YourBookings = () => {
         return accumulator + object.price;
     }, 0);
 
+
     const cancleOrder = (id: any) => {
         fetch(`http://localhost:8000/orders/cancel/${id}`, {
             method: "PUT",
@@ -38,6 +49,10 @@ const YourBookings = () => {
             .then((data) => {
                 toast.success("Status Changes");
             });
+
+    const cancleOrder =(id)=>{
+        
+
     }
 
     return (
@@ -45,6 +60,7 @@ const YourBookings = () => {
             <NavBar />
 
             <div className="py-14 mt-20 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+
 
                 <div className="flex justify-start item-start space-y-2 flex-col ">
                     <h1 className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9  text-gray-800">Order #{orderNumber}</h1>
@@ -111,6 +127,64 @@ const YourBookings = () => {
                                         <p className="text-base leading-4 text-gray-600">${total}</p>
                                     </div>
                                 </div>
+
+                        {
+                            booking.map((item: any) => (<div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row  items-start md:items-center space-y-4  md:space-x-6 xl:space-x-8 w-full mb-5">
+                                <div className="w-full md:w-40">
+                                    <img className="w-full hidden md:block rounded" src={item.decrImg1} alt="dress" />
+                                </div>
+                                <div className="  flex justify-between items-start w-full flex-col md:flex-row space-y-4 md:space-y-0  ">
+                                    <div className="w-full flex flex-col justify-start items-start space-y-2">
+                                        <h3 className="text-xl xl:text-2xl font-semibold leading-6 text-gray-800 ">{item.service}</h3>
+                                        <div className="flex justify-start items-start flex-col space-y-2">
+                                            <p className="text-sm leading-none text-gray-800">
+                                                <span className="text-gray-500">Package: </span> {item.package}
+                                            </p>
+                                            <p className="text-sm leading-none text-gray-800">
+                                                <span className="text-gray-500">Location: </span> {item.location}
+                                            </p>
+                                            <p className="text-sm leading-none text-gray-800">
+                                                <span className="text-gray-500">Date: </span> {item.date}
+                                            </p>
+                                            <p className="text-sm leading-none text-gray-800">
+                                                <span className="text-gray-500">Time: </span> {item.time}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center space-x-8 items-start w-full">
+                                        <p className="text-base xl:text-lg leading-6 text-gray-800">01</p>
+                                        <p className="text-base xl:text-lg font-semibold leading-6 text-gray-800">${item.price}</p>
+                                        <button> <label htmlFor="my-modal-3" className="bg-primary uppercase px-6 py-2 rounded text-white">Cancle</label>
+                                        </button>
+                               
+                                             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                                            <div className="modal mt-10">
+                                            <div className="modal-box relative text-black bg-gray-100">
+                                                <label htmlFor="my-modal-3" onClick={crossHandle} className=" btn-sm btn-circle absolute right-0 top-3 text-2xl font-bold">✕</label>
+                                                <h3 className="text-lg font-bold">Are you sure to cancle {item.service}</h3>
+                                                <p className="py-4 ">
+                                                <textarea onChange={cancleHandle} className="textarea w-3/4 bg-white text-black" placeholder="Please write on the valid reason" required></textarea>
+                                                </p>
+                                                <button> <label htmlFor="my-modal-3" className="bg-primary uppercase px-6 py-2 rounded text-white" onClick={()=>cancleOrder(item._id)}>Confirm
+                                                </label>
+                                                </button>
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                
+                            </div>))
+                        }
+                    </div>
+                    <div className="flex justify-center md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+                        <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6   ">
+                            <h3 className="text-xl font-semibold leading-5 text-gray-800">Summary</h3>
+                            <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+                                <div className="flex justify-between  w-full">
+                                    <p className="text-base leading-4 text-gray-800">Subtotal</p>
+                                    <p className="text-base leading-4 text-gray-600">${total}</p>
+                                </div>
+
                             </div>
                             <div className="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6  font-mono">
                                 <h3 className="text-xl font-semibold leading-5 text-gray-800" >You Are Ordering {booking.length} Service</h3>

@@ -177,12 +177,16 @@ function App() {
           <Route path="blogPost" element={<Blogposts></Blogposts>}></Route>
           <Route path="user" element={<Alluser></Alluser>}></Route>
           <Route path="articlepost" element={<Article />}></Route>
+
           <Route path="teams" element={<Team></Team>}>
              <Route path="teamA" element={<TeamA/>}></Route>
              <Route path="teamB" element={<TeamB/>}></Route>
              <Route path="teamC" element={<TeamC/>}></Route>
              <Route path="teamD" element={<TeamD/>}></Route>
              </Route>
+
+          <Route path="teams" element={<Teams/>}></Route>
+
           <Route path="allbookings" element={<AllBookings></AllBookings>}>
             <Route
               path="bookings"
