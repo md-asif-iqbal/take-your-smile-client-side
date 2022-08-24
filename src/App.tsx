@@ -136,12 +136,11 @@ import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 import Home from "./Pages/Donation/Home";
 
-import YourBookings from "./Pages/YourBookings/YourBookings";
+// import YourBookings from "./Pages/YourBookings/YourBookings";
 
 import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
-import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
 import EventPost from "./Pages/AdminDashbord/EventPost";
 import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
@@ -158,7 +157,13 @@ import Blogposts from "./Pages/AdminDashbord/Blogposts";
 import Pandding from "./Pages/AdminDashbord/AllsBookings/Pandding";
 import Complete from "./Pages/AdminDashbord/AllsBookings/Complete";
 import Canceled from "./Pages/AdminDashbord/AllsBookings/Canceled";
-import Teams from "./Pages/AdminDashbord/Teams";
+import Team from "./Pages/AdminDashbord/Teams/Team";
+import TeamA from "./Pages/AdminDashbord/Teams/TeamA";
+import TeamB from "./Pages/AdminDashbord/Teams/TeamB";
+import TeamC from "./Pages/AdminDashbord/Teams/TeamC";
+import TeamD from "./Pages/AdminDashbord/Teams/TeamD";
+import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
+import YourBookings from "./Pages/YourBookings/YourBookings";
 // Services location here
 function App() {
   return (
@@ -173,7 +178,16 @@ function App() {
           <Route path="blogPost" element={<Blogposts></Blogposts>}></Route>
           <Route path="user" element={<Alluser></Alluser>}></Route>
           <Route path="articlepost" element={<Article />}></Route>
-          <Route path="teams" element={<Teams/>}></Route>
+
+          <Route path="teams" element={<Team></Team>}>
+             <Route path="teamA" element={<TeamA/>}></Route>
+             <Route path="teamB" element={<TeamB/>}></Route>
+             <Route path="teamC" element={<TeamC/>}></Route>
+             <Route path="teamD" element={<TeamD/>}></Route>
+             </Route>
+
+          {/* <Route path="teams" element={<Teams/>}></Route> */}
+
           <Route path="allbookings" element={<AllBookings></AllBookings>}>
             <Route
               path="bookings"
@@ -226,7 +240,7 @@ function App() {
         {/* <Route path='/posts' element={<RequireAuth>
           <BlogPost />
         </RequireAuth>}></Route> */}
-        {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
         <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route> */}
@@ -414,7 +428,7 @@ function App() {
           path="/productfrom/:pack/:id/:pro"
           element={<ProductForm />}
         ></Route>
-        {/* Non Profit Bokking Form  */}
+        {/* /* Non Profit Bokking Form */}
         <Route
           path="/concerfrom/:pack/:id/:con"
           element={<ConcertFrom />}

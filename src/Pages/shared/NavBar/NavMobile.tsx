@@ -7,35 +7,63 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import useAdmin from '../../../hooks/Admin/useAdmin';
+import useUser from '../../../hooks/User/UseUser';
+import { useQuery } from '@tanstack/react-query';
 
 const NavMobile = () => {
-  const [user] = useAuthState(auth);
-  let photo: any = user?.photoURL;
-  let names: any = user?.displayName;
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  const [admin]:any  =  useAdmin(user);
+  const [users]:any  =  useUser(user);
+  const email = user?.email;
+  const { isLoading, error, data, refetch } = useQuery(['data'], () =>
+  fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
+    method: "GET",
+     headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+     }
+}).then(res =>res.json())
+)
+
   const logout = () => {
     signOut(auth);
     navigate('/login')
     localStorage.removeItem('accessToken');
   }
   const navigation = <>
-    <li className=' text-white  cursor-pointer'><Link to='/home'
-      className='transition-all duration-300 uppercase'> Home</Link></li>
-    <li className=' text-white  cursor-pointer uppercase'><Link to='/ourstory'
-      className='transition-all duration-300'> Our Story</Link></li>
-    <li className=' text-white  cursor-pointer uppercase'><Link to='/corporate'
-      className='transition-all duration-300'> Corporate</Link></li>
-    <li className=' text-white  cursor-pointer uppercase'><Link to='/nonprofit'
-      className='transition-all duration-300'> Non-Profit</Link></li>
-    <li className=' text-white  cursor-pointer'><Link to='/weddings'
+    <li className=' text-white  cursor-pointer'><Link to='/home' 
+                            className='transition-all duration-300 uppercase'> Home</Link></li>
+                             <li className=' text-white transition-all duration-300 cursor-pointer uppercase'>
+                              <div className="dropdown dropdown-hover">
+                                    <label id="0" className=" m-1">Portfolio</label>
+                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-base-100     text-black w-52">
+                                      <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
+                                          className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
+                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogslike' 
+                                          className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
+                                      <li className=' text-black cursor-pointer uppercase'><Link to='/donate' 
+                                          className='transition-all duration-300 hover:bg-primary hover:text-white'>Donation</Link></li>
+                                          <li className=' hover:bg-primary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
+                                          className='transition-all duration-300'> Our Story</Link></li>
+                                    </ul>
+                                  </div>
+                              </li>
+                            
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/corporate' 
+                            className='transition-all duration-300'> Corporate</Link></li>
+                             <li className=' text-white  cursor-pointer uppercase'><Link to='/nonprofit' 
+                            className='transition-all duration-300'> Non-Profit</Link></li>
+                            <li className=' text-white  cursor-pointer'><Link to='/weddings'
       className='transition-all duration-300 uppercase'> Weddings</Link></li>
 
     <li className=' text-white  cursor-pointer uppercase'><Link to='/social'
       className='transition-all duration-300'> Social</Link></li>
-    {
-      user ? <li className=' text-white  cursor-pointer uppercase'><Link to='/dashboard'
-        className='transition-all duration-300'> DashBoard</Link></li> : ''
-    }
+ 
+    <li className=' text-white cursor-pointer uppercase'><Link to='/articles' className='transition-all duration-300'>Article</Link></li>
+
+
     <li className=' text-white  cursor-pointer uppercase'><Link to='/contactus'
       className='transition-all duration-300'> Contact Us</Link></li>
     {user ? <li className=' text-white  cursor-pointer uppercase'>
@@ -44,60 +72,37 @@ const NavMobile = () => {
       <div className="dropdown dropdown-end">
         <label id="0" className=" m-1"> <button className=" transition-all duration-300 uppercase"  >
 
-          <div className="avatar ">
-            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-              {
-                user ? <img src={photo} alt={names} />
-                  : names
-              }
-            </div>
-          </div>
-        </button> </label>
+        <div className="avatar ">
+                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  {
+                   data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  /> : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />}
+                    </div>
+                    </div></button> </label>
         <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
 
           <div
-            className="bg-white uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center text-black right-0 appear-done enter-done"
+            className="bg-neutral uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done"
           >
-            <a
-              className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-              href="/likes"
-            >
-              My Likes
-            </a>
-            <a
-              className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-              href="/favourites"
-            >
-              My Favorites
-            </a>
-            <Link
-              className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-              to="/profiles"
-            >
-              Profile
-            </Link>
-            <a
-              className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
-              href="/settings"
-            >
-              Your Bookings
-            </a>
-            <button
-              className="flex w-full items-center px-3 py-3 cursor-pointer  hover:bg-gray-200 font-light text-sm focus:outline-none"
-              onClick={logout}
-            >
-              LOGOUT
-            </button>
-          </div>
 
-        </ul>
-      </div>
-      {/* end */}
+{
+                   users?.role === "user" && <>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/profiles"> Profile </Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/yourbookings"> Your Bookings</Link>
 
-    </li> : <li className=' text-white  cursor-pointer uppercase'><Link to='/login'
-      className='transition-all duration-300 '> Login</Link></li>}
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/availablejob">Apply for Employee</Link>
+                                        </> }
+                      {
+                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/admin"> Admin DashBoard</Link>}
 
+                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" onClick={logout} >LOGOUT</button>
+                        </div>
+                        </ul>
+                      </div>
+                       {/* end */}
 
+                     </li> : <li className=' text-base-100  cursor-pointer uppercase'><Link to='/login' 
+                            className='transition-all duration-300 '> Login</Link></li>}
 
   </>
   const [isOpen, setIsOpen] = useState(false);

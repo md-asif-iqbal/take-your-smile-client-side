@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Alluser = () => {
   const [user, setUser] = useState([]);
@@ -8,8 +9,24 @@ const Alluser = () => {
       .then((data) => setUser(data));
   }, [user]);
   console.log(user);
+
+  const handleDelete = (id: any) => {
+    const proced = window.confirm("Are Your Sure Delete This User");
+    if (proced) {
+      const url = `https://secure-escarpment-79738.herokuapp.com/usersData/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const reamingData = user.filter((user: any) => user._id !== id);
+          setUser(reamingData);
+          toast.success("Succesfully Delete User");
+        });
+    }
+  };
   return (
-    <section className="pt-4 mt-40">
+    <section className="pt-4">
       <div className="w-8/12 mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
@@ -36,16 +53,7 @@ const Alluser = () => {
                     </th>
                     <th
                       className="
-                               w-1/6
-                               min-w-[160px]
-                               text-lg
-                               font-semibold
-                               text-white
-                               py-4
-                               lg:py-4
-                               px-3
-                               lg:px-4
-                               font-mono
+                               w-1/6 min-w-[160px] text-lg font-semibold text-white py-4 lg:py-4 px-3 lg:px-4 font-mono
                                "
                     >
                       Email
@@ -135,7 +143,7 @@ const Alluser = () => {
                                border-b border-r border-[#E8E8E8]
                                "
                       >
-                        <span
+                        <span onClick={() => handleDelete(item._id)}
                           className="
                                    border-primary
                                   py-2

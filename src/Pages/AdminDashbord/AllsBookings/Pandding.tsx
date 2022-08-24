@@ -25,7 +25,7 @@ const Pandding = () => {
         // }
         const filterItems = (bookings) => {
                 const updatedItems = bookings.filter((item) => {
-                  return item.status === 'pandding';
+                  return item.status === 'pending';
                 });
                 setBookings(updatedItems);
                 console.log(pandding);

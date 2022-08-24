@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 
 const Modal = ({ data, close }) => {
   const {
-    decrImg1,details,email,location,package:packages,price,phone,name,service,time,date } = data;
+    decrImg1,details,email,location,package:packages,price,phone,name,service,time,date,status, _id } = data;
+
+    const handleDelete = (id:any) =>{
+      console.log(id);
+      
+    }
+  
 
   const modalVariants = {
     open: {
@@ -30,6 +36,9 @@ const Modal = ({ data, close }) => {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "10%" },
   };
+
+
+
 
   return (
     <motion.div
@@ -100,7 +109,12 @@ const Modal = ({ data, close }) => {
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">Status: <span className="text-primary"> Pandding </span> </p>
+          <p className="modal__description">Status: <span className="text-primary"> {status} </span> </p>
+        </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}>
+          <p className="modal__description"> <button onClick={() => handleDelete(_id)} className="bg-primary uppercase px-6 py-2 rounded-xl  text-white cursor-pointer">DELETE</button> </p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"
