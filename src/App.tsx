@@ -32,7 +32,7 @@ import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 // import UploadEvents from './Pages/dashboard/UploadEvents';
 // import Dashboard from './Pages/dashboard/Dashboard';
 // import Likes from './Pages/Likes/Posts';
-// import Posts from './Pages/Likes/Posts';
+import Posts from './Pages/Likes/Posts';
 
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
 import Error from "./Pages/shared/Error/Error";
@@ -167,7 +167,6 @@ import Contact from "./Pages/Contact/Contact";
 import Profiles from "./Pages/Profiles/Profiles";
 import Liked from "./Pages/Likes/Liked";
 import OurStory from "./Pages/OurStory/OurStory";
-import Posts from "./Pages/Likes/Posts";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 // Services location here
 function App() {
@@ -448,7 +447,7 @@ function App() {
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
         <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favorites' element={<Liked></Liked>}></Route>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>        
       </Routes>
 
       <Footer />
