@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { XIcon } from '@heroicons/react/outline';
 import { MenuAlt3Icon } from '@heroicons/react/outline';
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import useAdmin from '../../../hooks/Admin/useAdmin';
 import useUser from '../../../hooks/User/UseUser';

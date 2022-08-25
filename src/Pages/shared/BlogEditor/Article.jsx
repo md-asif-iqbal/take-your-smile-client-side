@@ -33,7 +33,7 @@ export default function BlogPost() {
   return (
     <>
 
-    <div className='my-10 px-5 md:px-10 mx-auto '>
+    <div className='my-10 lg:mt-36 mt-20 px-5 md:px-10 mx-auto '>
       <h2 className="text-3xl text-center my-10 uppercase">Post a blog</h2>
       <form className=' items-stretch bg-white  border-2 border-primary rounded-lg p-10' onSubmit={(e) => handleSubmit(e)}>
         <label className='text-3xl capitalize my-2 text-gray-500'>Post Title</label>

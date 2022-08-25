@@ -5,7 +5,7 @@ import CustomLink from '../CustomLink/CustomLink';
 const AllBookings = () => {
   return (
     <div>
-      <header className="border-b border-gray-500 w-8/12 mx-auto">
+      <header className="border-b border-gray-500 w-8/12 lg:mt-40 mt-20 mx-auto">
         <div
           className="flex items-center justify-between h-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8"
         >

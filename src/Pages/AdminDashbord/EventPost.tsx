@@ -49,7 +49,7 @@ const EventPost = () => {
     };
     return (
         <div>
-            <section className=" p-6 mx-auto">
+            <section className=" p-6 mx-auto lg:mt-36 mt-20">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid grid-cols-1 items-center gap-6 mt-4 md:grid-cols-2">
                         <div>

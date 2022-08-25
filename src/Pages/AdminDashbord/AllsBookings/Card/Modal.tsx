@@ -3,16 +3,32 @@ import "./Modal.css";
 import Feature from "./Feature";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Modal = ({ data, close }) => {
+  const handleDelete =( id: any ) =>{
+    const url =`https://secure-escarpment-79738.herokuapp.com/admin/booking/${id}`;
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            toast('Your Order is Cenceled');
+            console.log('yes');
+            
+            
+        })
+          
+    console.log(id);
+  }
+
   const {
     decrImg1,details,email,location,package:packages,price,phone,name,service,time,date,status, _id } = data;
 
-    const handleDelete = (id:any) =>{
-      console.log(id);
-      
-    }
-  
+
 
   const modalVariants = {
     open: {
@@ -114,7 +130,7 @@ const Modal = ({ data, close }) => {
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}>
-          <p className="modal__description"> <button onClick={() => handleDelete(_id)} className="bg-primary uppercase px-6 py-2 rounded-xl  text-white cursor-pointer">DELETE</button> </p>
+          <p className="modal__description"> <button onClick={()=> handleDelete(_id)} className="bg-primary uppercase px-6 py-2 rounded-xl  text-white cursor-pointer">DELETE</button> </p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"

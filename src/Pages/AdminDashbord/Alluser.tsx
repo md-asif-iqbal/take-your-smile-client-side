@@ -26,7 +26,7 @@ const Alluser = () => {
     }
   };
   return (
-    <section className="pt-4">
+    <section className="pt-4 lg:mt-40 mt-20">
       <div className="w-8/12 mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
