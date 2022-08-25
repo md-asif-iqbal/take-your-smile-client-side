@@ -126,19 +126,9 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
-// import Blogs from "./Pages/Blogs/Blogs";
-// import Posts from "./Pages/Likes/Posts";
-// import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
-import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
-
-
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
-// import Home from "./Pages/Donation/Home";
 
-// import YourBookings from "./Pages/YourBookings/YourBookings";
-
-// import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
@@ -166,7 +156,7 @@ import YourBookings from "./Pages/YourBookings/YourBookings";
 import Home from "./Pages/Donation/Home";
 import Blogs from "./Pages/Blogs/Blogs";
 import Corporate from "./Pages/Events/Corporate";
-import AvailableJob from "./Pages/AvailableJob/AvailableJob";
+// import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 import Location from "./Pages/Location/Location/Location";
 import Decrations from "./Pages/Decrations/Decrations";
 import Events from "./Pages/Events/Events";
@@ -178,6 +168,7 @@ import Profiles from "./Pages/Profiles/Profiles";
 import Liked from "./Pages/Likes/Liked";
 import OurStory from "./Pages/OurStory/OurStory";
 import Posts from "./Pages/Likes/Posts";
+import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 // Services location here
 function App() {
   return (

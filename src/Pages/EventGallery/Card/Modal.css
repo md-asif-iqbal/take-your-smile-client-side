@@ -2,7 +2,6 @@
   min-height: 600px;
   border-radius: 20px;
   position: relative;
-  background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
 }
@@ -13,7 +12,6 @@
 }
 
 .modal__info {
-  background-color: white;
   display: flex;
 }
 
@@ -43,7 +41,6 @@
 }
 
 .modal__description {
-  color: #737373;
   margin: 0px;
   padding: 0px;
   font-size: 1.25rem;
