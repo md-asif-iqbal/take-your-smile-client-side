@@ -32,6 +32,7 @@ const EnOrderForm = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
@@ -47,6 +48,7 @@ const EnOrderForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
+      status: 'pending',
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
