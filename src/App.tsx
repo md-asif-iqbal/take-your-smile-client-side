@@ -184,11 +184,13 @@ function App() {
           <Route path="articlepost" element={<Article />}></Route>
 
           <Route path="teams" element={<Team></Team>}>
+
              <Route path="teamA" element={<TeamA/>}></Route>
              <Route path="teamB" element={<TeamB/>}></Route>
              <Route path="teamC" element={<TeamC/>}></Route>
              <Route path="teamD" element={<TeamD/>}></Route>
           </Route>
+
 
 
 
@@ -231,9 +233,9 @@ function App() {
         {/* <NavBar/> */}
         <Route path="/sponsorpost" element={<SponsorPost />} />
         <Route path='/articles' element={
-         <Show />
+          <Show />
         }></Route>
-        <Route path='/article/:id' element={ <Blogs />
+        <Route path='/article/:id' element={<Blogs />
         }></Route>
 
         {/* <Route path='/posts' element={<RequireAuth>
@@ -253,7 +255,7 @@ function App() {
         <Route
           path="/contactus"
           element={
-              <Contact />
+            <Contact />
           }
         ></Route>
         <Route
@@ -457,7 +459,7 @@ function App() {
       <DarkMode />
     </div>
   );
-
+// 
 }
 
 export default App;
