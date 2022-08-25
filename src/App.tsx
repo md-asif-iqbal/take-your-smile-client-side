@@ -186,8 +186,7 @@ function App() {
              <Route path="teamD" element={<TeamD/>}></Route>
              </Route>
 
-          {/* <Route path="teams" element={<Teams/>}></Route> */
-          // hi
+          
 
           <Route path="allbookings" element={<AllBookings></AllBookings>}>
             <Route
