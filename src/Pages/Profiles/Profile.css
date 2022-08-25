@@ -482,7 +482,6 @@ a>code {
   word-wrap: break-word;
   border: 1px solid rgba(0, 0, 0, .05);
   border-radius: .375rem;
-  background-color: #fff;
   background-clip: border-box;
 }
 
@@ -500,7 +499,6 @@ a>code {
   margin-bottom: 0;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, .05);
-  background-color: #fff;
 }
 
 .main-content .card-header:first-child {
@@ -1218,7 +1216,7 @@ a.text-white:focus {
 
 .heading-small {
   font-size: .75rem;
-  padding-top: .25rem;
+  padding-top: 2.25rem;
   padding-bottom: .25rem;
   letter-spacing: .04em;
   text-transform: uppercase;

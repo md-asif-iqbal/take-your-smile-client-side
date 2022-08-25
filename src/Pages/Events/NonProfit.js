@@ -45,7 +45,7 @@ const NonProfit = () => {
     navigate(`/paintJam/${item}`);
   };
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div className="bg-primary-content">
       <NavBar></NavBar>
       <PageTitle title="Non-profit Event" />
       {/* <img className='w-full' src={banner} alt="" /> */}
@@ -63,8 +63,8 @@ const NonProfit = () => {
       </div>
       <div className=" w-3/5 mx-auto my-20">
         <h3
-          style={{ color: "#444", lineHeight: "44px", wordSpacing: "4px" }}
-          className="text-2xl lg:text-2xl align-middle  text-center  font-semibold ,"
+          style={{lineHeight: "44px", wordSpacing: "4px" }}
+          className="text-2xl lg:text-2xl align-middle  text-center  font-semibold text-secondary"
         >
           Non-profit events are one of our biggest passions and we have a
           variety of experience in the non-profit sector.
@@ -116,8 +116,8 @@ const NonProfit = () => {
         </div>
         <div className="w-3/4 pl-4 ">
           <h1
-            className="text-2xl lg:text-4xl mb-5"
-            style={{ color: "#444", fontWeight: "600" }}
+            className="text-2xl lg:text-4xl mb-5 text-secondary"
+            style={{ fontWeight: "600" }}
           >
             SERVICES INCLUDE
           </h1>
@@ -130,7 +130,10 @@ const NonProfit = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name}
+                <span className="text-secondary">
+
+              {item.name}
+              </span>
               </h1>
               <h1
                 onClick={() => WelcomeHomeEvents(item._id)}
@@ -139,7 +142,10 @@ const NonProfit = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name1}
+                </span>
               </h1>
               <h1
                 onClick={() => Fundrasing(item._id)}
@@ -148,7 +154,10 @@ const NonProfit = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name2}
+                </span>
               </h1>
               <h1
                 onClick={() => ExposEvents(item._id)}
@@ -157,7 +166,10 @@ const NonProfit = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name3}
+                <span className="text-secondary">
+
+              {item.name3}
+              </span>
               </h1>
               <h1
                 onClick={() => PaintJam(item._id)}
@@ -166,7 +178,10 @@ const NonProfit = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name4}
+                <span className="text-secondary">
+
+              {item.name4}
+              </span>
               </h1>
             </div>
           ))}

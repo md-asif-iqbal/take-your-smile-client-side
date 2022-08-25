@@ -46,7 +46,7 @@ const Weedings = () => {
     navigate(`/wedding/${item}`);
   };
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div className="bg-primary-content">
       <NavBar></NavBar>
       <PageTitle title="Weeding Event" />
 
@@ -65,8 +65,8 @@ const Weedings = () => {
       </div>
       <div className=" w-3/5 mx-auto my-20">
         <h3
-          style={{ color: "#444", lineHeight: "44px", wordSpacing: "4px" }}
-          className="text-2xl lg:text-2xl align-middle  text-center  font-semibold ,"
+          style={{lineHeight: "44px", wordSpacing: "4px" }}
+          className="text-2xl lg:text-2xl align-middle  text-center  font-semibold text-secondary"
         >
           Planning you're wedding, but no idea where to start? Take Heart!
         </h3>
@@ -114,8 +114,8 @@ const Weedings = () => {
         </div>
         <div className="w-3/4 pl-4 ">
           <h1
-            className="text-2xl lg:text-4xl mb-5"
-            style={{ color: "#444", fontWeight: "600" }}
+            className="text-2xl lg:text-4xl mb-5 text-secondary"
+            style={{ fontWeight: "600" }}
           >
             SERVICES INCLUDE
           </h1>
@@ -128,8 +128,11 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name}
-              </h1>
+                </span>
+                  </h1>
               <h1
                 onClick={() => handleEngagement(item._id)}
                 className="mb-2 font-mono cursor-pointer"
@@ -137,7 +140,10 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name1}
+                </span>
               </h1>
               <h1
                 onClick={() => handlerehearsal(item._id)}
@@ -146,7 +152,10 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                {item.name2}
+                <span className="text-secondary">
+
+                  {item.name2}
+                  </span>
               </h1>
               <h1
                 onClick={() => handleWedding(item._id)}
@@ -155,7 +164,10 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name3}
+                </span>
               </h1>
               <h1
                 onClick={() => FloralDesing(item._id)}
@@ -164,7 +176,10 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
+                <span className="text-secondary">
+
                 {item.name4}
+                </span>
               </h1>
             </div>
           ))}

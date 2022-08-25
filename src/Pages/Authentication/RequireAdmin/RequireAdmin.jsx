@@ -11,7 +11,7 @@ function RequireAdmin({ children }) {
 if (loading || adminLoading) {
     return <div className='h-40 mt-10'>{<Loading />}</div>
 }
-if (admin.role==="Admin") {
+if (admin?.role === "Admin") {
     return children;
 }
 return <Navigate to="/admin/login" state={{ from: location }} replace />;

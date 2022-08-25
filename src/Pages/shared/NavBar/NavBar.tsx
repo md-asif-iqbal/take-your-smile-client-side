@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import DesktopNav from './DesktopNav';
 import NavEnd from './NavEnd';
 import logo from '../../../Images/main-logo.svg'
 import NavMobile from './NavMobile';
+import DesktopNav from './DesktopNav';
+
 
 const NavBar = () => {
     const [bg, setBg] = useState(false);

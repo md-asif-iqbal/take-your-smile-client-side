@@ -37,8 +37,8 @@ const PaymentDoneBook = () => {
         <section>
           <PageTitle title="All Gallery" />
           <div className="Appes">
-            <h1 className='text-center mt-3 text-2xl text-black'> All Payments Here</h1>
-            <div className="propertiest text-black">
+            <h1 className='text-center mt-3 text-2xl text-secondary'> All Payments Here</h1>
+            <div className="propertiest text-secondary">
               {bookings.map((item) => (
                 <Card data={item} key={item.id} />
               ))}
