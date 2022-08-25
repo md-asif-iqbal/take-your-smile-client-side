@@ -1,8 +1,16 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import CheckoutForm2 from "../Donation/CheckoutForm2";
 import NavBar from "../shared/NavBar/NavBar";
+
+const stripePromise = loadStripe(
+    "pk_test_51LXS98B5Y3AeAE8iNY0Hgf4QUbKwQQVuUk1NqhUhbNZ1UhjYvdE5UJw3DnEJBLmlWBgFqKIjfXEnVZujomnNCAyo00kHESTAcf"
+);
+
 
 const YourBookings = () => {
     const [cancle, setCancle] = useState(false);
@@ -28,16 +36,16 @@ const YourBookings = () => {
 
     const filterItems = (bookings) => {
         const updatedItems = bookings.filter((item) => {
-          return item.status === 'pending' || item.status === 'complete';
+            return item.status === 'pending' || item.status === 'complete';
         });
         setBooking(updatedItems);
-  
-        
-      };
 
-    const [data, setData]:any = useState({});
-     console.log(data);
-     
+
+    };
+
+    const [data, setData]: any = useState({});
+    console.log(data);
+
     const total = booking.reduce((accumulator: any, object: any) => {
         return accumulator + object.price;
     }, 0);
@@ -50,7 +58,7 @@ const YourBookings = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                
+
                 toast.success("Status Changes");
             });
     }
@@ -145,7 +153,27 @@ const YourBookings = () => {
                                     <p className="text-lg font-semibold leading-6 text-gray-800">${total}</p>
                                 </div>
                                 <div className="w-full flex justify-center items-center">
-                                    <button className="hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">Pay Now</button>
+                                    <label htmlFor="my-modal-6" className="btn modal-button">Pay Now</label>
+
+                                    {/* <label htmlFor="my-modal-6" className="btn modal-button">open modal</label> */}
+
+
+                                    <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+                                    <div className="modal modal-bottom sm:modal-middle">
+                                        <div className="bg-primary modal-box relative">
+                                            <label htmlFor="my-modal-6" className="btn-circle  btn-sm  absolute right-2 top-3">✕</label>
+                                            <div className="">
+                                                <div className="flex flex-col ">
+                                                    <h1 className="font-bold capitalize text-3xl my-4">Make a Payment</h1>
+                                                </div>
+                                                <div className="card-body">
+                                                    <Elements stripe={stripePromise}>
+                                                        <CheckoutForm2 />
+                                                    </Elements>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +203,7 @@ const YourBookings = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
 
     );
 };
