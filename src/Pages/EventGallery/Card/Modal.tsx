@@ -44,8 +44,8 @@ const Modal = ({ data, close }) => {
         variants={imageVariants}
       ></motion.img>
       <motion.div className="modal__info" variants={modalInfoVariants}>
-        <motion.div className="modal__row" variants={modalRowVariants}>
-          <span className="modal__price">{title}</span>
+        <motion.div className="modal__row text-secondary" variants={modalRowVariants}>
+          <span className="modal__price text-secondary">{title}</span>
         </motion.div>
         <motion.div className="modal__row" variants={modalRowVariants}>
           <span className="modal__address">{date}</span>
@@ -55,7 +55,7 @@ const Modal = ({ data, close }) => {
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">{text}</p>
+          <p className="modal__description text-secondary">{text}</p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"

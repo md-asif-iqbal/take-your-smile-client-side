@@ -7,7 +7,6 @@ import { useSignInWithEmailAndPassword,useSendPasswordResetEmail } from 'react-f
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import { toast } from 'react-toastify';
-import NavBar from '../shared/NavBar/NavBar';
 import useToken from '../../hooks/useToken';
 
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -27,7 +26,7 @@ const Login = () => {
  
   let navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/home';
 
   const [email, setEmail] = useState();
   const [
@@ -68,21 +67,6 @@ const Login = () => {
       
     };
 
-   if(token){
-   
-      return(
-        <>
-          {
-            toast.success('Thank You! Login SuccessFull')
-          }
-        </>
-        )
-  
-   }
-   if (user) {
-   navigate('/home')
-}
-
     if(token){
       navigate(from, { replace: true })
     return(
@@ -107,7 +91,6 @@ const Login = () => {
     return (
       <>
       <PageTitle title="Login/Registation" />
-      <NavBar />
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">
           <div className="signin-signup">
@@ -146,10 +129,10 @@ const Login = () => {
                     })} />
               </div>
               
-            <p className='text-lg'> Forgot Password?<button className="text-primary" onClick={resetPassword}> Please Reset</button> </p>
+            <p className='text-lg text-secondary'> Forgot Password?<button className="text-primary" onClick={resetPassword}> Please Reset</button> </p>
 
             <input type="submit" value="Login" className="btn solid" />
-              <p className="social-text">Or Sign in with social platforms</p>
+              <p className="social-text text-secondary">Or Sign in with social platforms</p>
             </form>
            <SocialLogin />
           <Registation />

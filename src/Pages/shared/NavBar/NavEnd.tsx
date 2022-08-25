@@ -10,8 +10,8 @@ import useAdmin from "../../../hooks/Admin/useAdmin";
 const NavEnd = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  const [admin]:any  =  useAdmin(user);
-  const [users]:any  =  useUser(user);
+  const [admin, adminLoading]:any  =  useAdmin(user);
+  const [users, userLoading]:any  =  useUser(user);
   const email = user?.email;
   const { isLoading, error, data, refetch } = useQuery(['data'], () =>
   fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
@@ -22,12 +22,10 @@ const NavEnd = () => {
      }
 }).then(res =>res.json())
 )
-if (isLoading) {
-  // return <div className='h-40 mt-10'>{<Loading />}</div>
-
+if(isLoading || userLoading || adminLoading) {
 }
 
-if (isError) {
+if (isError || error) {
  
 }
 refetch();
@@ -64,30 +62,31 @@ refetch();
                    data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  /> : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />}
                     </div>
                     </div></button> </label>
-        <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
+        <ul id="0" className="dropdown-content menu p-2 shadow drop-bg rounded  w-52">
 
-          <div
-            className="bg-neutral uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done"
+          <div className="drop-bg uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done"
           >
 
-{
-                   users?.role === "user" && <>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/profiles"> Profile </Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/yourbookings"> Your Bookings</Link>
+              {
+                 users?.role === "user" && 
+                 <>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/favourites"> My Favorites</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/profiles"> Profile </Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/yourbookings"> Your Bookings</Link>
 
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/availablejob">Apply for Employee</Link>
-                                        </> }
-                      {
-                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/admin"> Admin DashBoard</Link>}
-
-                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" onClick={logout} >LOGOUT</button>
-                        </div>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/availablejob">Apply for Employee</Link>
+                  </> 
+              }
+                {
+                  admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/admin"> Admin DashBoard</Link>
+                }
+                <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" onClick={logout} >LOGOUT</button>
+                </div>
                         </ul>
                       </div>
                        {/* end */}
 
-                     </li> : <li className=' text-base-100  cursor-pointer uppercase'><Link to='/login' 
+                     </li> : <li className=' text-secondary  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
 
 

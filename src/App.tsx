@@ -6,16 +6,16 @@ import EventGallery from "./Pages/EventGallery/EventGallery";
 import NonProfitGallery from "./Pages/EventGallery/NonProfitGallery";
 import SocialGallery from "./Pages/EventGallery/SocialGallery";
 import WeddingGallery from "./Pages/EventGallery/WeddingGallery";
-import Events from "./Pages/Events/Events";
+// import Events from "./Pages/Events/Events";
 import HomeWithNav from "./Pages/Home/Home/HomeWithNav";
 import Footer from "./Pages/shared/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Contact from "./Pages/Contact/Contact";
-import Weedings from "./Pages/Events/Weedings";
-import Social from "./Pages/Events/Social";
-import NonProfit from "./Pages/Events/NonProfit";
-import OurStory from "./Pages/OurStory/OurStory";
+// import Contact from "./Pages/Contact/Contact";
+// import Weedings from "./Pages/Events/Weedings";
+// import Social from "./Pages/Events/Social";
+// import NonProfit from "./Pages/Events/NonProfit";
+// import OurStory from "./Pages/OurStory/OurStory";
 import Booking from "./Pages/dashboard/Booking";
 import Users from "./Pages/dashboard/Users";
 import MakeAdmin from "./Pages/dashboard/MakeAdmin";
@@ -31,7 +31,7 @@ import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
 // import Review from './Pages/dashboard/Review';
 // import UploadEvents from './Pages/dashboard/UploadEvents';
 // import Dashboard from './Pages/dashboard/Dashboard';
-import Likes from './Pages/Likes/Posts';
+// import Likes from './Pages/Likes/Posts';
 import Posts from './Pages/Likes/Posts';
 
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -40,10 +40,10 @@ import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
 import Messenger from "./Pages/Messenger/Messenger";
-import AvailableJob from "./Pages/AvailableJob/AvailableJob";
-import Location from "./Pages/Location/Location/Location";
-import Decrations from "./Pages/Decrations/Decrations";
-import Corporate from "./Pages/Events/Corporate";
+// import AvailableJob from "./Pages/AvailableJob/AvailableJob";
+// import Location from "./Pages/Location/Location/Location";
+// import Decrations from "./Pages/Decrations/Decrations";
+// import Corporate from "./Pages/Events/Corporate";
 import BirthdayParties from "./Pages/ServicesLocation/SocialEvents/BirthdayParties/BirthdayParties";
 import Anniversary from "./Pages/ServicesLocation/WeddingEvents/AnniversaryEvents/Anniversary";
 import AnniLocation from "./Pages/ServicesLocation/WeddingEvents/AnniversaryEvents/AnniLocation";
@@ -126,19 +126,9 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
-// import Blogs from "./Pages/Blogs/Blogs";
-// import Posts from "./Pages/Likes/Posts";
-// import AdminDashBoard from "./Pages/AdminDashBoard/AdminDashBoard";
-import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
-
-
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
-import Home from "./Pages/Donation/Home";
 
-// import YourBookings from "./Pages/YourBookings/YourBookings";
-
-import Liked from "./Pages/Likes/Liked";
 import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
@@ -147,10 +137,9 @@ import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
 import PaymentDoneBook from "./Pages/AdminDashbord/AllsBookings/PaymentDoneBook";
 import AllBookings from "./Pages/AdminDashbord/AllBookings";
 import DarkMode from "./Pages/shared/DarkMode/DarkMode";
-import Blogs from "./Pages/Blogs/Blogs";
+// import Blogs from "./Pages/Blogs/Blogs";
 import Show from "./Pages/shared/BlogEditor/Show";
 import Article from "./Pages/shared/BlogEditor/Article";
-import Profiles from "./Pages/Profiles/Profiles";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
 import Login from "./Pages/Authentication/Login";
 import Blogposts from "./Pages/AdminDashbord/Blogposts";
@@ -164,6 +153,21 @@ import TeamC from "./Pages/AdminDashbord/Teams/TeamC";
 import TeamD from "./Pages/AdminDashbord/Teams/TeamD";
 import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import YourBookings from "./Pages/YourBookings/YourBookings";
+import Home from "./Pages/Donation/Home";
+import Blogs from "./Pages/Blogs/Blogs";
+import Corporate from "./Pages/Events/Corporate";
+// import AvailableJob from "./Pages/AvailableJob/AvailableJob";
+import Location from "./Pages/Location/Location/Location";
+import Decrations from "./Pages/Decrations/Decrations";
+import Events from "./Pages/Events/Events";
+import Social from "./Pages/Events/Social";
+import Weedings from "./Pages/Events/Weedings";
+import NonProfit from "./Pages/Events/NonProfit";
+import Contact from "./Pages/Contact/Contact";
+import Profiles from "./Pages/Profiles/Profiles";
+import Liked from "./Pages/Likes/Liked";
+import OurStory from "./Pages/OurStory/OurStory";
+import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 // Services location here
 function App() {
   return (
@@ -184,24 +188,19 @@ function App() {
              <Route path="teamB" element={<TeamB/>}></Route>
              <Route path="teamC" element={<TeamC/>}></Route>
              <Route path="teamD" element={<TeamD/>}></Route>
-             </Route>
+          </Route>
 
-          
+
 
           <Route path="allbookings" element={<AllBookings></AllBookings>}>
-            <Route
-              path="bookings"
-              element={<AllsBookings></AllsBookings>}
-            ></Route>
+            <Route path="bookings" element={<AllsBookings></AllsBookings>}></Route>
             <Route path="payment" element={<PaymentDoneBook />}></Route>
             <Route path="pandding" element={<Pandding />}></Route>
             <Route path="complete" element={<Complete />}></Route>
             <Route path="canceled" element={<Canceled />}></Route>
 
-            {/* here all bookings we made it */}
           </Route>
-        </Route>
-
+</Route>
 
 
         <Route path='/home' element={<HomeWithNav />}></Route>
@@ -448,7 +447,7 @@ function App() {
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
         <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favorites' element={<Liked></Liked>}></Route>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>        
       </Routes>
 
       <Footer />

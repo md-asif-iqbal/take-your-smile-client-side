@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import CustomLink from '../CustomLink/CustomLink';
 import { AiOutlineHeart } from 'react-icons/ai';
 import "./EventGallery.css"
 import NavBar from '../shared/NavBar/NavBar';
 import Loading from '../shared/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
+import CustomLink from '../CustomLink/CustomLink';
 const EventGallery = () => {
  
     return (
@@ -22,17 +22,17 @@ const EventGallery = () => {
 
 {/* Gallery */}
                <div>
-                    <nav className="flex items-center lg:text-lg text-gray-500 font-bold justify-between max-w-3xl p-4 mx-auto">
-                    <h1>All</h1>
+                    <nav className="flex items-center lg:text-lg  font-bold justify-between max-w-3xl p-4 mx-auto">
+                    <h1 className='text-gray-500'>All</h1>
 
-                    <ul className="flex items-center space-x-1 text-xs lg:text-lg font-bold text-gray-500">
+                    <ul className="flex items-center space-x-1 text-xs lg:text-lg font-bold ">
                         <li className="">
-                        <h5 className="px-3 py-2 rounded-lg hidden lg:block"> Sort Events: </h5>
+                        <h5 className="px-3 py-2 rounded-lg hidden lg:block text-gray-500"> Sort Events: </h5>
                         </li>
-                        <li className="px-1 lg:px-2 py-2 rounded-lg">
+                        <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery'> All </CustomLink>
                         </li>
-                        <li className="px-1 lg:px-2 py-2 rounded-lg">
+                        <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery/corporategallery'> Corporate </CustomLink>
                         </li>
                         <li className="px-1 lg:px-2 py-2 rounded-lg">

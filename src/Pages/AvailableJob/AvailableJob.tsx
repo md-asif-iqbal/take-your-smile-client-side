@@ -31,19 +31,19 @@ const AvailableJob = () => {
   </div>
  
 </section>
-<section className="bg-gray-100 text-black">
+<section className="bg-primary-content">
 	<div className="container max-w-5xl px-4 py-12 mx-auto">
 		<div className="grid gap-4 mx-4 sm:grid-cols-12">
 			<div className="col-span-12 sm:col-span-3">
 				<div className="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-violet-400">
-					<h3 className="text-3xl font-semibold">Empolyees</h3>
-					<span className="text-sm font-bold tracking-wider uppercase text-gray-400">Event Management </span>
+					<h3 className="text-3xl font-semibold text-secondary">Empolyees</h3>
+					<span className="text-sm font-bold tracking-wider uppercase text-secondary">Event Management </span>
 				</div>
 			</div>
 			<div className="relative col-span-12 px-4 space-y-6 sm:col-span-9">
-				<div className="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-700">
+				<div className="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 ">
 					<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
-						<h3 className="text-xl font-semibold tracking-wide">Hiring Specialist Empolyees responsibilities include: </h3>
+						<h3 className="text-xl font-semibold tracking-wide text-secondary">Hiring Specialist Empolyees responsibilities include: </h3>
 						<time className="text-xs tracking-wide uppercase text-gray-400">Dec 2020</time>
 						<p className="mt-3">
                         <ul className="space-y-4">
@@ -84,7 +84,7 @@ const AvailableJob = () => {
                         </p>
 					</div>
 					<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
-						<h3 className="text-xl font-semibold tracking-wide">Responsibilities</h3>
+						<h3 className="text-xl font-semibold tracking-wide text-secondary">Responsibilities</h3>
 						<time className="text-xs tracking-wide uppercase text-gray-400">Jul 2019</time>
 						<p className="mt-3">
                         <ul className="space-y-4">
@@ -217,7 +217,7 @@ const AvailableJob = () => {
                         </p>
 					</div>
 					<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
-						<h3 className="text-xl font-semibold tracking-wide">Requirements and skills</h3>
+						<h3 className="text-xl font-semibold tracking-wide text-secondary">Requirements and skills</h3>
 						<time className="text-xs tracking-wide uppercase text-gray-400">Jan 2016</time>
 						<p className="mt-3">
                         <ul className="space-y-4">
@@ -299,20 +299,20 @@ const AvailableJob = () => {
 
                         </p>
 					</div>
-                    <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-0 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
-					</div>
+                    {/* <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-0 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
+					</div> */}
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<div className=" mt-60  flex justify-center items-center w-screen h-screen bg-white">
+<div className=" py-80  flex justify-center items-center w-screen h-screen bg-primary-content">
 
-	<div className="container mx-auto my-4 px-4 lg:px-20">
+	<div className="container mx-auto lg:px-20">
 
-		<div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
+		<div className="w-full p-8  md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
 			<div className="flex">
-				<h1 className="font-bold uppercase text-5xl">Send Your  <br /> Cv</h1>
+				<h1 className="font-bold uppercase text-5xl pt-5 text-secondary">Send Your  <br /> Cv</h1>
 			</div>
 			<div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
 				<input className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"

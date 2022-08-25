@@ -22,7 +22,7 @@ const Reviews = () => {
 
   return (
     <div className="background img">
-      <h1 className="text-center text-xl text-secondary mt-36 font-semibold font-mono">
+      <h1 className="text-center text-xl text-gary-900 mt-36 font-semibold font-mono">
         Customers Reviews
       </h1>
 

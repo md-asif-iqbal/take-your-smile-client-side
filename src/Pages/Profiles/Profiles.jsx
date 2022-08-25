@@ -270,7 +270,7 @@ return (
               <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div className="space-y-1 text-center">
                   <svg
-                    className="mx-auto h-12 w-12 text-base-100"
+                    className="mx-auto h-12 w-12 text-secondary"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 48 48"
@@ -285,7 +285,7 @@ return (
                   </svg>
                   <div className="flex">
                     <label className="relative cursor-pointer  rounded-md  px-3 py-2">
-                      <span className="font-mono text-base-100">
+                      <span className="font-mono text-secondary">
                         Upload a file
                       </span>
                       <input 

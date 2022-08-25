@@ -21,8 +21,7 @@ const AdminLogin = () => {
  
   let navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
-  const from = location.state?.from?.pathname || '/';
-
+  const from = location.state?.from?.pathname || '/home';
   const [email, setEmail] = useState();
   const [
     signInWithEmailAndPassword,
@@ -64,8 +63,6 @@ const AdminLogin = () => {
     };
 
    if(token){
-    
-     
      toast.success('Thank You! Login SuccessFull')
      navigate(from, { replace: true })
    
@@ -116,7 +113,7 @@ const AdminLogin = () => {
                     value:  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     message: 'Provide a Valid Email',
                 },
-                onBlur: (e) => setEmail(e.target.value)
+                // onBlur: (e) => setEmail(e.target.value)
                   })} />
               </div>
               <p className='text-left text-red-500'>
@@ -136,7 +133,7 @@ const AdminLogin = () => {
                     })} />
               </div>
               
-            <p className='text-lg'> Forgot Password?<button className="text-primary" onClick={resetPassword}> Please Reset</button> </p>
+            <p className='text-lg text-secondary'> Forgot Password?<button className="text-primary" onClick={resetPassword}> Please Reset</button> </p>
 
             <input type="submit" value="Login" className="btn solid" />
             </form>
