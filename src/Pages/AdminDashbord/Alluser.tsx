@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Alluser = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("https://secure-escarpment-79738.herokuapp.com/usersdata")
+    fetch("http://localhost:8000/usersdata")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 const useUser = user => {
-    const [users, setUser] = useState();
+    const [users, setUser] = useState({});
     const [userLoading, setUserLoading] = useState(true);
+    const email = user?.email;
     useEffect(() => {
-        const email = user?.email;
         if (email) {
-            fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`,{
+            fetch(`http://localhost:8000/user/${email}`,{
                 methodd: "GET",
                 headers: {
                     'content-type': 'application/json',
@@ -15,9 +15,10 @@ const useUser = user => {
             })
             .then(res => res.json())
             .then(data => {
-                setUser(data);
-                setUserLoading(false);
-                
+                if (data) {
+                    setUser(data);
+                    setUserLoading(false);
+                }
             })
         }
     },[user]);

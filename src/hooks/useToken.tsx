@@ -6,7 +6,9 @@ useEffect(() => {
 const email = user?.user?.email;
 const name = user?.user?.displayName;
 const image = user?.user?.photoURL;
+const role = {role: "user"};
 let currentUser;
+
 if (image) {
    currentUser = {email, name, image};
 }else{
@@ -14,7 +16,7 @@ if (image) {
 }
 
 if (email) {
-    fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`,{
+    fetch(`http://localhost:8000/user/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'

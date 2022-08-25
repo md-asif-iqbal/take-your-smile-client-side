@@ -31,7 +31,7 @@ const EventPost = () => {
                         decImg: img,
                     };
                     // send to your database
-                    fetch("https://secure-escarpment-79738.herokuapp.com/gallerys", {
+                    fetch("http://localhost:8000/gallerys", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

@@ -3,7 +3,6 @@
 #container {
   position: relative;
   width: 100%;
-  background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -102,18 +101,13 @@ form.sign-in-form {
   justify-content: center;
   align-items: center;
   margin: 0 0.45rem;
-  color: #333;
   border-radius: 50%;
-  border: 1px solid #333;
   text-decoration: none;
   font-size: 1.5rem;
   transition: 0.3s;
 }
 
-.social-icon:hover {
-  color: #FB4051;
-  border-color: #FB4051;
-}
+
 
 .btn {
   width: 150px;
@@ -151,7 +145,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #FB4051 0%, #FB4051 100%);
+  /* background-image: linear-gradient(-45deg, #FB4051 0%, #FB4051 100%); */
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;

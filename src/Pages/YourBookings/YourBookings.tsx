@@ -9,7 +9,7 @@ const YourBookings = () => {
     const orderNumber = Math.round(Math.random() * 100000)
     useEffect(() => {
         const email = user?.email
-        const url = `https://secure-escarpment-79738.herokuapp.com/myitems?email=${email}`;
+        const url = `http://localhost:8000/myitems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBooking(data))

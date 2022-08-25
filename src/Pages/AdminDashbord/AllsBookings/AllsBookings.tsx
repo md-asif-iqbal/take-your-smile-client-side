@@ -4,9 +4,9 @@ import Loading from '../../shared/Loading/Loading';
 import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
 import { properties } from './constants/data';
-const url = `https://secure-escarpment-79738.herokuapp.com/gallerys`;
+const url = `http://localhost:8000/gallerys`;
 // useEffect(() => {
-//   fetch("https://secure-escarpment-79738.herokuapp.com/gallerys")
+//   fetch("http://localhost:8000/gallerys")
 //     .then((res) => res.json())
 //     .then((data) => {
 //       setEvents(data);

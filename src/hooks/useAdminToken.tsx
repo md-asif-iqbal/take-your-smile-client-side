@@ -14,7 +14,7 @@ if(role.length > 1){
 }
 
 if (email) {
-    fetch(`https://secure-escarpment-79738.herokuapp.com/admin/${email}`,{
+    fetch(`http://localhost:8000/admin/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'
@@ -23,7 +23,7 @@ if (email) {
     })
     .then(res => res.json())
     .then(data => {
-        const accessToken = data.token;
+        const accessToken = data?.token;
         localStorage.setItem('accessToken', accessToken);
         setToken(accessToken)
     })

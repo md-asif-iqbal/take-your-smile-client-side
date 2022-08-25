@@ -47,6 +47,9 @@ select:invalid,
 select option{
   color: var(--option-color);
 }
+#container:before{
+  background: var(--btn-bg);
+}
 /* don't remove upper code */
 /* Custom Dark Mode Toggle Element */
 
@@ -136,8 +139,8 @@ select option{
     top: 50%;
     right: 0;
     left: 0;
-    width: 116px;
-    height: 56px;
+    width: 85px;
+    height: 45px;
     margin: 0 auto;
     background-color: #77b5fe;
     border-radius: 56px;
@@ -152,8 +155,8 @@ select option{
     position: absolute;
     top: 13px;
     left: 13px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #fafd0f;
     transform: scale(1);
     border-radius: 50%;
@@ -175,9 +178,9 @@ select option{
 .star
 {
     top: 0;
-    left: -7px;
-    font-size: 54px;
-    line-height: 21px;
+    left: -4px;
+    font-size: 45px;
+    line-height: 15px;
     color: #fafd0f;
     transition: 0.3s ease color;
 }
@@ -187,8 +190,8 @@ select option{
     position: absolute;
     bottom: -52px;
     right: 8px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: #fff;
     border-radius: 50%;
     transition: 0.3s ease bottom;
@@ -198,8 +201,8 @@ select option{
 {
     content: "";
     position: absolute;
-    top: -12px;
-    left: -17px;
+    top: -10px;
+    left: -14px;
     width: 40px;
     height: 40px;
     background-color:#03a9f4;
@@ -227,7 +230,7 @@ select option{
 
 #toggle_checkbox:checked + label #moon
 {
-    bottom: 8px;
+    bottom: 5px;
 }
 
 #toggle_checkbox:checked + label #moon:before

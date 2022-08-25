@@ -41,7 +41,7 @@ const Liked = () => {
     // console.log(user?.email)
 
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/posts/${postId}`
+    const url = `http://localhost:8000/posts/${postId}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -67,7 +67,7 @@ const Liked = () => {
     }
 
     useEffect(() => {
-        fetch('https://secure-escarpment-79738.herokuapp.com/posts')
+        fetch('http://localhost:8000/posts')
             .then(res => res.json())
             .then(data => {
                 const filter = data.filter(filteredData => filteredData.like === "liked")
@@ -136,7 +136,7 @@ const Liked = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -164,7 +164,7 @@ const Liked = () => {
             const update = { totalLikes, email, liked }
             console.log(update);
 
-            const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+            const url = `http://localhost:8000/posts/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
