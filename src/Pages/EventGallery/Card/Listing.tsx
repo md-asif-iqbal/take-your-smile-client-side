@@ -16,13 +16,13 @@ const Listing = ({ data, open }) => {
             src={decImg}
           />
         </div>
-        <div className="listing__details">
+        <div className="listing__details bg-primary-content">
           <div className="listing__type">Recent</div>
           <div className="listing__row">
-            <span className="listing__price">{title}</span>
+            <span className="listing__price text-secondary">{title}</span>
           </div>
           <div className="listing__row">
-            <span className="listing__address">{date}</span>
+            <span className="listing__address text-secondary">{date}</span>
           </div>
         
         </div>

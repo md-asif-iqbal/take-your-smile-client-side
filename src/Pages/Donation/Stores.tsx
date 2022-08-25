@@ -20,7 +20,7 @@ const Stores = () => {
     },
   ];
   return (
-    <div className="bg-[#FFF4E3]">
+    <div className="">
       <Swiper
         slidesPerView={1}
         centeredSlides={true}

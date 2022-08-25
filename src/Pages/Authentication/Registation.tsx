@@ -125,7 +125,7 @@ const Registation = () => {
                 })} />
               </div>
               <input type="submit" className="btn" value="Sign up" />
-              <p className="social-text">Or Sign up with social platforms</p>
+              <p className="social-text text-secondary">Or Sign up with social platforms</p>
             </form>
            
     );

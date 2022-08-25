@@ -71,7 +71,7 @@ const Admin = () => {
   return (
     <div className="lg:mt-40 mt-20">
       <div>
-        <h1 className="text-black font-mono text-2xl w-full text-center font-bold">
+        <h1 className="text-secondary font-mono text-2xl w-full text-center font-bold">
           Hello Mr, {user?.displayName} !
         </h1>
         <div className="busniess">

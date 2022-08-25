@@ -38,8 +38,8 @@ const Pandding = () => {
             <section>
                 <PageTitle title="All Gallery" />
                 <div className="Appes">
-                    <h1 className='text-center mt-3 text-black text-2xl'> All Pandding Bookings Here</h1>
-                    <div className="propertiest text-black">
+                    <h1 className='text-center mt-3 text-secondary text-2xl'> All Pandding Bookings Here</h1>
+                    <div className="propertiest text-secondary">
                         {bookings.map((items) => (
                             <Card data={items} key={items._id} />
                         ))}

@@ -18,7 +18,7 @@ const BirthdayParties = () => {
   return (
     <div>
       <NavBar />
-      <h1 className="text-3xl text-center font-mono mt-10 font-bold">
+      <h1 className="text-3xl text-center font-mono mt-10 font-bold text-secondary">
         You Are Select
         <span className="text-primary font-mono"> {social.name}</span>
       </h1>
@@ -89,7 +89,7 @@ const BirthdayParties = () => {
             <div className="w-9/12 mx-auto py-8">
               <button
                 onClick={() => handleClick(item._id)}
-                className="btn odd:bg-primary w-full text-white"
+                className="btn w-full"
               >
                 Book Now
               </button>

@@ -26,7 +26,6 @@ const WeddingGallery = () => {
           return item.titleCode === 'non-profit';
         });
         setEvents(updatedItems);
-        console.log(events);
         
       };
     return (

@@ -8,10 +8,10 @@ const Dashbord = () => {
   return (
     <div>
       <NavBar />
-      <div className="grid bg-[#DFECF1] text-white lg:grid-cols-[200px_minmax(900px,_1fr)_50px]">
+      <div className="grid lg:grid-cols-[200px_minmax(900px,_1fr)_50px]">
         <div className="rounded-2xl h-[590px] pb-16 mb-16 mx-auto ml-10 w-44 mt-36  bg-blue-900 ">
           <div className="pb-3 px-2 pt-3">
-            <p className="font-mono mt-2 font-semibold text-center">Admin</p>
+            <p className="font-mono mt-2 font-semibold text-center text-white">Admin</p>
           </div>
           <div className="pb-2 px-2 pt-3">
             <div className="hover:border-r-2 border-white px-2 my-2 mx-auto cursor-pointer">

@@ -97,10 +97,10 @@ const Alluser = () => {
                         className="
                                text-center text-dark
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-[#F3F6FF]
+                               
                                border-b border-l border-[#E8E8E8]
                                "
                       >
@@ -110,10 +110,10 @@ const Alluser = () => {
                         className="
                                text-center text-dark
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-white
+                               
                                border-b border-[#E8E8E8]
                                "
                       >
@@ -123,10 +123,10 @@ const Alluser = () => {
                         className="
                                text-center text-dark
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-[#F3F6FF]
+                               
                                border-b border-[#E8E8E8]
                                "
                       >
@@ -136,10 +136,10 @@ const Alluser = () => {
                         className="
                                text-center text-dark
                                font-medium
-                               text-black
+                               text-secondary
                                py-5
                                px-2
-                               bg-white
+                              
                                border-b border-r border-[#E8E8E8]
                                "
                       >

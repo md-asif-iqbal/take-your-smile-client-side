@@ -58,7 +58,7 @@ const FashionCarLoc = () => {
                 <AiFillHome /> Home
               </span>
               {corporate.map((item) => (
-                <h1 key={item._id} className="font-mono">
+                <h1 className="font-mono">
                   / {item.name}/ {packag.title}
                 </h1>
               ))}
@@ -82,7 +82,6 @@ const FashionCarLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
-            key={item._id}
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >

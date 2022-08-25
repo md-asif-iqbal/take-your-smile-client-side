@@ -1,4 +1,4 @@
-/* 1 */
+/* need for both design don't remove this code */
 :root {
   --font-color: #fff;
   --background-color: #ECF0F3;
@@ -15,12 +15,13 @@
   --link-color: lightblue;
   --btn-bg: #C74B50;
   --option-color: #A6ADBA;
+  --color: #C74B50
 }
 
 /* 3 */
 body {
   background-color: var(--background-color);
-  color: var(--font-color);
+  /* color: var(--font-color); */
 }
 
 a {
@@ -46,13 +47,24 @@ select:invalid,
 select option{
   color: var(--option-color);
 }
-
+#container:before{
+  background: var(--btn-bg);
+}
+.drop-bg{
+  background: var(--background-color);
+}
+/* don't remove upper code */
 /* Custom Dark Mode Toggle Element */
+
+/* 1st design */
+
+
+
 .toggle-theme-wrapper {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4px;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* gap: 4px; */
 
     position: fixed;
     bottom: 50%;
@@ -60,7 +72,7 @@ select option{
     z-index: 20;
   }
   
-  .toggle-theme-wrapper span {
+  /* .toggle-theme-wrapper span {
     font-size: 25px;
   }
   .toggle-theme {
@@ -110,4 +122,121 @@ select option{
   
   .slider.round:before {
     border-radius: 50%;
-  }
+  } */
+
+
+
+  /* 2nd design */
+
+
+  
+#toggle_checkbox
+{
+    display: none;
+}
+
+.toggle-theme-wrapper label
+{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 85px;
+    height: 45px;
+    margin: 0 auto;
+    background-color: #77b5fe;
+    border-radius: 56px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.3s ease background-color;
+    overflow: hidden;
+}
+
+#star
+{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 25px;
+    height: 25px;
+    background-color: #fafd0f;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+    z-index: 1;
+}
+
+#star-1
+{
+    position: relative;
+}
+
+#star-2
+{
+    position: absolute;
+    transform: rotateZ(36deg);
+}
+
+.star
+{
+    top: 0;
+    left: -4px;
+    font-size: 45px;
+    line-height: 15px;
+    color: #fafd0f;
+    transition: 0.3s ease color;
+}
+
+#moon
+{
+    position: absolute;
+    bottom: -52px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease bottom;
+}
+
+#moon:before
+{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -14px;
+    width: 40px;
+    height: 40px;
+    background-color:#03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label
+{
+    background-color: #000;
+}
+
+#toggle_checkbox:checked + label #star
+{
+    top: 3px;
+    left: 64px;
+    transform: scale(0.3);
+    background-color: yellow;
+}
+
+#toggle_checkbox:checked + label .star
+{
+    color: yellow;
+}
+
+#toggle_checkbox:checked + label #moon
+{
+    bottom: 5px;
+}
+
+#toggle_checkbox:checked + label #moon:before
+{
+    background-color: #000;
+}
