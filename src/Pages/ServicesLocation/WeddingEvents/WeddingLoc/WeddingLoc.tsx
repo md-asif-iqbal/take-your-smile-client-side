@@ -58,7 +58,7 @@ const WeddingLoc = () => {
                 <AiFillHome /> Home
               </span>
               {wedding.map((item) => (
-                <h1 key={item._id} className="font-mono">
+                <h1 className="font-mono">
                   / {item.name3}/ {packag.title}
                 </h1>
               ))}

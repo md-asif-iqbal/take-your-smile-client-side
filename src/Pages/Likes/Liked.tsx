@@ -21,7 +21,7 @@ interface UserData {
 }
 
 
-const Posts = () => {
+const Liked = () => {
 
 
     const [user] = useAuthState(auth)
@@ -124,9 +124,7 @@ const Posts = () => {
         }
 
         setQuantity(quantity)
-        console.log(likesQuantity)
 
-        console.log(quantity);
         // const [user, loading, error] = useAuthState(auth);
         // const name = user.displayName;
 
@@ -215,23 +213,22 @@ const Posts = () => {
     return (
         <div>
             <NavBar />
-            <div className=" mx-auto font-sans mt-36">
-                <h1 className='text-3xl text-center mt-16 font-bold opacity-60'>All Blogs Here</h1>
+            <div className=" mx-auto font-sans pt-36">
+                <h1 className='text-3xl text-center pt-16 font-bold opacity-60 text-secondary'>All Blogs Here</h1>
 
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post['_id']} className="card w-96 bg-base-100 shadow-xl">
+                                    <div key={post['_id']} className="card w-96 shadow-xl">
                                         <figure><img src={post['image']} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">
+                                            <h2 className="card-title text-secondary">
                                                 {post['name']}
-                                                {/* <div className="badge badge-secondary">NEW</div> */}
 
                                             </h2>
-                                            <p>{post['body']}</p>
+                                            <p className='text-secondary'>{post['body']}</p>
                                             <div className="card-actions justify-end">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -243,10 +240,6 @@ const Posts = () => {
                                                                     </BsSuitHeart>
                                                             }
 
-                                                            {/* <BsSuitHeart style={{ display: `${display}` }}>
-                                                            </BsSuitHeart>
-
-                                                            <BsFillSuitHeartFill style={{ color: 'FF014F', display: `${display1}` }}></BsFillSuitHeartFill> */}
                                                         </button>
                                                     </div>
                                                     <span>{post['likes']}</span>
@@ -277,7 +270,7 @@ const Posts = () => {
 
                                                 }
                                             </div>
-                                            <button onClick={() => handleComments(post['_id'])} style={{ color: 'grey' }} className='text-right'>Show all comments</button>
+                                            <button onClick={() => handleComments(post['_id'])}  className='text-right  text-secondary'>Show all comments</button>
                                         </div>
 
                                     </div>)
@@ -291,4 +284,4 @@ const Posts = () => {
         </div>
     );
 }
-export default Posts;
+export default Liked;

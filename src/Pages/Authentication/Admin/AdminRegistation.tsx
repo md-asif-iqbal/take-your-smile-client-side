@@ -23,7 +23,7 @@ const AdminRegistation = () => {
   const [role, setRole] = useState('');
   const navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/home';
   const [
     createUserWithEmailAndPassword,
     user,

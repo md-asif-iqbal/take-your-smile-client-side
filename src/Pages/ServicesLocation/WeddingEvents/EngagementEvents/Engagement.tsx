@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { useNavigate, useParams } from "react-router-dom";
 import UsePack from "../../../../hooks/UsePack";
@@ -17,12 +18,12 @@ const Engagement = () => {
   return (
     <div>
       <NavBar />
-      <h1 className="text-3xl text-center font-mono mt-10 font-bold">
+      <h1 className="text-3xl text-center font-mono mt-10 font-bold text-secondary">
         You Are Select <span className="text-primary">{anniver.name1}</span>
       </h1>
       <div className="mt-20 grid w-9/12 mb-10 mx-auto grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {packages.map((item) => (
-          <div key={item._id} className="mx-auto even:bg-gradient-to-r from-[#001510] to-[#00bf8f] even:text-white odd:text-primary  text-center font-mono rounded-xl pt-8">
+          <div className="mx-auto even:bg-gradient-to-r from-[#001510] to-[#00bf8f] even:text-white odd:text-primary  text-center font-mono rounded-xl pt-8">
             <h1 className="text-2xl font-bold font-mono">{item.title}</h1>
             <h1 className="text-sm w-10/12 mx-auto font-mono py-3">
               {item.dis}
@@ -87,7 +88,7 @@ const Engagement = () => {
             <div className="w-9/12 mx-auto py-8">
               <button
                 onClick={() => handleClick(item._id)}
-                className="btn odd:bg-primary w-full text-white"
+                className="btn w-full text-white"
               >
                 Book Now
               </button>

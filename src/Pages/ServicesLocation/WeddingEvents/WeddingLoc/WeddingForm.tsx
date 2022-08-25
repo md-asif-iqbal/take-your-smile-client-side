@@ -34,7 +34,6 @@ const WeddingForm = () => {
     location: string;
     address: string;
   };
-  let status = "pending";
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
@@ -49,8 +48,6 @@ const WeddingForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price,
-      status: status
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -89,12 +86,11 @@ const WeddingForm = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md">
+                <div className="max-w-md" style={{ backgroundColor: "white" }}>
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -110,7 +106,7 @@ const WeddingForm = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>
