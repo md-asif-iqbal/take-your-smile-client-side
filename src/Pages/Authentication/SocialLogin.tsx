@@ -18,9 +18,10 @@ type Inputs = {
 const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation() as unknown as Inputs;
-  const from = location.state?.from?.pathname || '/';    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
-    const [token] = useToken(Guser || Fuser);
+  const from = location.state?.from?.pathname || '/home'; 
+  const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+  const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
+  const [token] = useToken(Guser || Fuser);
 
     if (Gerror || Ferror) {
         return (
