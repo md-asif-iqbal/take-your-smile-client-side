@@ -68,7 +68,7 @@ refetch();
           >
 
               {
-                 users?.role === "user" && 
+                 users && 
                  <>
                     <Link className="flex items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/favourites"> My Favorites</Link>
                     <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/profiles"> Profile </Link>
