@@ -20,7 +20,7 @@ const Decration = () => {
   console.log(packag);
   const [address]: any = UseLocation(id);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/anniversary";
+    const url = "http://localhost:8000/anniversary";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

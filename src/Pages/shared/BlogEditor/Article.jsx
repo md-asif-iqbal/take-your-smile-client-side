@@ -15,7 +15,7 @@ export default function BlogPost() {
       body: body,
       image: image
     }
-    fetch('https://secure-escarpment-79738.herokuapp.com/articles', {
+    fetch('http://localhost:8000/articles', {
       method: "POST",
       headers: {
         'content-type': 'application/json'

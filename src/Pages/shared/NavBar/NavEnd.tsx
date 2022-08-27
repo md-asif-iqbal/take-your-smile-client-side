@@ -14,7 +14,7 @@ const NavEnd = () => {
   const [users, userLoading]:any  =  useUser(user);
   const email = user?.email;
   const { isLoading, error, data, refetch } = useQuery(['data'], () =>
-  fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
+  fetch(`http://localhost:8000/user/${email}`, {
     method: "GET",
      headers: {
       'content-type': 'application/json',
@@ -68,7 +68,7 @@ refetch();
           >
 
               {
-                 users && 
+                 users?.role === "user" && 
                  <>
                     <Link className="flex items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/favourites"> My Favorites</Link>
                     <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/profiles"> Profile </Link>
