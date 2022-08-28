@@ -57,7 +57,7 @@ const YourBookings = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-
+                // 
                 toast.success("Status Changes");
             });
     }
