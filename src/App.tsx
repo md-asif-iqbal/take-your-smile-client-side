@@ -129,7 +129,6 @@ import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunche
 import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 
-import ClickToTop from "./Pages/shared/scrollTop/ClickToTop";
 import Alluser from "./Pages/AdminDashbord/Alluser";
 import Admin from "./Pages/AdminDashbord/Dashbord/Admin";
 import EventPost from "./Pages/AdminDashbord/EventPost";
@@ -168,6 +167,7 @@ import Profiles from "./Pages/Profiles/Profiles";
 import Liked from "./Pages/Likes/Liked";
 import OurStory from "./Pages/OurStory/OurStory";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
+import ClickToTop from "./Pages/ScrollTop/ClickToTop";
 // Services location here
 function App() {
   return (
