@@ -6,7 +6,7 @@ import Card from './Card';
 
 const Complete = () => {
     const [bookings , setBookings] = useState([]);
-    const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
+    const url = `http://localhost:8000/allbookings`;
 
     useEffect(() => {
         fetch(url)

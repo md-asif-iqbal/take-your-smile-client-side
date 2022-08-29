@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const Alluser = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("https://secure-escarpment-79738.herokuapp.com/usersdata")
+    fetch("http://localhost:8000/usersdata")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);
@@ -13,16 +13,14 @@ const Alluser = () => {
   const handleDelete = (id: any) => {
     const proced = window.confirm("Are Your Sure Delete This User");
     if (proced) {
-      console.log('yes1');
-      
       const url = `https://secure-escarpment-79738.herokuapp.com/usersData/${id}`;
+
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log('yes2');
-          
+       
           const reamingData = user.filter((user: any) => user._id !== id);
           setUser(reamingData);
           console.log('yes');

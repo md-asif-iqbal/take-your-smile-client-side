@@ -20,7 +20,6 @@ type Inputs = {
     state: {
       from: Location;
     }
-    
   };
 const Login = () => {
  

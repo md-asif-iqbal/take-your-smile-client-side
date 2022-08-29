@@ -32,7 +32,7 @@ const AdminRegistation = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  const [token] = useAdminToken(user, role);
+  const [adminToken] = useAdminToken(user, role);
 
   const { register,reset, handleSubmit,watch, formState: { errors } } = useForm<Inputs>();
     let errorMessage;
@@ -51,7 +51,7 @@ const AdminRegistation = () => {
       return <div className='h-40 mt-10'>{<Loading />}</div>
     }
 
-    if(token){
+    if(adminToken){
       
       toast.success('Thank You! Registation Successfull')
       navigate(from, { replace: true })

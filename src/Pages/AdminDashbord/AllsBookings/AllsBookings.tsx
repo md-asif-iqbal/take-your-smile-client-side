@@ -5,7 +5,7 @@ import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
 const AllsBookings = () => {
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
+    const url = `http://localhost:8000/allbookings`;
     const { data: bookings, isLoading, refetch } = useQuery(['allBooking'], () => fetch(url, {
         method: 'GET',
         headers: {

@@ -6,7 +6,7 @@ import Card from './Card';
 const PaymentDoneBook = () => {
   const [pandding, setPandding] = useState([]);
     const [bookings , setBookings] = useState([]);
-    const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
+    const url = `http://localhost:8000/allbookings`;
 
     useEffect(() => {
         fetch(url)
