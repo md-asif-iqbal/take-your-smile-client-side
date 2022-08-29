@@ -22,11 +22,19 @@ const Reviews = () => {
 
   return (
     <div className="background img">
-      <h1 className="text-center text-xl text-gary-900 mt-36 font-semibold font-mono">
+      <h1
+      data-aos="fade-up"
+      data-aos-easing="gradient(0,0,1000)"
+      data-aos-duration="2000"
+      className="text-center text-xl text-gary-900 mt-36 font-semibold font-mono">
         Customers Reviews
       </h1>
 
-      <h1 className="text-center text-3xl capitalize text-primary font-semibold font-mono">
+      <h1 
+      data-aos="fade-up"
+      data-aos-easing="gradient(0,0,1200)"
+      data-aos-duration="2200"
+      className="text-center text-3xl capitalize text-primary font-semibold font-mono">
         What Our Customers Says
       </h1>
       <Swiper

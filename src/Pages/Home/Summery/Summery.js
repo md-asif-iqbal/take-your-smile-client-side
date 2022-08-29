@@ -11,7 +11,11 @@ const Summery = () => {
   }, []);
   return (
     <div className="business-bg font-mono md:h-40 ">
-      <div className="grid gap-2 grid-cols-1 md:gap-10 lg:grid-cols-4 md:grid-cols-2 md:px-4 mx-auto  md:w-10/12 mt-20 items-center">
+      <div 
+      data-aos="zoom-in"
+      data-aos-easing="gradient(0,0,1200)"
+      data-aos-duration="2200"
+      className="grid gap-2 grid-cols-1 md:gap-10 lg:grid-cols-4 md:grid-cols-2 md:px-4 mx-auto  md:w-10/12 mt-20 items-center">
         {summery.map((item) => (
           <div className="mt-8">
             <p className="text-white text-xl font-bold pt-2 text-center">

@@ -57,8 +57,12 @@ export default class RecentEvents extends Component {
       ],
     };
     return (
-      <div  className="px-7 py-14">
+      <div className="px-7 py-14">
         <h3
+
+          data-aos="zoom-in"
+
+          data-aos-duration="1400"
           className="pb-7 text-3xl text-center"
           style={{
             fontFamily:
@@ -66,12 +70,16 @@ export default class RecentEvents extends Component {
           }}
         >
           <strong>
-          <span className="text-secondary">Recent</span> <span className="text-primary">Events</span>
+            <span className="text-secondary">Recent</span> <span className="text-primary">Events</span>
           </strong>
         </h3>
         <Slider {...settings}>
           {this.state.books.map((book) => (
-            <div key={book.id} className="px-3">
+            <div
+              data-aos="flip-right"
+              data-aos-easing="gradient(0,0,1200)"
+              data-aos-duration="2200"
+              key={book.id} className="px-3">
               <div className="banner1">
                 <img className="lg:h-80 h-20 image1" src={book.img} alt="" />
 
