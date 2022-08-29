@@ -29,13 +29,10 @@ const AdminLogin = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  const [token] = useAdminToken(user, ' ');
+  const [adminToken] = useAdminToken(user, ' ');
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const { register, handleSubmit,reset, formState: { errors } } = useForm<Inputs>({mode: "onBlur"})
-    let [btnStatus, setBtnStatus] = useState<String>('');
-    let changeBtnStatus = (status:string )=> {
-       setBtnStatus(status)
-    }
+  
   
     const onSubmit: SubmitHandler<Inputs> = async(data) =>{
         const email = data.email;
@@ -62,7 +59,7 @@ const AdminLogin = () => {
       
     };
 
-   if(token){
+   if(adminToken){
      toast.success('Thank You! Login SuccessFull')
      navigate(from, { replace: true })
    
@@ -70,7 +67,7 @@ const AdminLogin = () => {
    }
 
 
-    if(token){
+    if(adminToken){
       navigate(from, { replace: true })
     return(
       <>
@@ -95,7 +92,7 @@ const AdminLogin = () => {
       <>
       <PageTitle title="Login/Registation" />
       <NavBar />
-        <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
+        <div id='container'>
         <div className="forms-container">
           <div className="signin-signup">
 
@@ -137,36 +134,21 @@ const AdminLogin = () => {
 
             <input type="submit" value="Login" className="btn solid" />
             </form>
-          <AdminRegistation />
           </div>
         </div>
   
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
-              <p>
-              Planning an event but no idea where to start? Take Heart!
+              <h2 className='text-3xl font-bold'>Are You Admin?</h2>
+              <h6 className='text-md'>
+              Please Login, This is Admin Login Page..
 
-              </p>
-              <button className="btn transparent" id="sign-up-btn" onClick={()=> changeBtnStatus("sign-up")}>
-                Sign up
-              </button>
-            </div>
-            <img src="../../images/log.svg" className="image" alt="" />
-          </div>
-          <div className="panel right-panel">
-            <div className="content">
-              <h3>One of us ?</h3>
-              <p>
-              Planning an event but no idea where to start? Take Heart!
-
-              </p>
-              <button className="btn transparent" id='sign-in-btn' onClick={()=> changeBtnStatus("sign-in")}>
-                Sign in
-              </button>
+              </h6>
+        
             </div>
           </div>
+          
         </div>
       </div>
 </>

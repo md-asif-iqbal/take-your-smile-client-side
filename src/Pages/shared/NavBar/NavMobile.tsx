@@ -18,7 +18,7 @@ const NavMobile = () => {
   const [users]:any  =  useUser(user);
   const email = user?.email;
   const { isLoading, error, data, refetch } = useQuery(['data'], () =>
-  fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
+  fetch(`http://localhost:8000/user/${email}`, {
     method: "GET",
      headers: {
       'content-type': 'application/json',
@@ -33,19 +33,19 @@ const NavMobile = () => {
     localStorage.removeItem('accessToken');
   }
   const navigation = <>
-    <li className=' text-white  cursor-pointer'><Link to='/home' 
-                            className='transition-all duration-300 uppercase'> Home</Link></li>
+    <li className=' text-white  cursor-pointer'>
+      <Link to='/home'  className='transition-all duration-300 uppercase'> Home</Link></li>
                              <li className=' text-white transition-all duration-300 cursor-pointer uppercase'>
                               <div className="dropdown dropdown-hover">
                                     <label id="0" className=" m-1">Portfolio</label>
-                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow bg-base-100     text-black w-52">
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/gallery' 
+                                    <ul id="0" className="dropdown-content rounded menu p-2 shadow drop-bg     text-white w-52">
+                                      <li className=' text-secondary cursor-pointer uppercase'><Link to='/gallery' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Event Gallery</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/blogslike' 
+                                      <li className=' text-secondary cursor-pointer uppercase'><Link to='/blogslike' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
-                                      <li className=' text-black cursor-pointer uppercase'><Link to='/donate' 
+                                      <li className=' text-secondary cursor-pointer uppercase'><Link to='/donate' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Donation</Link></li>
-                                          <li className=' hover:bg-primary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
+                                          <li className=' hover:bg-primary text-secondary hover:text-white  cursor-pointer uppercase'><Link to='/ourstory' 
                                           className='transition-all duration-300'> Our Story</Link></li>
                                     </ul>
                                   </div>
@@ -78,30 +78,30 @@ const NavMobile = () => {
                    data?.image ? <img src={data?.image} alt={data.name} className="w-12 h-12"  /> : <img src="https://i.ibb.co/rwGPsQ9/profile.jpg" alt={data?.name} className="w-14 h-14" />}
                     </div>
                     </div></button> </label>
-        <ul id="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded  w-52">
+        <ul id="0" className="dropdown-content menu p-2 shadow drop-bg rounded  w-52">
 
           <div
-            className="bg-neutral uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done"
+            className="drop-bg uppercase px-1 py-2 w-64 mt-4  rounded max-w-screen origin-center  right-0 appear-done enter-done"
           >
 
-{
+              {
                    users?.role === "user" && <>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" to="/favorites"> My Favorites</Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/profiles"> Profile </Link>
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/yourbookings"> Your Bookings</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/favorites"> My Favorites</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/profiles"> Profile </Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/yourbookings"> Your Bookings</Link>
 
-                    <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/availablejob">Apply for Employee</Link>
+                    <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" to="/availablejob">Apply for Employee</Link>
                                         </> }
                       {
-                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-base-100 text-sm focus:outline-none" to="/admin"> Admin DashBoard</Link>}
+                      admin?.role === "Admin" && <Link className="flex items-center px-3 py-3 cursor-pointer text-secondary text-sm focus:outline-none  hover:bg-primary hover:text-white" to="/admin"> Admin DashBoard</Link>}
 
-                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-base-100 text-sm focus:outline-none" onClick={logout} >LOGOUT</button>
+                      <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-secondary text-sm focus:outline-none hover:bg-primary hover:text-white" onClick={logout} >LOGOUT</button>
                         </div>
                         </ul>
                       </div>
                        {/* end */}
 
-                     </li> : <li className=' text-base-100  cursor-pointer uppercase'><Link to='/login' 
+                     </li> : <li className=' text-secondary  cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
 
   </>

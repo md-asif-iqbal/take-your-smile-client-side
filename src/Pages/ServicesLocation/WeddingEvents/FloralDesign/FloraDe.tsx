@@ -20,7 +20,7 @@ const FloraDe = () => {
   const { id } = useParams();
   const [address]: any = UseLocation(id);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/floralDesign";
+    const url = "http://localhost:8000/floralDesign";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

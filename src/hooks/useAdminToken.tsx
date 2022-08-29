@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react"
 
 const useAdminToken = (user:any, role:any) => {
-const [token, setToken] = useState('');
+const [adminToken, setToken] = useState('');
 useEffect(() => {
 const email = user?.user?.email;
 const name = user?.user?.displayName;
 
-let  currentUser;
+let  currentAdmin;
 if(role.length > 1){
-    currentUser = {email, name, role};
+    currentAdmin = {email, name, role};
 }else{
-    currentUser = {email, name};
+    currentAdmin = {email, name};
 }
 
 if (email) {
-    fetch(`https://secure-escarpment-79738.herokuapp.com/admin/${email}`,{
+    fetch(`http://localhost:8000/admin/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(currentUser)
+        body: JSON.stringify(currentAdmin)
     })
     .then(res => res.json())
     .then(data => {
@@ -30,6 +30,6 @@ if (email) {
 }
 
 },[user]);
-return [token];
+return [adminToken];
 }
 export default useAdminToken;

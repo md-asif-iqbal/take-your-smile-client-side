@@ -13,7 +13,7 @@ const EngagementLoc = () => {
   const navigate = useNavigate();
   const [packag]: any = UsePackage(pack);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "http://localhost:8000/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));
@@ -66,12 +66,12 @@ const EngagementLoc = () => {
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto">
           <input
             type="text"
-            className=" border-none px-10 text-xl font-mono input py-10 w-full"
+            className=" border-none px-10 text-xl font-mono input py-10 w-full bg-primary-content text-secondary"
             value={filter}
             placeholder="Search Your Location"
             onChange={searchEvent.bind(this)}
           />
-          <h1 className="absolute bottom-6 right-12 text-3xl ">
+          <h1 className="absolute bottom-6 right-12 text-3xl text-secondary">
             <ImSearch />
           </h1>
         </div>

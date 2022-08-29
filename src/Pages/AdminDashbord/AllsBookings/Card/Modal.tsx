@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Modal = ({ data, close }) => {
   const handleDelete =( id: any ) =>{
-    const url =`https://secure-escarpment-79738.herokuapp.com/admin/booking/${id}`;
+    const url =`http://localhost:8000/admin/booking/${id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

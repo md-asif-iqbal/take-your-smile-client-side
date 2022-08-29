@@ -12,6 +12,11 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 if (loading || userLoading) {
     return <div className='h-40 mt-10'>{<Loading />}</div>
 }
+// if (!users) {
+//     return <Navigate to="/login" state={{ from: location }} replace />;
+//   }
+//   return children;
+
 if (role === "user") {
     return children;
 }
