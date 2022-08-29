@@ -13,20 +13,28 @@ const Alluser = () => {
   const handleDelete = (id: any) => {
     const proced = window.confirm("Are Your Sure Delete This User");
     if (proced) {
+      console.log('yes1');
+      
       const url = `https://secure-escarpment-79738.herokuapp.com/usersData/${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log('yes2');
+          
           const reamingData = user.filter((user: any) => user._id !== id);
           setUser(reamingData);
+          console.log('yes');
+          
           toast.success("Succesfully Delete User");
         });
     }
   };
+  console.log(user);
+  
   return (
-    <section className="pt-4 lg:mt-40 mt-20">
+    <section className="pt-4 lg:mt-40 mt-20 w-full">
       <div className="w-8/12 mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
@@ -36,8 +44,7 @@ const Alluser = () => {
                   <tr className="bg-blue-900 text-center font-mono ">
                     <th
                       className="
-                               w-1/6
-                               min-w-[160px]
+                               
                                text-lg
                                font-semibold
                                text-white
@@ -53,15 +60,14 @@ const Alluser = () => {
                     </th>
                     <th
                       className="
-                               w-1/6 min-w-[160px] text-lg font-semibold text-white py-4 lg:py-4 px-3 lg:px-4 font-mono
+                                text-lg font-semibold text-white py-4 lg:py-4 px-3 lg:px-4 font-mono
                                "
                     >
                       Email
                     </th>
                     <th
                       className="
-                               w-1/6
-                               min-w-[160px]
+                               
                                text-lg
                                font-semibold
                                text-white
@@ -75,8 +81,7 @@ const Alluser = () => {
                     </th>
                     <th
                       className="
-                               w-1/6
-                               min-w-[160px]
+                               
                                text-lg
                                font-semibold
                                text-white
@@ -144,7 +149,7 @@ const Alluser = () => {
                                "
                       >
                         <span onClick={() => handleDelete(item._id)}
-                          className="
+                          className=" cursor-wait
                                    border-primary
                                   py-2
                                   px-2
