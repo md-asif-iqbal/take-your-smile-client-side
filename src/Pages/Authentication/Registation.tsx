@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Loading from '../shared/Loading/Loading';
 import useToken from '../../hooks/useToken';
 import { useLocation, useNavigate } from 'react-router-dom';
+import NavBar from '../shared/NavBar/NavBar';
 
 type Inputs = {
     name: string,

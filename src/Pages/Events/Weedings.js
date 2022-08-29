@@ -19,7 +19,7 @@ const Weedings = () => {
   const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/wedding";
+    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));
@@ -65,7 +65,7 @@ const Weedings = () => {
       </div>
       <div className=" w-3/5 mx-auto my-20">
         <h3
-          style={{lineHeight: "44px", wordSpacing: "4px" }}
+          style={{ lineHeight: "44px", wordSpacing: "4px" }}
           className="text-2xl lg:text-2xl align-middle  text-center  font-semibold text-secondary"
         >
           Planning you're wedding, but no idea where to start? Take Heart!
@@ -128,11 +128,8 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name}
-                </span>
-                  </h1>
+                <span className="text-secondary">{item.name}</span>
+              </h1>
               <h1
                 onClick={() => handleEngagement(item._id)}
                 className="mb-2 font-mono cursor-pointer"
@@ -140,10 +137,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name1}
-                </span>
+                <span className="text-secondary">{item.name1}</span>
               </h1>
               <h1
                 onClick={() => handlerehearsal(item._id)}
@@ -152,10 +146,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                  {item.name2}
-                  </span>
+                <span className="text-secondary">{item.name2}</span>
               </h1>
               <h1
                 onClick={() => handleWedding(item._id)}
@@ -164,10 +155,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name3}
-                </span>
+                <span className="text-secondary">{item.name3}</span>
               </h1>
               <h1
                 onClick={() => FloralDesing(item._id)}
@@ -176,10 +164,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name4}
-                </span>
+                <span className="text-secondary">{item.name4}</span>
               </h1>
             </div>
           ))}

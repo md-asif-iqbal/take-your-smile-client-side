@@ -14,7 +14,7 @@ const OurLiveEvent = () => {
   time.setSeconds(time.getSeconds() + 216000);
   const [liveEvent, setLiveEvent]: any = useState([]);
   useEffect(() => {
-    const url = `http://localhost:8000/orders`;
+    const url = `https://secure-escarpment-79738.herokuapp.com/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setLiveEvent(data));
@@ -26,7 +26,7 @@ const OurLiveEvent = () => {
         slidesPerView={1}
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -52,12 +52,13 @@ const OurLiveEvent = () => {
             >
               <div className=" grid sm:grid-cols-1 items-center  md:grid-cols-3 w-10/12 mx-auto ">
                 <img
+                  data-aos="fade-right" data-aos-duration="2500"
                   src={item.decrImg1}
                   className="w-80 h-60 rounded-md"
                   alt=""
                 />
                 <div className="live-detail mt-4 md:mx-0 mx-auto">
-                  <span className=" flex items-center gap-2">
+                  <span data-aos="zoom-out-left" data-aos-duration="2200" className=" flex items-center gap-2">
                     <i className="bg-white p-1 rounded-3xl mb-2 text-orange-500">
                       <FiBookmark className=" bookmark-icon text-orange-500" />
                     </i>
@@ -65,14 +66,14 @@ const OurLiveEvent = () => {
                       {item.service}
                     </span>
                   </span>
-                  <h2 className="live-linek-name font-mono">
+                  <h2 data-aos="zoom-out-left" data-aos-duration="2000" className="live-linek-name font-mono">
                     {item.date},{" "}
                     <span className="text-md mr-2">{item.time}</span>
                   </h2>
-                  <hr className="mb-3 mt-3" />
+                  <hr data-aos="zoom-out-left" data-aos-duration="1800" className="mb-3 mt-3" />
                   <div>
                     <ul>
-                      <li>
+                      <li data-aos="zoom-out-left" data-aos-duration="1600">
                         <span className=" flex items-center gap-2">
                           <p className="bg-white p-1 rounded-3xl mb-2 text-orange-500">
                             <AiOutlineClockCircle />
@@ -82,7 +83,7 @@ const OurLiveEvent = () => {
                           </span>
                         </span>
                       </li>
-                      <li>
+                      <li data-aos="zoom-out-left" data-aos-duration="1400">
                         <span className=" flex items-center gap-2">
                           <p className="bg-white p-1 rounded-3xl text-orange-500">
                             <GoLocation />
@@ -96,11 +97,18 @@ const OurLiveEvent = () => {
                   </div>
                 </div>
                 <div className="mx-auto mt-5 md:mb-3">
-                  <div>
+                  <div
+                    data-aos="fade-down"
+                    data-aos-duration="1400"
+                  >
                     <Time expiryTimestamp={time} />
                   </div>
                   <div className="mx-auto">
                     <a
+
+                      data-aos="fade-up"
+                      data-aos-anchor-placement="bottom-bottom"
+                      data-aos-duration="1400"
                       href="#_"
                       className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md"
                     >
@@ -112,6 +120,10 @@ const OurLiveEvent = () => {
                       </span>
                     </a>
                     <a
+
+                      data-aos="fade-up"
+                      data-aos-anchor-placement="bottom-bottom"
+                      data-aos-duration="1000"
                       href="#_"
                       className="relative ml-4 p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md"
                     >

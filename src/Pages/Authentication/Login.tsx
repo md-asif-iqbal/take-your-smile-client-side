@@ -11,6 +11,7 @@ import useToken from '../../hooks/useToken';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import PageTitle from '../shared/PageTitle/PageTitle';
+import NavBar from '../shared/NavBar/NavBar';
 
 
 
@@ -89,6 +90,7 @@ const Login = () => {
    
     return (
       <>
+      <NavBar/>
       <PageTitle title="Login/Registation" />
         <div id='container' className={btnStatus ===  'sign-up' ? "sign-up-mode" : ""}>
         <div className="forms-container">

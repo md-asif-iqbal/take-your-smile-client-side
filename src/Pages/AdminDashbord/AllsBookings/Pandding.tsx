@@ -8,7 +8,7 @@ import Card from './Card';
 const Pandding = () => {
     const [pandding, setPandding] = useState([]);
     const [bookings , setBookings] = useState([]);
-    const url = `http://localhost:8000/allbookings`;
+    const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
 
     useEffect(() => {
         fetch(url)

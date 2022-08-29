@@ -27,7 +27,7 @@ const YourBookings = () => {
     const orderNumber = Math.round(Math.random() * 100000)
     useEffect(() => {
         const email = user?.email
-        const url = `http://localhost:8000/myitems?email=${email}`;
+        const url = `https://secure-escarpment-79738.herokuapp.com/myitems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => filterItems(data))
@@ -51,7 +51,7 @@ const YourBookings = () => {
 
     const cancleOrder = (id: any) => {
 
-        fetch(`http://localhost:8000/orders/cancel/${id}`, {
+        fetch(`https://secure-escarpment-79738.herokuapp.com/orders/cancel/${id}`, {
             method: "PUT",
         })
             .then((res) => res.json())

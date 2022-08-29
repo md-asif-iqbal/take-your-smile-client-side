@@ -15,7 +15,7 @@ const SponsorPost = () => {
         const image = data.url;
         const description = data.description;
         const sponsor = {title, image, description};
-        fetch(`http://localhost:8000/sponsor`,{
+        fetch(`https://secure-escarpment-79738.herokuapp.com/sponsor`,{
             method: "POST",
             headers: {
                 'content-type': 'application/json'

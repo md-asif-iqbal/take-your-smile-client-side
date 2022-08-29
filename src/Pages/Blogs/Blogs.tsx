@@ -9,7 +9,7 @@ const Blogs = () => {
 
   let {id} = useParams();  
   const { isLoading, isError, data:articles, error, refetch } = useQuery(['articles'],  () => 
-  fetch(`http://localhost:8000/articles/${id}`,{
+  fetch(`https://secure-escarpment-79738.herokuapp.com/articles/${id}`,{
       method: "GET",
       headers: {
           'content-type': "applicataion/json"

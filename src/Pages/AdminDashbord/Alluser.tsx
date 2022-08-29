@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const Alluser = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/usersdata")
+    fetch("https://secure-escarpment-79738.herokuapp.com/usersdata")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);

@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBar";
 const Show = () => {
   const navigate = useNavigate();
     const { isLoading, isError, data:articles, error,refetch } = useQuery(['articles'],  () => 
-    fetch('http://localhost:8000/articles',{
+    fetch('https://secure-escarpment-79738.herokuapp.com/articles',{
         method: "GET",
         headers: {
             'content-type': "applicataion/json"

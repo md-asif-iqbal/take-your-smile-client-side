@@ -5,7 +5,7 @@ const TeamB = () => {
     const [teamA, setTeamA] = useState([])
     const [team, setTeam]: any = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:8000/teams';
+        const url = 'https://secure-escarpment-79738.herokuapp.com/teams';
         fetch(url)
             .then(res => res.json())
             .then(data => {

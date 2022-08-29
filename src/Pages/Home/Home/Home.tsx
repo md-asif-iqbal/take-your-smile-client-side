@@ -12,11 +12,15 @@ import FAQ from '../FAQ/FAQ';
 import Modal from '../../shared/Modal/Modal';
 import RecentEvents from '../../RecentEvents/RecentEvents';
 import OurLiveEvent from '../../LiveEvent/OurLiveEvent ';
+import { motion, useViewportScroll } from "framer-motion"
 
 const Home = () => {
-
+    const { scrollYProgress } = useViewportScroll()
     return (
-        <div>
+        <motion.path
+        d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
+        style={{ pathLength: scrollYProgress }}
+        >
             <PageTitle title="Take Your Smile" />
             <Banner/>
             <Services />
@@ -29,8 +33,7 @@ const Home = () => {
             <FAQ />
             <Modal />
 
-        </div>
-    );
-};
+     </motion.path>
+)};
 
 export default Home;

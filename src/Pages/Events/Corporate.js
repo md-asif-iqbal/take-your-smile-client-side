@@ -19,7 +19,7 @@ import "swiper/css/navigation";
 const Corporate = () => {
   const [corporate, setCorporat] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:8000/corporate";
+    const url = "https://secure-escarpment-79738.herokuapp.com/corporate";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCorporat(data));
@@ -65,7 +65,7 @@ const Corporate = () => {
         </div>
         <div className=" w-3/5 mx-auto my-20">
           <h3
-            style={{lineHeight: "44px", wordSpacing: "4px" }}
+            style={{ lineHeight: "44px", wordSpacing: "4px" }}
             className="text-2xl lg:text-2xl align-middle  text-center  font-semibold text-secondary"
           >
             Let Take Heart Events help wow your employees, clients or potential
@@ -119,7 +119,7 @@ const Corporate = () => {
           <div className="w-3/4 pl-4 ">
             <h1
               className="text-2xl lg:text-4xl mb-5 text-secondary"
-              style={{  fontWeight: "600" }}
+              style={{ fontWeight: "600" }}
             >
               SERVICES INCLUDE
             </h1>
@@ -132,10 +132,7 @@ const Corporate = () => {
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                   </span>
-                  <span className="text-secondary">
-
-                {item.name}
-                </span>
+                  <span className="text-secondary">{item.name}</span>
                 </h1>
                 <h1
                   onClick={() => NewYearEvent(item._id)}
@@ -144,10 +141,7 @@ const Corporate = () => {
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                   </span>
-                  <span className="text-secondary">
-
-                {item.name1}
-                </span>
+                  <span className="text-secondary">{item.name1}</span>
                 </h1>
                 <h1
                   onClick={() => EducationalSemi(item._id)}
@@ -156,10 +150,7 @@ const Corporate = () => {
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                   </span>
-                  <span className="text-secondary">
-
-                {item.name2}
-                </span>
+                  <span className="text-secondary">{item.name2}</span>
                 </h1>
                 <h1
                   onClick={() => SalesEvents(item._id)}
@@ -168,10 +159,7 @@ const Corporate = () => {
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                   </span>
-                  <span className="text-secondary">
-
-              {item.name3}
-              </span>
+                  <span className="text-secondary">{item.name3}</span>
                 </h1>
                 <h1
                   onClick={() => handleProduct(item._id)}
@@ -180,10 +168,7 @@ const Corporate = () => {
                   <span>
                     <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                   </span>
-                  <span className="text-secondary">
-
-                {item.name4}
-                </span>
+                  <span className="text-secondary">{item.name4}</span>
                 </h1>
               </div>
             ))}

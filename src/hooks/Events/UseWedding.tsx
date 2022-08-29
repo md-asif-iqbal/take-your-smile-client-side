@@ -4,7 +4,7 @@ const UseWedding = (id: any) => {
   const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:8000/wedding/${id}`;
+    const url = `https://secure-escarpment-79738.herokuapp.com/wedding/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));

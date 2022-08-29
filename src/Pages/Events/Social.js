@@ -19,7 +19,7 @@ const Social = () => {
   const [social, setSocial] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/social";
+    const url = "https://secure-escarpment-79738.herokuapp.com/social";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSocial(data));
@@ -64,7 +64,7 @@ const Social = () => {
       </div>
       <div className=" w-3/5 mx-auto my-20">
         <h3
-          style={{  lineHeight: "44px", wordSpacing: "4px" }}
+          style={{ lineHeight: "44px", wordSpacing: "4px" }}
           className="text-2xl lg:text-2xl align-middle  text-center  font-semibold text-secondary"
         >
           Our social event planning services are perfect for the host/hostess
@@ -117,7 +117,7 @@ const Social = () => {
         <div className="w-3/4 pl-4 ">
           <h1
             className="text-2xl lg:text-4xl mb-5 text-secondary"
-            style={{  fontWeight: "600" }}
+            style={{ fontWeight: "600" }}
           >
             SERVICES INCLUDE
           </h1>
@@ -130,10 +130,7 @@ const Social = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                  {item.name}
-                  </span>
+                <span className="text-secondary">{item.name}</span>
               </h1>
               <h1
                 onClick={() => HandleSeasonal(item._id)}
@@ -142,10 +139,7 @@ const Social = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name1}
-                </span>
+                <span className="text-secondary">{item.name1}</span>
               </h1>
               <h1
                 onClick={() => handleReligious(item._id)}
@@ -154,10 +148,7 @@ const Social = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-            {item.name4}
-            </span>
+                <span className="text-secondary">{item.name4}</span>
               </h1>
               <h1
                 onClick={() => handleHolday(item._id)}
@@ -166,10 +157,7 @@ const Social = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                {item.name3}
-                </span>
+                <span className="text-secondary">{item.name3}</span>
               </h1>
               <h1
                 onClick={() => Retirement(item._id)}
@@ -178,10 +166,7 @@ const Social = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">
-
-                  {item.name2}
-                  </span>
+                <span className="text-secondary">{item.name2}</span>
               </h1>
             </div>
           ))}
