@@ -214,14 +214,18 @@ const Liked = () => {
         <div>
             <NavBar />
             <div className=" mx-auto font-sans pt-36">
-                <h1 className='text-3xl text-center pt-16 font-bold opacity-60 text-secondary'>All Blogs Here</h1>
+                <h1 data-aos="flip-down"
+                data-aos-duration="3000" 
+                className='text-3xl text-center pt-16 font-bold opacity-60 text-secondary'>All Blogs Here</h1>
 
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post['_id']} className="card w-96 shadow-xl">
+                                    <div data-aos="zoom-in"
+                                    data-aos-duration="3000"
+                                     key={post['_id']} className="card w-96 shadow-xl">
                                         <figure><img src={post['image']} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title text-secondary">

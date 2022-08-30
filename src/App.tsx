@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import AllGallery from "./Pages/EventGallery/AllGallery";
 import CorporateGallery from "./Pages/EventGallery/CorporateGallery";
@@ -168,8 +168,13 @@ import Liked from "./Pages/Likes/Liked";
 import OurStory from "./Pages/OurStory/OurStory";
 import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 import ClickToTop from "./Pages/ScrollTop/ClickToTop";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // Services location here
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="relative">
 
