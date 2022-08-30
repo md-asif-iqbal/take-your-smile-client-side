@@ -72,7 +72,11 @@ const Profile = () => {
             </ul>
           </div>
 
-          <div className="text-center">
+          <div
+          // data-aos="flip-right"
+          // data-aos-easing="ease-out-cubic"
+          // data-aos-duration="2000" 
+           className="text-center">
             <NavLink to="update">
               <button className="btn btn-block btn-primary  text-white">
                 Update Profile

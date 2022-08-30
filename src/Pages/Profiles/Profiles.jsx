@@ -121,8 +121,15 @@ return (
       <div className="container-fluid d-flex align-items-center">
         <div className="row">
           <div className="col-lg-7 col-md-10">
-            <h1 className="display-2 text-white text-2xl md:text-3xl">Hello {details?.userName ? details?.userName : details?.name},</h1>
-            <p className="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+            <h1
+             data-aos="flip-down"
+                data-aos-duration="3000" 
+                 className="display-2 text-white text-2xl md:text-3xl">Hello {details?.userName ? details?.userName : details?.name},</h1>
+            <p
+            data-aos="fade-up"
+            data-aos-easing="gradient(0,0,1200)"
+            data-aos-duration="1900"
+             className="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
             <button className="btn btn-info">Edit profile</button>
           </div>
         </div>
@@ -134,7 +141,10 @@ return (
           <div className="card card-profile shadow">
             <div className="row justify-content-center">
               <div className="col-lg-3 order-lg-2">
-                <div className="card-profile-image">
+                <div 
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+                className="card-profile-image">
                   {
                     details?.image ? <img src={details?.image} className="rounded-circle" alt={user?.name} /> : <img src='https://i.ibb.co/rwGPsQ9/profile.jpg' className="rounded-circle" alt={details?.name} />
                   }
@@ -146,18 +156,22 @@ return (
               <div className="row">
                 <div className="col">
                   <div className="card-profile-stats d-flex justify-content-center mt-3">
-                    <div>
+                    <div data-aos="flip-down"
+                data-aos-duration="3000" >
                       <span className="heading text-info">22</span>
-                      <span className="description">Booking</span>
+                      <span  className="description">Booking</span>
                     </div>
-                    <div>
+                    <div data-aos="flip-down"
+                data-aos-duration="3000" >
                       <span className="heading text-info">89</span>
                       <span className="description">Favorite</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div data-aos="zoom-in"
+                data-aos-duration="3000"
+                 className="text-center">
                 <h3 className='text-xl font-bold capitalize text-info'>
                   {details?.userName ? details?.userName : details?.name}
                 </h3>
@@ -186,15 +200,23 @@ return (
             <div className="card-header  border-0">
               <div className="row align-items-center">
                 <div className="col-8">
-                  <h3 className="mb-0 text-info">My account</h3>
+                  <h3  data-aos="flip-down"
+                data-aos-duration="3000" 
+                 className="mb-0 text-info">My account</h3>
                 </div>
               
               </div>
             </div>
             <div className="card-body">
             <form className='items-stretch' onSubmit={handleSubmit(onSubmit)}>
-                <h6 className="heading-small text-muted mb-4">User information</h6>
-                <div className="pl-lg-4">
+                <h6
+                data-aos="flip-down"
+                data-aos-duration="3000" 
+                 className="heading-small text-muted mb-4">User information</h6>
+                <div 
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+                 className="pl-lg-4">
                   <div className="row">
                     <div className="col-lg-6">
                    
@@ -261,9 +283,12 @@ return (
                   </div>
                 </div>
                 <hr className="my-4" />
-                <h6 className="heading-small text-muted mb-4">profile photo</h6>
+                <h6  data-aos="flip-down"
+                data-aos-duration="3000" 
+                  className="heading-small text-muted mb-4">profile photo</h6>
                 
-                <div>
+                <div data-aos="zoom-in"
+                data-aos-duration="3000">
               <label className="fromControl-label capitalize">
                 Upload Your profile photo
               </label>
@@ -307,14 +332,21 @@ return (
             </div>
                 
                 <hr className="my-4" />
-                <h6 className="heading-small text-muted mb-4">About me</h6>
-                <div className="pl-lg-4">
+                <h6  data-aos="flip-down"
+                data-aos-duration="3000" 
+                 className="heading-small text-muted mb-4">About me</h6>
+                <div data-aos="zoom-in"
+                data-aos-duration="3000" className="pl-lg-4">
                   <div className="form-group focused">
                     <label>About Me</label>
                     <textarea rows="6" className="fromControl fromControl-alternative" placeholder="A few words about you ..." {...register("bio")}></textarea>
                   </div>
                 </div>
-                <div className='text-center'>
+                <div
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+                 className='text-center'>
                   <input type="submit" value="Update Profile" className='btn btn-primary ' />
                 </div>
               </form>
