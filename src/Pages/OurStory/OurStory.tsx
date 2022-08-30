@@ -47,12 +47,14 @@ const OurStory = () => {
   return (
     <div className="background img">
       <PageTitle title="Our Story" />
-      <NavBar/>
+      <NavBar />
       {<Banner></Banner>}
       {<Header></Header>}
       <div className="font-mono grid gap-10 grid-cols-1 md:grid-cols-2 w-10/12 mx-auto mt-32">
         {ourStory.map((item) => (
-          <div key={item.id} className="grid grid-cols-1 mb-20 md:grid-cols-2">
+          <div data-aos="flip-right"
+            data-aos-easing="gradient(0,0,1200)"
+            data-aos-duration="2200" key={item.id} className="grid grid-cols-1 mb-20 md:grid-cols-2">
             <img className="w-56 h-80 mx-auto" src={item.img} alt="" />
             <div>
               <p className="text-md text-center mx-auto">{item.dis}</p>
