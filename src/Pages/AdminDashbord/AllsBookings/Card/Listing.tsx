@@ -17,7 +17,7 @@ const Listing = ({ data, open }) => {
           />
         </div>
         <div className="listing__details">
-          <div className="listing__type text-secondary">{status}</div>
+          <div className="listing__type bg-emerald-400 bg-opacity-20 text-secondary">{status}</div>
           <div className="listing__row">
             <span className="listing__price">{service}</span>
           </div>

@@ -23,7 +23,7 @@ const Complete = () => {
         // }
         const filterItems = (bookings) => {
                 const updatedItems = bookings.filter((item) => {
-                  return item.status === 'completed';
+                  return item.status === 'complete';
                 });
                 setBookings(updatedItems);
 
@@ -36,7 +36,7 @@ const Complete = () => {
             <section>
                 <PageTitle title="All Gallery" />
                 <div className="Appes">
-                    <h1 className='text-center mt-3 text-secondary text-2xl'> All Bookings Here</h1>
+                    <h1 className='text-center mt-3 text-secondary text-2xl'> All Complete Bookings Here</h1>
                     <div className="propertiest text-secondary">
                         {bookings.map((items: any) => (
                             <Card data={items} key={items._id} />

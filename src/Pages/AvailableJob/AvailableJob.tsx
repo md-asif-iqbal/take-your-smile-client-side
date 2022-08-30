@@ -20,7 +20,7 @@ const AvailableJob = () => {
 
       <p className="mt-6 lg:text-lg text-white">Use this Hiring Employee job description template to attract and recruit qualified candidates for Event Management</p>
 
-      <div className="mt-8 flex flex-col space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
+      <div className="mt-8 flex space-x-36 mx-auto flex-col space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
         <input id="email" type="text" className="rounded-md border border-transparent bg-white/20 px-4 py-2 text-white placeholder-white backdrop-blur-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 sm:mx-2" placeholder="Enter your CV link" />
 
         <button className="transform rounded-md bg-blue-700 px-8 py-2 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">Post this job</button>
@@ -31,7 +31,7 @@ const AvailableJob = () => {
   </div>
  
 </section>
-<section className="bg-primary-content">
+<section className="bg-primary-content mb-36">
 	<div className="container max-w-5xl px-4 py-12 mx-auto">
 		<div className="grid gap-4 mx-4 sm:grid-cols-12">
 			<div className="col-span-12 sm:col-span-3">
@@ -308,7 +308,7 @@ const AvailableJob = () => {
 </section>
 <div className=" py-80  flex justify-center items-center w-screen h-screen bg-primary-content">
 
-	<div className="container mx-auto lg:px-20">
+	<div className="container mx-auto  lg:px-20">
 
 		<div className="w-full p-8  md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
 			<div className="flex">

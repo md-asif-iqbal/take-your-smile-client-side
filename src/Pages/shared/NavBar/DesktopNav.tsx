@@ -14,8 +14,8 @@ const DesktopNav = () => {
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Blogs</Link></li>
                                       <li className='text-secondary  cursor-pointer uppercase'><Link to='/donate' 
                                           className='transition-all duration-300 hover:bg-primary hover:text-white'>Donation</Link></li>
-                                          <li className=' hover:bg-primary text-secondary   cursor-pointer uppercase'><Link to='/ourstory' 
-                                          className='transition-all duration-300 hover:text-white'> Our Story</Link></li>
+                                          <li className=' hover:bg-primary text-secondary rounded-xl  cursor-pointer uppercase'><Link to='/ourstory' 
+                                          className='transition-all duration-300 hover:bg-primary text-secondary hover:text-white '> Our Story</Link></li>
                                     </ul>
                                   </div>
                               </li>

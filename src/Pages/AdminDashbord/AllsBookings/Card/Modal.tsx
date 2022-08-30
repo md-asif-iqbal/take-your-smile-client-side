@@ -16,13 +16,26 @@ const Modal = ({ data, close }) => {
         })
         .then(res => res.json())
         .then(data => {
-            toast('Your Order is Cenceled');
+            toast(`${service} Order is Deleted`);
             console.log('yes');
             
             
         })
           
     console.log(id);
+  }
+  const handleComplete =(id : any)=>{
+    fetch(`https://secure-escarpment-79738.herokuapp.com/orders/complete/${id}`, {
+      method: "PUT",
+  })
+      .then((res) => res.json())
+      .then((data) => {
+          console.log(data);
+          // 
+          toast.success(`Congrats ${service} is completed.`);
+      });
+
+
   }
 
   const {
@@ -82,6 +95,12 @@ const Modal = ({ data, close }) => {
         >
           <p className="modal__description">Package: {packages}</p>
         </motion.div>
+        <motion.div
+          className="modal__description-wrapper"
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">Amount: <span className="text-emerald-400"> {price} </span></p>
+        </motion.div>
 
         <motion.div
           className="modal__description-wrapper"
@@ -130,7 +149,9 @@ const Modal = ({ data, close }) => {
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}>
-          <p className="modal__description"> <button onClick={()=> handleDelete(_id)} className="bg-primary uppercase px-6 py-2 rounded-xl  text-white cursor-pointer">DELETE</button> </p>
+          <p className="modal__description"> {status==='payment'? <button onClick={()=> handleComplete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">Complete</button>:
+          <button onClick={()=> handleDelete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">DELETE</button>
+          }  </p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"

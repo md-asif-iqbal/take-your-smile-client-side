@@ -68,7 +68,7 @@ const Registation = () => {
         }
         reset()
     };
-    return (
+    return (                  
         <form  className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
             <p className='text-red-500'>{errorMessage}</p>
             <p className='text-left text-red-500'>

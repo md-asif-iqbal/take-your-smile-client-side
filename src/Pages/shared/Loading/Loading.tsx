@@ -11,7 +11,7 @@ const loadingCircle = {
   display: "block",
   width: "1rem",
   height: "1rem",
-  backgroundColor: "#3A36DB",
+  backgroundColor: "#e11d48",
   borderRadius: "0.5rem",
 };
 
@@ -44,8 +44,8 @@ const loadingCircleTransition = {
 const Loading = () => {
     return (
         <div>
-      <div className="fixed  w-full mb-20 -mt-20 z-50 bg-primary opacity-30" />
-      <div className="flex fixed w-full justify-center items-center ">
+      <div className="fixed  w-full z-50  bg-primary opacity-50" />
+      <div className="flex fixed w-full justify-center  mt-28 items-center ">
         <motion.div
           style={loadingContainer}
           variants={loadingContainerVariants}
