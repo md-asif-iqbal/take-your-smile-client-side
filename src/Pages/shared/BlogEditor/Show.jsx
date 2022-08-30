@@ -36,7 +36,10 @@ const Show = () => {
         <div >
         <NavBar/>
     <div className=" mx-auto font-sans pt-36">
-    <h1 className='text-3xl text-center mt-16 font-bold text-secondary uppercase'>All Blogs</h1>
+    <h1
+     data-aos="flip-down"
+     data-aos-duration="3000" 
+     className='text-3xl text-center mt-16 font-bold text-secondary uppercase'>All <span className="text-orange-600">Blogs</span></h1>
 
     <section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto">
@@ -44,14 +47,19 @@ const Show = () => {
     {
       articles.map((item)=>(
         <div className="p-4 md:w-1/3" key={item._id}>
-    <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+    <div  className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
      {
-         item.image ? <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={item.image} alt="blog"/> : <img className="lg:h-48 md:h-36 w-full object-cover object-center" src='placeholder.png' alt="blog"/> 
+         item.image ? <img 
+         data-aos="zoom-in"
+         data-aos-duration="3000" 
+         className="lg:h-48 md:h-36 w-full object-cover object-center" src={item.image} alt="blog"/> : <img className="lg:h-48 md:h-36 w-full object-cover object-center" src='placeholder.png' alt="blog"/> 
     } 
       <div className="p-6">
         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Admin</h2>
-        <h2 className="title-font text-3xl font-medium text-secondary mb-3">{item.title}</h2>
-        <p className="leading-relaxed mb-3 text-secondary">{getText(item.body)}</p>
+        <h2 data-aos="flip-down"
+     data-aos-duration="3000" className="title-font text-3xl font-medium text-secondary mb-3">{item.title}</h2>
+        <p data-aos="zoom-in-down"
+     data-aos-duration="3000" className="leading-relaxed mb-3 text-secondary">{getText(item.body)}</p>
         <div className="flex items-center flex-wrap ">
           <button className="text-secondary inline-flex items-center md:mb-2 lg:mb-0"  onClick={() => handlePost(item._id)}>Learn More
             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -47,11 +47,19 @@ const Contact = () => {
                 </div>
             </div>
             </div>
-
+              <h1
+                data-aos="flip-down"
+                data-aos-duration="3000" 
+                className='text-3xl text-center mt-16 font-bold text-secondary uppercase'>Contact <span className="text-orange-600">Us</span>
+                </h1>
             {/* Contact Form */}
-            <div className="hero min-h-screen min-w-screen flex flex-col-reverse px-2 md:px-0  lg:flex-row-reverse mx-auto justify-center items-center gap-5 my-16">
+            <div 
+             className="hero min-h-screen min-w-screen flex flex-col-reverse px-2 md:px-0  lg:flex-row-reverse mx-auto justify-center items-center gap-5 my-16">
              
-                <div className="card flex-shrink-0 w-full lg:w-5/6 max-w-lg shadow-2xl ">
+                <div 
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+                 className="card flex-shrink-0 w-full lg:w-5/6 max-w-lg shadow-2xl ">
                 <form  className='p-0 flex-row' ref={form}  onSubmit={handleSubmit(onSubmit)}>
                 <div className="card-body">
                     <p className='text-left text-red-500'>
@@ -146,13 +154,18 @@ const Contact = () => {
                 } })}></textarea>
                   
                     </div>
-                    <div className="form-control mt-6">
-                    <button className="btn btn-primary uppercase" type='submit'>Send Message</button>
+                    <div    
+                           data-aos="flip-right"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="2000" 
+                            className="form-control mt-6">
+                    <button className="btn btn-primary uppercase" type='submit'>Send Message </button>
                     </div>
                 </div>
                     </form>
                 </div>
-                <div className="card w-full  lg:w-1/5 shadow-xl  lg:text-left z-0 bg-primary">
+                <div data-aos="fade-up"
+                data-aos-duration="3000" className="card w-full  lg:w-1/5 shadow-xl  lg:text-left z-0 bg-primary">
                 <div className="card-body">
                     <h2 className="card-title text-xl text-white">Phone</h2>
                     <p className='text-lg text-white flex items-center gap-5'><BsTelephoneOutbound /><span><a href="tel:01881220413" >01881220413</a></span></p>
