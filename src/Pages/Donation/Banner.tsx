@@ -49,16 +49,37 @@ const Banner = () => {
             <SwiperSlide key={item.id}>
               <div className="banner-img relative ">
                 <div className="title">
-                  <h1 className="font-mono font-bold text-2xl">{item.title}</h1>
+                  <h1
+                  data-aos="fade-up"
+                  data-aos-easing="gradient(0,0,1000)"
+                  data-aos-duration="2500"
+                  className="font-mono font-bold text-2xl">{item.title}</h1>
                   <div className="border"> </div>
                 </div>
-                <img className="h-screen w-full" src={item.img} alt="" />
-                <div className="banner"> </div>
+                <img
+                className="h-screen w-full" src={item.img} alt="" />
+                <div
+                data-aos="fade-up"
+                data-aos-easing="gradient(0,0,1000)"
+                data-aos-duration="2300"
+                className="banner"> </div>
                 <div className="dis">
-                  <h1 className="font-mono text-white text-center font-bold text-4xl">{item.dis}</h1>
+                  <h1 
+                  data-aos="fade-up"
+                  data-aos-easing="gradient(0,0,1000)"
+                  data-aos-duration="2100"
+                  className="font-mono text-white text-center font-bold text-4xl">{item.dis}</h1>
                   <div className="ml-40 mt-4">
-                    <button className="exploreBtn mr-10 font-mono">Explore Now</button>
-                    <button className="donateBtn font-mono">Donate Now</button>
+                    <button 
+                    data-aos="fade-up"
+                    data-aos-easing="gradient(0,0,1000)"
+                    data-aos-duration="1000"
+                    className="exploreBtn mr-10 font-mono">Explore Now</button>
+                    <button
+                    data-aos="fade-up"
+                    data-aos-easing="gradient(0,0,1000)"
+                    data-aos-duration="1000"
+                    className="donateBtn font-mono">Donate Now</button>
                   </div>
                 </div>
               </div>

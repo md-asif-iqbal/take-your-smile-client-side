@@ -8,7 +8,7 @@ const stripePromise = loadStripe(
 );
 const Payment = () => {
   return (
-    <div className="w-full lg:-mt-96 mb-60 lg:w-2/5 px-8 py-12 ml-auto bg-primary  rounded-2xl">
+    <div data-aos="fade-down-left" data-aos-duration="1300" className="w-full lg:-mt-96 mb-60 lg:w-2/5 px-8 py-12 ml-auto bg-primary  rounded-2xl">
       <div className="flex flex-col ">
         <h1 className="font-bold capitalize text-3xl my-4 text-secondary">Make a Payment</h1>
       </div>
