@@ -37,16 +37,16 @@ const Stores = () => {
         <>
           {stores.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
-                <img className="h-96" src={item.img} alt="" />
+              <div data-aos="fade-right" data-aos-duration="2400" className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
+                <img  className="h-96" src={item.img} alt="" />
                 <div className="items-center font-mono">
-                  <h2 className="text-primary text-2xl mb-4 font-semibold">
+                  <h2 data-aos="zoom-out-left" data-aos-duration="1800" className="text-primary text-2xl mb-4 font-semibold">
                     {item.name}
                   </h2>
-                  <h2 className="text-secondary text-xl font-semibold">
+                  <h2 data-aos="zoom-out-left" data-aos-duration="1600" className="text-secondary text-xl font-semibold">
                     {item.dis}
                   </h2>
-                  <p className="text-secondary text-[18px] mt-4">
+                  <p data-aos="zoom-out-left" data-aos-duration="1400" className="text-secondary text-[18px] mt-4">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
                     dolores eius labore odio optio consequuntur laboriosam
                     facere consectetur accusantium debitis. Lorem, ipsum dolor...
