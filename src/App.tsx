@@ -152,6 +152,7 @@ import TeamC from "./Pages/AdminDashbord/Teams/TeamC";
 import TeamD from "./Pages/AdminDashbord/Teams/TeamD";
 import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import YourBookings from "./Pages/YourBookings/YourBookings";
+import MyBookings from "./Pages/YourBookings/MyBookings";
 import Home from "./Pages/Donation/Home";
 import Blogs from "./Pages/Blogs/Blogs";
 import Corporate from "./Pages/Events/Corporate";
@@ -190,10 +191,10 @@ function App() {
 
           <Route path="teams" element={<Team></Team>}>
 
-             <Route path="teamA" element={<TeamA/>}></Route>
-             <Route path="teamB" element={<TeamB/>}></Route>
-             <Route path="teamC" element={<TeamC/>}></Route>
-             <Route path="teamD" element={<TeamD/>}></Route>
+            <Route path="teamA" element={<TeamA />}></Route>
+            <Route path="teamB" element={<TeamB />}></Route>
+            <Route path="teamC" element={<TeamC />}></Route>
+            <Route path="teamD" element={<TeamD />}></Route>
           </Route>
 
 
@@ -207,7 +208,7 @@ function App() {
             <Route path="canceled" element={<Canceled />}></Route>
 
           </Route>
-</Route>
+        </Route>
 
 
         <Route path='/home' element={<HomeWithNav />}></Route>
@@ -453,8 +454,8 @@ function App() {
           element={<PaintJamFrom />}
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
-        <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favourites' element={<Liked></Liked>}></Route>        
+        <Route path='/yourbookings' element={<MyBookings></MyBookings>}></Route>
+        <Route path='/favourites' element={<Liked></Liked>}></Route>
       </Routes>
 
       <Footer />
@@ -464,7 +465,7 @@ function App() {
       <DarkMode />
     </div>
   );
-// 
+  // 
 }
 
 export default App;
