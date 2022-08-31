@@ -10,7 +10,7 @@ const NavBar = () => {
 
     useEffect(() => {
       window.addEventListener('scroll', () => {
-        return window.scrollY > 5 ? setBg(true) : setBg(false);
+        return window.scrollY > 50 ? setBg(true) : setBg(false);
       });
     });
     return (

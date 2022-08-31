@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import Loading from '../shared/Loading/Loading';
 import PageTitle from '../shared/PageTitle/PageTitle';
 import Card from './Card';
+
 const WeddingGallery = () => {
-  const [gallery, setGallery] = useState([]);
-    const [events, setEvents] = useState([]);
+  
+  const [gallery, setGallery] :any = useState([]);
+    const [events, setEvents] :any = useState([]);
     // const [loading, setLoading] = useState(false);
     useEffect(() => {
 
@@ -21,7 +23,7 @@ const WeddingGallery = () => {
 
          
     //   console.log(gallery);
-      const filterItem = (categItem: any) => {
+      const filterItem :any = (categItem: any) => {
         const updatedItems = gallery.filter((item) => {
           return item.titleCode === 'non-profit';
         });

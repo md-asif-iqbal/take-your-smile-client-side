@@ -6,8 +6,8 @@ import PageTitle from '../../shared/PageTitle/PageTitle';
 import Card from './Card';
 
 const Pandding = () => {
-    const [pandding, setPandding] = useState([]);
-    const [bookings , setBookings] = useState([]);
+    const [pandding, setPandding] :any = useState([]);
+    const [bookings , setBookings]:any = useState([]);
     const url = `https://secure-escarpment-79738.herokuapp.com/allbookings`;
 
     useEffect(() => {

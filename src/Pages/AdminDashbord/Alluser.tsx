@@ -10,7 +10,7 @@ const Alluser = () => {
   }, [user]);
   console.log(user);
 
-  const handleDelete = (id: any) => {
+  const handleDelete = (id: string) => {
     const proced = window.confirm("Are Your Sure Delete This User");
     if (proced) {
       const url = `https://secure-escarpment-79738.herokuapp.com/usersData/${id}`;

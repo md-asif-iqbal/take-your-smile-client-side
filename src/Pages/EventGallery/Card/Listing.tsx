@@ -4,7 +4,8 @@ import "./Listing.css";
 import { motion } from "framer-motion";
 
 const Listing = ({ data, open }) => {
-    const { decImg,title,text,date } = data;
+    const { decImg,title,text,date } = data ;
+   
 
   return (
     <motion.div className="listing" onClick={open} whileHover={{ scale: 1.1 }}>
