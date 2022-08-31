@@ -153,7 +153,7 @@ const CheckoutForm = () => {
                 fontSize: "18px",
                 color: "white",
                 "::placeholder": {
-                  color: "black",
+                  color: "white",
                 },
               },
               invalid: {

@@ -31,6 +31,7 @@ if (isError || error) {
 refetch();
   
 
+ console.log(data?.image);
  
  const logout = () =>{
    signOut(auth);
@@ -86,7 +87,7 @@ refetch();
                       </div>
                        {/* end */}
 
-                     </li> : <li className=' text-secondary  cursor-pointer uppercase'><Link to='/login' 
+                     </li> : <li className='cursor-pointer uppercase'><Link to='/login' 
                             className='transition-all duration-300 '> Login</Link></li>}
 
 

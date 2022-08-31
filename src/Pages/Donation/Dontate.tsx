@@ -19,7 +19,7 @@ const Dontate = () => {
         data-aos="fade-left"
         data-aos-easing="gradient(0,0,1200)"
         data-aos-duration="2200"
-        className="donateBtn">Donate Now</button>
+        className="btn">Donate Now</button>
       </div>
     </div>
   );

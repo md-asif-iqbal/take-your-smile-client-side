@@ -71,7 +71,7 @@ const Modal = ({ data, close }) => {
 
   return (
     <motion.div
-      className="modals"
+      className="modals bg-primary-content"
       variants={modalVariants}
       onClick={(e) => e.stopPropagation()}
     >

@@ -2,7 +2,7 @@
   min-height: 700px;
   border-radius: 20px;
   position: relative;
-  background-color: white;
+  background-color: var(--background-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
 }
@@ -13,7 +13,7 @@
 }
 
 .modal__info {
-  background-color: white;
+  background-color: var(--background-color);
   display: flex;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .modal__price {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .modal__address {

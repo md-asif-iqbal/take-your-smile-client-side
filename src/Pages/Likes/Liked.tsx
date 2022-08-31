@@ -198,47 +198,44 @@ const Posts = () => {
         <div>
             <NavBar />
             <div className=" mx-auto font-sans mt-36">
-                <h1 className='text-black text-3xl text-center mt-16 font-bold opacity-60 pt-3 underline'>My <span className='' style={{ color: 'red' }}>Favourites</span></h1>
+                <h1 className='text-secondary text-3xl text-center mt-16 font-bold opacity-60 pt-3 underline'>My <span className='' style={{ color: 'red' }}>Favourites</span></h1>
 
                 <section className="text-neutral body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post['_id']} className="card w-96 bg-base-100 shadow-xl">
+                                    <div key={post['_id']} className="card w-96  shadow-xl">
                                         <figure><img src={post['image']} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">
+                                            <h2 className="card-title text-secondary">
                                                 {post['name']}
-                                                {/* <div className="badge badge-secondary">NEW</div> */}
+                                               
 
                                             </h2>
-                                            <p>{post['body']}</p>
+                                            <p className='text-secondary'>{post['body']}</p>
                                             <div className="card-actions justify-end">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <button onClick={() => handleColor(post['likes'], post['_id'], user, post['like'])}>
                                                             {
                                                                 post['like'] === 'liked' ?
-                                                                    <BsFillSuitHeartFill style={{ color: 'FF014F' }}></BsFillSuitHeartFill> :
+                                                                    <BsFillSuitHeartFill className='text-primary'></BsFillSuitHeartFill> :
                                                                     <BsSuitHeart >
                                                                     </BsSuitHeart>
                                                             }
 
-                                                            {/* <BsSuitHeart style={{ display: `${display}` }}>
-                                                            </BsSuitHeart>
-
-                                                            <BsFillSuitHeartFill style={{ color: 'FF014F', display: `${display1}` }}></BsFillSuitHeartFill> */}
+                                                  
                                                         </button>
                                                     </div>
-                                                    <span>{post['likes']}</span>
+                                                    <span className='text-secondary'>{post['likes']}</span>
                                                 </div>
 
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <BsChat></BsChat>
+                                                        <BsChat className='text-secondary'></BsChat>
                                                     </div>
-                                                    <span>5K</span>
+                                                    <span className='text-secondary'>5K</span>
                                                 </div>
 
 

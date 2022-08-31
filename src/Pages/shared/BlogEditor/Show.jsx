@@ -1,26 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
-import { Link, useNavigate } from "react-router-dom";
-import Loading from '../../shared/Loading/Loading';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
 const Show = () => {
   const navigate = useNavigate();
-    const { isLoading, isError, data:articles, error,refetch } = useQuery(['articles'],  () => 
-    fetch('https://secure-escarpment-79738.herokuapp.com/articles',{
-        method: "GET",
-        headers: {
-            'content-type': "applicataion/json"
-        }
-    }).then(res => res.json())
-    )
-    if (isLoading) {
-        return <div className='h-40 mt-10'>{<Loading />}</div>
 
-      }
+  const [articles, setArticles] = useState([]);
+  useEffect(()=>{
+      fetch('https://secure-escarpment-79738.herokuapp.com/articles')
+      .then(res => res.json())
+      .then(data => setArticles(data))
+  },[]);
     
-      if (isError) {
-        return <span>Error: {error.message}</span>
-      }
       const getText = (data) => {
         const html = document.createElement("div")
         html.innerHTML = data
@@ -31,7 +22,6 @@ const Show = () => {
         const path = `/article/${id}`;
         navigate(path)
       }
-      refetch();
     return (
         <div >
         <NavBar/>
@@ -89,7 +79,7 @@ const Show = () => {
 </section>
    
 <div className="btn-group m-5 gap-5 p-5 flex justify-center">
-
+{/* 
   <div className="flex justify-center space-x-1 dark:text-gray-100">
 <button title="previous" type="button" className="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md dark:bg-gray-900 dark:border-gray-800">
 <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" className="w-4">
@@ -105,7 +95,7 @@ const Show = () => {
     <polyline points="9 18 15 12 9 6"></polyline>
 </svg>
 </button>
-</div>
+</div> */}
 </div>
 </div>
 </div>

@@ -175,7 +175,7 @@ return (
                 <h3 className='text-xl font-bold capitalize text-info'>
                   {details?.userName ? details?.userName : details?.name}
                 </h3>
-                <div className="h5 font-weight-500">
+                <div className="h5 font-weight-500 text-secondary">
                   {email}
                 </div>
                 <div className="h5 mt-4 ">
@@ -338,7 +338,7 @@ return (
                 <div data-aos="zoom-in"
                 data-aos-duration="3000" className="pl-lg-4">
                   <div className="form-group focused">
-                    <label>About Me</label>
+                    <label className='text-secondary'>About Me</label>
                     <textarea rows="6" className="fromControl fromControl-alternative" placeholder="A few words about you ..." {...register("bio")}></textarea>
                   </div>
                 </div>

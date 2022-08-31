@@ -278,48 +278,48 @@ const Posts = () => {
     return (
         <div>
             <NavBar />
-            <div className="text-neutral mx-auto font-sans  mt-36">
-                <h1 className='text-black text-3xl text-center mt-16 font-bold opacity-60 underline'>All <span style={{ color: 'red' }}>Blogs</span> Here</h1>
+            <div className="text-neutral mx-auto font-sans  pt-36">
+                <h1 className='text-secondary text-3xl text-center mt-16 font-bold opacity-60 underline'>All <span style={{ color: 'red' }}>Blogs</span> Here</h1>
 
                 <section className=" body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post?._id} className="card w-96 bg-base-100 shadow-xl">
+                                    <div key={post?._id} className="card w-96 shadow-xl">
                                         <figure><img src={post?.image} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">
+                                            <h2 className="card-title text-secondary">
                                                 {post?.name}
 
 
                                             </h2>
-                                            <p>{post?.body}</p>
+                                            <p className='text-secondary'>{post?.body}</p>
                                             <div className="card-actions justify-end relative">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <button onClick={() => handleColor(post?.likes, post?._id, user, post?.like)}>
                                                             {
                                                                 post?.like === 'liked' ?
-                                                                    <BsFillSuitHeartFill style={{ color: 'FF014F' }}></BsFillSuitHeartFill> :
+                                                                    <BsFillSuitHeartFill className='text-primary'></BsFillSuitHeartFill> :
                                                                     <BsSuitHeart >
                                                                     </BsSuitHeart>
                                                             }
 
                                                         </button>
                                                     </div>
-                                                    <span>{post?.likes}</span>
+                                                    <span className='text-secondary'>{post?.likes}</span>
                                                 </div>
 
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <BsChat></BsChat>
+                                                        <BsChat className='text-secondary'></BsChat>
                                                     </div>
-                                                    <span>5K</span>
+                                                    <span className='text-secondary'>5K</span>
                                                 </div>
 
                                                 {/* social share  */}
-                                                <div className='cursor-pointer'>
+                                                <div className='cursor-pointer text-secondary'>
                                                     <ShareSocial
                                                         posts={posts}
                                                     ></ShareSocial>
@@ -327,7 +327,7 @@ const Posts = () => {
 
                                             </div>
 
-                                            <label onClick={() => handleComments(post?._id)} htmlFor="my-modal-6" className="modal-button text-right underlineText cursor-pointer">  Show all comments</label>
+                                            <label onClick={() => handleComments(post?._id)} htmlFor="my-modal-6" className="modal-button text-right underlineText cursor-pointer text-secondary">  Show all comments</label>
 
 
                                         </div>
@@ -343,18 +343,18 @@ const Posts = () => {
 
 
             {
-                < div className='text-neutral'>
+                <div>
                     <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                     <div className="modal modal-bottom sm:modal-middle ">
-                        <div className="modal-box relative" >
-                            <label htmlFor="my-modal-6" className=" btn-sm btn-circle absolute right-2 top-2 cursor-pointer">✕</label>
-                            <h3 className="font-bold text-lg">{post?.name}</h3>
-                            <p className="py-4">{post?.body}</p>
-                            <div className='bg-white rounded-md'>
+                        <div className="modal-box bg-primary-content relative" >
+                            <label htmlFor="my-modal-6" className=" btn-sm btn-circle absolute right-2 top-2 cursor-pointer text-primary">✕</label>
+                            <h3 className="font-bold text-lg text-secondary">{post?.name}</h3>
+                            <p className="py-4 text-secondary">{post?.body}</p>
+                            <div className='rounded-md'>
                                 {
                                     post?.comments?.map((c) =>
                                         <div >
-                                            <div className='mb-2 rounded-md text-black py-1' style={{ borderBottom: '2px solid black' }}>
+                                            <div className='mb-2 rounded-md text-secondary py-1' style={{ borderBottom: '2px solid black' }}>
                                                 <div className='flex px-2'>
                                                     <img className='rounded ' style={{ width: '30px' }} src={c['img']} alt="" />
                                                     <p className='pl-3 text-xl' style={{ display: 'flex', alignItems: 'center', fontFamily: "monospace" }}> {c['userName']}</p>
@@ -370,7 +370,7 @@ const Posts = () => {
                             </div>
 
                             <form className='p-0' style={{ alignItems: 'normal' }} onSubmit={handleCommentPost} action="">
-                                <p className='w-3/4'><input type="text" placeholder="Type your comment here" name='comment' className="input input-bordered w-full max-w-xs" /></p>
+                                <p className='w-3/4'><input type="text" placeholder="Type your comment here" name='comment' className="input bg-neutral input-bordered w-full max-w-xs" /></p>
                                 <p className='text-right mt-2'>  <button type="submit" className=' py-3 px-2 rounded-md btn' style={{}}>POST</button></p>
 
                             </form>
