@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import set from "date-fns/esm/set/index.js";
 import { toast, ToastContainer } from "react-toastify";
 import Loading from "../shared/Loading/Loading";
+import gif from './../../Images/Spinner-1s-104px (1).svg'
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -170,9 +171,8 @@ const CheckoutForm = () => {
       </form>
 
       {processing && (
-        <p>
-          <Loading></Loading>
-        </p>
+        <div className="mx-auto"><img src={gif} alt="" /></div>
+
       )}
       {cardError && <p style={{ color: "yellow" }}>{cardError}</p>}
       {success && (
@@ -184,7 +184,6 @@ const CheckoutForm = () => {
           </p>
         </div>
       )}
-      <ToastContainer />
     </>
   );
 };

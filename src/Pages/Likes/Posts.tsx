@@ -14,68 +14,137 @@ import {
     TwitterIcon,
     LinkedinShareButton,
     LinkedinIcon
-  } from "react-share";
+} from "react-share";
 import { useOnClickOutside } from '../../hooks/UseClickOutSide/UseOutsideClick';
 import ShareSocial from './ShareSocial';
 
-// type Inputs = {
-//     name: string,
-//     email: string,
-//     phone: string,
-//     company: string,
-//     message: string,
-//     date: string,
-//     event: string
-// };
+import './Posts.css'
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 interface UserData {
 
     input: number
 }
 
-
 const Posts = () => {
 
 
     const [user] = useAuthState(auth)
+    // console.log(user?.photoURL);
+
     const [posts, setPosts] = useState<any[]>([]);
 
     const [display, setDisplay] = useState('block')
     const [display1, setDisplay1] = useState('none')
     const [likesQuantity, setQuantity] = useState();
+    const [showComment, setShowComment] = useState('');
+    const [comment, setComment] = useState('');
 
 
     const [value, setValue] = useState<UserData | Number>(0);
 
     const [userdata, SetUserdata] = useState({})
     const [postId, setPostid] = useState('');
-    console.log(postId)
-    const [post, setPost]:any= useState([]);
-    // console.log(user)
+    // console.log(postId)
 
-    // social share start 
-    // const shareUrl = 'https://take-your-smile-4d64a.web.app'
-    // const [isHovering, setIsHovering] = useState(false);
-
-    // const handleMouseOver = () => {
-    //   setIsHovering(true);
-    // };
-  
-    // const handleMouseOut = () => {
-    // //   setIsHovering(false);
-    // };
+    const [post, setPost]: any = useState({});
 
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/posts/${postId}`
     useEffect(() => {
+        fetch('https://secure-escarpment-79738.herokuapp.com/posts')
+            .then(res => res.json())
+            .then(data => setPosts(data));
+    }, [posts])
+
+    const handleCommentPost = (e) => {
+        e.preventDefault();
+
+        const comment = e.target.comment.value;
+        console.log(comment)
+        setComment(comment)
+        const name = user?.displayName;
+        const img = user?.photoURL;
+        var comments = {
+            comment: comment,
+            userName: name,
+            img: img,
+        };
+        const update = { comments }
+        console.log(update)
+
+
+        const url = `https://secure-escarpment-79738.herokuapp.com/comments/${postId}`
+
+        axios.post(`https://secure-escarpment-79738.herokuapp.com/comments/${postId}`, update)
+            .then(function (response) {
+                console.log(response);
+                toast.success('Comment Added Successfully')
+                e.target.reset();
+            })
+
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
+
+    const handleComments = (id) => {
+        console.log(id)
+        setPostid(id)
+
+        const url = `https://secure-escarpment-79738.herokuapp.com/posts/${id}`
+
         fetch(url)
             .then(res => res.json())
             .then(data => setPost(data));
-    }, [])
 
 
-    const handleComments = (id: any) => {
-        setPostid(id)
+        if (showComment !== 'show') {
+            const visible = 'show';
+            setShowComment(visible)
+            const update = { showComment }
+            const url = `https://secure-escarpment-79738.herokuapp.com/allposts/${id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+
+                },
+                body: JSON.stringify(update)
+
+            })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    // alert('Quantity updated successfully');
+
+                })
+        }
+        else {
+            const visible = 'hidden';
+            setShowComment(visible)
+            const update = { showComment }
+            const url = `https://secure-escarpment-79738.herokuapp.com/allposts/${id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+
+                },
+                body: JSON.stringify(update)
+
+            })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    // alert('Quantity updated successfully');
+
+                })
+        }
 
         console.log(post)
         setDisplay('block')
@@ -91,11 +160,7 @@ const Posts = () => {
 
     }
 
-    useEffect(() => {
-        fetch('https://secure-escarpment-79738.herokuapp.com/posts')
-            .then(res => res.json())
-            .then(data => setPosts(data));
-    }, [posts])
+
 
     // console.log(posts)
     let i = 0
@@ -103,7 +168,7 @@ const Posts = () => {
 
     const click = [''];
 
-    const handleColor = (quantity: any, id: any, user: any, likeStatus: any) => {
+    const handleColor = (quantity, id, user, likeStatus) => {
         console.log(quantity, user.email, likeStatus)
 
         // const input = i + 1
@@ -207,103 +272,64 @@ const Posts = () => {
         }
 
 
-
-
-
-        // setClicks((parseFloat(clicks)) + 1);
-        // const onClick = click + 1
-        // setClicks(onClick)
-
-
-
-        // setDisplay('block')
-        // if (display === 'block') {
-        //     setDisplay('none')
-        //     setDisplay1('block')
-        //     // const click = clicks - 1;
-        // }
-        // else {
-        //     setDisplay1('none')
-        // }
-
-
-
-
     }
-// const ref = useRef();
-// useOnClickOutside(ref, () =>{
-//     setIsHovering(false)
-// })
+
 
     return (
         <div>
             <NavBar />
-            <div className=" mx-auto font-sans pt-36">
-                <h1 className='text-3xl text-center mt-16 font-bold text-secondary'>All Blogs Here</h1>
+            <div className="text-neutral mx-auto font-sans  mt-36">
+                <h1 className='text-black text-3xl text-center mt-16 font-bold opacity-60 underline'>All <span style={{ color: 'red' }}>Blogs</span> Here</h1>
 
                 <section className=" body-font">
                     <div className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
-                                    <div key={post['_id']} className="card w-96  shadow-xl">
-                                        <figure><img src={post['image']} alt="Shoes" /></figure>
+                                    <div key={post?._id} className="card w-96 bg-base-100 shadow-xl">
+                                        <figure><img src={post?.image} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title text-secondary">
-                                                {post['name']}
-                                                {/* <div className="badge badge-secondary">NEW</div> */}
+                                            <h2 className="card-title">
+                                                {post?.name}
+
 
                                             </h2>
-                                            <p className='text-secondary'>{post['body']}</p>
+                                            <p>{post?.body}</p>
                                             <div className="card-actions justify-end relative">
                                                 <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        <button onClick={() => handleColor(post['likes'], post['_id'], user, post['like'])} className="text-secondary">
+                                                        <button onClick={() => handleColor(post?.likes, post?._id, user, post?.like)}>
                                                             {
-                                                                post['like'] === 'liked' ?
+                                                                post?.like === 'liked' ?
                                                                     <BsFillSuitHeartFill style={{ color: 'FF014F' }}></BsFillSuitHeartFill> :
                                                                     <BsSuitHeart >
                                                                     </BsSuitHeart>
                                                             }
 
-                                                            {/* <BsSuitHeart style={{ display: `${display}` }}>
-                                                            </BsSuitHeart>
-
-                                                            <BsFillSuitHeartFill style={{ color: 'FF014F', display: `${display1}` }}></BsFillSuitHeartFill> */}
                                                         </button>
                                                     </div>
-                                                    <span className='text-secondary'>{post['likes']}</span>
+                                                    <span>{post?.likes}</span>
                                                 </div>
 
-                                                <div className="flex gap-1 text-secondary">
+                                                <div className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <BsChat></BsChat>
                                                     </div>
-                                                    <span className='text-secondary'>5K</span>
+                                                    <span>5K</span>
                                                 </div>
 
                                                 {/* social share  */}
-                                               <ShareSocial
-                                               posts={posts}
-                                               ></ShareSocial>
+                                                <div className='cursor-pointer'>
+                                                    <ShareSocial
+                                                        posts={posts}
+                                                    ></ShareSocial>
+                                                </div>
 
                                             </div>
-                                            <div style={{
-                                                display: `${display1}`
-                                            }}>
-                                                {
-                                                    post['comments'].map((c: any) =>
-                                                        <div>
-                                                            <div className='flex '>
-                                                                <img className='rounded' style={{ width: '30px' }} src={c['img']} alt="" />
-                                                                <p className='pl-3 ' style={{ display: 'flex', alignItems: 'center' }}> {c['userName']}</p>
-                                                            </div>
-                                                            <p className='mb-3' style={{ display: 'flex', alignItems: 'center' }}> {c['comment']}</p>
-                                                        </div>)
 
-                                                }
-                                            </div>
-                                            <button onClick={() => handleComments(post['_id'])} className='text-right text-secondary'>Show all comments</button>
+                                            <label onClick={() => handleComments(post?._id)} htmlFor="my-modal-6" className="modal-button text-right underlineText cursor-pointer">  Show all comments</label>
+
+
                                         </div>
 
                                     </div>)
@@ -314,7 +340,46 @@ const Posts = () => {
 
                 </section>
             </div>
-        </div>
+
+
+            {
+                < div className='text-neutral'>
+                    <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+                    <div className="modal modal-bottom sm:modal-middle ">
+                        <div className="modal-box relative" >
+                            <label htmlFor="my-modal-6" className=" btn-sm btn-circle absolute right-2 top-2 cursor-pointer">✕</label>
+                            <h3 className="font-bold text-lg">{post?.name}</h3>
+                            <p className="py-4">{post?.body}</p>
+                            <div className='bg-white rounded-md'>
+                                {
+                                    post?.comments?.map((c) =>
+                                        <div >
+                                            <div className='mb-2 rounded-md text-black py-1' style={{ borderBottom: '2px solid black' }}>
+                                                <div className='flex px-2'>
+                                                    <img className='rounded ' style={{ width: '30px' }} src={c['img']} alt="" />
+                                                    <p className='pl-3 text-xl' style={{ display: 'flex', alignItems: 'center', fontFamily: "monospace" }}> {c['userName']}</p>
+                                                </div>
+                                                <p className='px-2' style={{ display: 'flex', alignItems: 'center' }}> {c['comment']}</p>
+
+                                            </div>
+
+                                        </div>
+                                    )
+
+                                }
+                            </div>
+
+                            <form className='p-0' style={{ alignItems: 'normal' }} onSubmit={handleCommentPost} action="">
+                                <p className='w-3/4'><input type="text" placeholder="Type your comment here" name='comment' className="input input-bordered w-full max-w-xs" /></p>
+                                <p className='text-right mt-2'>  <button type="submit" className=' py-3 px-2 rounded-md btn' style={{}}>POST</button></p>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div >
     );
 }
 export default Posts;
