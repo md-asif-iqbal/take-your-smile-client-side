@@ -347,7 +347,7 @@ const NonProfit = () => {
           </div>
         </div>
       </div>
-
+{/*  */}
       <RecentEvents></RecentEvents>
     </div>
   );
