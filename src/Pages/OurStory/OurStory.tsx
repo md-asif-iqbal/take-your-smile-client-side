@@ -45,7 +45,7 @@ const OurStory = () => {
     },
   ];
   return (
-    <div className="background img">
+    <div className="img">
       <PageTitle title="Our Story" />
       <NavBar />
       {<Banner></Banner>}
@@ -57,7 +57,7 @@ const OurStory = () => {
             data-aos-duration="2200" key={item.id} className="grid grid-cols-1 mb-20 md:grid-cols-2">
             <img className="w-56 h-80 mx-auto" src={item.img} alt="" />
             <div>
-              <p className="text-md text-center mx-auto">{item.dis}</p>
+              <p className="text-md text-center mx-auto text-secondary">{item.dis}</p>
               <h1 className="text-lg text-primary text-center italic font-bold mt-4">{item.name}</h1>
             </div>
           </div>

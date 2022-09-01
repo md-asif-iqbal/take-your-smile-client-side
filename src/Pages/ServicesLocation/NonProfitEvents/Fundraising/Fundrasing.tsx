@@ -52,7 +52,6 @@ const Fundrasing = () => {
             </h1>
           </div>
         </div>
-        <h1 className="text-2xl text-center text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto py-6 pl-14">
           <h1 className="font-mono font-lg">
             Home /{" "}

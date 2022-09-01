@@ -58,7 +58,7 @@ const ProductLoc = () => {
                 <AiFillHome /> Home
               </span>
               {corporate.map((item) => (
-                <h1 key={item._id} className="font-mono">
+                <h1 className="font-mono">
                   / {item.name2}/ {packag.title}
                 </h1>
               ))}
@@ -68,12 +68,12 @@ const ProductLoc = () => {
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto">
           <input
             type="text"
-            className=" border-none px-10 text-xl font-mono input py-10 w-full"
+            className=" border-none px-10 text-xl font-mono input py-10 w-full bg-primary-content text-secondary"
             value={filter}
             placeholder="Search Your Location"
             onChange={searchEvent.bind(this)}
           />
-          <h1 className="absolute bottom-6 right-12 text-3xl ">
+          <h1 className="absolute bottom-6 right-12 text-3xl text-secondary">
             <ImSearch />
           </h1>
         </div>

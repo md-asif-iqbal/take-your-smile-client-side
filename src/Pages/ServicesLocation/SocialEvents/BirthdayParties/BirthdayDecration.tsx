@@ -61,7 +61,6 @@ const BirthdayDecration = () => {
           </h1>
         </div>
       </div>
-      <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
         {decoration.map((item) => (
           <div key={item._id}>

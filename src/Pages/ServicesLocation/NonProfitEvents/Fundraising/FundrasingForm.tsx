@@ -23,7 +23,6 @@ const FundrasingForm = () => {
   console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
-
   type Inputs = {
     name: string;
     email: string;
@@ -34,16 +33,15 @@ const FundrasingForm = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
-  let status = "pending";
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: fundrasing.decImg,
-      decrImg2: fundrasing.decImg1,
-      decrImg3: fundrasing.decImg2,
+      decrImg2: fundrasing.decImg,
+      decrImg3: fundrasing.decImg,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -51,8 +49,7 @@ const FundrasingForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price,
-      status: status
+      status: 'pending',
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -91,12 +88,11 @@ const FundrasingForm = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md">
+                <div className="max-w-md" style={{ backgroundColor: "white" }}>
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -112,7 +108,7 @@ const FundrasingForm = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

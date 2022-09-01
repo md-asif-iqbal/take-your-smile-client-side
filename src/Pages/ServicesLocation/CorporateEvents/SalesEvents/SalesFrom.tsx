@@ -33,16 +33,15 @@ const SalesFrom = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
-  let status = "pending";
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: sales.decImg,
-      decrImg2: sales.decImg1,
-      decrImg3: sales.decImg2,
+      decrImg2: sales.decImg,
+      decrImg3: sales.decImg,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -50,8 +49,7 @@ const SalesFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price,
-      status: status
+      status: 'pending',
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -90,7 +88,6 @@ const SalesFrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
@@ -111,7 +108,7 @@ const SalesFrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

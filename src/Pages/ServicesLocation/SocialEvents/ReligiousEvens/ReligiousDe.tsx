@@ -12,15 +12,7 @@ import UsePackage from "../../../../hooks/UsePackage";
 import NavBar from "../../../shared/NavBar/NavBar";
 const Fade = require("react-reveal/Fade");
 const ReligiousDe = () => {
-
-  interface decration {
-    decImg: any;
-    decImg1: any;
-    decImg2: any;
-    _id: string;
-
-  }
-  const [decoration, setDecoration] = useState<decration[]>([]);
+  const [decoration, setDecoration] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
   const [address]: any = UseLocation(id);
@@ -60,7 +52,6 @@ const ReligiousDe = () => {
             </h1>
           </div>
         </div>
-        <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto py-6 pl-14">
           <h1 className="font-mono font-lg">
             Home /{" "}

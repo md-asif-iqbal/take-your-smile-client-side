@@ -16,10 +16,9 @@ const RetirementFrom = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const { pack } = useParams();
-  const [packag]: any = UsePackage(pack);
+  const [packag]: any[] = UsePackage(pack);
   const { reti } = useParams();
-
-  const [retirement]: any = UseRetirement(reti)
+  const [retirement]: any = UseRetirement(reti);
   console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
@@ -34,17 +33,15 @@ const RetirementFrom = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
-  let status = "pending";
-
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: retirement.decImg,
-      decrImg2: retirement.decImg1,
-      decrImg3: retirement.decImg2,
+      decrImg2: retirement.decImg,
+      decrImg3: retirement.decImg,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -52,8 +49,7 @@ const RetirementFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price,
-      status: status
+      status: 'pending',
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -92,12 +88,11 @@ const RetirementFrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md">
+                <div className="max-w-md" style={{ backgroundColor: "white" }}>
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -113,7 +108,7 @@ const RetirementFrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

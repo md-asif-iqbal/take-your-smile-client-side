@@ -15,17 +15,14 @@ import UseFashionDe from "../../../../hooks/Decration/Corporate/UseFashionDe";
 const FashionFrom = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit, reset } = useForm<Inputs>();
-
   const [corporate] = UseCorporate();
   const { pack } = useParams();
   const [packag]: any[] = UsePackage(pack);
   const { fas } = useParams();
-  const [FashionDe]: any[] = UseFashionDe(fas);
+  const [FashionDe]:any = UseFashionDe(fas);
+  console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
-
-  const status: string = "pending";
-
   type Inputs = {
     name: string;
     email: string;
@@ -36,16 +33,15 @@ const FashionFrom = () => {
     package: string;
     location: string;
     address: string;
+    status: string;
   };
-
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: FashionDe.decImg,
-      decrImg2: FashionDe.decImg1,
-      decrImg3: FashionDe.decImg2,
+      decrImg2: FashionDe.decImg,
+      decrImg3: FashionDe.decImg,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -53,8 +49,7 @@ const FashionFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      price: packag.price,
-      status: status
+      status: 'pending',
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -79,7 +74,7 @@ const FashionFrom = () => {
     reset();
   };
   const [date, setDate] = useState(new Date());
-  const formattedDate: string = format(date, "PP");
+  const formattedDate: any = format(date, "PP");
   const css = `.my-selected:not([disabled]) { 
         background: #FB4051;
         color: white;
@@ -93,12 +88,11 @@ const FashionFrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
-          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md">
+                <div className="max-w-md" style={{ backgroundColor: "white" }}>
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -114,7 +108,7 @@ const FashionFrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
+          <div className=" pt-3 mb-8">
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>
