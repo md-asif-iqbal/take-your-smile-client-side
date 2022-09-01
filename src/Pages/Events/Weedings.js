@@ -137,7 +137,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">{item.name}</span>
+                <span className="text-secondary  hover:underline hover:text-primary">{item.name}</span>
               </h1>
               <h1 data-aos="zoom-out-left" data-aos-duration="2400"
                 onClick={() => handleEngagement(item._id)}
@@ -146,7 +146,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">{item.name1}</span>
+                <span className="text-secondary hover:underline hover:text-primary">{item.name1}</span>
               </h1>
               <h1 data-aos="zoom-out-left" data-aos-duration="2200"
                 onClick={() => handlerehearsal(item._id)}
@@ -155,7 +155,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">{item.name2}</span>
+                <span className="text-secondary hover:underline hover:text-primary">{item.name2}</span>
               </h1>
               <h1 data-aos="zoom-out-left" data-aos-duration="2200"
                 onClick={() => handleWedding(item._id)}
@@ -164,7 +164,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">{item.name3}</span>
+                <span className="text-secondary hover:underline hover:text-primary">{item.name3}</span>
               </h1>
               <h1 data-aos="zoom-out-left" data-aos-duration="1800"
                 onClick={() => FloralDesing(item._id)}
@@ -173,7 +173,7 @@ const Weedings = () => {
                 <span>
                   <AiOutlineHeart className="inline-block align-middle mr-3 text-primary" />
                 </span>
-                <span className="text-secondary">{item.name4}</span>
+                <span className="text-secondary hover:underline hover:text-primary">{item.name4}</span>
               </h1>
             </div>
           ))}
