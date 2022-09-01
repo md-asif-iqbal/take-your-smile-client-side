@@ -11,14 +11,14 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
 import UseNonProfitEvents from "../../../../hooks/OurEvents/UseNonProfitEvents";
-import UsePaintde from "../../../../hooks/Decration/NonProfit/UsePaintde";
-const PaintJamFrom = () => {
+import UseFairsde from "../../../../hooks/Decration/NonProfit/UseFairsde";
+const FairsForm = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const { pack } = useParams();
   const [packag]: any[] = UsePackage(pack);
-  const { pain } = useParams();
-  const [paintJam]:any = UsePaintde(pain);
+  const {fair} = useParams()
+  const [fairs]:any  = UseFairsde(fair)
   const [nonPropit] = UseNonProfitEvents();
   console.log(packag);
   const { id } = useParams();
@@ -39,9 +39,9 @@ const PaintJamFrom = () => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
-      decrImg1: paintJam.decImg,
-      decrImg2: paintJam.decImg1,
-      decrImg3: paintJam.decImg2,
+      decrImg1: fairs.decImg,
+      decrImg2: fairs.decImg1,
+      decrImg3: fairs.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -189,7 +189,7 @@ const PaintJamFrom = () => {
                       key={item._id}
                       type="text"
                       {...register("service", { required: true })}
-                      value={item.name4}
+                      value={item.name3}
                       className="border-rounded border-2 border-primary rounded-lg  lg:mr-2 my-3 input-md  w-full max-w-xs block "
                     />
                   ))}
@@ -223,4 +223,4 @@ const PaintJamFrom = () => {
   );
 };
 
-export default PaintJamFrom;
+export default FairsForm;

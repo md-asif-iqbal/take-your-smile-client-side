@@ -1,24 +1,26 @@
-import { BsFillCheckCircleFill } from "react-icons/bs";
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
 import UsePack from "../../../../hooks/UsePack";
-import UseAnniversery from "../../../../hooks/WedEventServices/UseAnniversery";
+import { useNavigate, useParams } from "react-router-dom";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import UseNonProfit from "../../../../hooks/Events/UseNonProfit";
 import NavBar from "../../../shared/NavBar/NavBar";
-const Engagement = () => {
+const FairsExpos = () => {
   const [packages] = UsePack();
   const { id } = useParams();
-  const [anniver]: any = UseAnniversery(id);
+  const [nonProfit]: any = UseNonProfit(id);
   const navigate = useNavigate();
   const handleClick = (item: any) => {
     if (item) {
-      navigate(`/engLocation/${item}`);
+      navigate(`/fairsLoc/${item}`);
     }
     console.log(item);
   };
   return (
     <div>
       <NavBar />
-      <h1 className="text-3xl text-center font-mono mt-10 font-bold">
-        You Have Selected <span className="text-primary">{anniver.name1}</span>
+      <h1 className="text-3xl text-center font-mono mt-40 font-bold">
+        You Have Selected
+        <span className="text-primary font-mono"> {nonProfit.name3}</span>
       </h1>
       <div className="mt-20 grid w-9/12 mb-10 mx-auto grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {packages.map((item) => (
@@ -99,4 +101,4 @@ const Engagement = () => {
   );
 };
 
-export default Engagement;
+export default FairsExpos;

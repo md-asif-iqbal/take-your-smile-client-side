@@ -4,25 +4,25 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
 import { AiFillHome } from "react-icons/ai";
 import UsePackage from "../../../../hooks/UsePackage";
-import UseWedding from "../../../../hooks/OurEvents/UseWedding";
+import UseNonProfitEvents from "../../../../hooks/OurEvents/UseNonProfitEvents";
 import NavBar from "../../../shared/NavBar/NavBar";
 const Fade = require("react-reveal/Fade");
-const RehearsalLoc = () => {
+const FairExposLoc = () => {
   const [address, setAddress] = useState([]);
   const [filter, setFilter] = useState("");
   const { pack } = useParams();
   const navigate = useNavigate();
   const [packag]: any = UsePackage(pack);
+  const [nonPropit] = UseNonProfitEvents();
   useEffect(() => {
     const url = "https://secure-escarpment-79738.herokuapp.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));
   }, []);
-  const [wedding] = UseWedding();
   const handleClick = (item: any, pack: any) => {
     if (item) {
-      navigate(`/Rehardecration/${pack}/${item}`);
+      navigate(`/fairsde/${pack}/${item}`);
     }
   };
 
@@ -38,9 +38,10 @@ const RehearsalLoc = () => {
         .includes(filter.toString().toLowerCase())
     );
   });
+
   return (
     <>
-      <NavBar />
+    <NavBar />
       <div className="z-10">
         <div className="extra relative">
           <div>
@@ -58,9 +59,9 @@ const RehearsalLoc = () => {
                 <AiFillHome /> Home
               </span>
 
-              {wedding.map((item) => (
+              {nonPropit.map((item) => (
                 <h1 key={item._id} className="font-mono">
-                  / {item.name2}/ {packag.title}
+                  / {item.name3}/ {packag.title}
                 </h1>
               ))}
             </h1>
@@ -83,7 +84,7 @@ const RehearsalLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
-            key={item._id} 
+            key={item._id}
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >
@@ -106,4 +107,4 @@ const RehearsalLoc = () => {
     </>
   );
 };
-export default RehearsalLoc;
+export default FairExposLoc;

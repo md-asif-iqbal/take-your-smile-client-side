@@ -1,6 +1,6 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import UseCorporate from "../../../../hooks/OurEvents/UseCorporate";
 import UseLocation from "../../../../hooks/UseLocation";
@@ -33,15 +33,16 @@ const Educationafrom = () => {
     package: string;
     location: string;
     address: string;
-    status: string;
   };
+
+  let status = "pending";
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: educational.decImg,
-      decrImg2: educational.decImg,
-      decrImg3: educational.decImg,
+      decrImg2: educational.decImg2,
+      decrImg3: educational.decImg3,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -49,8 +50,11 @@ const Educationafrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      status: 'pending',
+      price: packag.price,
+      status: status
     };
+
+
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
       method: "POST",
@@ -88,11 +92,12 @@ const Educationafrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
+          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md" style={{ backgroundColor: "white" }}>
+                <div className="max-w-md">
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -108,7 +113,7 @@ const Educationafrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8">
+          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

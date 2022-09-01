@@ -87,7 +87,7 @@ refetch();
                        {/* end */}
 
                      </li> : <li className=' text-secondary  cursor-pointer uppercase'><Link to='/login' 
-                            className='transition-all duration-300 '> Login</Link></li>}
+                            className='transition-all duration-300 text-white'> Login</Link></li>}
 
 
   </>
