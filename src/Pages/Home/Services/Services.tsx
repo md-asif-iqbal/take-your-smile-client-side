@@ -7,6 +7,7 @@ import { GiShakingHands } from 'react-icons/gi';
 import { RiVipDiamondLine } from 'react-icons/ri';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { NavLink } from 'react-router-dom';
 
 
 const Services = () => {
@@ -53,7 +54,7 @@ const Services = () => {
                         <div data-aos="fade-up"
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-duration="1000" className="card-actions">
-                            <button className="btn capitalize  btn-block text-lg">details</button>
+                            <NavLink to="/corporate" className="btn capitalize  btn-block text-lg">details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@ const Services = () => {
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-duration="1000"
                             className="card-actions">
-                            <button className="btn capitalize btn-block text-lg">details</button>
+                            <NavLink to="/nonprofit" className="btn capitalize btn-block text-lg">details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -103,7 +104,7 @@ const Services = () => {
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-duration="1000"
                             className="card-actions">
-                            <button className="btn capitalize btn-block text-lg">details</button>
+                            <NavLink to="/social" className="btn capitalize btn-block text-lg">details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -127,7 +128,7 @@ const Services = () => {
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-duration="1000"
                             className="card-actions">
-                            <button className="btn    capitalize btn-block text-lg">details</button>
+                            <NavLink to="/weddings" className="btn capitalize btn-block text-lg">details</NavLink>
                         </div>
                     </div>
                 </div>

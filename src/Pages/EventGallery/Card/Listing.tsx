@@ -18,7 +18,7 @@ const Listing = ({ data, open }) => {
           />
         </div>
         <div className="listing__details bg-primary-content">
-          <div className="listing__type">Recent</div>
+          <div className="listing__type text-secondary">Recent</div>
           <div className="listing__row">
             <span className="listing__price text-secondary">{title}</span>
           </div>
