@@ -33,15 +33,16 @@ const NewYearFrom = () => {
     package: string;
     location: string;
     address: string;
-    status: string;
   };
+  let status: string = "pending";
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
       email: user?.email,
       decrImg1: newYear.decImg,
-      decrImg2: newYear.decImg,
-      decrImg3: newYear.decImg,
+      decrImg2: newYear.decImg1,
+      decrImg3: newYear.decImg2,
       package: packag.title,
       location: address.Location,
       phone: data.phone,
@@ -49,7 +50,8 @@ const NewYearFrom = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      status: 'pending',
+      price: packag.price,
+      status: status
     };
 
     fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
@@ -88,11 +90,12 @@ const NewYearFrom = () => {
       <div className="mt-40">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 items-center"
+          style={{ backgroundColor: "white" }}
         >
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">
-                <div className="max-w-md" style={{ backgroundColor: "white" }}>
+                <div className="max-w-md">
                   <style>{css}</style>
                   <DayPicker
                     mode="single"
@@ -108,7 +111,7 @@ const NewYearFrom = () => {
             </div>
           </div>
 
-          <div className=" pt-3 mb-8" >
+          <div className=" pt-3 mb-8" style={{ backgroundColor: "white" }}>
             <h1 className="text-3xl text-center pb-5">
               <span className="text-primary">Booking</span> Details
             </h1>

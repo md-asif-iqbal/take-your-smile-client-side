@@ -11,9 +11,24 @@ const stripePromise = loadStripe(
     "pk_test_51LXS98B5Y3AeAE8iNY0Hgf4QUbKwQQVuUk1NqhUhbNZ1UhjYvdE5UJw3DnEJBLmlWBgFqKIjfXEnVZujomnNCAyo00kHESTAcf"
 );
 
-
 const YourBookings = () => {
+
+    interface book {
+        decrImg1: any;
+        service: string;
+        location: string;
+        package: string;
+        date: number;
+        time: string;
+        price: number;
+        _id: string;
+    }
+
+
+    const [booking, setBooking] = React.useState<book[]>([]);
+
     const [cancle, setCancle] = useState(false);
+    const [paymentData, setPaymentData]: any = useState({});
     const cancleHandle = () => {
         setCancle(true)
     }
@@ -22,7 +37,12 @@ const YourBookings = () => {
     }
     console.log(cancle);
 
-    const [booking, setBooking]: any = useState([]);
+    const handlePayment = (item) => {
+        console.log(item)
+        setPaymentData(item)
+    }
+
+    // const [booking, setBooking] = useState([]);
     console.log(booking)
     const [user] = useAuthState(auth);
     const orderNumber = Math.round(Math.random() * 100000)
@@ -30,27 +50,30 @@ const YourBookings = () => {
         const email = user?.email
         const url = `https://secure-escarpment-79738.herokuapp.com/myitems?email=${email}`;
         fetch(url)
-            .then(res => res.json())
-            .then(data => filterItems(data))
-    }, [user])
+            .then((res) => res.json())
+            .then(data => {
+                const reamingData = data.filter((item: any) => {
+                    return item.status === 'pending';
+                })
+                setBooking(reamingData)
+            })
+    }, [booking])
 
-    const filterItems = (bookings) => {
-        const updatedItems = bookings.filter((item) => {
-            return item.status === 'pending' || item.status === 'complete';
-        });
-        setBooking(updatedItems);
-
-
-    };
+    // const filterItems = (bookings) => {
+    //     const updatedItems = bookings.filter((item) => {
+    //         return item.status === 'pending';
+    //     });
+    //     setBooking(updatedItems);
+    // };
 
     const [data, setData]: any = useState({});
     console.log(data);
 
-    const total = booking.reduce((accumulator: any, object: any) => {
+    const total = booking.reduce((accumulator, object) => {
         return accumulator + object.price;
     }, 0);
 
-    const cancleOrder = (id: any) => {
+    const cancleOrder = (id) => {
 
         fetch(`https://secure-escarpment-79738.herokuapp.com/orders/cancel/${id}`, {
             method: "PUT",
@@ -78,7 +101,7 @@ const YourBookings = () => {
                             <p className="text-lg md:text-xl font-semibold leading-6 xl:leading-5 text-gray-800 font-mono mb-4">Customer’s Cart</p>
 
                             {
-                                booking.map((item: any) => (<div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row  items-start md:items-center space-y-4  md:space-x-6 xl:space-x-8 w-full mb-5">
+                                booking.map((item) => (<div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row  items-start md:items-center space-y-4  md:space-x-6 xl:space-x-8 w-full mb-5">
                                     <div className="w-full md:w-40">
                                         <img className="w-full hidden md:block rounded" src={item.decrImg1} alt="dress" />
                                     </div>
@@ -101,10 +124,19 @@ const YourBookings = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center space-x-8  w-full">
-                                            <p className="text-base xl:text-lg leading-6 text-gray-800">01</p>
+                                            {
+                                                paymentData?.status !== "paid" ?
+                                                    < p className="text-base xl:text-lg leading-6 text-gray-800">  <label htmlFor="my-modal-6" className="btn modal-button" onClick={() => handlePayment(item)}>Pay Now</label></p> :
+                                                    < p className="text-base xl:text-lg leading-6 text-gray-800">  <button className="btn btn-primary" >Paid</button></p>
+                                            }
+
+
                                             <p className="text-base xl:text-lg font-semibold leading-6 text-gray-800">${item.price}</p>
-                                            <button> <label htmlFor="my-modal-3" onClick={() => setData(item)} className="bg-primary uppercase px-6 py-2 rounded text-white cursor-pointer">Cancle</label>
-                                            </button>
+                                            {
+                                                paymentData?.status !== "paid" &&
+                                                <button> <label htmlFor="my-modal-3" onClick={() => setData(item)} className="bg-primary uppercase px-6 py-2 rounded text-white cursor-pointer">Cancel</label>
+                                                </button>
+                                            }
 
                                             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
                                             <div className="modal mt-10">
@@ -153,7 +185,7 @@ const YourBookings = () => {
                                     <p className="text-lg font-semibold leading-6 text-gray-800">${total}</p>
                                 </div>
                                 <div className="w-full flex justify-center items-center">
-                                    <label htmlFor="my-modal-6" className="btn modal-button">Pay Now</label>
+                                    {/* <label htmlFor="my-modal-6" className="btn modal-button">Pay Now</label> */}
 
                                     {/* <label htmlFor="my-modal-6" className="btn modal-button">open modal</label> */}
 
@@ -168,7 +200,7 @@ const YourBookings = () => {
                                                 </div>
                                                 <div className="card-body">
                                                     <Elements stripe={stripePromise}>
-                                                        {/* <CheckoutForm2></CheckoutForm2> */}
+                                                        <CheckoutForm2 paymentData={paymentData} />
                                                     </Elements>
                                                 </div>
                                             </div>
