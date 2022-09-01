@@ -18,7 +18,7 @@ const WeddingEven = () => {
     <div>
       <NavBar />
       <h1 className="text-3xl text-center font-mono mt-40 font-bold text-secondary">
-        You Are Select <span className="text-primary">{anniver.name3}</span>
+        You  Have Selected <span className="text-primary">{anniver.name3}</span>
       </h1>
       <div className="mt-20 grid w-9/12 mb-10 mx-auto grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {packages.map((item) => (

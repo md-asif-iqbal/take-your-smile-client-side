@@ -79,7 +79,7 @@ const OurLiveEvent = () => {
                             <AiOutlineClockCircle />
                           </p>
                           <span className="mb-2 ml-1 text-white">
-                            Start 5.00pm- 0.00pm
+                            Start 5.00pm- 08.00pm
                           </span>
                         </span>
                       </li>
@@ -89,7 +89,7 @@ const OurLiveEvent = () => {
                             <GoLocation />
                           </p>
                           <span className="text-white ml-1">
-                            End 9:00 - 0.00 pm
+                            Hotel Sheraton
                           </span>
                         </span>
                       </li>

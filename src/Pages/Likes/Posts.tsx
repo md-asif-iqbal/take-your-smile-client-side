@@ -282,21 +282,21 @@ const Posts = () => {
                 <h1 className='text-black text-3xl text-center mt-16 font-bold opacity-60 underline'>All <span style={{ color: 'red' }}>Blogs</span> Here</h1>
 
                 <section className=" body-font">
-                    <div className="container px-5 mx-auto  py-24 ">
+                    <div data-aos="fade-down-right" data-aos-duration="2000" data-aos-easing="ease-in-sine" className="container px-5 mx-auto  py-24 ">
                         <div className="flex gap-10 flex-wrap   w-full justify-around">
                             {
                                 posts.map(post =>
                                     <div key={post?._id} className="card w-96 bg-base-100 shadow-xl">
-                                        <figure><img src={post?.image} alt="Shoes" /></figure>
+                                        <figure><img data-aos="zoom-in" data-aos-duration="1700" data-aos-easing="ease-in-sine" src={post?.image} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">
+                                            <h2 data-aos="fade-left" data-aos-duration="1400" data-aos-easing="ease-in-sine" className="card-title">
                                                 {post?.name}
 
 
                                             </h2>
-                                            <p>{post?.body}</p>
+                                            <p data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-sine">{post?.body}</p>
                                             <div className="card-actions justify-end relative">
-                                                <div className="flex gap-1">
+                                                <div data-aos="fade-right" data-aos-duration="1800" data-aos-easing="ease-in-sine" className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <button onClick={() => handleColor(post?.likes, post?._id, user, post?.like)}>
                                                             {
@@ -311,7 +311,7 @@ const Posts = () => {
                                                     <span>{post?.likes}</span>
                                                 </div>
 
-                                                <div className="flex gap-1">
+                                                <div data-aos="fade-right" data-aos-duration="1600" data-aos-easing="ease-in-sine" className="flex gap-1">
                                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                                         <BsChat></BsChat>
                                                     </div>
@@ -319,7 +319,7 @@ const Posts = () => {
                                                 </div>
 
                                                 {/* social share  */}
-                                                <div className='cursor-pointer'>
+                                                <div data-aos="fade-right" data-aos-duration="1400" data-aos-easing="ease-in-sine" className='cursor-pointer'>
                                                     <ShareSocial
                                                         posts={posts}
                                                     ></ShareSocial>
@@ -327,7 +327,7 @@ const Posts = () => {
 
                                             </div>
 
-                                            <label onClick={() => handleComments(post?._id)} htmlFor="my-modal-6" className="modal-button text-right underlineText cursor-pointer">  Show all comments</label>
+                                            <label data-aos="fade-up" data-aos-duration="1400" data-aos-easing="ease-in-sine" onClick={() => handleComments(post?._id)} htmlFor="my-modal-6" className="modal-button text-right underlineText cursor-pointer">  Show all comments</label>
 
 
                                         </div>

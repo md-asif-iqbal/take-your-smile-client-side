@@ -18,15 +18,15 @@ const ShareSocial = (posts:any) => {
     const shareUrl = 'https://take-your-smile-4d64a.web.app';
     const [isHovering, setIsHovering] = useState(false);
     
-    const handleMouseOver = () => {
+    const handleMouseOver = ():void => {
         setIsHovering(true);
     };
 
-   const handleMouseOut = () => {
+   const handleMouseOut = ():void => {
       //   setIsHovering(false);
    };
    const ref = useRef();
-   useOnClickOutside(ref, () => {
+   useOnClickOutside(ref, ():void => {
       setIsHovering(false)
    })
    return (
@@ -41,19 +41,19 @@ const ShareSocial = (posts:any) => {
          {isHovering && (
             <div  ref={ref} className='social-share absolute bottom-7 flex items-center right-0'>
 
-               <FacebookShareButton url={shareUrl}>
+               <FacebookShareButton data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-sine" url={shareUrl}>
                   <FacebookIcon size={40} round={true} />
                </FacebookShareButton>
 
-               <WhatsappShareButton url={shareUrl}>
+               <WhatsappShareButton data-aos="fade-left" data-aos-duration="600" data-aos-easing="ease-in-sine" url={shareUrl}>
                   <WhatsappIcon size={40} round={true} />
                </WhatsappShareButton>
 
-               <TwitterShareButton url={shareUrl}>
+               <TwitterShareButton data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-sine" url={shareUrl}>
                   <TwitterIcon size={40} round={true} />
                </TwitterShareButton>
 
-               <LinkedinShareButton url={shareUrl}>
+               <LinkedinShareButton data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-in-sine" url={shareUrl}>
                   <LinkedinIcon size={40} round={true} />
                </LinkedinShareButton>
 
