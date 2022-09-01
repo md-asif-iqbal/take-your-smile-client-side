@@ -60,7 +60,7 @@ const WelcomHomeLoc = () => {
               </span>
 
               {nonPropit.map((item) => (
-                <h1 className="font-mono">
+                <h1 key={item._id} className="font-mono">
                   / {item.name1}/ {packag.title}
                 </h1>
               ))}
@@ -70,12 +70,12 @@ const WelcomHomeLoc = () => {
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto">
           <input
             type="text"
-            className=" border-none px-10 text-xl font-mono input py-10 w-full bg-primary-content text-secondary"
+            className=" border-none px-10 text-xl font-mono input py-10 w-full"
             value={filter}
             placeholder="Search Your Location"
             onChange={searchEvent.bind(this)}
           />
-          <h1 className="absolute bottom-6 right-12 text-3xl text-secondary">
+          <h1 className="absolute bottom-6 right-12 text-3xl ">
             <ImSearch />
           </h1>
         </div>
@@ -84,6 +84,7 @@ const WelcomHomeLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
+            key={item._id} 
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >

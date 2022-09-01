@@ -15,9 +15,9 @@ const EducationalDe = () => {
   const [decoration, setDecoration] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
-  const [address]:any = UseLocation(id);
+  const [address]: any = UseLocation(id);
   const { pack } = useParams();
-  const [packag]:any = UsePackage(pack);
+  const [packag]: any = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
     const url = "https://secure-escarpment-79738.herokuapp.com/EducationalSeminar";
@@ -27,12 +27,12 @@ const EducationalDe = () => {
   }, []);
 
   console.log(decoration);
-  const handleClick = (item:any, pack:any, id:any) => {
+  const handleClick = (item: any, pack: any, id: any) => {
     navigate(`/Educationfrom/${pack}/${id}/${item}`);
   };
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="z-10">
         <div className="mb-[-30px] relative">
           <div>
@@ -62,6 +62,7 @@ const EducationalDe = () => {
           </h1>
         </div>
       </div>
+      <h1 className="text-2xl text-center text-primary"> <span className="text-black">Select</span> Your Decoration</h1>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
         {decoration.map((item) => (
           <div key={item._id}>

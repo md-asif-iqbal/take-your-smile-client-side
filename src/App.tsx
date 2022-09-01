@@ -152,7 +152,6 @@ import TeamC from "./Pages/AdminDashbord/Teams/TeamC";
 import TeamD from "./Pages/AdminDashbord/Teams/TeamD";
 import Dashbord from "./Pages/AdminDashbord/Dashbord/Dashbord";
 import YourBookings from "./Pages/YourBookings/YourBookings";
-import MyBookings from "./Pages/YourBookings/MyBookings";
 import Home from "./Pages/Donation/Home";
 import Blogs from "./Pages/Blogs/Blogs";
 import Corporate from "./Pages/Events/Corporate";
@@ -454,7 +453,7 @@ function App() {
           element={<PaintJamFrom />}
         ></Route>
         <Route path='/blogslike' element={<Posts></Posts>}></Route>
-        <Route path='/yourbookings' element={<MyBookings></MyBookings>}></Route>
+        <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
         <Route path='/favourites' element={<Liked></Liked>}></Route>
       </Routes>
 

@@ -18,8 +18,8 @@ const WelcomeHome = () => {
   return (
     <div>
       <NavBar />
-      <h1 className="text-3xl text-center font-mono mt-40 font-bold text-secondary">
-        You  Have Selected
+      <h1 className="text-3xl text-center font-mono mt-40 font-bold">
+        You Have Selected
         <span className="text-primary font-mono"> {nonProfit.name1}</span>
       </h1>
       <div className="mt-20 grid w-9/12 mb-10 mx-auto grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -89,7 +89,7 @@ const WelcomeHome = () => {
             <div className="w-9/12 mx-auto py-8">
               <button
                 onClick={() => handleClick(item._id)}
-                className="btn w-full"
+                className="btn odd:bg-primary w-full text-white"
               >
                 Book Now
               </button>
