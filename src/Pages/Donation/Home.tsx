@@ -8,7 +8,7 @@ import Team from "./Team";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden sm:overflow-x-hidden">
       <Banner></Banner>
       <About></About>
       <Stores></Stores>

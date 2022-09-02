@@ -6,7 +6,7 @@ import {useNavigate } from 'react-router-dom';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import './Events.css'
@@ -29,28 +29,28 @@ const Events = () => {
                 <div className='background-img-1 '>
                     <div className='child' style={{ paddingTop: '20vh' }}>
                         <h2 className='text-3xl lg:text-4xl align-middle  text-center' style={{ fontFamily: 'monospace', color: 'white', wordSpacing: '4px' }}><strong>PLAN A CORPORATE EVENT</strong></h2>
-                        <h2 className='text-center pt-7'>   <a className="change " href='/home'>GET STARTED</a></h2>
+                        <h2 className='text-center pt-7'>   <Link className="change " to="/corporate">GET STARTED</Link></h2>
                     </div>
 
                 </div>
                 <div className='background-img-2 '>
                     <div className='child' style={{ paddingTop: '20vh' }}>
                         <h2 className='text-3xl lg:text-4xl align-middle  text-center' style={{ fontFamily: 'monospace', color: 'white', wordSpacing: '4px' }}><strong>PLAN A NON-PROFIT EVENT</strong></h2>
-                        <h2 className='text-center pt-7'>   <a className="change " href='/home'>GET STARTED</a></h2>
+                        <h2 className='text-center pt-7'>   <Link className="change " to="/nonprofit">GET STARTED</Link></h2>
                     </div>
 
                 </div>
                 <div className='background-img-3 '>
                     <div className='child' style={{ paddingTop: '20vh' }}>
                         <h2 className='text-3xl lg:text-4xl align-middle  text-center' style={{ fontFamily: 'monospace', color: 'white', wordSpacing: '4px' }}><strong>PLAN A SOCIAL EVENT</strong></h2>
-                        <h2 className='text-center pt-7'>   <a className="change " href='/home'>GET STARTED</a></h2>
+                        <h2 className='text-center pt-7'> <Link className="change " to="/weddings">GET STARTED</Link></h2>
                     </div>
 
                 </div>
                 <div className='background-img-4 '>
                     <div className='child' style={{ paddingTop: '20vh' }}>
                         <h2 className='text-3xl lg:text-4xl align-middle  text-center' style={{ fontFamily: 'monospace', color: 'white', wordSpacing: '4px' }}><strong>PLAN A WEDDING</strong></h2>
-                        <h2 className='text-center pt-7'>   <a className="change " href='/home'>GET STARTED</a></h2>
+                        <h2 className='text-center pt-7'> <Link className="change " to="/social">GET STARTED</Link></h2>
                     </div>
 
                 </div>

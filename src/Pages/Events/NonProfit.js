@@ -45,7 +45,7 @@ const NonProfit = () => {
     navigate(`/paintJam/${item}`);
   };
   return (
-    <div className="bg-primary-content">
+    <div className="bg-primary-content overflow-x-hidden sm:overflow-x-hidden">
       <NavBar></NavBar>
       <PageTitle title="Non-profit Event" />
       {/* <img className='w-full' src={banner} alt="" /> */}

@@ -51,7 +51,7 @@ const Team = () => {
               <div className="absolute w-full bottom-5 left-0 text-center">
                 <div
                   className="
-                                bg-white
+                                bg-primary-content
                                 relative
                                 rounded-lg
                                 overflow-hidden
@@ -60,10 +60,10 @@ const Team = () => {
                                 px-3
                                 "
                 >
-                  <h3 className="text-base font-semibold text-dark">
+                  <h3 className="text-base font-semibold text-secondary">
                     Coriss Ambady
                   </h3>
-                  <p className="text-sm text-body-color">Web Developer</p>
+                  <p className="text-sm text-secondary">Web Developer</p>
                   <div>
                     <span className="absolute left-0 bottom-0">
                       <svg
@@ -253,7 +253,7 @@ const Team = () => {
               <div className="absolute w-full bottom-5 left-0 text-center">
                 <div
                   className="
-                                bg-white
+                                bg-primary-content
                                 relative
                                 rounded-lg
                                 overflow-hidden
@@ -262,10 +262,10 @@ const Team = () => {
                                 px-3
                                 "
                 >
-                  <h3 className="text-base font-semibold text-dark">
+                  <h3 className="text-base font-semibold text-secondary">
                     Glorius Cristian
                   </h3>
-                  <p className="text-sm text-body-color">App Developer</p>
+                  <p className="text-sm text-secondary">App Developer</p>
                   <div>
                     <span className="absolute left-0 bottom-0">
                       <svg
@@ -455,7 +455,7 @@ const Team = () => {
               <div className="absolute w-full bottom-5 left-0 text-center">
                 <div
                   className="
-                                bg-white
+                                bg-primary-content
                                 relative
                                 rounded-lg
                                 overflow-hidden
@@ -464,10 +464,10 @@ const Team = () => {
                                 px-3
                                 "
                 >
-                  <h3 className="text-base font-semibold text-dark">
+                  <h3 className="text-base font-semibold text-secondary">
                     Jackie Sanders
                   </h3>
-                  <p className="text-sm text-body-color">UI/UX Designer</p>
+                  <p className="text-sm text-secondary">UI/UX Designer</p>
                   <div>
                     <span className="absolute left-0 bottom-0">
                       <svg
@@ -655,7 +655,7 @@ const Team = () => {
               <div className="absolute w-full bottom-5 left-0 text-center">
                 <div
                   className="
-                                bg-white
+                                bg-primary-content
                                 relative
                                 rounded-lg
                                 overflow-hidden
@@ -664,10 +664,10 @@ const Team = () => {
                                 px-3
                                 "
                 >
-                  <h3 className="text-base font-semibold text-dark">
+                  <h3 className="text-base font-semibold text-secondary">
                     Nikolas Brooten
                   </h3>
-                  <p className="text-sm text-body-color">Sales Manager</p>
+                  <p className="text-sm text-secondary">Sales Manager</p>
                   <div>
                     <span className="absolute left-0 bottom-0">
                       <svg

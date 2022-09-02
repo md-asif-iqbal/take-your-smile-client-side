@@ -46,12 +46,12 @@ const Corporate = () => {
   };
   return (
     <div>
-      <div className="bg-primary-content">
+      <div className="bg-primary-content overflow-x-hidden sm:overflow-x-hidden">
         <NavBar></NavBar>
         <PageTitle title="Corporate Event" />
 
         {/* <img className='w-full' src={banner} alt="" /> */}
-        <div className="banner-corporate pt-8">
+        <div className="banner-corporate pt-8 ">
           <h1
             data-aos="zoom-in"
             data-aos-easing="gradient(0,0,1200)"

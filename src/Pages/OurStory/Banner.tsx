@@ -20,7 +20,7 @@ const Banner = () => {
     },
   ];
   return (
-    <div>
+    <div className=" overflow-x-hidden sm:overflow-x-hidden">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

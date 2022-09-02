@@ -10,7 +10,7 @@ import { Navigation, Autoplay } from "swiper";
 export default function Sponsorship() {
 
   return (
-    <div className="p-10">
+    <div className="p-10 overflow-x-hidden sm:overflow-x-hidden">
       <Swiper
         slidesPerView={6}
         spaceBetween={30}

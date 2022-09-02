@@ -23,11 +23,11 @@ const EventGallery = () => {
 {/* Gallery */}
                <div>
                     <nav className="flex items-center lg:text-lg  font-bold justify-between max-w-3xl p-4 mx-auto">
-                    <h1 className='text-gray-500'>All</h1>
+                    <h1 className='text-secondary'>All</h1>
 
                     <ul className="flex items-center space-x-1 text-xs lg:text-lg font-bold ">
                         <li className="">
-                        <h5 className="px-3 py-2 rounded-lg hidden lg:block text-gray-500"> Sort Events: </h5>
+                        <h5 className="px-3 py-2 rounded-lg hidden lg:block text-secondary"> Sort Events: </h5>
                         </li>
                         <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery'> All </CustomLink>
@@ -35,13 +35,13 @@ const EventGallery = () => {
                         <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery/corporategallery'> Corporate </CustomLink>
                         </li>
-                        <li className="px-1 lg:px-2 py-2 rounded-lg">
+                        <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery/nonprofitgallery'> Non-Profit </CustomLink>
                         </li>
-                        <li className="px-1 lg:px-2 py-2 rounded-lg">
+                        <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery/socialgallery'> Social</CustomLink>
                         </li>
-                        <li className="px-1 lg:px-2 py-2 rounded-lg">
+                        <li className="px-1 lg:px-2 py-2 rounded-lg text-secondary">
                         <CustomLink to='/gallery/weddinggallery'> Weddings </CustomLink>
                         </li>
 

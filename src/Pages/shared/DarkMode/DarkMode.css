@@ -2,7 +2,7 @@
 :root {
   --font-color: #fff;
   --background-color: #ECF0F3;
-  --link-color: #fff;
+  /* --link-color: #fff; */
   --btn-bg: #FB4051;
   --color: #fff;
   --option-color: #2A303C;
@@ -12,7 +12,7 @@
 [data-theme="dark"] {
   --font-color: #A6ADBA;
   --background-color: #2A303C;
-  --link-color: lightblue;
+  /* --link-color: lightblue; */
   --btn-bg: #C74B50;
   --option-color: #A6ADBA;
   --color: #C74B50

@@ -2,8 +2,8 @@ import React from "react";
 import headImg from "../../Assets/our-story/header.jpg";
 const Header = () => {
   return (
-    <>
-      <h1 data-aos="fade-up"
+    <div className="overflow-x-hidden sm:overflow-x-hidden">
+      <h1 data-aos="fade-up "
         data-aos-easing="gradient(0,0,1000)"
         data-aos-duration="1700" className="background-set mt-24 text-primary text-2xl font-semibold text-center italic mb-20">
         Love Story
@@ -32,7 +32,7 @@ const Header = () => {
           </h1>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

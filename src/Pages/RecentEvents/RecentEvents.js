@@ -57,7 +57,7 @@ export default class RecentEvents extends Component {
       ],
     };
     return (
-      <div className="px-7 py-14">
+      <div className="px-7 py-14 overflow-x-hidden sm:overflow-x-hidden">
         <h3
           data-aos="zoom-in"
           data-aos-duration="1400"

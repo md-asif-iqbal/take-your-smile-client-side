@@ -103,7 +103,7 @@ const OurLiveEvent = () => {
                   >
                     <Time expiryTimestamp={time} />
                   </div>
-                  <div className="mx-auto">
+                  <div className="mx-auto overflow-x-hidden sm:overflow-x-hidden">
                     <a
 
                       data-aos="fade-up"

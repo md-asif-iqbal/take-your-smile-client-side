@@ -46,7 +46,7 @@ const Weedings = () => {
     navigate(`/wedding/${item}`);
   };
   return (
-    <div className="bg-primary-content">
+    <div className="bg-primary-content overflow-x-hidden sm:overflow-x-hidden">
       <NavBar></NavBar>
       <PageTitle title="Weeding Event" />
 

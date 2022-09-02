@@ -48,7 +48,7 @@ const Gallery = () => {
             <img className="hover:bg-primary" src={item.img} alt="" />
           </motion.div>
         ))} */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 overflow-x-hidden sm:overflow-x-hidden">
         <div data-aos="fade-down-right" data-aos-duration="2000" data-aos-easing="ease-in-sine" className=""> <img src="https://presentup.themetechmount.com/presentup-elegant/wp-content/uploads/sites/4/2018/10/gallery-image-001-720x604.jpg" alt="" /></div>
 
         <div data-aos="fade-down" data-aos-duration="1900" data-aos-easing="ease-in-sine" > <img src="https://presentup.themetechmount.com/presentup-elegant/wp-content/uploads/sites/4/2018/10/gallery-image-005-720x604.jpg" alt="" /></div>

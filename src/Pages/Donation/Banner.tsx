@@ -79,7 +79,7 @@ const Banner = () => {
                     data-aos="fade-up"
                     data-aos-easing="gradient(0,0,1000)"
                     data-aos-duration="1000"
-                    className="donateBtn font-mono">Donate Now</button>
+                    className="btn font-mono">Donate Now</button>
                   </div>
                 </div>
               </div>

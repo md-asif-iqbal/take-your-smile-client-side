@@ -124,7 +124,7 @@ img {
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: .5rem;
-  color: #32325d;
+  color: var(--option-color);
 }
 
 

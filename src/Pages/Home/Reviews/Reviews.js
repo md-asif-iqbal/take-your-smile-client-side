@@ -21,12 +21,12 @@ const Reviews = () => {
   }
 
   return (
-    <div className="background img">
+    <div className="img overflow-x-hidden sm:overflow-x-hidden">
       <h1
         data-aos="fade-up"
         data-aos-easing="gradient(0,0,1000)"
         data-aos-duration="2000"
-        className="text-center text-xl text-gary-900 mt-36 font-semibold font-mono"
+        className="text-center text-xl text-secondary mt-36 font-semibold font-mono"
       >
         Customers Reviews
       </h1>
