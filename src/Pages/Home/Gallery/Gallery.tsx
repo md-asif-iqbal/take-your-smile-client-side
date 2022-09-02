@@ -30,7 +30,7 @@ const Gallery = () => {
     },
   ];
   return (
-    <div className="w-8/12 mx-auto font-mono mt-20">
+    <div className="overflow-x-hidden sm:overflow-x-hidden w-8/12 mx-auto font-mono mt-20">
       <h1 data-aos="zoom-out-right" data-aos-duration="2400"
         className="text-2xl font-bold text-center text-secondary">
         A Story Behind a Pictures

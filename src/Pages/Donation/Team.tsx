@@ -2,19 +2,19 @@ import React from "react";
 
 const Team = () => {
   return (
-    <section className="pt-20 pb-10 lg:pb-20">
+    <section className="pt-20 pb-10 lg:pb-20 overflow-x-hidden sm:overflow-x-hidden">
       <div className="text-center mx-auto mb-[60px] max-w-[510px]">
         <span
-        data-aos="fade-up"
-        data-aos-easing="gradient(0,0,1000)"
-        data-aos-duration="2400"
-        className="font-semibold text-lg text-primary mb-2 block">
+          data-aos="fade-up"
+          data-aos-easing="gradient(0,0,1000)"
+          data-aos-duration="2400"
+          className="font-semibold text-lg text-primary mb-2 block">
           Our Team
         </span>
         <h2
-        data-aos="fade-up"
-        data-aos-easing="gradient(0,0,1000)"
-        data-aos-duration="1900"
+          data-aos="fade-up"
+          data-aos-easing="gradient(0,0,1000)"
+          data-aos-duration="1900"
           className="
                           font-bold
                           text-3xl
@@ -27,21 +27,21 @@ const Team = () => {
           Our Awesome Team
         </h2>
         <p
-        data-aos="fade-up"
-        data-aos-easing="gradient(0,0,1000)"
-        data-aos-duration="2100"
-        className="text-base text-secondary">
+          data-aos="fade-up"
+          data-aos-easing="gradient(0,0,1000)"
+          data-aos-duration="2100"
+          className="text-base text-secondary">
           There are many variations of passages of Lorem Ipsum available but the
           majority have suffered alteration in some form.
         </p>
       </div>
       <div className="flex flex-wrap mx-auto w-11/12">
         <div className="w-full md:w-1/2 xl:w-1/4 px-4">
-          <div 
-          data-aos="flip-right"
-          data-aos-easing="gradient(0,0,1200)"
-          data-aos-duration="2200"
-          className="max-w-[370px] w-full mx-auto mb-10">
+          <div
+            data-aos="flip-right"
+            data-aos-easing="gradient(0,0,1200)"
+            data-aos-duration="2200"
+            className="max-w-[370px] w-full mx-auto mb-10">
             <div className="relative rounded-lg overflow-hidden">
               <img
                 src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
@@ -239,10 +239,10 @@ const Team = () => {
           </div>
         </div>
         <div
-         data-aos="flip-right"
-         data-aos-easing="gradient(0,0,1200)"
-         data-aos-duration="2200"
-        className="w-full md:w-1/2 xl:w-1/4 px-4">
+          data-aos="flip-right"
+          data-aos-easing="gradient(0,0,1200)"
+          data-aos-duration="2200"
+          className="w-full md:w-1/2 xl:w-1/4 px-4">
           <div className="max-w-[370px] w-full mx-auto mb-10">
             <div className="relative rounded-lg overflow-hidden">
               <img
@@ -441,10 +441,10 @@ const Team = () => {
           </div>
         </div>
         <div
-         data-aos="flip-right"
-         data-aos-easing="gradient(0,0,1200)"
-         data-aos-duration="2200"
-        className="w-full md:w-1/2 xl:w-1/4 px-4">
+          data-aos="flip-right"
+          data-aos-easing="gradient(0,0,1200)"
+          data-aos-duration="2200"
+          className="w-full md:w-1/2 xl:w-1/4 px-4">
           <div className="max-w-[370px] w-full mx-auto mb-10">
             <div className="relative rounded-lg overflow-hidden">
               <img
@@ -643,15 +643,15 @@ const Team = () => {
           </div>
         </div>
         <div
-         data-aos="flip-right"
-         data-aos-easing="gradient(0,0,1200)"
-         data-aos-duration="2200"
-        className="w-full md:w-1/2 xl:w-1/4 px-4">
+          data-aos="flip-right"
+          data-aos-easing="gradient(0,0,1200)"
+          data-aos-duration="2200"
+          className="w-full md:w-1/2 xl:w-1/4 px-4">
           <div className="max-w-[370px] w-full mx-auto mb-10">
             <div className="relative rounded-lg overflow-hidden">
               <img
-             
-              src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg" alt="" className="w-full"/>
+
+                src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg" alt="" className="w-full" />
               <div className="absolute w-full bottom-5 left-0 text-center">
                 <div
                   className="

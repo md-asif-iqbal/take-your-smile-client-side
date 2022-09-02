@@ -21,7 +21,7 @@ const Reviews = () => {
   }
 
   return (
-    <div className="img">
+    <div className="img overflow-x-hidden sm:overflow-x-hidden">
       <h1
         data-aos="fade-up"
         data-aos-easing="gradient(0,0,1000)"

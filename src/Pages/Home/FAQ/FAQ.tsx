@@ -3,7 +3,7 @@ import React from 'react';
 const FAQ = () => {
 
   return (
-    <div className="space-y-4 lg:w-1/2 w-full mx-auto my-8">
+    <div className="overflow-x-hidden sm:overflow-x-hidden space-y-4 lg:w-1/2 w-full mx-auto my-8">
       <h2
         data-aos="zoom-in"
         data-aos-easing="gradient(0,0,1200)"

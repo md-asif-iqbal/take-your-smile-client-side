@@ -15,7 +15,7 @@ const Services = () => {
         AOS.init();
     }, [])
     return (
-        <div className='container mx-auto my-10 px-2'>
+        <div className='container overflow-x-hidden sm:overflow-x-hidden mx-auto my-10 px-2'>
             <div className='text-center leading-6 px-2'>
                 <h2
                     data-aos="fade-up"

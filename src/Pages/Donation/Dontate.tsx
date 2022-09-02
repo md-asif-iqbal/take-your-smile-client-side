@@ -4,7 +4,7 @@ import Payment from "./Payment";
 
 const Dontate = () => {
   return (
-    <div className="backgr py-10 relative">
+    <div className="backgr py-10 relative overflow-x-hidden sm:overflow-x-hidden">
       <div className="banner"> </div>
       <div className="flex items-center justify-around don-title">
         <h1 

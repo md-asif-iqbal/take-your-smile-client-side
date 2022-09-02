@@ -39,7 +39,7 @@ const ShareSocial = (posts:any) => {
          </div>
 
          {isHovering && (
-            <div  ref={ref} className='social-share absolute bottom-7 flex items-center right-0'>
+            <div  ref={ref} className='social-share overflow-x-hidden sm:overflow-x-hidden absolute bottom-7 flex items-center right-0'>
 
                <FacebookShareButton data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-sine" url={shareUrl}>
                   <FacebookIcon size={40} round={true} />

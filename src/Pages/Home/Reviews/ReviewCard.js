@@ -5,7 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 const ReviewCard = ({ item }) => {
   const { name, status, address, img, rating, discription } = item;
   return (
-    <div data-aos="fade-right" data-aos-duration="2400" className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
+    <div data-aos="fade-right" data-aos-duration="2400" className="card card-side overflow-x-hidden sm:overflow-x-hidden grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
       {!item.img ? (
         <img className="w-60 mt-10 mx-auto" src={avatar} alt="" />
       ) : (

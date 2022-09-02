@@ -10,7 +10,7 @@ const Summery = () => {
       .then((data) => setSummery(data));
   }, []);
   return (
-    <div className="business-bg font-mono md:h-40 ">
+    <div className="business-bg font-mono md:h-40 overflow-x-hidden sm:overflow-x-hidden ">
       <div
         data-aos="zoom-in"
         data-aos-easing="gradient(0,0,1200)"

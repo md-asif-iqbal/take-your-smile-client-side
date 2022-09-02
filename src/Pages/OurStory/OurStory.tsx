@@ -50,7 +50,7 @@ const OurStory = () => {
       <NavBar />
       {<Banner></Banner>}
       {<Header></Header>}
-      <div className="font-mono grid gap-10 grid-cols-1 md:grid-cols-2 w-10/12 mx-auto mt-32">
+      <div className="font-mono overflow-x-hidden sm:overflow-x-hidden grid gap-10 grid-cols-1 md:grid-cols-2 w-10/12 mx-auto mt-32">
         {ourStory.map((item) => (
           <div data-aos="flip-right"
             data-aos-easing="gradient(0,0,1200)"

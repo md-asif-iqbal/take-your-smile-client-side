@@ -37,7 +37,7 @@ const Stores = () => {
         <>
           {stores.map((item) => (
             <SwiperSlide key={item.id}>
-              <div data-aos="fade-right" data-aos-duration="2400" className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
+              <div data-aos="fade-right" data-aos-duration="2400" className="card card-side overflow-x-hidden sm:overflow-x-hidden grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
                 <img  className="h-96" src={item.img} alt="" />
                 <div className="items-center font-mono">
                   <h2 data-aos="zoom-out-left" data-aos-duration="1800" className="text-primary text-2xl mb-4 font-semibold">

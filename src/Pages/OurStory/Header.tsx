@@ -8,7 +8,7 @@ const Header = () => {
         data-aos-duration="1700" className="background-set mt-24 text-primary text-2xl font-semibold text-center italic mb-20">
         Love Story
       </h1>
-      <div className="w-11/12 font-mono md:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="w-11/12 overflow-x-hidden sm:overflow-x-hidden font-mono md:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
         <img data-aos="fade-down-right" data-aos-duration="3000" data-aos-easing="ease-in-sine" src={headImg} className="mx-auto" alt="" />
         <div className="text-center text-md">
           <p data-aos="fade-down-left" data-aos-duration="1300" data-aos-easing="ease-in-sine"  className="mb-2">

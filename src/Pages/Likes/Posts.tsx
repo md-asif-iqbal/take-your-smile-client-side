@@ -278,7 +278,7 @@ const Posts = () => {
     return (
         <div>
             <NavBar />
-            <div className="text-neutral mx-auto font-sans  mt-36">
+            <div className="text-neutral overflow-x-hidden sm:overflow-x-hidden mx-auto font-sans  mt-36">
                 <h1 className='text-black text-3xl text-center mt-16 font-bold opacity-60 underline'>All <span style={{ color: 'red' }}>Blogs</span> Here</h1>
 
                 <section className=" body-font">

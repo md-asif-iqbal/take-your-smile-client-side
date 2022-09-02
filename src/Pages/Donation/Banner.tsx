@@ -42,12 +42,12 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper overflow-x-hidden sm:overflow-x-hidden"
       >
         <>
           {banner.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="banner-img relative ">
+              <div className="banner-img relative overflow-x-hidden sm:overflow-x-hidden">
                 <div className="title">
                   <h1
                   data-aos="fade-up"
