@@ -6,16 +6,11 @@ import EventGallery from "./Pages/EventGallery/EventGallery";
 import NonProfitGallery from "./Pages/EventGallery/NonProfitGallery";
 import SocialGallery from "./Pages/EventGallery/SocialGallery";
 import WeddingGallery from "./Pages/EventGallery/WeddingGallery";
-// import Events from "./Pages/Events/Events";
 import HomeWithNav from "./Pages/Home/Home/HomeWithNav";
 import Footer from "./Pages/shared/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Contact from "./Pages/Contact/Contact";
-// import Weedings from "./Pages/Events/Weedings";
-// import Social from "./Pages/Events/Social";
-// import NonProfit from "./Pages/Events/NonProfit";
-// import OurStory from "./Pages/OurStory/OurStory";
+
 import Booking from "./Pages/dashboard/Booking";
 import Users from "./Pages/dashboard/Users";
 import MakeAdmin from "./Pages/dashboard/MakeAdmin";
@@ -23,15 +18,6 @@ import AllBooking from "./Pages/dashboard/AllBooking";
 import Update from "./Pages/dashboard/Profile/Update";
 import Profile from "./Pages/dashboard/Profile/Profile";
 import RequireAuth from "./Pages/shared/RequireAuth/RequireAuth";
-// import Blogs from './Pages/Blogs/Blogs';
-
-
-// import SingleEvent from './Pages/EventGallery/SingleEvent';
-// import Error from './Pages/shared/Error/Error';
-// import Review from './Pages/dashboard/Review';
-// import UploadEvents from './Pages/dashboard/UploadEvents';
-// import Dashboard from './Pages/dashboard/Dashboard';
-// import Likes from './Pages/Likes/Posts';
 import Posts from './Pages/Likes/Posts';
 
 import SingleEvent from "./Pages/EventGallery/SingleEvent";
@@ -40,10 +26,6 @@ import Review from "./Pages/dashboard/Review";
 import UploadEvents from "./Pages/dashboard/UploadEvents";
 import Dashboard from "./Pages/dashboard/Dashboard";
 import Messenger from "./Pages/Messenger/Messenger";
-// import AvailableJob from "./Pages/AvailableJob/AvailableJob";
-// import Location from "./Pages/Location/Location/Location";
-// import Decrations from "./Pages/Decrations/Decrations";
-// import Corporate from "./Pages/Events/Corporate";
 import BirthdayParties from "./Pages/ServicesLocation/SocialEvents/BirthdayParties/BirthdayParties";
 import Anniversary from "./Pages/ServicesLocation/WeddingEvents/AnniversaryEvents/Anniversary";
 import AnniLocation from "./Pages/ServicesLocation/WeddingEvents/AnniversaryEvents/AnniLocation";
@@ -126,7 +108,6 @@ import Product from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/Pr
 import ProductLoc from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductLoc";
 import ProductDe from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductDe";
 import ProductForm from "./Pages/ServicesLocation/CorporateEvents/ProductLaunches/ProductForm";
-import Modal from "./Pages/shared/Modal/Modal";
 import SponsorPost from "./Pages/shared/Sponsorship/SponsorPost";
 
 import Alluser from "./Pages/AdminDashbord/Alluser";
@@ -136,7 +117,6 @@ import AllsBookings from "./Pages/AdminDashbord/AllsBookings/AllsBookings";
 import PaymentDoneBook from "./Pages/AdminDashbord/AllsBookings/PaymentDoneBook";
 import AllBookings from "./Pages/AdminDashbord/AllBookings";
 import DarkMode from "./Pages/shared/DarkMode/DarkMode";
-// import Blogs from "./Pages/Blogs/Blogs";
 import Show from "./Pages/shared/BlogEditor/Show";
 import Article from "./Pages/shared/BlogEditor/Article";
 import AdminLogin from "./Pages/Authentication/Admin/AdminLogin";
@@ -155,7 +135,6 @@ import YourBookings from "./Pages/YourBookings/YourBookings";
 import Home from "./Pages/Donation/Home";
 import Blogs from "./Pages/Blogs/Blogs";
 import Corporate from "./Pages/Events/Corporate";
-// import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 import Location from "./Pages/Location/Location/Location";
 import Decrations from "./Pages/Decrations/Decrations";
 import Events from "./Pages/Events/Events";
@@ -170,6 +149,7 @@ import AvailableJob from "./Pages/AvailableJob/AvailableJob";
 import ClickToTop from "./Pages/ScrollTop/ClickToTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin/RequireAdmin";
 // Services location here
 function App() {
   useEffect(() => {
@@ -181,31 +161,72 @@ function App() {
       <Routes>
         <Route path='/' element={<Events />}></Route>
         <Route path="user" element={<Alluser></Alluser>}></Route>
-        <Route path="/admin" element={<Dashbord></Dashbord>}>
+        <Route path="/admin" element={<RequireAdmin>
+              <Dashbord></Dashbord>
+            </RequireAdmin>}>
           <Route index element={<Admin></Admin>}></Route>
-          <Route path="eventpost" element={<EventPost></EventPost>}></Route>
-          <Route path="blogPost" element={<Blogposts></Blogposts>}></Route>
-          <Route path="user" element={<Alluser></Alluser>}></Route>
-          <Route path="articlepost" element={<Article />}></Route>
-
-          <Route path="teams" element={<Team></Team>}>
-
-            <Route path="teamA" element={<TeamA />}></Route>
-            <Route path="teamB" element={<TeamB />}></Route>
-            <Route path="teamC" element={<TeamC />}></Route>
-            <Route path="teamD" element={<TeamD />}></Route>
+          <Route path="eventpost" element={<RequireAdmin>
+            <EventPost></EventPost>
+          </RequireAdmin>
+          }></Route>
+          <Route path="blogPost" element={<RequireAdmin>
+            <Blogposts></Blogposts>
+          </RequireAdmin>
+          }></Route>
+          <Route path="user" element={<RequireAdmin>
+            <Alluser></Alluser>
+          </RequireAdmin>
+          }></Route>
+          <Route path="articlepost" element={<RequireAdmin>
+            <Article />
+          </RequireAdmin>
+          }></Route>
+          <Route path="teams" element={<RequireAdmin>
+            <Team></Team>
+            </RequireAdmin>
+            }>
+            <Route path="teamA" element={<RequireAdmin>
+              <TeamA />
+              </RequireAdmin>
+              }></Route>
+            <Route path="teamB" element={<RequireAdmin>
+              <TeamB />
+              </RequireAdmin>
+              }></Route>
+            <Route path="teamC" element={<RequireAdmin>
+              <TeamC />
+              </RequireAdmin>
+              }></Route>
+            <Route path="teamD" element={<RequireAdmin>
+              <TeamD />
+              </RequireAdmin>
+              }></Route>
           </Route>
-
-
-
-
-          <Route path="allbookings" element={<AllBookings></AllBookings>}>
-            <Route path="bookings" element={<AllsBookings></AllsBookings>}></Route>
-            <Route path="payment" element={<PaymentDoneBook />}></Route>
-            <Route path="pandding" element={<Pandding />}></Route>
-            <Route path="complete" element={<Complete />}></Route>
-            <Route path="canceled" element={<Canceled />}></Route>
-
+          <Route path="allbookings" element={<RequireAdmin>
+            <AllBookings></AllBookings>
+            </RequireAdmin>
+            }>
+            <Route path="bookings" element={<RequireAdmin>
+              <AllsBookings></AllsBookings>
+              </RequireAdmin>
+              }></Route>
+            <Route path="payment" element={<RequireAdmin>
+              <PaymentDoneBook />
+              </RequireAdmin>
+              }></Route>
+            <Route path="pandding" element={<RequireAdmin>
+              <Pandding />
+              </RequireAdmin>
+              }></Route>
+            <Route path="complete" element={<RequireAdmin>
+              <Complete />
+              </RequireAdmin>
+              }></Route>
+            <Route path="canceled" element={<RequireAdmin>
+              <Canceled />
+              </RequireAdmin>
+              }>
+              </Route>
           </Route>
         </Route>
 
@@ -213,12 +234,6 @@ function App() {
         <Route path='/home' element={<HomeWithNav />}></Route>
 
         <Route path="/donate" element={<Home></Home>}></Route>
-        {/* <Route path='dashboard' element={<Dashboard></Dashboard>}>
-          <Route path='allbooking' element={<AllBooking></AllBooking>}></Route>
-          <Route path='booking' element={<Booking></Booking>}></Route>
-        <Route path="/" element={<Events />}></Route>
-        <Route path="/home" element={<HomeWithNav />}></Route>
-        <Route path="/admindashboard" element={<AdminDashBoard />}></Route> */}
 
 
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
@@ -242,14 +257,9 @@ function App() {
         }></Route>
         <Route path='/article/:id' element={<Blogs />
         }></Route>
-
-        {/* <Route path='/posts' element={<RequireAuth>
-          <BlogPost />
-        </RequireAuth>}></Route> */}
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/admin/login" element={<AdminLogin />}></Route>
-        {/* <Route path="/blogsone" element={<BlogsOne></BlogsOne>}></Route>
-        <Route path="/blogsthree" element={<BlogsThree></BlogsThree>}></Route> */}
+
 
         <Route path="/home" element={<HomeWithNav />}></Route>
         <Route path="/ourstory" element={<OurStory />}></Route>
@@ -288,26 +298,127 @@ function App() {
         <Route path="/decretion/:id" element={<Decrations />}></Route>
 
         {/* Events Services Package Here  */}
-        <Route path="/birthday/:id" element={<BirthdayParties />}></Route>
-        <Route path="/anniversary/:id" element={<Anniversary />}></Route>
-        <Route path="/engagement/:id" element={<Engagement />}></Route>
-        <Route path="/rehearsal/:id" element={<Rehearsal />}></Route>
-        <Route path="/wedding/:id" element={<WeddingEven />}></Route>
-        <Route path="/floral/:id" element={<FloralDesign />}></Route>
-        <Route path="/seasonal/:id" element={<SeasonalEvents />}></Route>
-        <Route path="/retirement/:id" element={<Retirement />}></Route>
-        <Route path="/religious/:id" element={<Religious />}></Route>
-        <Route path="/holyday/:id" element={<Holyday />}></Route>
-        <Route path="/fashionCar/:id" element={<FashionCarnival />}></Route>
-        <Route path="/newYear/:id" element={<NewYearEvents />}></Route>
-        <Route path="/educational/:id" element={<Educational />}></Route>
-        <Route path="/salesEvent/:id" element={<SalesEvents />}></Route>
-        <Route path="/product/:id" element={<Product />}></Route>
-        <Route path="/concert/:id" element={<ConcertEvents />}></Route>
-        <Route path="/fairs/:id" element={<FairsExpos />}></Route>
-        <Route path="/homeEvent/:id" element={<WelcomeHome />}></Route>
-        <Route path="/paintJam/:id" element={<PaintJam />}></Route>
-        <Route path="/Fundrasing/:id" element={<FundrasingEvent />}></Route>
+        <Route path="/birthday/:id" element={
+        <RequireAuth>
+          
+          <BirthdayParties />
+        </RequireAuth>
+      }></Route>
+        <Route path="/anniversary/:id" element={
+        <RequireAuth>
+          
+          <Anniversary />
+        </RequireAuth>
+        }></Route>
+        <Route path="/engagement/:id" element={
+        <RequireAuth>
+          
+          <Engagement />
+        </RequireAuth>
+        }></Route>
+        <Route path="/rehearsal/:id" element={
+        <RequireAuth>
+          
+          <Rehearsal />
+        </RequireAuth>
+        
+        }></Route>
+        <Route path="/wedding/:id" element={
+        <RequireAuth>
+          
+          <WeddingEven />
+        </RequireAuth>
+        }></Route>
+        <Route path="/floral/:id" element={
+        <RequireAuth>
+          
+          <FloralDesign />
+        </RequireAuth>
+        }></Route>
+        <Route path="/seasonal/:id" element={
+        <RequireAuth>
+          
+          <SeasonalEvents />
+        </RequireAuth>
+        }></Route>
+        <Route path="/retirement/:id" element={
+        <RequireAuth>
+          
+          <Retirement />
+        </RequireAuth>
+        }></Route>
+        <Route path="/religious/:id" element={
+        <RequireAuth>
+          
+          <Religious />
+        </RequireAuth>
+        }></Route>
+        <Route path="/holyday/:id" element={
+        <RequireAuth>
+          
+          <Holyday />
+        </RequireAuth>
+        }></Route>
+        <Route path="/fashionCar/:id" element={
+        <RequireAuth>
+          
+          <FashionCarnival />
+        </RequireAuth>
+        }></Route>
+        <Route path="/newYear/:id" element={
+        <RequireAuth>
+          
+          <NewYearEvents />
+        </RequireAuth>
+        }></Route>
+        <Route path="/educational/:id" element={
+        <RequireAuth>
+          
+          <Educational />
+        </RequireAuth>
+        }></Route>
+        <Route path="/salesEvent/:id" element={
+        <RequireAuth>
+          
+          <SalesEvents />
+        </RequireAuth>
+        }></Route>
+        <Route path="/product/:id" element={
+        <RequireAuth>
+          
+          <Product />
+        </RequireAuth>
+        }></Route>
+        <Route path="/concert/:id" element={
+        <RequireAuth>
+          
+          <ConcertEvents />
+        </RequireAuth>
+        }></Route>
+        <Route path="/fairs/:id" element={
+        <RequireAuth>
+          
+          <FairsExpos />
+        </RequireAuth>
+        }></Route>
+        <Route path="/homeEvent/:id" element={
+        <RequireAuth>
+          
+          <WelcomeHome />
+        </RequireAuth>
+        }></Route>
+        <Route path="/paintJam/:id" element={
+        <RequireAuth>
+          
+          <PaintJam />
+        </RequireAuth>
+        }></Route>
+        <Route path="/Fundrasing/:id" element={
+        <RequireAuth>
+          
+          <FundrasingEvent />
+        </RequireAuth>
+        }></Route>
         {/* Set Location  */}
         {/* Wedding Events Part  */}
         <Route path="/annilocation/:pack" element={<AnniLocation />}></Route>
@@ -352,9 +463,7 @@ function App() {
         <Route path="/floralDe/:pack/:id" element={<FloraDe />}></Route>
 
         {/* Social Events  */}
-        <Route
-          path="/birthdayDecra/:pack/:id"
-          element={<BirthdayDecration />}
+        <Route path="/birthdayDecra/:pack/:id" element={<BirthdayDecration />}
         ></Route>
         <Route path="/holydayDec/:pack/:id" element={<HolyDayDec />}></Route>
         <Route path="/religiousDec/:pack/:id" element={<ReligiousDe />}></Route>
@@ -452,9 +561,20 @@ function App() {
           path="/paintFrom/:pack/:id/:pain"
           element={<PaintJamFrom />}
         ></Route>
-        <Route path='/blogslike' element={<Posts></Posts>}></Route>
-        <Route path='/yourbookings' element={<YourBookings></YourBookings>}></Route>
-        <Route path='/favourites' element={<Liked></Liked>}></Route>
+        <Route path='/blogslike' element={<RequireAuth>
+
+          <Posts></Posts>
+        </RequireAuth>
+        }></Route>
+        <Route path='/yourbookings' element={<RequireAuth>
+
+          <YourBookings></YourBookings>
+        </RequireAuth>
+        }></Route>
+        <Route path='/favourites' element={<RequireAuth>
+          <Liked></Liked>
+        </RequireAuth>
+        }></Route>
       </Routes>
 
       <Footer />
