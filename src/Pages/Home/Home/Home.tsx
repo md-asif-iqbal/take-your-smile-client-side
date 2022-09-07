@@ -31,7 +31,7 @@ const Home = () => {
             <Summery></Summery>
             <RecentEvents></RecentEvents>
             <FAQ />
-            <Modal />
+            {/* <Modal /> */}
 
      </motion.path>
 )};

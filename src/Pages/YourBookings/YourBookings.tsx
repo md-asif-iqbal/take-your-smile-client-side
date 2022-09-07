@@ -35,7 +35,6 @@ const YourBookings = () => {
     const crossHandle = () => {
         setCancle(false)
     }
-    console.log(cancle);
 
     const handlePayment = (item) => {
         console.log(item)
@@ -87,13 +86,15 @@ const YourBookings = () => {
     }
 
     return (
-        <div className="overflow-x-hidden sm:overflow-x-hidden">
+        <div className="overflow-x-hidden sm:overflow-x-hidden ">
             <NavBar />
 
-            <div className="py-14 mt-20 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+            <div className="py-14 mt-36 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto ">
 
                 <div className="flex justify-start item-start space-y-2 flex-col ">
-                    <h1 className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9  text-secondary">Order #{orderNumber}</h1>
+              
+
+                    <h1 className="text-3xl  lg:text-4xl font-semibold leading-7 lg:leading-9  text-secondary">Order #{orderNumber}</h1>
                 </div>
                 <div className="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch  w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
                     <div className="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
@@ -134,7 +135,7 @@ const YourBookings = () => {
                                             <p className="text-base xl:text-lg font-semibold leading-6 text-secondary">${item.price}</p>
                                             {
                                                 paymentData?.status !== "paid" &&
-                                                <p className="text-base xl:text-lg  leading-6 text-secondary"> <label htmlFor="my-modal-3" onClick={() => setData(item)} className=" uppercase btn  text-white cursor-pointer">Cancel</label>
+                                                <p className="text-base xl:text-lg  leading-6 text-secondary"> <label htmlFor="my-modal-3" onClick={() => setData(item)} className=" uppercase btn   hover:text-primary cursor-pointer">Cancel</label>
                                                 </p>
                                             }
 
