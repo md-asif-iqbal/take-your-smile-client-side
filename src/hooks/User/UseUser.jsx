@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 const useUser = user => {
     const [users, setUser] = useState();
     const [userLoading, setUserLoading] = useState(true);
+ 
     useEffect(() => {
+        
         const email = user?.email;
         if (email) {
             fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`,{
@@ -15,6 +17,7 @@ const useUser = user => {
             })
             .then(res => res.json())
             .then(data => {
+                
                 setUser(data);
                 setUserLoading(false);
                 
