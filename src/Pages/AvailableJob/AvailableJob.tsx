@@ -26,7 +26,7 @@ const AvailableJob = () => {
 					 className="mt-6 lg:text-lg text-white">Use this Hiring Employee job description template to attract and recruit qualified candidates for Event Management</p>
 
       <div className="mt-8 flex space-x-36 mx-auto items-center flex-col space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0 mr-24 lg:mr-0">
-        <input id="email" type="text" className="rounded-md border border-transparent bg-white/20 px-4 py-2 text-white placeholder-white backdrop-blur-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Enter your CV link" />
+        <input id="email" type="text" className="rounded-md border border-transparent bg-white/20 px-4 py-2 text-white placeholder-white backdrop-blur-sm focus:border-blue-400 focus:outline-none  focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Enter your CV link" />
 
         <button className="transform rounded-md bg-blue-700 lg:px-8 py-2 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 focus:bg-blue-600 focus:outline-none ">Post this job</button>
       </div>
