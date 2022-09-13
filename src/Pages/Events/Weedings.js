@@ -62,7 +62,7 @@ const Weedings = () => {
             color: "white",
           }}
         >
-          WEEDING PLANNING
+          WEEDING PLANING
         </h1>
       </div>
       <div className=" w-3/5 mx-auto my-20">
