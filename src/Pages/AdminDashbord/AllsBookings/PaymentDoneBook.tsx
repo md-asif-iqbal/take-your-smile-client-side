@@ -23,7 +23,7 @@ const PaymentDoneBook = () => {
         // }
         const filterItems = (bookings) => {
                 const updatedItems = bookings.filter((item) => {
-                  return item.status === 'payment';
+                  return item.status === 'paid';
                 });
                 setBookings(updatedItems);
                 console.log(pandding);

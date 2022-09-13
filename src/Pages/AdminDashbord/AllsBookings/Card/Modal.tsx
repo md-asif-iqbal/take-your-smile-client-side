@@ -149,7 +149,7 @@ const Modal = ({ data, close }) => {
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}>
-          <p className="modal__description"> {status==='payment'? <button onClick={()=> handleComplete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">Complete</button>:
+          <p className="modal__description"> {status==='paid'? <button onClick={()=> handleComplete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">Complete</button>:
           <button onClick={()=> handleDelete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">DELETE</button>
           }  </p>
         </motion.div>
