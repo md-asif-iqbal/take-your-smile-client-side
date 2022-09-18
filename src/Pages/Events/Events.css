@@ -18,7 +18,7 @@
 }
 
 .background-img-2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.599), rgba(0, 0, 0, 0.481)), url(../../Images/NonProfitBigBanner.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.599), rgba(0, 0, 0, 0.481)), url(../../Images/event-management-bangladesh.jpeg);
     height: 55vh;
 
     /* color:transparent; */
@@ -42,7 +42,7 @@
 }
 
 .background-img-4 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(../../Images//WeedingBigBanner.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.496), rgba(0, 0, 0, 0.616)), url(../../Images//wed.jpeg);
     height: 55vh;
 
     /* color:transparent; */
