@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const UseEducationDe = (edu: any) => {
   const [educational, SetEducational] = useState([]);
   useEffect(() => {
-    const url = `https://secure-escarpment-79738.herokuapp.com/EducationalSeminar/${edu}`;
+    const url = `https://take-your-smile-server-side.onrender.com/EducationalSeminar/${edu}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => SetEducational(data));

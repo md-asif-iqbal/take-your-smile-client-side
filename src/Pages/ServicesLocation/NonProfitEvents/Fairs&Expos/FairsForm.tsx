@@ -17,8 +17,8 @@ const FairsForm = () => {
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const { pack } = useParams();
   const [packag]: any[] = UsePackage(pack);
-  const {fair} = useParams()
-  const [fairs]:any  = UseFairsde(fair)
+  const { fair } = useParams();
+  const [fairs]: any = UseFairsde(fair);
   const [nonPropit] = UseNonProfitEvents();
   console.log(packag);
   const { id } = useParams();
@@ -49,10 +49,10 @@ const FairsForm = () => {
       details: data.details,
       time: data.time,
       date: formattedDate,
-      status: 'pending',
+      status: "pending",
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("https://take-your-smile-server-side.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -86,9 +86,7 @@ const FairsForm = () => {
     <div>
       <NavBar />
       <div className="mt-40">
-        <div
-          className="grid grid-cols-1 lg:grid-cols-2 items-center"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
           <div>
             <div className="hero mt-28">
               <div className="hero-content text-center">

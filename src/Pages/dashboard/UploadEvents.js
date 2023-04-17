@@ -30,13 +30,16 @@ const UploadEvents = () => {
             img: img,
           };
           // send to your database
-          fetch("https://secure-escarpment-79738.herokuapp.com/recentEvents", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(events),
-          })
+          fetch(
+            "https://take-your-smile-server-side.onrender.com/recentEvents",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(events),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               toast.success("Event succesfully add");

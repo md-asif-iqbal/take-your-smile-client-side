@@ -25,13 +25,12 @@ const RetirementDe = () => {
     decImg1: any;
     decImg2: any;
     _id: string;
-
   }
 
   const [decoration, setDecoration] = useState<decration[]>([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/retirement";
+    const url = "https://take-your-smile-server-side.onrender.com/retirement";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
@@ -72,7 +71,10 @@ const RetirementDe = () => {
           </h1>
         </div>
       </div>
-      <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
+      <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold">
+        {" "}
+        <span className="text-black">Select</span> Your Decoration
+      </h1>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
         {decoration.map((item) => (
           <div key={item._id}>

@@ -18,7 +18,7 @@ const HomeFrom = () => {
   const { pack } = useParams();
   const [packag]: any[] = UsePackage(pack);
   const { weh } = useParams();
-  const [WeHome]:any = UseWelcomeDe(weh);
+  const [WeHome]: any = UseWelcomeDe(weh);
   const [nonPropit] = UseNonProfitEvents();
   console.log(packag);
   const { id } = useParams();
@@ -50,9 +50,9 @@ const HomeFrom = () => {
       time: data.time,
       date: formattedDate,
       price: packag.price,
-      status: status
+      status: status,
     };
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("https://take-your-smile-server-side.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

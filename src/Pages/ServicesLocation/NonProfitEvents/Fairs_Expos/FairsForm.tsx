@@ -53,7 +53,7 @@ const FairsForm = () => {
       status: status
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("https://take-your-smile-server-side.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

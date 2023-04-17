@@ -7,7 +7,7 @@ const Profile = () => {
   const [users, setUser] = useState([]);
   useEffect(() => {
     const email = user?.email;
-    fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
+    fetch(`https://take-your-smile-server-side.onrender.com/user/${email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -73,10 +73,11 @@ const Profile = () => {
           </div>
 
           <div
-          // data-aos="flip-right"
-          // data-aos-easing="ease-out-cubic"
-          // data-aos-duration="2000" 
-           className="text-center">
+            // data-aos="flip-right"
+            // data-aos-easing="ease-out-cubic"
+            // data-aos-duration="2000"
+            className="text-center"
+          >
             <NavLink to="update">
               <button className="btn btn-block btn-primary  text-white">
                 Update Profile

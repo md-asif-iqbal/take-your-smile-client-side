@@ -3,7 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import set from "date-fns/esm/set/index.js";
 import { toast, ToastContainer } from "react-toastify";
 import Loading from "../shared/Loading/Loading";
-import gif from './../../Images/Spinner-1s-104px (1).svg'
+import gif from "./../../Images/Spinner-1s-104px (1).svg";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -30,7 +30,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     if (amount) {
       fetch(
-        "https://secure-escarpment-79738.herokuapp.com/create-payment-intent",
+        "https://take-your-smile-server-side.onrender.com/create-payment-intent",
         {
           method: "POST",
           headers: {
@@ -171,8 +171,9 @@ const CheckoutForm = () => {
       </form>
 
       {processing && (
-        <div className="mx-auto"><img src={gif} alt="" /></div>
-
+        <div className="mx-auto">
+          <img src={gif} alt="" />
+        </div>
       )}
       {cardError && <p style={{ color: "yellow" }}>{cardError}</p>}
       {success && (

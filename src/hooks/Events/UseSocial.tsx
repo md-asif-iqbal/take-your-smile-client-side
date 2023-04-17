@@ -4,7 +4,7 @@ const UseSocial = (id: any) => {
   const [social, setSocial] = useState([]);
 
   useEffect(() => {
-    const url = `https://secure-escarpment-79738.herokuapp.com/social/${id}`;
+    const url = `https://take-your-smile-server-side.onrender.com/social/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSocial(data));

@@ -20,7 +20,7 @@ const Fundrasing = () => {
   const [packag]: any = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/Fundraising";
+    const url = "https://take-your-smile-server-side.onrender.com/Fundraising";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
@@ -31,7 +31,7 @@ const Fundrasing = () => {
   };
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="z-10">
         <div className="mb-[-30px] relative">
           <div>
@@ -52,7 +52,10 @@ const Fundrasing = () => {
             </h1>
           </div>
         </div>
-        <h1 className="text-2xl text-center text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
+        <h1 className="text-2xl text-center text-primary font-mono font-bold">
+          {" "}
+          <span className="text-black">Select</span> Your Decoration
+        </h1>
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto py-6 pl-14">
           <h1 className="font-mono font-lg">
             Home /{" "}

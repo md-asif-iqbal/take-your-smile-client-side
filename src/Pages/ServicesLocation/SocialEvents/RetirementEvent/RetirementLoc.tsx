@@ -16,7 +16,7 @@ const RetirementLoc = () => {
   const [packag]: any = UsePackage(pack);
   const [social] = UseSocialEvents();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "https://take-your-smile-server-side.onrender.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));
@@ -27,7 +27,7 @@ const RetirementLoc = () => {
     }
   };
 
-  const searchEvent = (event:any) => {
+  const searchEvent = (event: any) => {
     setFilter(event.target.value);
   };
 
@@ -83,7 +83,7 @@ const RetirementLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
-            key={item._id} 
+              key={item._id}
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >

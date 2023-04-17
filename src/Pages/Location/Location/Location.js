@@ -13,7 +13,7 @@ const Location = () => {
   const [packag] = UsePackage(id);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "https://take-your-smile-server-side.onrender.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));

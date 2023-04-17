@@ -19,7 +19,7 @@ const FairsDe = () => {
   const [packag]: any = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/fairsExpos";
+    const url = "https://take-your-smile-server-side.onrender.com/fairsExpos";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
@@ -30,7 +30,7 @@ const FairsDe = () => {
   };
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <div className="z-10">
         <div className="mb-[-30px] relative">
           <div>

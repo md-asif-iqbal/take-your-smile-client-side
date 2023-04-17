@@ -15,7 +15,7 @@ const NewYearLoc = () => {
   const [packag]: any = UsePackage(pack);
   const [corporate] = UseCorporate();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "https://take-your-smile-server-side.onrender.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));
@@ -40,7 +40,7 @@ const NewYearLoc = () => {
   });
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="z-10">
         <div className="extra relative">
           <div>
@@ -82,7 +82,7 @@ const NewYearLoc = () => {
         {dataSeacrch.slice(0, 6).map((item) => (
           <Fade bottom>
             <div
-            key={item._id}
+              key={item._id}
               onClick={() => handleClick(item._id, packag._id)}
               className="relative rounded-xl cursor-pointer"
             >

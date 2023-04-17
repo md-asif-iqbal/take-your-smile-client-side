@@ -42,14 +42,17 @@ const Update = () => {
             github: data.github,
           };
           //send fata on database
-          fetch(`https://secure-escarpment-79738.herokuapp.com/user/${email}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-            body: JSON.stringify(userInfo),
-          })
+          fetch(
+            `https://take-your-smile-server-side.onrender.com/user/${email}`,
+            {
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
+              body: JSON.stringify(userInfo),
+            }
+          )
             .then((res) => res.json())
             .then((insertData) => {
               return toast.success("You are Successfully Update Profile!");

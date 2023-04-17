@@ -15,7 +15,7 @@ const FairExposLoc = () => {
   const [packag]: any = UsePackage(pack);
   const [nonPropit] = UseNonProfitEvents();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/address";
+    const url = "https://take-your-smile-server-side.onrender.com/address";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddress(data));
@@ -41,7 +41,7 @@ const FairExposLoc = () => {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="z-10">
         <div className="extra relative">
           <div>

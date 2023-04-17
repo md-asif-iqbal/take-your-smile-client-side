@@ -10,7 +10,7 @@ export default class RecentEvents extends Component {
   };
 
   componentDidMount() {
-    fetch("https://secure-escarpment-79738.herokuapp.com/recentEvents")
+    fetch("https://take-your-smile-server-side.onrender.com/recentEvents")
       .then((response) => response.json())
       .then((booksList) => {
         this.setState({ books: booksList });

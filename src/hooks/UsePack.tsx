@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const UsePack = () => {
-    const [packages, setPackages] = useState([]);
+  const [packages, setPackages] = useState([]);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/package";
+    const url = "https://take-your-smile-server-side.onrender.com/package";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);
-  return [packages]
+  return [packages];
 };
 
 export default UsePack;

@@ -26,7 +26,7 @@ const Review = () => {
       img: user?.photoUrl,
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/reviews", {
+    fetch("https://take-your-smile-server-side.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

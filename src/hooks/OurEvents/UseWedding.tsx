@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const UseWedding = () => {
-    const [wedding, setWedding] = useState([]);
+  const [wedding, setWedding] = useState([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/wedding";
+    const url = "https://take-your-smile-server-side.onrender.com/wedding";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setWedding(data));
   }, []);
-    return [wedding]
+  return [wedding];
 };
 
 export default UseWedding;

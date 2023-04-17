@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const Alluser = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("https://secure-escarpment-79738.herokuapp.com/usersdata")
+    fetch("https://take-your-smile-server-side.onrender.com/usersdata")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, [user]);
@@ -13,24 +13,23 @@ const Alluser = () => {
   const handleDelete = (id: string) => {
     const proced = window.confirm("Are Your Sure Delete This User");
     if (proced) {
-      const url = `https://secure-escarpment-79738.herokuapp.com/usersData/${id}`;
+      const url = `https://take-your-smile-server-side.onrender.com/usersData/${id}`;
 
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-       
           const reamingData = user.filter((user: any) => user._id !== id);
           setUser(reamingData);
-          console.log('yes');
-          
+          console.log("yes");
+
           toast.success("Succesfully Delete User");
         });
     }
   };
   console.log(user);
-  
+
   return (
     <section className="pt-4 lg:mt-40 mt-20 w-full">
       <div className="w-8/12 mx-auto">
@@ -146,7 +145,8 @@ const Alluser = () => {
                                border-b border-r border-[#E8E8E8]
                                "
                       >
-                        <span onClick={() => handleDelete(item._id)}
+                        <span
+                          onClick={() => handleDelete(item._id)}
                           className=" cursor-wait
                                    border-primary
                                   py-2

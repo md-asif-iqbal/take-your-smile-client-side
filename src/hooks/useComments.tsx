@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const useComments = () => {
+  const url = `https://take-your-smile-server-side.onrender.com/postComments`;
 
-    const url = `https://secure-escarpment-79738.herokuapp.com/postComments`
+  const [comments, setComments] = useState([]);
 
-    const [comments, setComments] = useState([])
+  // interface UserData {
 
-    // interface UserData {
+  //     comments: string
+  // }
 
-    //     comments: string
-    // }
+  // const [value, setValue] = useState<UserData | Number>(0);
 
-    // const [value, setValue] = useState<UserData | Number>(0);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setComments(data));
+  }, []);
 
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setComments(data));
-    }, [])
-
-    return [comments, setComments];
+  return [comments, setComments];
 };
 
 export default useComments;

@@ -12,13 +12,11 @@ import UsePackage from "../../../../hooks/UsePackage";
 import NavBar from "../../../shared/NavBar/NavBar";
 const Fade = require("react-reveal/Fade");
 const ReligiousDe = () => {
-
   interface decration {
     decImg: any;
     decImg1: any;
     decImg2: any;
     _id: string;
-
   }
   const [decoration, setDecoration] = useState<decration[]>([]);
   const navigate = useNavigate();
@@ -28,7 +26,7 @@ const ReligiousDe = () => {
   const [packag]: any = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/religious";
+    const url = "https://take-your-smile-server-side.onrender.com/religious";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
@@ -60,7 +58,10 @@ const ReligiousDe = () => {
             </h1>
           </div>
         </div>
-        <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
+        <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold">
+          {" "}
+          <span className="text-black">Select</span> Your Decoration
+        </h1>
         <div className="bg-white rounded-lg shadow-lg relative overflow-hidden w-6/12 mx-auto py-6 pl-14">
           <h1 className="font-mono font-lg">
             Home /{" "}

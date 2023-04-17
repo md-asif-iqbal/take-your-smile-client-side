@@ -20,7 +20,7 @@ const WelcomeDe = () => {
   const [packag]: any = UsePackage(pack);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/home";
+    const url = "https://take-your-smile-server-side.onrender.com/home";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

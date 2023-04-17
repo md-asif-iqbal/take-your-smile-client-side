@@ -18,7 +18,7 @@ const ConcertFrom = () => {
   const { pack } = useParams();
   const [packag]: any[] = UsePackage(pack);
   const { con } = useParams();
-  const [concert]:any = UseConcert(con)
+  const [concert]: any = UseConcert(con);
   const [nonPropit] = UseNonProfitEvents();
   console.log(packag);
   const { id } = useParams();
@@ -50,10 +50,10 @@ const ConcertFrom = () => {
       time: data.time,
       date: formattedDate,
       price: packag.price,
-      status: status
+      status: status,
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("https://take-your-smile-server-side.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

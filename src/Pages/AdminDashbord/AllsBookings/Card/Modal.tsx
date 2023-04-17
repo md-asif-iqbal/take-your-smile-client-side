@@ -6,42 +6,52 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 
 const Modal = ({ data, close }) => {
-  const handleDelete =( id: any ) =>{
-    const url =`https://secure-escarpment-79738.herokuapp.com/admin/booking/${id}`;
-        fetch(url, {
-            method: 'DELETE',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            toast(`${service} Order is Deleted`);
-            console.log('yes');
-            
-            
-        })
-          
-    console.log(id);
-  }
-  const handleComplete =(id : any)=>{
-    fetch(`https://secure-escarpment-79738.herokuapp.com/orders/complete/${id}`, {
-      method: "PUT",
-  })
+  const handleDelete = (id: any) => {
+    const url = `https://take-your-smile-server-side.onrender.com/admin/booking/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-          console.log(data);
-          // 
-          toast.success(`Congrats ${service} is completed.`);
+        toast(`${service} Order is Deleted`);
+        console.log("yes");
       });
 
-
-  }
+    console.log(id);
+  };
+  const handleComplete = (id: any) => {
+    fetch(
+      `https://take-your-smile-server-side.onrender.com/orders/complete/${id}`,
+      {
+        method: "PUT",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        //
+        toast.success(`Congrats ${service} is completed.`);
+      });
+  };
 
   const {
-    decrImg1,details,email,location,package:packages,price,phone,name,service,time,date,status, _id } = data;
-
-
+    decrImg1,
+    details,
+    email,
+    location,
+    package: packages,
+    price,
+    phone,
+    name,
+    service,
+    time,
+    date,
+    status,
+    _id,
+  } = data;
 
   const modalVariants = {
     open: {
@@ -65,9 +75,6 @@ const Modal = ({ data, close }) => {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "10%" },
   };
-
-
-
 
   return (
     <motion.div
@@ -99,7 +106,9 @@ const Modal = ({ data, close }) => {
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">Amount: <span className="text-emerald-400"> {price} </span></p>
+          <p className="modal__description">
+            Amount: <span className="text-emerald-400"> {price} </span>
+          </p>
         </motion.div>
 
         <motion.div
@@ -114,7 +123,7 @@ const Modal = ({ data, close }) => {
         >
           <p className="modal__description">Location: {location}</p>
         </motion.div>
-        
+
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}
@@ -133,7 +142,7 @@ const Modal = ({ data, close }) => {
         >
           <p className="modal__description">Contact Number: {phone}</p>
         </motion.div>
-       
+
         <motion.div
           className="modal__description-wrapper"
           variants={modalRowVariants}
@@ -144,20 +153,38 @@ const Modal = ({ data, close }) => {
           className="modal__description-wrapper"
           variants={modalRowVariants}
         >
-          <p className="modal__description">Status: <span className="text-primary"> {status} </span> </p>
+          <p className="modal__description">
+            Status: <span className="text-primary"> {status} </span>{" "}
+          </p>
         </motion.div>
         <motion.div
           className="modal__description-wrapper"
-          variants={modalRowVariants}>
-          <p className="modal__description"> {status==='paid'? <button onClick={()=> handleComplete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">Complete</button>:
-          <button onClick={()=> handleDelete(_id)} className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer">DELETE</button>
-          }  </p>
+          variants={modalRowVariants}
+        >
+          <p className="modal__description">
+            {" "}
+            {status === "paid" ? (
+              <button
+                onClick={() => handleComplete(_id)}
+                className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer"
+              >
+                Complete
+              </button>
+            ) : (
+              <button
+                onClick={() => handleDelete(_id)}
+                className="hover:bg-primary uppercase px-6 py-1 rounded  hover:text-white border-2 cursor-pointer"
+              >
+                DELETE
+              </button>
+            )}{" "}
+          </p>
         </motion.div>
         <motion.button
           className="modal__close-wrapper"
           whileHover={{ scale: 1.2 }}
-          onClick={close} 
-          >
+          onClick={close}
+        >
           <IoCloseCircleOutline className="modal__close-icon" />
         </motion.button>
       </motion.div>

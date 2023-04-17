@@ -19,7 +19,7 @@ const RetirementFrom = () => {
   const [packag]: any = UsePackage(pack);
   const { reti } = useParams();
 
-  const [retirement]: any = UseRetirement(reti)
+  const [retirement]: any = UseRetirement(reti);
   console.log(packag);
   const { id } = useParams();
   const [address]: any[] = UseLocation(id);
@@ -37,7 +37,6 @@ const RetirementFrom = () => {
   };
   let status = "pending";
 
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const booking = {
       name: user?.displayName,
@@ -53,10 +52,10 @@ const RetirementFrom = () => {
       time: data.time,
       date: formattedDate,
       price: packag.price,
-      status: status
+      status: status,
     };
 
-    fetch("https://secure-escarpment-79738.herokuapp.com/orders", {
+    fetch("https://take-your-smile-server-side.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

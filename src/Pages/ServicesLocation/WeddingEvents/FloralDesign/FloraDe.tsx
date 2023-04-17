@@ -20,7 +20,7 @@ const FloraDe = () => {
   const { id } = useParams();
   const [address]: any = UseLocation(id);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/floralDesign";
+    const url = "https://take-your-smile-server-side.onrender.com/floralDesign";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
@@ -61,7 +61,10 @@ const FloraDe = () => {
           </h1>
         </div>
       </div>
-      <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold"> <span className="text-black">Select</span> Your Decoration</h1>
+      <h1 className="text-2xl text-center mt-5 text-primary font-mono font-bold">
+        {" "}
+        <span className="text-black">Select</span> Your Decoration
+      </h1>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
         {decoration.map((item) => (
           <div key={item._id}>

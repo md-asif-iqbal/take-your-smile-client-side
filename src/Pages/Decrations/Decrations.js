@@ -15,7 +15,7 @@ const Decrations = () => {
   const { id } = useParams();
   const [address] = UseLocation(id);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/decoration";
+    const url = "https://take-your-smile-server-side.onrender.com/decoration";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));

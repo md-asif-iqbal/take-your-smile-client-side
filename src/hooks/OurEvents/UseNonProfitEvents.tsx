@@ -3,7 +3,7 @@ const UseNonProfitEvents = () => {
   const [nonPropit, setnonPropit] = useState([]);
 
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/nonprofit";
+    const url = "https://take-your-smile-server-side.onrender.com/nonprofit";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setnonPropit(data));

@@ -20,18 +20,19 @@ const NewYearDe = () => {
   const [packag]: any = UsePackage(pack);
   console.log(packag);
   useEffect(() => {
-    const url = "https://secure-escarpment-79738.herokuapp.com/NewYearEvents";
+    const url =
+      "https://take-your-smile-server-side.onrender.com/NewYearEvents";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDecoration(data));
   }, []);
   console.log(decoration);
-  const handleClick = (item: any, pack:any, id:any) => {
+  const handleClick = (item: any, pack: any, id: any) => {
     navigate(`/newYearfrom/${pack}/${id}/${item}`);
   };
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="z-10">
         <div className="mb-[-30px] relative">
           <div>
@@ -61,7 +62,10 @@ const NewYearDe = () => {
           </h1>
         </div>
       </div>
-      <h1 className="text-2xl text-center text-primary"> <span className="text-black">Select</span> Your Decoration</h1>
+      <h1 className="text-2xl text-center text-primary">
+        {" "}
+        <span className="text-black">Select</span> Your Decoration
+      </h1>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
         {decoration.map((item) => (
           <div key={item._id}>
