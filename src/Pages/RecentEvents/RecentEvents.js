@@ -73,7 +73,7 @@ export default class RecentEvents extends Component {
           </strong>
         </h3>
         <Slider {...settings}>
-          {this.state.books.map((book) => (
+          {this.state.books?.map((book) => (
             <div
               data-aos="flip-right"
               data-aos-easing="gradient(0,0,1200)"

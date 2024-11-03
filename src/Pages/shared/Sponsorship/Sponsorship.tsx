@@ -77,7 +77,7 @@ const Sponsher = () => {
         >
           <div>
             {
-              sponser.map(item => (<SwiperSlide>
+              sponser?.map(item => (<SwiperSlide>
 
                 <div className='flex flex-col mx-auto pb-20 '>
                   <Fade top duration={6000}>

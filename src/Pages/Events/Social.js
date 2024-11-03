@@ -138,7 +138,7 @@ const Social = () => {
           >
             SERVICES INCLUDE
           </h1>
-          {social.map((item) => (
+          {social?.map((item) => (
             <div key={item._id}>
               <h1
                 data-aos="zoom-out-left"

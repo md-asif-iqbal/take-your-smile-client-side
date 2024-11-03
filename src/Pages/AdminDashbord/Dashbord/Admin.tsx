@@ -100,7 +100,7 @@ const Admin = () => {
               className="mySwiper"
             >
               <>
-                {busniess.map((item) => (
+                {busniess?.map((item) => (
                   <SwiperSlide>
                     <div className="text-black font-semibold font-mono mt-8 p-5 w-48 py-8 bg-[#D0E1E9] rounded-3xl mb-10 mx-auto">
                       <h1 className="text-3xl mb-2">{item.icons}</h1>

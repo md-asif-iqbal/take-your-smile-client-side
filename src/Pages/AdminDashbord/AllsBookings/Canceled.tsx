@@ -37,7 +37,7 @@ const Canceled = () => {
             All Cancle Bookings Here
           </h1>
           <div className="propertiest text-secondary">
-            {bookings.map((items) => (
+            {bookings?.map((items) => (
               <Card data={items} key={items._id} />
             ))}
           </div>

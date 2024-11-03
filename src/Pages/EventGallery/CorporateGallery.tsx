@@ -38,7 +38,7 @@ const CorporateGallery = () => {
         <PageTitle title="All Gallery" />
         <div className="Appes">
           <div className="propertiest">
-            {events.map((item) => (
+            {events?.map((item) => (
               <Card data={item} key={item._id} />
             ))}
           </div>

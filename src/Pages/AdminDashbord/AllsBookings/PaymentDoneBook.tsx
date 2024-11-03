@@ -39,7 +39,7 @@ const PaymentDoneBook = () => {
               All Payments Here
             </h1>
             <div className="propertiest text-secondary">
-              {bookings.map((item) => (
+              {bookings?.map((item) => (
                 <Card data={item} key={item.id} />
               ))}
             </div>

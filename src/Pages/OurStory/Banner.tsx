@@ -36,7 +36,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <>
-          {banner.map((item) => (
+          {banner?.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="banner-img">
                 <img className="h-screen w-full" src={item.img} alt="" />

@@ -45,7 +45,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <>
-          {banner.map((item) => (
+          {banner?.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="banner-img relative ">
                 <div className="title">

@@ -92,7 +92,7 @@ const Alluser = () => {
                     </th>
                   </tr>
                 </thead>
-                {user.map((item) => (
+                {user?.map((item) => (
                   <tbody>
                     <tr className="font-mono">
                       <td

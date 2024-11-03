@@ -251,7 +251,7 @@ const Posts = () => {
             className="container px-5 mx-auto  py-24 "
           >
             <div className="flex gap-10 flex-wrap   w-full justify-around">
-              {posts.map((post) => (
+              {posts?.map((post) => (
                 <div
                   key={post?._id}
                   className="card w-96 bg-base-100 shadow-xl"

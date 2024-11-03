@@ -184,7 +184,7 @@ const FairsForm = () => {
                   />
                 </div>
                 <div className="lg:flex w-full">
-                  {nonPropit.map((item) => (
+                  {nonPropit?.map((item) => (
                     <input
                       key={item._id}
                       type="text"

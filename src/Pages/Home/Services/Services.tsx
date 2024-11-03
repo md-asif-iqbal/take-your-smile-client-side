@@ -76,7 +76,7 @@ const Services = () => {
             </div>
             <div className='grid gap-5 grid-cols-1 container mx-auto md:grid-cols-2 lg:grid-cols-4 px-2'>
                 {
-                    services.map(item => (<div className="w-11/12 mx-auto">
+                    services?.map(item => (<div className="w-11/12 mx-auto">
                         <div className="pt-10 w-10/12 mx-auto">
                             <Fade bottom duration={3500}>
                                 <div className="flex w-24 h-24 border-2 border-primary rounded-full cursor-pointer mx-auto"> <span className='text-4xl text-center py-7 text-primary mx-auto px-2'>{item.icons}</span> </div>

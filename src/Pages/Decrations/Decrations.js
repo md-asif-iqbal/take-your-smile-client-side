@@ -49,7 +49,7 @@ const Decrations = () => {
         </div>
       </div>
       <div className="grid mt-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto">
-        {decoration.map((item) => (
+        {decoration?.map((item) => (
           <div key={item._id}>
             <Fade bottom>
               <div>

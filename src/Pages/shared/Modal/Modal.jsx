@@ -58,7 +58,7 @@ const Modal = () => {
               modules={[Navigation, Pagination, Autoplay]}
               className="mySwiper"
             >
-              {sponsors.map((sponsor) => (
+              {sponsors?.map((sponsor) => (
                 <SwiperSlide>
                   <h2 className="text-lg md:text-2xl font-bold mb-2 w-full text-secondary">
                     {sponsor.title}

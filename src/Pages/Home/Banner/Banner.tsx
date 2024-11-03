@@ -58,7 +58,7 @@ const Banner = () => {
       >
 
         {
-          banner.map(item => (<SwiperSlide key={item.id}>
+          banner?.map(item => (<SwiperSlide key={item.id}>
             <div className='relative border-b-8 border-primary'>
               <img src={item.img} alt="" className='w-full h-screen' />
               <div className="banner"> </div>

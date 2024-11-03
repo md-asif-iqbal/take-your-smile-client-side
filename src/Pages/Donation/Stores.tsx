@@ -35,7 +35,7 @@ const Stores = () => {
         className="mySwiper w-8/12"
       >
         <>
-          {stores.map((item) => (
+          {stores?.map((item) => (
             <SwiperSlide key={item.id}>
               <div data-aos="fade-right" data-aos-duration="2400" className="card card-side grid md:grid-cols-2 pb-14 pt-20 grid-cols-1 px-2 items-center">
                 <img  className="h-96" src={item.img} alt="" />

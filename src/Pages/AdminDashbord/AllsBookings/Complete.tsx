@@ -37,7 +37,7 @@ const Complete = () => {
             All Complete Bookings Here
           </h1>
           <div className="propertiest text-secondary">
-            {bookings.map((items: any) => (
+            {bookings?.map((items: any) => (
               <Card data={items} key={items._id} />
             ))}
           </div>

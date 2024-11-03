@@ -37,7 +37,7 @@ const AllGallery = () => {
       <PageTitle title="All Gallery" />
       <div className="Appes">
         <div className="propertiest">
-          {gallerys.map((item) => (
+          {gallerys?.map((item) => (
             <Card data={item} key={item.date} />
           ))}
         </div>

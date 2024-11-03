@@ -24,7 +24,7 @@
     "daisyui": "^1.25.4",
     "date-fns": "^2.29.1",
     "dompurify": "^2.3.10",
-    "firebase": "^9.9.1",
+    "firebase": "^9.23.0",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-animated-progress-bar": "^1.1.1",
@@ -82,8 +82,7 @@
     "@testing-library/react": "^13.3.0",
     "@types/react-scroll": "^1.8.3",
     "@types/react-slick": "^0.23.10",
-    "node-sass": "^7.0.1",
-    "sass": "^1.53.0",
+    "sass": "^1.80.6",
     "tailwindcss": "^3.1.6"
   }
 }

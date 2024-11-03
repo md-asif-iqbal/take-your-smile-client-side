@@ -102,7 +102,7 @@ const YourBookings = () => {
                 Customer’s Cart
               </p>
 
-              {booking.map((item) => (
+              {booking?.map((item) => (
                 <div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row  items-start md:items-center space-y-4  md:space-x-6 xl:space-x-8 w-full mb-5">
                   <div className="w-full md:w-40">
                     <img

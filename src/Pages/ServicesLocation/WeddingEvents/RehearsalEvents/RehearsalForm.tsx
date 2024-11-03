@@ -185,7 +185,7 @@ const RehearsalForm = () => {
                   />
                 </div>
                 <div className="lg:flex w-full">
-                  {wedding.map((item) => (
+                  {wedding?.map((item) => (
                     <input
                       key={item._id}
                       type="text"

@@ -186,7 +186,7 @@ const RetirementFrom = () => {
                   />
                 </div>
                 <div className="lg:flex w-full">
-                  {social.map((item) => (
+                  {social?.map((item) => (
                     <input
                       key={item._id}
                       type="text"

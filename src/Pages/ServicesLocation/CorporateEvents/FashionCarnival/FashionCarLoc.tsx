@@ -57,7 +57,7 @@ const FashionCarLoc = () => {
               >
                 <AiFillHome /> Home
               </span>
-              {corporate.map((item) => (
+              {corporate?.map((item) => (
                 <h1 key={item._id} className="font-mono">
                   / {item.name}/ {packag.title}
                 </h1>
@@ -79,7 +79,7 @@ const FashionCarLoc = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-9/12 mx-auto gap-8 mt-28">
-        {dataSeacrch.slice(0, 6).map((item) => (
+        {dataSeacrch.slice(0, 6)?.map((item) => (
           <Fade bottom>
             <div
               key={item._id}

@@ -52,7 +52,7 @@ const Show = () => {
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap -m-4">
-              {articles.map((item) => (
+              {articles?.map((item) => (
                 <div className="p-4 md:w-1/3" key={item._id}>
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                     {item.image ? (

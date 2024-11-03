@@ -24,7 +24,7 @@ const TeamA = () => {
 
   return (
     <div>
-      {team.map((item: any) => (
+      {team?.map((item: any) => (
         <Card item={item}></Card>
       ))}
     </div>

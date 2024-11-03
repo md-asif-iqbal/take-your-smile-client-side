@@ -136,7 +136,7 @@ const Weedings = () => {
           >
             SERVICES INCLUDE
           </h1>
-          {wedding.map((item) => (
+          {wedding?.map((item) => (
             <div key={item._id}>
               <h1
                 onClick={() => HandleAnniversary(item._id)}

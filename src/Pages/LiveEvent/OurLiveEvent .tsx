@@ -52,7 +52,7 @@ const OurLiveEvent = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        {reverse.slice(0, 6).map((item: any) => (
+        {reverse.slice(0, 6)?.map((item: any) => (
           <SwiperSlide key={item._id}>
             <div>
               <Fade left duration={7500}>

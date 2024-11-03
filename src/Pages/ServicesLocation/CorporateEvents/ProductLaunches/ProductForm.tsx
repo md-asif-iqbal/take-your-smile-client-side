@@ -185,7 +185,7 @@ const ProductForm = () => {
                   />
                 </div>
                 <div className="lg:flex w-full">
-                  {corporate.map((item) => (
+                  {corporate?.map((item) => (
                     <input
                       key={item._id}
                       type="text"

@@ -80,7 +80,7 @@ const Review = () => {
             <h1 className="text-base font-medium font-mono text-white">
               Rating:
             </h1>
-            {stars.map((e, i) => {
+            {stars?.map((e, i) => {
               return (
                 <FontAwesomeIcon
                   icon={faStar}
