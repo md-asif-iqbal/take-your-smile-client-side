@@ -6,8 +6,8 @@ import Loading from "../shared/Loading/Loading";
 import { useQuery } from "@tanstack/react-query";
 
 const AllGallery = () => {
-  const [gallery, setGallery] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [gallery] = useState([]);
+  const [, setEvents] = useState([]);
   const url = `https://take-your-smile-server-side.onrender.com/gallerys`;
   const {
     data: gallerys,
