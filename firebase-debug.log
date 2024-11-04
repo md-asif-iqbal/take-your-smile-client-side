@@ -1,0 +1,45 @@
+[debug] [2024-11-04T13:35:10.486Z] ----------------------------------------------------------------------
+[debug] [2024-11-04T13:35:10.491Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2024-11-04T13:35:10.491Z] CLI Version:   13.23.1
+[debug] [2024-11-04T13:35:10.492Z] Platform:      darwin
+[debug] [2024-11-04T13:35:10.492Z] Node Version:  v23.1.0
+[debug] [2024-11-04T13:35:10.492Z] Time:          Mon Nov 04 2024 19:35:10 GMT+0600 (Bangladesh Standard Time)
+[debug] [2024-11-04T13:35:10.492Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-04T13:35:10.525Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-04T13:35:10.525Z] > authorizing via signed-in user (md.asifiqbal2008@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/asifsmacbook/Projects/take-your-smile-client-side
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-11-04T13:35:29.546Z] Using project from CLI flag: take-your-smile-4d64a
+[debug] [2024-11-04T13:35:29.547Z] Checked if tokens are valid: true, expires at: 1730729019028
+[debug] [2024-11-04T13:35:29.547Z] Checked if tokens are valid: true, expires at: 1730729019028
+[debug] [2024-11-04T13:35:29.548Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a [none]
+[debug] [2024-11-04T13:35:30.432Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a 403
+[debug] [2024-11-04T13:35:30.432Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-11-04T13:35:30.433Z] Request to https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a had HTTP Error: 403, The caller does not have permission
+[debug] [2024-11-04T13:35:30.744Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/take-your-smile-4d64a had HTTP Error: 403, The caller does not have permission
+    at responseToError (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project take-your-smile-4d64a. Please make sure the project exists and your account has permission to access it.
